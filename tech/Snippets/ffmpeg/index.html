@@ -8,22 +8,22 @@
       
       
       
-        <link rel="canonical" href="https://0xfab1.net/">
+        <link rel="canonical" href="https://0xfab1.net/tech/Snippets/ffmpeg/">
       
       
-      <link rel="shortcut icon" href="icons/favicon.ico">
+      <link rel="shortcut icon" href="../../../icons/favicon.ico">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.7">
     
     
       
-        <title>0xfab1</title>
+        <title>FFmpeg - 0xfab1</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.19753c6b.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.19753c6b.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.196e0c26.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.196e0c26.min.css">
         
           
           
@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome" class="md-skip">
+        <a href="#ffmpeg" class="md-skip">
           Skip to content
         </a>
       
@@ -88,7 +88,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Welcome
+              FFmpeg
             
           </span>
         </div>
@@ -186,20 +186,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="." class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../.." class="md-nav__link">
       Welcome
     </a>
-    
   </li>
 
     
@@ -229,7 +220,7 @@
 
 
   <li class="md-nav__item">
-    <a href="lists/Wikipedia/" class="md-nav__link">
+    <a href="../../../lists/Wikipedia/" class="md-nav__link">
       Wikipedia
     </a>
   </li>
@@ -244,10 +235,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     <label class="md-nav__link" for="nav-3">
       Tech
       <span class="md-nav__icon md-icon"></span>
@@ -264,10 +257,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" >
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" checked>
     <label class="md-nav__link" for="nav-3-1">
       Snippets
       <span class="md-nav__icon md-icon"></span>
@@ -284,11 +279,111 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="tech/Snippets/ffmpeg/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        FFmpeg
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       FFmpeg
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-time-lapse-video" class="md-nav__link">
+    Create Time Lapse Video
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compress-video" class="md-nav__link">
+    Compress Video
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#save-as-av1" class="md-nav__link">
+    Save as AV1
+  </a>
+  
+    <nav class="md-nav" aria-label="Save as AV1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pass-1" class="md-nav__link">
+    Pass 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pass-2" class="md-nav__link">
+    Pass 2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convert-from-mov-to-gif" class="md-nav__link">
+    Convert from MOV to GIF
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convert-from-gif-to-mp4" class="md-nav__link">
+    Convert from GIF to MP4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convert-from-mp4-to-minimized-gif" class="md-nav__link">
+    Convert from MP4 to minimized GIF
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stack-videos-in-a-grid-horizontally-and-vertically" class="md-nav__link">
+    Stack Videos in a Grid (Horizontally and Vertically)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -298,7 +393,7 @@
 
 
   <li class="md-nav__item">
-    <a href="tech/Snippets/openssl/" class="md-nav__link">
+    <a href="../openssl/" class="md-nav__link">
       OpenSSL
     </a>
   </li>
@@ -331,6 +426,83 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-time-lapse-video" class="md-nav__link">
+    Create Time Lapse Video
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compress-video" class="md-nav__link">
+    Compress Video
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#save-as-av1" class="md-nav__link">
+    Save as AV1
+  </a>
+  
+    <nav class="md-nav" aria-label="Save as AV1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pass-1" class="md-nav__link">
+    Pass 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pass-2" class="md-nav__link">
+    Pass 2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convert-from-mov-to-gif" class="md-nav__link">
+    Convert from MOV to GIF
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convert-from-gif-to-mp4" class="md-nav__link">
+    Convert from GIF to MP4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convert-from-mp4-to-minimized-gif" class="md-nav__link">
+    Convert from MP4 to minimized GIF
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stack-videos-in-a-grid-horizontally-and-vertically" class="md-nav__link">
+    Stack Videos in a Grid (Horizontally and Vertically)
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -341,17 +513,59 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/FullByte/FullByte.github.io/edit/master/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/FullByte/FullByte.github.io/edit/master/docs/tech/Snippets/ffmpeg.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="welcome">Welcome</h1>
-<p>Hi Internet stranger,</p>
-<p>this website is dedicated to the notes and lists I made, code i have written, copied or modified, things i created, modified or repaired and basically anything I find of interest.</p>
-<p>I hope you enjoy the content and found your visit worthwhile :)</p>
-<p>Regards,
-0xfab1</p>
+                <h1 id="ffmpeg">FFmpeg</h1>
+<p>FFmpeg is a great tool and here are some examples.</p>
+<h2 id="create-time-lapse-video">Create Time Lapse Video</h2>
+<p>In my case the files are from a GoPro named "G" followed by seven digits e.g. G0011565.jpg.
+The starting number of the series of pictures is 11021 in my example.
+Change the start_number value, the filename prefix (in this case "G") and the length of the number if required.
+More details: <a href="http://ffmpeg.org/ffmpeg-all.html#image2-1">http://ffmpeg.org/ffmpeg-all.html#image2-1</a></p>
+<pre><code class="language-shell">ffmpeg -framerate 30 -start_number 11021 -i &quot;E:\path\G%07d.jpg&quot; -c:v libx264 &quot;E:\path\output.mp4&quot;
+</code></pre>
+<p>Example output:</p>
+<p><img alt="Timelapse video using FFmpeg" src="../_ffmpeg_timelapse.jpg" /></p>
+<h2 id="compress-video">Compress Video</h2>
+<p>To compress an avi file you can use H.264 on the output file named e.g. "input.avi" and create a smaller version of the video named "output.mkv"
+More details: <a href="https://trac.ffmpeg.org/wiki/Encode/H.264">https://trac.ffmpeg.org/wiki/Encode/H.264</a></p>
+<pre><code class="language-shell">ffmpeg -i input.avi -c:v libx264 -preset slow -crf 15 output.mkv
+</code></pre>
+<h2 id="save-as-av1">Save as AV1</h2>
+<h3 id="pass-1">Pass 1</h3>
+<pre><code class="language-shell">ffmpeg.exe -i input.mp4 -c:v libaom-av1 -b:v 200k -filter:v scale=720:-1 -strict experimental -cpu-used 1 -tile-columns 2 -row-mt 1 -threads 8 -pass 1 -f mp4 NUL &amp;&amp; ^
+</code></pre>
+<h3 id="pass-2">Pass 2</h3>
+<pre><code class="language-shell">ffmpeg.exe -i input.mp4 -pix_fmt yuv420p -movflags faststart -c:v libaom-av1 -b:v 200k -filter:v scale=720:-1 -strict experimental -cpu-used 1 -tile-columns 2 -row-mt 1 -threads 8 -pass 2 output.mp4
+</code></pre>
+<h2 id="convert-from-mov-to-gif">Convert from MOV to GIF</h2>
+<pre><code class="language-shell">ffmpeg.exe -i input.mov -ss 00:08:08 -t 12 -filter_complex &quot;[0:v] fps=12,scale=720:-1&quot; -y scene2.gif
+</code></pre>
+<h2 id="convert-from-gif-to-mp4">Convert from GIF to MP4</h2>
+<pre><code class="language-shell">ffmpeg -f gif -i favmeme.gif betterfavmeme.mp4
+</code></pre>
+<h2 id="convert-from-mp4-to-minimized-gif">Convert from MP4 to minimized GIF</h2>
+<p>Turn input.mp4 into a small output.gif by cutting the gif palette size with palettegen=max_colors=64 to improve the compression:</p>
+<pre><code class="language-shell">ffmpeg -ss 00:03 -t 00:03.7 -i input.mp4 -an -vf &quot;transpose=2, crop=in_w-200:in_h-50:0:0, fps=11, scale=-1:360:flags=lanczos, split[s0][s1];[s0]palettegen=max_colors=64[p];[s1][p]paletteuse&quot; -loop 1 output.gif
+</code></pre>
+<h2 id="stack-videos-in-a-grid-horizontally-and-vertically">Stack Videos in a Grid (Horizontally and Vertically)</h2>
+<p>2 Videos Horizontally</p>
+<pre><code class="language-shell">ffmpeg -i input0.mp4 -i input1.mp4 -filter_complex hstack=inputs=2 horizontal-stacked-output.mp4
+</code></pre>
+<p>2 Videos Vertically</p>
+<pre><code class="language-shell">ffmpeg -i input0.mp4 -i input1.mp4 -filter_complex vstack=inputs=2 vertical-stack-output.mp4
+</code></pre>
+<p>Videos of Different Lengths</p>
+<pre><code class="language-shell">ffmpeg -i input0.mp4 -i input1.mp4 -filter_complex hstack=inputs=2:shortest=1 shortest-output.mp4
+</code></pre>
+<p>2×2 Grid of Videos</p>
+<pre><code class="language-shell">ffmpeg -i input0.mp4 -i input1.mp4 -i input2.mp4 -i input3.mp4 -filter_complex &quot;[0:v][1:v]hstack=inputs=2[top]; [2:v][3:v]hstack=inputs=2[bottom]; [top][bottom]vstack=inputs=2[v]&quot; -map &quot;[v]&quot; finalOutput.mp4
+</code></pre>
+<pre><code class="language-shell">ffmpeg -i input0.mp4 -i input1.mp4 -i input2.mp4 -i input3.mp4 -i input4.mp4 -i input5.mp4 -filter_complex &quot;[0:v][1:v][2:v]hstack=inputs=3[top]; [3:v][4:v][5:v]hstack=inputs=3[bottom]; [top][bottom]vstack=inputs=2[v]&quot; -map &quot;[v]&quot; finalOutput.mp4
+</code></pre>
                 
               
               
@@ -370,14 +584,28 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
+          <a href="../../../lists/Wikipedia/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Wikipedia
+              </div>
+            </div>
+          </a>
         
-          <a href="lists/Wikipedia/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+        
+          <a href="../openssl/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Wikipedia
+                OpenSSL
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
@@ -426,15 +654,15 @@
       
     </div>
     
-      <script src="assets/javascripts/vendor.0ac82a11.min.js"></script>
-      <script src="assets/javascripts/bundle.f81dfb4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../../assets/javascripts/vendor.0ac82a11.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f81dfb4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
-          base: ".",
+          base: "../../..",
           features: [],
           search: Object.assign({
-            worker: "assets/javascripts/worker/search.4ac00218.min.js"
+            worker: "../../../assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
