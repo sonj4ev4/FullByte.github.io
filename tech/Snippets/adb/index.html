@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://0xfab1.net/tech/Snippets/openssl/">
+        <link rel="canonical" href="https://0xfab1.net/tech/Snippets/adb/">
       
       
       <link rel="shortcut icon" href="../../../icons/favicon.ico">
@@ -16,7 +16,7 @@
     
     
       
-        <title>OpenSSL - 0xfab1</title>
+        <title>adb - 0xfab1</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#openssl" class="md-skip">
+        <a href="#adb" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              OpenSSL
+              adb
             
           </span>
         </div>
@@ -296,11 +296,49 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../adb/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        adb
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       adb
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#delete-an-app-on-your-android-phone" class="md-nav__link">
+    Delete an app on your android phone
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -320,77 +358,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        OpenSSL
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-    
-    <a href="./" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../openssl/" class="md-nav__link">
       OpenSSL
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#create-certificates-and-keys" class="md-nav__link">
-    Create certificates and keys
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#validate-certificates-and-keys" class="md-nav__link">
-    Validate Certificates and Keys
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#converting-using-openssl" class="md-nav__link">
-    Converting Using OpenSSL
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-encrypt-and-decrypt-files-with-openssl" class="md-nav__link">
-    How to encrypt and decrypt files with OpenSSL
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#https-webserver" class="md-nav__link">
-    HTTPS webserver
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -477,36 +449,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create-certificates-and-keys" class="md-nav__link">
-    Create certificates and keys
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#validate-certificates-and-keys" class="md-nav__link">
-    Validate Certificates and Keys
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#converting-using-openssl" class="md-nav__link">
-    Converting Using OpenSSL
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-encrypt-and-decrypt-files-with-openssl" class="md-nav__link">
-    How to encrypt and decrypt files with OpenSSL
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#https-webserver" class="md-nav__link">
-    HTTPS webserver
+  <a href="#delete-an-app-on-your-android-phone" class="md-nav__link">
+    Delete an app on your android phone
   </a>
   
 </li>
@@ -523,98 +467,24 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/FullByte/FullByte.github.io/edit/master/docs/tech/Snippets/openssl.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/FullByte/FullByte.github.io/edit/master/docs/tech/Snippets/adb.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="openssl">OpenSSL</h1>
-<p>Examples using OpenSSL</p>
-<h2 id="create-certificates-and-keys">Create certificates and keys</h2>
-<p>Generate a new private key and Certificate Signing Request</p>
-<pre><code class="language-shell">openssl req -out CSR.csr -new -newkey rsa:2048 -nodes -keyout privateKey.key
-</code></pre>
-<p>Generate a self-signed certificate (see How to Create and Install an Apache Self Signed Certificate for more info)</p>
-<pre><code class="language-shell">openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privateKey.key -out certificate.crt
-</code></pre>
-<p>Generate a certificate signing request (CSR) for an existing private key</p>
-<pre><code class="language-shell">openssl req -out CSR.csr -key privateKey.key -new
-</code></pre>
-<p>Generate a certificate signing request based on an existing certificate</p>
-<pre><code class="language-shell">openssl x509 -x509toreq -in certificate.crt -out CSR.csr -signkey privateKey.key
-</code></pre>
-<p>Remove a passphrase from a private key</p>
-<pre><code class="language-shell">openssl rsa -in privateKey.pem -out newPrivateKey.pem
-</code></pre>
-<h2 id="validate-certificates-and-keys">Validate Certificates and Keys</h2>
-<p>Check an MD5 hash of the public key to ensure that it matches with what is in a CSR or private key</p>
-<pre><code class="language-shell">openssl x509 -noout -modulus -in certificate.crt | openssl md5
-openssl rsa -noout -modulus -in privateKey.key | openssl md5
-openssl req -noout -modulus -in CSR.csr | openssl md5
-</code></pre>
-<p>Check an SSL connection: This displays all (including Intermediates) certificates of a given website.</p>
-<pre><code class="language-shell">openssl s_client -connect www.google.com:443
-</code></pre>
-<p>Check Certificate</p>
-<pre><code class="language-shell">openssl x509 -in certificate.crt -text -noout
-</code></pre>
-<p>Check CSR of Certificate</p>
-<p>Decode your Certificate Signing Request (CSR) and and verify that it contains the correct information:</p>
-<pre><code class="language-shell">openssl req -in mycsr.csr -noout -text
-</code></pre>
-<p>Check a private key</p>
-<pre><code class="language-shell">openssl rsa -in private.key -check
-</code></pre>
-<p>Check a PKCS#12 file (.pfx or .p12)</p>
-<pre><code class="language-shell">openssl pkcs12 -info -in keyStore.p12
-</code></pre>
-<h2 id="converting-using-openssl">Converting Using OpenSSL</h2>
-<p>Convert certificates and keys to different formats to make them compatible with OS/software required.</p>
-<p>Convert a DER file (.crt .cer .der) to PEM</p>
-<pre><code class="language-shell">openssl x509 -inform der -in certificate.cer -out certificate.pem
-</code></pre>
-<p>Convert a PEM file to DER</p>
-<pre><code class="language-shell">openssl x509 -outform der -in certificate.pem -out certificate.der
-</code></pre>
-<p>Convert a PKCS#12 file (.pfx .p12) containing a private key and certificates to PEM</p>
-<p>You can add -nocerts to only output the private key or add -nokeys to only output the certificates.</p>
-<pre><code class="language-shell">openssl pkcs12 -in keyStore.pfx -out keyStore.pem -nodes
-</code></pre>
-<p>Convert a PEM certificate file and a private key to PKCS#12 (.pfx .p12)</p>
-<pre><code class="language-shell">openssl pkcs12 -export -out certificate.pfx -inkey privateKey.key -in certificate.crt -certfile CACert.crt
-</code></pre>
-<h2 id="how-to-encrypt-and-decrypt-files-with-openssl">How to encrypt and decrypt files with OpenSSL</h2>
-<p>Install openssl and the associated development libraries'</p>
-<p>Run <strong>openssl version -a</strong> to check if openssl is installed or just run this command to install all requirements for this demo:</p>
-<pre><code class="language-shell">sudo apt-get install libssl-dev openssl
-</code></pre>
-<p>Create a test file named <strong>"plain.txt"</strong> which we shall encrypt &amp; decrypt in the next step.</p>
-<pre><code class="language-shell">echo &quot;this is a test&quot; &gt; plain.txt
-</code></pre>
-<p>Encrypt and Decrypt example via Triple Data Encryption Standard</p>
-<p>The following lines will create the encrypted file <strong>"encrypted.txt"</strong> and decrypted file <strong>"decrypted.txt"</strong>.</p>
-<pre><code class="language-shell">openssl des3 -in plain.txt -out encrypted.txt -pass pass:password
-openssl des3 -d -in encrypted.txt -out decrypted.txt -pass pass:password
-</code></pre>
-<p>The file <strong>"decrypted.txt"</strong> should match with our test file <strong>"plain.txt"</strong>.</p>
-<pre><code class="language-shell">diff -s plain.txt decrypted.txt
-</code></pre>
-<p>Encrypt and Decrypt example via AES-256 with CBC</p>
-<p>There are plenty of ciphers availble. Run <strong>openssl help</strong> to see the cipher commands available too you. Here is another example using AES-256 with CBC.</p>
-<pre><code class="language-shell">openssl aes-256-cbc -a -salt -in plain.txt -out encrypted.txt -k password
-openssl aes-256-cbc -d -a -in encrypted.txt -out decrypted.txt -k password
-</code></pre>
-<p>Encrypt images using a key and IV</p>
-<pre><code class="language-shell">openssl aes-128-cbc -K &quot;55555555555555555555555555555555&quot; -iv &quot;83deccd3f93b37c70d37297f319cf367&quot; -in WRxFKdq.png -out OMG_SAME_IMAGE.png
-</code></pre>
-<p>Example screenshot:</p>
-<p><img alt="OpenSSL fle encyption and decryption demo" src="../_openssl_file_encrpytion_decryption.png" /></p>
-<h2 id="https-webserver">HTTPS webserver</h2>
-<pre><code class="language-shell">openssl req -x509 -newkey rsa:4096 -keyout /tmp/key.pem -out /tmp/cert.pem -nodes &amp;&amp; openssl s_server -WWW -port 8443 -cert /tmp/cert.pem -key /tmp/key.pem
-</code></pre>
-<pre><code class="language-shell">openssl req -newkey rsa:2048 -nodes -x509 -subj '/CN=name-you-want.example.com' -days 3650 -out server.cert -keyout server.key
-</code></pre>
-<pre><code class="language-shell">openssl s_server -accept 7781 -cert server.cert -key server.key -WWW
+                <h1 id="adb">adb</h1>
+<p>Prerequisite</p>
+<ul>
+<li>Download Minimal ADB and Fastboot</li>
+<li>Enable dev mode on phone</li>
+<li>active USB Debugging</li>
+</ul>
+<h2 id="delete-an-app-on-your-android-phone">Delete an app on your android phone</h2>
+<p>Run these commands to delete the app <package name>.</p>
+<pre><code class="language-shell">adb devices # check if your device is visible
+adb shell
+pm list packages -3 # list hidden system apps
+pm uninstall --user 0 &lt;package name&gt;
 </code></pre>
                 
               
@@ -634,7 +504,7 @@ openssl aes-256-cbc -d -a -in encrypted.txt -out decrypted.txt -k password
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../ffmpeg/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../Excel/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -643,19 +513,19 @@ openssl aes-256-cbc -d -a -in encrypted.txt -out decrypted.txt -k password
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                FFmpeg
+                Microsoft Excel
               </div>
             </div>
           </a>
         
         
-          <a href="../../cheatsheets/MobileCodes/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../ffmpeg/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Phone Codes
+                FFmpeg
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
