@@ -1,35 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://0xfab1.net/</loc>
-     <lastmod>2020-12-11</lastmod>
+     <lastmod>2021-01-03</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://0xfab1.net/lists/Wikipedia/</loc>
-     <lastmod>2020-12-11</lastmod>
+     <lastmod>2021-01-03</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://0xfab1.net/tech/Snippets/Excel/</loc>
-     <lastmod>2020-12-11</lastmod>
+     <lastmod>2021-01-03</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://0xfab1.net/tech/Snippets/adb/</loc>
-     <lastmod>2020-12-11</lastmod>
+     <lastmod>2021-01-03</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://0xfab1.net/tech/Snippets/ffmpeg/</loc>
-     <lastmod>2020-12-11</lastmod>
+     <lastmod>2021-01-03</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://0xfab1.net/tech/Snippets/openssl/</loc>
-     <lastmod>2020-12-11</lastmod>
+     <lastmod>2021-01-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/Snippets/youtube-dl/</loc>
+     <lastmod>2021-01-03</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://0xfab1.net/tech/cheatsheets/MobileCodes/</loc>
-     <lastmod>2020-12-11</lastmod>
+     <lastmod>2021-01-03</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://0xfab1.net/tech/cheatsheets/network/</loc>
-     <lastmod>2020-12-11</lastmod>
+     <lastmod>2021-01-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
