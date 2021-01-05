@@ -306,7 +306,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../gizmo/djimini2/" class="md-nav__link">
+    <a href="../../gizmo/dji-mini2/" class="md-nav__link">
       DJI Mini 2
     </a>
   </li>
@@ -348,7 +348,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../lists/GoodMovies/" class="md-nav__link">
+    <a href="../../lists/Wikipedia/" class="md-nav__link">
+      Wikipedia
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../lists/good-movies/" class="md-nav__link">
       Watch List
     </a>
   </li>
@@ -361,7 +374,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../lists/ICDcodes/" class="md-nav__link">
+    <a href="../../lists/icd-codes/" class="md-nav__link">
       ICD-10
     </a>
   </li>
@@ -374,21 +387,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../lists/UrbanDictionary/" class="md-nav__link">
+    <a href="../../lists/urban-dictionary/" class="md-nav__link">
       Urban Dictionary
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../lists/Wikipedia/" class="md-nav__link">
-      Wikipedia
     </a>
   </li>
 
@@ -435,13 +435,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1" >
     
     <label class="md-nav__link" for="nav-5-1">
-      Dicemosaic
+      Lego
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="Dicemosaic" data-md-level="2">
+    <nav class="md-nav" aria-label="Lego" data-md-level="2">
       <label class="md-nav__title" for="nav-5-1">
         <span class="md-nav__icon md-icon"></span>
-        Dicemosaic
+        Lego
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -453,7 +453,62 @@
 
 
   <li class="md-nav__item">
-    <a href="../../make/dicemosaic/dicemosaic/" class="md-nav__link">
+    <a href="../../make/lego/qr-code/" class="md-nav__link">
+      QR-Code
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../make/lego/starwars/" class="md-nav__link">
+      Star Wars
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  
+  <li class="md-nav__item md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-2" type="checkbox" id="nav-5-2" >
+    
+    <label class="md-nav__link" for="nav-5-2">
+      Werkeln
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Werkeln" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-2">
+        <span class="md-nav__icon md-icon"></span>
+        Werkeln
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../make/werkeln/dicemosaic/" class="md-nav__link">
       Dice Mosaic
     </a>
   </li>
@@ -543,6 +598,19 @@
   <li class="md-nav__item">
     <a href="../openssl/" class="md-nav__link">
       OpenSSL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../ssh/" class="md-nav__link">
+      SSH
     </a>
   </li>
 
@@ -682,15 +750,15 @@
                 <h1 id="youtube-dl">youtube-dl</h1>
 <p>Examples using youtube-dl</p>
 <h2 id="youtube-video-download">YouTube video download</h2>
-<p>Download to a specific location:</p>
-<pre><code class="language-shell">youtube-dl -o 'path' '&lt;youtube-link&gt;'
+<p>Download to a specific location in best quality:</p>
+<pre><code class="language-shell">youtube-dl -f 22 -o 'path' '&lt;youtube-link&gt;'
 </code></pre>
 <p>Download with details:</p>
-<pre><code class="language-shell">youtube-dl --write-description --write-info-json --write-annotations --write-sub --write-thumbnail '&lt;youtube-link&gt;'
+<pre><code class="language-shell">youtube-dl -f 22 --write-description --write-info-json --write-annotations --write-sub --write-thumbnail '&lt;youtube-link&gt;'
 </code></pre>
 <h2 id="youtube-playlists">YouTube Playlists</h2>
 <p>Download a playlist:</p>
-<pre><code class="language-shell">youtube-dl -i --prefer-ffmpeg --yes-playlist '&lt;playlist-link'
+<pre><code class="language-shell">youtube-dl -f 22 -i --prefer-ffmpeg --yes-playlist '&lt;playlist-link'
 </code></pre>
 <p>Download a playlist with audio only:</p>
 <pre><code class="language-shell">youtube-dl -f 22 --yes-playlist '&lt;playlist-link'
@@ -717,7 +785,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../openssl/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../ssh/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -726,7 +794,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                OpenSSL
+                SSH
               </div>
             </div>
           </a>
