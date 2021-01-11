@@ -1,79 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://0xfab1.net/</loc>
-     <lastmod>2021-01-05</lastmod>
+     <lastmod>2021-01-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://0xfab1.net/cheatsheets/mobile-codes/</loc>
-     <lastmod>2021-01-05</lastmod>
+     <loc>https://0xfab1.net/about/</loc>
+     <lastmod>2021-01-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://0xfab1.net/cheatsheets/network/</loc>
-     <lastmod>2021-01-05</lastmod>
+     <loc>https://0xfab1.net/azure/cloudshell/</loc>
+     <lastmod>2021-01-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/azure/powershell/</loc>
+     <lastmod>2021-01-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/azure/vscode/</loc>
+     <lastmod>2021-01-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://0xfab1.net/gizmo/Dye-DM14/</loc>
-     <lastmod>2021-01-05</lastmod>
+     <lastmod>2021-01-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://0xfab1.net/gizmo/dji-mini2/</loc>
-     <lastmod>2021-01-05</lastmod>
+     <lastmod>2021-01-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://0xfab1.net/lists/Wikipedia/</loc>
-     <lastmod>2021-01-05</lastmod>
+     <loc>https://0xfab1.net/links/azure/</loc>
+     <lastmod>2021-01-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://0xfab1.net/lists/good-movies/</loc>
-     <lastmod>2021-01-05</lastmod>
+     <loc>https://0xfab1.net/list/IRC/</loc>
+     <lastmod>2021-01-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://0xfab1.net/lists/icd-codes/</loc>
-     <lastmod>2021-01-05</lastmod>
+     <loc>https://0xfab1.net/list/good-movies/</loc>
+     <lastmod>2021-01-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://0xfab1.net/lists/urban-dictionary/</loc>
-     <lastmod>2021-01-05</lastmod>
+     <loc>https://0xfab1.net/list/icd-codes/</loc>
+     <lastmod>2021-01-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/list/mobile-codes/</loc>
+     <lastmod>2021-01-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/list/network/</loc>
+     <lastmod>2021-01-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/list/urban-dictionary/</loc>
+     <lastmod>2021-01-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/list/wikipedia/</loc>
+     <lastmod>2021-01-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/make/dicemosaic/</loc>
+     <lastmod>2021-01-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://0xfab1.net/make/lego/qr-code/</loc>
-     <lastmod>2021-01-05</lastmod>
+     <lastmod>2021-01-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://0xfab1.net/make/lego/starwars/</loc>
-     <lastmod>2021-01-05</lastmod>
+     <lastmod>2021-01-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://0xfab1.net/make/werkeln/dicemosaic/</loc>
-     <lastmod>2021-01-05</lastmod>
+     <loc>https://0xfab1.net/snippet/Excel/</loc>
+     <lastmod>2021-01-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://0xfab1.net/snippets/Excel/</loc>
-     <lastmod>2021-01-05</lastmod>
+     <loc>https://0xfab1.net/snippet/adb/</loc>
+     <lastmod>2021-01-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://0xfab1.net/snippets/adb/</loc>
-     <lastmod>2021-01-05</lastmod>
+     <loc>https://0xfab1.net/snippet/ffmpeg/</loc>
+     <lastmod>2021-01-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://0xfab1.net/snippets/ffmpeg/</loc>
-     <lastmod>2021-01-05</lastmod>
+     <loc>https://0xfab1.net/snippet/gpg/</loc>
+     <lastmod>2021-01-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://0xfab1.net/snippets/gpg/</loc>
-     <lastmod>2021-01-05</lastmod>
+     <loc>https://0xfab1.net/snippet/openssl/</loc>
+     <lastmod>2021-01-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://0xfab1.net/snippets/openssl/</loc>
-     <lastmod>2021-01-05</lastmod>
+     <loc>https://0xfab1.net/snippet/ssh/</loc>
+     <lastmod>2021-01-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://0xfab1.net/snippets/ssh/</loc>
-     <lastmod>2021-01-05</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://0xfab1.net/snippets/youtube-dl/</loc>
-     <lastmod>2021-01-05</lastmod>
+     <loc>https://0xfab1.net/snippet/youtube-dl/</loc>
+     <lastmod>2021-01-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
