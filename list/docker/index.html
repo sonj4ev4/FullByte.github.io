@@ -825,6 +825,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#archive-box" class="md-nav__link">
+    Archive Box
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wireguard" class="md-nav__link">
+    Wireguard
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ipfs" class="md-nav__link">
+    IPFS
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1187,6 +1208,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#archive-box" class="md-nav__link">
+    Archive Box
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wireguard" class="md-nav__link">
+    Wireguard
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ipfs" class="md-nav__link">
+    IPFS
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1234,6 +1276,36 @@
 cd notecalc3
 docker build . --tag notecalc3
 docker run --rm -d -p 5000:5000 notecalc3
+</code></pre>
+<h2 id="archive-box">Archive Box</h2>
+<p>Sources:</p>
+<ul>
+<li><a href="https://github.com/ArchiveBox/ArchiveBox">https://github.com/ArchiveBox/ArchiveBox</a></li>
+<li><a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Docker">https://github.com/ArchiveBox/ArchiveBox/wiki/Docker</a></li>
+<li><a href="https://nixintel.info/osint-tools/make-your-own-internet-archive-with-archive-box/">https://nixintel.info/osint-tools/make-your-own-internet-archive-with-archive-box/</a></li>
+</ul>
+<pre><code class="language-shell">docker run -v $PWD:/data archivebox/archivebox init
+docker run -v $PWD:/data archivebox/archivebox add 'https://0xfab1.net'
+docker run -v $PWD:/data -it archivebox/archivebox manage createsuperuser
+docker run -v $PWD:/data -p 8000:8000 archivebox/archivebox server 0.0.0.0:8000
+</code></pre>
+<h2 id="wireguard">Wireguard</h2>
+<p>Sources:</p>
+<ul>
+<li><a href="https://github.com/linuxserver/docker-wireguard">https://github.com/linuxserver/docker-wireguard</a></li>
+</ul>
+<pre><code class="language-shell">docker pull ghcr.io/linuxserver/wireguard
+</code></pre>
+<h2 id="ipfs">IPFS</h2>
+<p>Sources:</p>
+<ul>
+<li><a href="https://registry.hub.docker.com/r/ipfs/go-ipfs">https://registry.hub.docker.com/r/ipfs/go-ipfs</a></li>
+<li><a href="https://github.com/ipfs/go-ipfs">https://github.com/ipfs/go-ipfs</a></li>
+</ul>
+<pre><code class="language-shell">docker pull ipfs/go-ipfs
+docker run -d --name ipfs_host -v $ipfs_staging:/export -v $ipfs_data:/data/ipfs -p 4001:4001 -p 127.0.0.1:8080:8080 -p 127.0.0.1:5001:5001 ipfs/go-ipfs:latest
+docker exec ipfs_host ipfs swarm peers
+docker logs -f ipfs_host
 </code></pre>
                 
               
