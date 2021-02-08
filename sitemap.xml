@@ -60,18 +60,6 @@
      <lastmod>2021-02-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://0xfab1.net/fun/books/</loc>
-     <lastmod>2021-02-08</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://0xfab1.net/fun/books2/</loc>
-     <lastmod>2021-02-08</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://0xfab1.net/fun/movies/</loc>
-     <lastmod>2021-02-08</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
      <loc>https://0xfab1.net/fun/games/boardgames/</loc>
      <lastmod>2021-02-08</lastmod>
      <changefreq>daily</changefreq>
@@ -104,6 +92,14 @@
      <lastmod>2021-02-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
+     <loc>https://0xfab1.net/fun/read/books/</loc>
+     <lastmod>2021-02-08</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/fun/read/books2/</loc>
+     <lastmod>2021-02-08</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
      <loc>https://0xfab1.net/fun/sport/climbing/</loc>
      <lastmod>2021-02-08</lastmod>
      <changefreq>daily</changefreq>
@@ -116,7 +112,15 @@
      <lastmod>2021-02-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
+     <loc>https://0xfab1.net/fun/watch/movies/</loc>
+     <lastmod>2021-02-08</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
      <loc>https://0xfab1.net/make/dicemosaic/</loc>
+     <lastmod>2021-02-08</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/make/art/links/</loc>
      <lastmod>2021-02-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -133,10 +137,6 @@
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://0xfab1.net/make/links/collab/</loc>
-     <lastmod>2021-02-08</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://0xfab1.net/make/links/draw/</loc>
      <lastmod>2021-02-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -165,14 +165,6 @@
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://0xfab1.net/random/advice/communicate/</loc>
-     <lastmod>2021-02-08</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://0xfab1.net/tech/mobile-codes/</loc>
-     <lastmod>2021-02-08</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://0xfab1.net/tech/network/</loc>
      <lastmod>2021-02-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -245,6 +237,14 @@
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://0xfab1.net/tech/snippet/ipfs/</loc>
+     <lastmod>2021-02-08</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/snippet/mobile-codes/</loc>
+     <lastmod>2021-02-08</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/snippet/network/</loc>
      <lastmod>2021-02-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
