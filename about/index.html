@@ -647,8 +647,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../fun/games/picogames/" class="md-nav__link">
-        Pico
+      <a href="../fun/games/computergames/" class="md-nav__link">
+        Computer Games
       </a>
     </li>
   
@@ -1051,6 +1051,46 @@
   
 
           
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-4" type="checkbox" id="nav-5-4" >
+      
+      <label class="md-nav__link" for="nav-5-4">
+        Music
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Music" data-md-level="2">
+        <label class="md-nav__title" for="nav-5-4">
+          <span class="md-nav__icon md-icon"></span>
+          Music
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../make/music/tools/" class="md-nav__link">
+        Music Tools
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -1425,7 +1465,7 @@
   
     <li class="md-nav__item">
       <a href="../tech/snippet/cloudshell/" class="md-nav__link">
-        Setup Azure Cloud Shell
+        Azure Cloud Shell
       </a>
     </li>
   
@@ -1437,7 +1477,7 @@
   
     <li class="md-nav__item">
       <a href="../tech/snippet/docker/" class="md-nav__link">
-        Docker Containers
+        Docker
       </a>
     </li>
   
@@ -1485,7 +1525,7 @@
   
     <li class="md-nav__item">
       <a href="../tech/snippet/ipfs/" class="md-nav__link">
-        IPFS Examples
+        IPFS
       </a>
     </li>
   
@@ -1639,10 +1679,15 @@
                 
                 <h1 id="about-me">About me</h1>
 <h2 id="public-pages">Public Pages</h2>
-<ul>
-<li>This Wiki: <a href="https://0xfab1.net/">https://0xfab1.net/</a></li>
-<li>Github: <a href="https://github.com/FullByte">https://github.com/FullByte</a></li>
-</ul>
+<p>Query DNS for TXT records of <a href="https://0xfab1.net">0xfab1.net</a> as follows</p>
+<pre><code class="language-bash">curl -s -H 'accept: application/dns-json' 'https://cloudflare-dns.com/dns-query?name=0xfab1.net&amp;type=TXT'  | jq -r .Answer[].data
+</code></pre>
+<p>and you will receive this result:</p>
+<pre><code class="language-shell">&quot;v=me; github=https://github.com/FullByte&quot;
+&quot;v=me; twitter=https://twitter.com/ZeroGdoubleD&quot;
+&quot;v=me; about=https://0xfab1.net/about/&quot;
+&quot;v=me; gravatar=https://de.gravatar.com/0xfab1&quot;
+</code></pre>
 <h2 id="geek-codes">Geek Codes</h2>
 <p>My Geek Code 3.1</p>
 <pre><code class="language-GEEKCODE">-----BEGIN GEEK CODE BLOCK-----
