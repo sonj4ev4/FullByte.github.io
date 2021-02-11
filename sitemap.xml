@@ -64,7 +64,7 @@
      <lastmod>2021-02-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://0xfab1.net/fun/games/computergames/</loc>
+     <loc>https://0xfab1.net/fun/games/pcgames/</loc>
      <lastmod>2021-02-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -73,6 +73,18 @@
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://0xfab1.net/fun/games/switchgames/</loc>
+     <lastmod>2021-02-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/fun/games/pc/Facturio/</loc>
+     <lastmod>2021-02-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/fun/games/pc/RocketLeague/</loc>
+     <lastmod>2021-02-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/fun/games/pc/YuGiOh/edopro/</loc>
      <lastmod>2021-02-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -120,11 +132,19 @@
      <lastmod>2021-02-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
+     <loc>https://0xfab1.net/fun/travel/auto/</loc>
+     <lastmod>2021-02-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
      <loc>https://0xfab1.net/fun/travel/maps/</loc>
      <lastmod>2021-02-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://0xfab1.net/fun/travel/travel/</loc>
+     <loc>https://0xfab1.net/fun/travel/traveltips/</loc>
+     <lastmod>2021-02-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/fun/travel/wandern/</loc>
      <lastmod>2021-02-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -140,6 +160,10 @@
      <lastmod>2021-02-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
+     <loc>https://0xfab1.net/make/links/</loc>
+     <lastmod>2021-02-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
      <loc>https://0xfab1.net/make/art/contextfreeart/</loc>
      <lastmod>2021-02-11</lastmod>
      <changefreq>daily</changefreq>
@@ -152,23 +176,15 @@
      <lastmod>2021-02-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
+     <loc>https://0xfab1.net/make/lego/lego-links/</loc>
+     <lastmod>2021-02-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
      <loc>https://0xfab1.net/make/lego/qr-code/</loc>
      <lastmod>2021-02-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://0xfab1.net/make/lego/starwars/</loc>
-     <lastmod>2021-02-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://0xfab1.net/make/links/build/</loc>
-     <lastmod>2021-02-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://0xfab1.net/make/links/collab/</loc>
-     <lastmod>2021-02-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://0xfab1.net/make/links/lego/</loc>
      <lastmod>2021-02-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -216,7 +232,27 @@
      <lastmod>2021-02-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
+     <loc>https://0xfab1.net/tech/code/python/</loc>
+     <lastmod>2021-02-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
      <loc>https://0xfab1.net/tech/code/vscode/</loc>
+     <lastmod>2021-02-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/hack/Aircrack/</loc>
+     <lastmod>2021-02-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/hack/Airodump/</loc>
+     <lastmod>2021-02-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/hack/Kismet/</loc>
+     <lastmod>2021-02-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/hack/Metasploit/</loc>
      <lastmod>2021-02-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -224,7 +260,7 @@
      <lastmod>2021-02-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://0xfab1.net/tech/hack/hack/</loc>
+     <loc>https://0xfab1.net/tech/hack/links/</loc>
      <lastmod>2021-02-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -232,7 +268,11 @@
      <lastmod>2021-02-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://0xfab1.net/tech/poweruser/cli/</loc>
+     <loc>https://0xfab1.net/tech/poweruser/collab/</loc>
+     <lastmod>2021-02-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/poweruser/create-wiki/</loc>
      <lastmod>2021-02-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -240,7 +280,51 @@
      <lastmod>2021-02-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://0xfab1.net/tech/poweruser/snippet/Excel/</loc>
+     <loc>https://0xfab1.net/tech/poweruser/os/linux/GentooInstallOnt500/</loc>
+     <lastmod>2021-02-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/poweruser/os/linux/Linux/</loc>
+     <lastmod>2021-02-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/poweruser/os/linux/PiBitcoinMiner/</loc>
+     <lastmod>2021-02-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/poweruser/os/linux/PiRetroGaming/</loc>
+     <lastmod>2021-02-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/poweruser/os/linux/RaspberryPi/</loc>
+     <lastmod>2021-02-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/poweruser/os/linux/Ubuntu/</loc>
+     <lastmod>2021-02-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/poweruser/os/linux/VIMCommands/</loc>
+     <lastmod>2021-02-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/poweruser/os/linux/cli-only/</loc>
+     <lastmod>2021-02-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/poweruser/os/windows/Excel/</loc>
+     <lastmod>2021-02-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/poweruser/os/windows/System/</loc>
+     <lastmod>2021-02-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/poweruser/os/windows/Windows10/</loc>
+     <lastmod>2021-02-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/poweruser/os/windows/steam/</loc>
      <lastmod>2021-02-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -280,15 +364,7 @@
      <lastmod>2021-02-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://0xfab1.net/tech/poweruser/snippet/steam/</loc>
-     <lastmod>2021-02-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
      <loc>https://0xfab1.net/tech/poweruser/snippet/youtube-dl/</loc>
-     <lastmod>2021-02-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://0xfab1.net/tech/poweruser/wiki/create-wiki/</loc>
      <lastmod>2021-02-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
