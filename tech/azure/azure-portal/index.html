@@ -9,14 +9,14 @@
       
       
       
-        <link rel="canonical" href="https://0xfab1.net/tech/azure/azure-cloudshell/">
+        <link rel="canonical" href="https://0xfab1.net/tech/azure/azure-portal/">
       
       <link rel="shortcut icon" href="../../../icons/favicon.ico">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
     
     
       
-        <title>Azure Cloud Shell - 0xfab1</title>
+        <title>Azure Portal - 0xfab1</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#azure-cloud-shell" class="md-skip">
+        <a href="#azure-portal" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Azure Cloud Shell
+              Azure Portal
             
           </span>
         </div>
@@ -1371,6 +1371,18 @@
             
   
   
+  
+    <li class="md-nav__item">
+      <a href="../az-powershell/" class="md-nav__link">
+        Azure Powershell
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
     
   
   
@@ -1382,12 +1394,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Azure Cloud Shell
+          Azure Portal
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Azure Cloud Shell
+        Azure Portal
       </a>
       
         
@@ -1411,23 +1423,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#attach-storage" class="md-nav__link">
-    Attach Storage
+  <a href="#azure-helper" class="md-nav__link">
+    Azure Helper
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Helper">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-json-template-deployment-via-link" class="md-nav__link">
+    Azure JSON Template deployment via Link
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#connect-to-vm-console" class="md-nav__link">
-    Connect to VM console
+        
+          <li class="md-nav__item">
+  <a href="#arm-file-visualization" class="md-nav__link">
+    ARM File visualization
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#enhance-cloudshell-bash" class="md-nav__link">
-    Enhance CloudShell Bash
+        
+          <li class="md-nav__item">
+  <a href="#azure-service-links-placeholder" class="md-nav__link">
+    Azure Service Links (Placeholder)
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1444,8 +1469,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../azure-powershell/" class="md-nav__link">
-        Azure Powershell
+      <a href="../cloudshell/" class="md-nav__link">
+        Azure Cloud Shell
       </a>
     </li>
   
@@ -1456,42 +1481,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../azure/" class="md-nav__link">
-        Azure
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-1-4" type="checkbox" id="nav-6-1-4" >
-      
-      <label class="md-nav__link" for="nav-6-1-4">
-        Links
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Links" data-md-level="3">
-        <label class="md-nav__title" for="nav-6-1-4">
-          <span class="md-nav__icon md-icon"></span>
-          Links
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../links/RFC/" class="md-nav__link">
-        RFCs
+      <a href="../devops/" class="md-nav__link">
+        DevOps
       </a>
     </li>
   
@@ -1502,7 +1493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../links/azure/" class="md-nav__link">
+      <a href="../links/" class="md-nav__link">
         Azure
       </a>
     </li>
@@ -1514,15 +1505,9 @@
   
   
     <li class="md-nav__item">
-      <a href="../links/dctools/" class="md-nav__link">
-        DC Tools
+      <a href="../strings/" class="md-nav__link">
+        Azure Strings
       </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
     </li>
   
 
@@ -1772,6 +1757,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../poweruser/RFC/" class="md-nav__link">
+        RFCs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../poweruser/collab/" class="md-nav__link">
         Collaboration Tools
       </a>
@@ -1807,18 +1804,30 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../poweruser/tools/" class="md-nav__link">
+        Tools
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-4-5" type="checkbox" id="nav-6-4-5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-4-7" type="checkbox" id="nav-6-4-7" >
       
-      <label class="md-nav__link" for="nav-6-4-5">
+      <label class="md-nav__link" for="nav-6-4-7">
         Os
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Os" data-md-level="3">
-        <label class="md-nav__title" for="nav-6-4-5">
+        <label class="md-nav__title" for="nav-6-4-7">
           <span class="md-nav__icon md-icon"></span>
           Os
         </label>
@@ -1833,14 +1842,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-4-5-1" type="checkbox" id="nav-6-4-5-1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-4-7-1" type="checkbox" id="nav-6-4-7-1" >
       
-      <label class="md-nav__link" for="nav-6-4-5-1">
+      <label class="md-nav__link" for="nav-6-4-7-1">
         Linux
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Linux" data-md-level="4">
-        <label class="md-nav__title" for="nav-6-4-5-1">
+        <label class="md-nav__title" for="nav-6-4-7-1">
           <span class="md-nav__icon md-icon"></span>
           Linux
         </label>
@@ -1957,14 +1966,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-4-5-2" type="checkbox" id="nav-6-4-5-2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-4-7-2" type="checkbox" id="nav-6-4-7-2" >
       
-      <label class="md-nav__link" for="nav-6-4-5-2">
+      <label class="md-nav__link" for="nav-6-4-7-2">
         Windows
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Windows" data-md-level="4">
-        <label class="md-nav__title" for="nav-6-4-5-2">
+        <label class="md-nav__title" for="nav-6-4-7-2">
           <span class="md-nav__icon md-icon"></span>
           Windows
         </label>
@@ -2039,14 +2048,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-4-6" type="checkbox" id="nav-6-4-6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-4-8" type="checkbox" id="nav-6-4-8" >
       
-      <label class="md-nav__link" for="nav-6-4-6">
+      <label class="md-nav__link" for="nav-6-4-8">
         Snippet
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Snippet" data-md-level="3">
-        <label class="md-nav__title" for="nav-6-4-6">
+        <label class="md-nav__title" for="nav-6-4-8">
           <span class="md-nav__icon md-icon"></span>
           Snippet
         </label>
@@ -2185,6 +2194,46 @@
   
 
           
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-5" type="checkbox" id="nav-6-5" >
+      
+      <label class="md-nav__link" for="nav-6-5">
+        Standards
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Standards" data-md-level="2">
+        <label class="md-nav__title" for="nav-6-5">
+          <span class="md-nav__icon md-icon"></span>
+          Standards
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards/timezone/" class="md-nav__link">
+        Timezone
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -2223,23 +2272,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#attach-storage" class="md-nav__link">
-    Attach Storage
+  <a href="#azure-helper" class="md-nav__link">
+    Azure Helper
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Helper">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-json-template-deployment-via-link" class="md-nav__link">
+    Azure JSON Template deployment via Link
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#connect-to-vm-console" class="md-nav__link">
-    Connect to VM console
+        
+          <li class="md-nav__item">
+  <a href="#arm-file-visualization" class="md-nav__link">
+    ARM File visualization
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#enhance-cloudshell-bash" class="md-nav__link">
-    Enhance CloudShell Bash
+        
+          <li class="md-nav__item">
+  <a href="#azure-service-links-placeholder" class="md-nav__link">
+    Azure Service Links (Placeholder)
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2255,12 +2317,12 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/FullByte/FullByte.github.io/edit/master/docs/tech/azure/azure-cloudshell.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/FullByte/FullByte.github.io/edit/master/docs/tech/azure/azure-portal.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="azure-cloud-shell">Azure Cloud Shell</h1>
+                <h1 id="azure-portal">Azure Portal</h1>
 <h2 id="info">Info</h2>
 <table>
 <thead>
@@ -2272,50 +2334,27 @@
 <tbody>
 <tr>
 <td>Official Page</td>
-<td></td>
-</tr>
-<tr>
-<td>Online</td>
-<td><a href="https://shell.azure.com/">https://shell.azure.com/</a></td>
+<td><a href="https://portal.azure.com/">https://portal.azure.com/</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="attach-storage">Attach Storage</h2>
-<p>Add FileShare to Cloud Shell</p>
-<pre><code class="language-powershell">clouddrive mount -s &lt;secret&gt; -g &lt;rg-name&gt; -n &lt;fileshare&gt; -f &lt;share&gt;
-</code></pre>
-<p>Show Drives</p>
-<pre><code class="language-powershell">Get-CloudDrive
-</code></pre>
-<p>Link: <a href="https://docs.microsoft.com/de-de/azure/cloud-shell/persisting-shell-storage">https://docs.microsoft.com/de-de/azure/cloud-shell/persisting-shell-storage</a></p>
-<h2 id="connect-to-vm-console">Connect to VM console</h2>
-<p>You can access an Azure VM within the Azure Cloud Shell.
-<a href="https://docs.microsoft.com/de-de/azure/cloud-shell/quickstart-powershell">https://docs.microsoft.com/de-de/azure/cloud-shell/quickstart-powershell</a></p>
-<p>Enable remoting if not yet done:</p>
-<pre><code class="language-powershell">Enable-AzVMPSRemoting -Name MyVM1 -ResourceGroupname MyResourceGroup
-</code></pre>
-<p>Execute script on VM:</p>
-<pre><code class="language-powershell">Invoke-AzVMCommand -Name MyVM1 -ResourceGroupName MyResourceGroup -Scriptblock {Get-ComputerInfo} -Credential (Get-Credential)
-</code></pre>
-<p>Enter VMs commandline:</p>
-<pre><code class="language-powershell">Enter-AzVM -Name MyVM1 -ResourceGroupName MyResourceGroup -Credential (Get-Credential)
-</code></pre>
-<h2 id="enhance-cloudshell-bash">Enhance CloudShell Bash</h2>
-<p><strong>Posh-Git</strong> provides us with information at the command line about the state of the current repository we are in. It also provides tab completion for Git commands.
-<a href="https://github.com/dahlbyk/posh-git">https://github.com/dahlbyk/posh-git</a></p>
-<pre><code class="language-powershell">install-module posh-git
-import-module posh-git
-</code></pre>
-<p><strong>Oh-My-Posh</strong> allows you to theme your prompt with various color schemes, Git status indicators, Admin status and many other things.
-<a href="https://github.com/JanDeDobbeleer/oh-my-posh">https://github.com/JanDeDobbeleer/oh-my-posh</a></p>
-<pre><code class="language-powershell">Install-Module oh-my-posh
-Import-module oh-my-posh
-</code></pre>
-<p><strong>Get-ChildItemColor</strong> is a simple tool which adds color coding to the get-childitem command. When you run this command, you get different colors used for folders vs. files and different file types.
-<a href="https://github.com/joonro/Get-ChildItemColor">https://github.com/joonro/Get-ChildItemColor</a></p>
-<pre><code class="language-powershell">Install-Module Get-ChildItemColor
-Import-Module Get-ChildItemColor
-</code></pre>
+<h2 id="azure-helper">Azure Helper</h2>
+<h3 id="azure-json-template-deployment-via-link">Azure JSON Template deployment via Link</h3>
+<ul>
+<li>Link to directly deploy to Azure via JSON File: <a href="https://portal.azure.com/#create/Microsoft.Template/uri/">https://portal.azure.com/#create/Microsoft.Template/uri/</a> + URItoJSONtemplateFile</li>
+<li>Example Link to directly deploy to Azure via JSON File:
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-vnet-two-subnets%2Fazuredeploy.json">https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-vnet-two-subnets%2Fazuredeploy.json</a></li>
+</ul>
+<h3 id="arm-file-visualization">ARM File visualization</h3>
+<ul>
+<li>Show in ARM Template: <a href="http://armviz.io/#/?load=">http://armviz.io/#/?load=</a> + URItoJSONtemplateFile</li>
+<li>Example: <a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-vnet-two-subnets%2Fazuredeploy.json">http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-vnet-two-subnets%2Fazuredeploy.json</a></li>
+</ul>
+<h3 id="azure-service-links-placeholder">Azure Service Links (Placeholder)</h3>
+<ul>
+<li>Websites: <a href="https://yourwebsite.scm.azurewebsites.net/">https://yourwebsite.scm.azurewebsites.net/</a></li>
+<li>[...]</li>
+</ul>
                 
               
               
@@ -2334,7 +2373,7 @@ Import-Module Get-ChildItemColor
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../../../make/music/tools/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../az-powershell/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -2343,19 +2382,19 @@ Import-Module Get-ChildItemColor
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Music Tools
+                Azure Powershell
               </div>
             </div>
           </a>
         
         
-          <a href="../azure-powershell/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../cloudshell/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Azure Powershell
+                Azure Cloud Shell
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
