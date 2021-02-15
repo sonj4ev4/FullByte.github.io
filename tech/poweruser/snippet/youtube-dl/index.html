@@ -2150,6 +2150,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#audio-only" class="md-nav__link">
+    Audio only
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#youtube-playlists" class="md-nav__link">
     YouTube Playlists
   </a>
@@ -2268,6 +2275,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#audio-only" class="md-nav__link">
+    Audio only
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#youtube-playlists" class="md-nav__link">
     YouTube Playlists
   </a>
@@ -2333,6 +2347,9 @@
 </code></pre>
 <p>Download with details:</p>
 <pre><code class="language-shell">youtube-dl -f 22 --write-description --write-info-json --write-annotations --write-sub --write-thumbnail '&lt;youtube-link&gt;'
+</code></pre>
+<h2 id="audio-only">Audio only</h2>
+<pre><code class="language-shell">youtube-dl -i --extract-audio --audio-format mp3 --audio-quality 0 '&lt;youtube-link&gt;'
 </code></pre>
 <h2 id="youtube-playlists">YouTube Playlists</h2>
 <p>Download a playlist:</p>
