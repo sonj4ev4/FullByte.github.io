@@ -232,34 +232,6 @@
      <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://0xfab1.net/tech/code/dev/</loc>
-     <lastmod>2021-02-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://0xfab1.net/tech/code/gamedev/</loc>
-     <lastmod>2021-02-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://0xfab1.net/tech/code/github/</loc>
-     <lastmod>2021-02-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://0xfab1.net/tech/code/hardware/</loc>
-     <lastmod>2021-02-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://0xfab1.net/tech/code/powershell/</loc>
-     <lastmod>2021-02-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://0xfab1.net/tech/code/python/</loc>
-     <lastmod>2021-02-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://0xfab1.net/tech/code/vscode/</loc>
-     <lastmod>2021-02-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
      <loc>https://0xfab1.net/tech/hack/Aircrack/</loc>
      <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
@@ -281,6 +253,10 @@
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://0xfab1.net/tech/hack/links/</loc>
+     <lastmod>2021-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/hack/radare2/</loc>
      <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -397,6 +373,34 @@
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://0xfab1.net/tech/poweruser/snippet/youtube-dl/</loc>
+     <lastmod>2021-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/script/dev/</loc>
+     <lastmod>2021-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/script/gamedev/</loc>
+     <lastmod>2021-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/script/github/</loc>
+     <lastmod>2021-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/script/hardware/</loc>
+     <lastmod>2021-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/script/powershell/</loc>
+     <lastmod>2021-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/script/python/</loc>
+     <lastmod>2021-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/script/vscode/</loc>
      <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
