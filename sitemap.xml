@@ -164,10 +164,6 @@
      <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://0xfab1.net/make/dicemosaic/</loc>
-     <lastmod>2021-02-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
      <loc>https://0xfab1.net/make/links/</loc>
      <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
@@ -192,7 +188,7 @@
      <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://0xfab1.net/make/lego/lego-links/</loc>
+     <loc>https://0xfab1.net/make/lego/links/</loc>
      <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -204,7 +200,19 @@
      <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://0xfab1.net/make/music/tools/</loc>
+     <loc>https://0xfab1.net/make/music/links/</loc>
+     <lastmod>2021-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/make/raspberrypi/PiBitcoinMiner/</loc>
+     <lastmod>2021-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/make/raspberrypi/PiRetroGaming/</loc>
+     <lastmod>2021-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/make/werkstatt/dicemosaic/</loc>
      <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -288,47 +296,27 @@
      <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://0xfab1.net/tech/poweruser/os/linux/GentooInstallOnt500/</loc>
+     <loc>https://0xfab1.net/tech/poweruser/linux/DangerousLinuxCommands/</loc>
      <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://0xfab1.net/tech/poweruser/os/linux/PiBitcoinMiner/</loc>
+     <loc>https://0xfab1.net/tech/poweruser/linux/GentooInstallOnt500/</loc>
      <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://0xfab1.net/tech/poweruser/os/linux/PiRetroGaming/</loc>
+     <loc>https://0xfab1.net/tech/poweruser/linux/RaspberryPi/</loc>
      <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://0xfab1.net/tech/poweruser/os/linux/RaspberryPi/</loc>
+     <loc>https://0xfab1.net/tech/poweruser/linux/Ubuntu/</loc>
      <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://0xfab1.net/tech/poweruser/os/linux/Ubuntu/</loc>
+     <loc>https://0xfab1.net/tech/poweruser/linux/VIM/</loc>
      <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://0xfab1.net/tech/poweruser/os/linux/VIM/</loc>
-     <lastmod>2021-02-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://0xfab1.net/tech/poweruser/os/linux/cli-tools/</loc>
-     <lastmod>2021-02-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://0xfab1.net/tech/poweruser/os/windows/Excel/</loc>
-     <lastmod>2021-02-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://0xfab1.net/tech/poweruser/os/windows/System/</loc>
-     <lastmod>2021-02-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://0xfab1.net/tech/poweruser/os/windows/Windows10/</loc>
-     <lastmod>2021-02-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://0xfab1.net/tech/poweruser/os/windows/steam/</loc>
+     <loc>https://0xfab1.net/tech/poweruser/linux/cli-tools/</loc>
      <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -369,6 +357,22 @@
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://0xfab1.net/tech/poweruser/snippet/youtube-dl/</loc>
+     <lastmod>2021-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/poweruser/windows/Excel/</loc>
+     <lastmod>2021-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/poweruser/windows/System/</loc>
+     <lastmod>2021-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/poweruser/windows/Windows10/</loc>
+     <lastmod>2021-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/poweruser/windows/steam/</loc>
      <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
