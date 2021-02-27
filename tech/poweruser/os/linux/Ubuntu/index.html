@@ -16,7 +16,7 @@
     
     
       
-        <title>Make Ubuntu Desktop nice - 0xfab1</title>
+        <title>Ubuntu - 0xfab1</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#make-ubuntu-desktop-nice" class="md-skip">
+        <a href="#ubuntu" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Make Ubuntu Desktop nice
+              Ubuntu
             
           </span>
         </div>
@@ -1792,18 +1792,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../Linux/" class="md-nav__link">
-        Linux
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../PiBitcoinMiner/" class="md-nav__link">
         Raspberry Pi Bitcoin minder using ASIC Chips attached via USB
       </a>
@@ -1849,12 +1837,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Make Ubuntu Desktop nice
+          Ubuntu
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Make Ubuntu Desktop nice
+        Ubuntu
       </a>
       
         
@@ -1871,22 +1859,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#get-video-codecs" class="md-nav__link">
-    Get Video Codecs
+  <a href="#basics" class="md-nav__link">
+    Basics
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#get-compiz-and-docky" class="md-nav__link">
-    Get Compiz and Docky
+  <a href="#create-the-boot-script" class="md-nav__link">
+    Create the boot script
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#gnome-tweak" class="md-nav__link">
-    Gnome Tweak
+  <a href="#make-ubuntu-desktop-nice" class="md-nav__link">
+    Make Ubuntu Desktop nice
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-tools" class="md-nav__link">
+    Network Tools
   </a>
   
 </li>
@@ -1904,7 +1899,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../VIMCommands/" class="md-nav__link">
+      <a href="../VIM/" class="md-nav__link">
         VIM commands
       </a>
     </li>
@@ -1916,7 +1911,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cli-only/" class="md-nav__link">
+      <a href="../cli-tools/" class="md-nav__link">
         CLI Tools
       </a>
     </li>
@@ -2344,22 +2339,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#get-video-codecs" class="md-nav__link">
-    Get Video Codecs
+  <a href="#basics" class="md-nav__link">
+    Basics
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#get-compiz-and-docky" class="md-nav__link">
-    Get Compiz and Docky
+  <a href="#create-the-boot-script" class="md-nav__link">
+    Create the boot script
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#gnome-tweak" class="md-nav__link">
-    Gnome Tweak
+  <a href="#make-ubuntu-desktop-nice" class="md-nav__link">
+    Make Ubuntu Desktop nice
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-tools" class="md-nav__link">
+    Network Tools
   </a>
   
 </li>
@@ -2381,16 +2383,101 @@
                   </a>
                 
                 
-                <h1 id="make-ubuntu-desktop-nice">Make Ubuntu Desktop nice</h1>
-<h2 id="get-video-codecs">Get Video Codecs</h2>
+                <h1 id="ubuntu">Ubuntu</h1>
+<h2 id="basics">Basics</h2>
+<p>Random basics</p>
+<ul>
+<li>Check installed packges <code>sudo tasksel</code></li>
+<li>Update and upgrade <code>sudo apt update &amp;&amp; sudo apt upgrade -y</code></li>
+<li>Upgrading to a newer release <code>do-release-upgrade</code></li>
+<li>Check who is online <code>w</code></li>
+<li>Show all system users <code>cut -d: -f1 /etc/passwd</code></li>
+</ul>
+<p>Get system details</p>
+<ul>
+<li>Get all enviornment variables <code>printenv</code></li>
+<li>Get all configuration variables <code>getconf -a</code></li>
+<li>Show ports/connections open <code>lsof</code></li>
+<li>Get ubuntu version <code>lsb_release -r</code></li>
+<li>Free disk space <code>df -h</code></li>
+</ul>
+<h2 id="create-the-boot-script">Create the boot script</h2>
+<p>Example script that install updates to ubuntu automatically</p>
+<p>The script "bootupdate.sh":</p>
+<pre><code class="language-shell">#!/bin/bash
+sudo apt update &amp;&amp; sudo apt upgrade -y
+exit 0
+</code></pre>
+<p>Move "bootupdate.sh" to init.d</p>
+<pre><code class="language-shell">mv bootupdate.sh /etc/init.d/bootupdate.sh
+</code></pre>
+<p>Add script to boot sequente</p>
+<pre><code class="language-shell">update-rc.d bootupdate.sh start 2
+</code></pre>
+<h2 id="make-ubuntu-desktop-nice">Make Ubuntu Desktop nice</h2>
+<p>Get Video Codecs</p>
 <pre><code class="language-shell">sudo apt-get install ubuntu-restricted-extras ubuntu-restricted-addons
 </code></pre>
-<h2 id="get-compiz-and-docky">Get Compiz and Docky</h2>
+<p>Get Compiz and Docky</p>
 <pre><code class="language-shell">sudo apt-get install gnome-session-flashback compiz compiz-core compiz-plugins compiz-plugins-default compiz-plugins-extra compiz-plugins-main compiz-plugins-main-default compiz-plugins-main-dev compizconfig-settings-manager docky
 </code></pre>
-<h2 id="gnome-tweak">Gnome Tweak</h2>
+<p>Gnome Tweak</p>
 <pre><code class="language-shell">sudo apt-get install gnome-tweaks gnome-tweak-tool
 </code></pre>
+<h2 id="network-tools">Network Tools</h2>
+<ol>
+<li>arpwatch – Ethernet Activity Monitor.</li>
+<li>bmon – bandwidth monitor and rate estimator.</li>
+<li>bwm-ng – live network bandwidth monitor.</li>
+<li>curl – transferring data with URLs.</li>
+<li>darkstat – captures network traffic, usage statistics.</li>
+<li>dhclient – Dynamic Host Configuration Protocol Client</li>
+<li>dig – query DNS servers for information.</li>
+<li>dstat – replacement for vmstat, iostat, mpstat, netstat and ifstat.</li>
+<li>ethtool – utility for controlling network drivers and hardware.</li>
+<li>ftp – simplest file transfer protocol.</li>
+<li>gated – gateway routing daemon.</li>
+<li>host – DNS lookup utility.</li>
+<li>hping – TCP/IP packet assembler/analyzer.</li>
+<li>ibmonitor – shows bandwidth and total data transferred.</li>
+<li>ifstat –  report network interfaces bandwidth.</li>
+<li>iftop – display bandwidth usage.</li>
+<li>ip (PDF file) – a command with more features that ifconfig (net-tools).</li>
+<li>iperf3 – network bandwidth measurement tool. (above screenshot Stacklinux VPS)</li>
+<li>iproute2 – collection of utilities for controlling TCP/IP.</li>
+<li>IPTraf – An IP Network Monitor.</li>
+<li>iputils – set of small useful utilities for Linux networking.</li>
+<li>jwhois (whois) – client for the whois service.</li>
+<li>mtr – network diagnostic tool.</li>
+<li>net-tools – utilities include: arp, hostname, ifconfig, netstat, rarp, route, plipconfig, slattach, mii-tool, iptunnel and ipmaddr.</li>
+<li>ncat – improved re-implementation of the venerable netcat.</li>
+<li>netcat – networking utility for reading/writing network connections.</li>
+<li>nethogs – a small ‘net top’ tool.</li>
+<li>Netperf – Network bandwidth Testing.</li>
+<li>netsniff-ng – Swiss army knife for daily Linux network plumbing.</li>
+<li>netstat – Print network connections, routing tables, statistics, etc.</li>
+<li>netwatch – monitoring Network Connections.</li>
+<li>nload – display network usage.</li>
+<li>nmap – network discovery and security auditing.</li>
+<li>nslookup – query Internet name servers interactively.</li>
+<li>ping – send icmp echo_request to network hosts.</li>
+<li>route – show / manipulate the IP routing table.</li>
+<li>slurm – network load monitor.</li>
+<li>smokeping –  keeps track of your network latency.</li>
+<li>speedometer – Measure and display the rate of data across a network.</li>
+<li>speedtest-cli – test internet bandwidth using speedtest.net</li>
+<li>ss – utility to investigate sockets.</li>
+<li>ssh –  secure system administration and file transfers over insecure networks.</li>
+<li>tcpdump – command-line packet analyzer.</li>
+<li>tcptrack – Displays information about tcp connections on a network interface.</li>
+<li>telnet – user interface to the TELNET protocol.</li>
+<li>tracepath – very similar function to traceroute.</li>
+<li>traceroute – print the route packets trace to network host.</li>
+<li>vnStat – network traffic monitor.</li>
+<li>wget –  retrieving files using HTTP, HTTPS, FTP and FTPS.</li>
+<li>Wireless Tools for Linux – includes iwconfig, iwlist, iwspy, iwpriv and ifrename.</li>
+<li>Wireshark – network protocol analyzer.</li>
+</ol>
                 
               
               
@@ -2423,7 +2510,7 @@
         </a>
       
       
-        <a href="../VIMCommands/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../VIM/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">

@@ -1788,18 +1788,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../os/linux/Linux/" class="md-nav__link">
-        Linux
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../os/linux/PiBitcoinMiner/" class="md-nav__link">
         Raspberry Pi Bitcoin minder using ASIC Chips attached via USB
       </a>
@@ -1837,7 +1825,7 @@
   
     <li class="md-nav__item">
       <a href="../../os/linux/Ubuntu/" class="md-nav__link">
-        Make Ubuntu Desktop nice
+        Ubuntu
       </a>
     </li>
   
@@ -1848,7 +1836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../os/linux/VIMCommands/" class="md-nav__link">
+      <a href="../../os/linux/VIM/" class="md-nav__link">
         VIM commands
       </a>
     </li>
@@ -1860,7 +1848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../os/linux/cli-only/" class="md-nav__link">
+      <a href="../../os/linux/cli-tools/" class="md-nav__link">
         CLI Tools
       </a>
     </li>
@@ -2123,6 +2111,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ssh-escape-sequences" class="md-nav__link">
+    SSH Escape Sequences
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#file-transfert-with-scp" class="md-nav__link">
     File Transfert with SCP
   </a>
@@ -2356,6 +2351,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ssh-escape-sequences" class="md-nav__link">
+    SSH Escape Sequences
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#file-transfert-with-scp" class="md-nav__link">
     File Transfert with SCP
   </a>
@@ -2404,6 +2406,24 @@ Set-Service -Name sshd -StartupType 'Automatic'
 <h2 id="login">Login</h2>
 <p>Login to azure server "azureserver" with user "user" and private ssh keyfile "private.key". The passphrase will be queried after executing the command.</p>
 <pre><code class="language-shell">ssh -i private.key user@azureserver.westeurope.cloudapp.azure.com
+</code></pre>
+<p>When you SSH into another machine using public key authentication, the key pair from either <code>~/.ssh/id_dsa</code>, <code>~/.ssh/id_ecdsa</code>, or <code>~/.ssh/id_rsa</code> is used by default. The <code>-i</code> option can be used to specify a different key pair file.</p>
+<p>Use the <code>-L</code> flag to forward a connection to a remote server</p>
+<pre><code>ssh server -L3000:localhost:3000
+</code></pre>
+<h2 id="ssh-escape-sequences">SSH Escape Sequences</h2>
+<p>To see all escape sequences press <code>~?</code>.</p>
+<pre><code> ~.   - terminate connection (and any multiplexed sessions)
+ ~B   - send a BREAK to the remote system
+ ~C   - open a command line
+ ~R   - request rekey
+ ~V/v - decrease/increase verbosity (LogLevel)
+ ~^Z  - suspend ssh
+ ~#   - list forwarded connections
+ ~&amp;   - background ssh (when waiting for connections to terminate)
+ ~?   - this message
+ ~~   - send the escape character by typing it twice
+(Note that escapes are only recognized immediately after newline.)
 </code></pre>
 <h2 id="file-transfert-with-scp">File Transfert with SCP</h2>
 <p>Copying file to host:</p>
