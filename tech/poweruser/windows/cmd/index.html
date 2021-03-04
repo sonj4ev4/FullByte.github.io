@@ -2226,8 +2226,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../Windows10/" class="md-nav__link">
-        Windows 10
+      <a href="../Troubleshooting/" class="md-nav__link">
+        Troubleshooting
       </a>
     </li>
   
@@ -2304,6 +2304,82 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-logs" class="md-nav__link">
+    Delete logs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mount-linux-file-system" class="md-nav__link">
+    Mount Linux File System
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#merge-files" class="md-nav__link">
+    Merge Files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network" class="md-nav__link">
+    Network
+  </a>
+  
+    <nav class="md-nav" aria-label="Network">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-mac-address-of-remote-pc" class="md-nav__link">
+    Get MAC Address of remote PC
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#netzwerkverkehr-umleiten" class="md-nav__link">
+    Netzwerkverkehr umleiten
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traceroute" class="md-nav__link">
+    traceroute
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send-message" class="md-nav__link">
+    Send Message
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#benchmark-drive" class="md-nav__link">
+    Benchmark Drive
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-symbolic-links" class="md-nav__link">
+    Create Symbolic links
+  </a>
   
 </li>
       
@@ -2618,6 +2694,82 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#delete-logs" class="md-nav__link">
+    Delete logs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mount-linux-file-system" class="md-nav__link">
+    Mount Linux File System
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#merge-files" class="md-nav__link">
+    Merge Files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network" class="md-nav__link">
+    Network
+  </a>
+  
+    <nav class="md-nav" aria-label="Network">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-mac-address-of-remote-pc" class="md-nav__link">
+    Get MAC Address of remote PC
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#netzwerkverkehr-umleiten" class="md-nav__link">
+    Netzwerkverkehr umleiten
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traceroute" class="md-nav__link">
+    traceroute
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send-message" class="md-nav__link">
+    Send Message
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#benchmark-drive" class="md-nav__link">
+    Benchmark Drive
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-symbolic-links" class="md-nav__link">
+    Create Symbolic links
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2636,6 +2788,16 @@
                 
                 
                 <h1 id="cmd">CMD</h1>
+<p>Basics</p>
+<ul>
+<li>Systeminformation: <code>systeminfo</code></li>
+<li>NIC and DNS Info: <code>ipconfig -all</code></li>
+<li>Active Connections: <code>netstat –a</code></li>
+<li>Routing table: <code>route print</code></li>
+<li>Users logged in: <code>(Get-CimInstance Win32_LoggedOnUser) | Select-Object -Unique</code></li>
+<li>Services Running: <code>Msconfig</code></li>
+<li>Firewall settings <code>netsh advfirewall show currentprofile</code></li>
+</ul>
 <h2 id="robocopy">Robocopy</h2>
 <p>exclude files</p>
 <div class="highlight"><pre><span></span><code>Robocopy /xd excludethis
@@ -2656,6 +2818,84 @@ exit
 </code></pre></div>
 <p>use h2format to format the disk (64kb clusters) e.g. for drive x:</p>
 <div class="highlight"><pre><span></span><code>h2format x: 64
+</code></pre></div>
+<h2 id="delete-logs">Delete logs</h2>
+<div class="highlight"><pre><span></span><code>del /f /q /s %windir%\prefetch\*
+reg delete “HKCU\Software\Microsoft\Windows\ShellNoRoam\MUICache” /va /f
+reg delete “HKLM\Software\Microsoft\Windows\ShellNoRoam\MUICache” /va /f
+reg delete “HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\MuiCache” /va /f
+reg delete “HKLM\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\MuiCache” /va /f
+reg delete “HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU” /va /f
+reg delete “HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist” /va /f
+wmic nteventlog where LogFileName=’File Replication Service’ Call ClearEventlog
+wmic nteventlog where LogFileName=’Application’ Call ClearEventlog
+wmic nteventlog where LogFileName=’System’ Call ClearEventlog
+wmic nteventlog where LogFileName=’PowerShell’ Call ClearEventlog
+ren %1 temp000 &amp; copy /y %windir%\regedit.exe temp000 &amp; del temp000
+</code></pre></div>
+<h2 id="mount-linux-file-system">Mount Linux File System</h2>
+<p>List devices (choose the drive you want to mount)</p>
+<div class="highlight"><pre><span></span><code><span class="n">wmic</span> <span class="n">diskdrive</span> <span class="n">list</span> <span class="n">brief</span>
+</code></pre></div>
+<p>Mount partition 1 of "PHYSICALDRIVE3" and open it</p>
+<div class="highlight"><pre><span></span><code><span class="n">wsl</span> <span class="p">-</span><span class="n">-mount</span> <span class="p">\\.\</span><span class="n">PHYSICALDRIVE3</span> <span class="p">-</span><span class="n">-partition</span> <span class="n">1</span>
+<span class="n">wsl</span>
+<span class="nb">cd </span><span class="p">/</span><span class="n">mnt</span><span class="p">/</span><span class="n">wsl</span><span class="p">/</span><span class="n">PHYSICALDRIVE3p1</span><span class="p">/</span>
+</code></pre></div>
+<p>Source: <a href="https://docs.microsoft.com/de-de/windows/wsl/wsl2-mount-disk">https://docs.microsoft.com/de-de/windows/wsl/wsl2-mount-disk</a></p>
+<h2 id="merge-files">Merge Files</h2>
+<p>To hide something</p>
+<div class="highlight"><pre><span></span><code>copy /b secret.jpg + pic1.jpg newpic.jpg
+</code></pre></div>
+<p>To merge video files</p>
+<div class="highlight"><pre><span></span><code>copy /b video1.avi + video2.avi video.avi
+</code></pre></div>
+<h2 id="network">Network</h2>
+<p><strong>Find hidden WiFi network</strong></p>
+<div class="highlight"><pre><span></span><code>Netsh wlan show networks <span class="nv">mode</span><span class="o">=</span>bssid
+</code></pre></div>
+<p><strong>Reply from IP: TTL expired in transit</strong></p>
+<div class="highlight"><pre><span></span><code>ARP -p &lt;IP&gt; &lt;MAC&gt;
+</code></pre></div>
+<p><strong>Firewall config</strong></p>
+<h3 id="get-mac-address-of-remote-pc">Get MAC Address of remote PC</h3>
+<p>Option 1</p>
+<div class="highlight"><pre><span></span><code>net view machinename
+nbtstat -a machinename
+</code></pre></div>
+<p>Option 2</p>
+<div class="highlight"><pre><span></span><code>Ping &lt;IP/machinename&gt;
+Arp –a
+</code></pre></div>
+<p>Option 3</p>
+<div class="highlight"><pre><span></span><code>getmac
+</code></pre></div>
+<h3 id="netzwerkverkehr-umleiten">Netzwerkverkehr umleiten</h3>
+<p>Die Addresse 8.8.8.8 mit der eigenen IP 10.155.84.186 aufrufen:</p>
+<div class="highlight"><pre><span></span><code>route add <span class="m">8</span>.8.8.8 MASK <span class="m">255</span>.255.255.255 <span class="m">10</span>.155.84.186
+route print
+</code></pre></div>
+<h3 id="traceroute">traceroute</h3>
+<p>pathping (alternative to tracert: https://de.wikipedia.org/wiki/Pathping)</p>
+<p>Using ICMP</p>
+<div class="highlight"><pre><span></span><code>traceroute -I www.microsoft.com
+</code></pre></div>
+<p>Using UDP</p>
+<div class="highlight"><pre><span></span><code>traceroute -U www.microsoft.com
+</code></pre></div>
+<p>Using TCP Port 80 (usually allowed by firewalls)</p>
+<div class="highlight"><pre><span></span><code>traceroute -T -p <span class="m">80</span> www.microsoft.com
+</code></pre></div>
+<h3 id="send-message">Send Message</h3>
+<p>Anderen usern auf einem System eine Nachricht schicken:</p>
+<div class="highlight"><pre><span></span><code>net send /users This is a <span class="nb">test</span> message
+msg <span class="se">\*</span> /SERVER:localhost /TIME:666 /W This is a <span class="nb">test</span> message
+</code></pre></div>
+<h2 id="benchmark-drive">Benchmark Drive</h2>
+<div class="highlight"><pre><span></span><code>Winsat disk –write –ran –ransize <span class="m">262144</span> –drive f
+</code></pre></div>
+<h2 id="create-symbolic-links">Create Symbolic links</h2>
+<div class="highlight"><pre><span></span><code>fsutil hardlink create &lt;destination_path&gt; &lt;file_path&gt;
 </code></pre></div>
                 
               
