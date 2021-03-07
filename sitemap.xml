@@ -256,39 +256,35 @@
      <lastmod>2021-03-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://0xfab1.net/tech/hack/Aircrack/</loc>
-     <lastmod>2021-03-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://0xfab1.net/tech/hack/Airodump/</loc>
-     <lastmod>2021-03-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://0xfab1.net/tech/hack/Kismet/</loc>
-     <lastmod>2021-03-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://0xfab1.net/tech/hack/Metasploit/</loc>
-     <lastmod>2021-03-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://0xfab1.net/tech/hack/TTL/</loc>
-     <lastmod>2021-03-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://0xfab1.net/tech/hack/nmap/</loc>
-     <lastmod>2021-03-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://0xfab1.net/tech/hack/radare2/</loc>
-     <lastmod>2021-03-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
      <loc>https://0xfab1.net/tech/hack/challenges/cryptohack.org/</loc>
      <lastmod>2021-03-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://0xfab1.net/tech/hack/challenges/tryhackme.com/</loc>
+     <lastmod>2021-03-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/hack/tools/Aircrack/</loc>
+     <lastmod>2021-03-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/hack/tools/Airodump/</loc>
+     <lastmod>2021-03-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/hack/tools/Kismet/</loc>
+     <lastmod>2021-03-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/hack/tools/Metasploit/</loc>
+     <lastmod>2021-03-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/hack/tools/nmap/</loc>
+     <lastmod>2021-03-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/hack/tools/radare2/</loc>
      <lastmod>2021-03-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -441,6 +437,10 @@
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://0xfab1.net/tech/standards/RFC/</loc>
+     <lastmod>2021-03-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://0xfab1.net/tech/standards/TTL/</loc>
      <lastmod>2021-03-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
