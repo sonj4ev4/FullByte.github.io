@@ -2195,6 +2195,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#get-file-information" class="md-nav__link">
+    Get File Information
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#create-time-lapse-video" class="md-nav__link">
     Create Time Lapse Video
   </a>
@@ -2721,6 +2728,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#get-file-information" class="md-nav__link">
+    Get File Information
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#create-time-lapse-video" class="md-nav__link">
     Create Time Lapse Video
   </a>
@@ -2842,6 +2856,10 @@
 </tr>
 </tbody>
 </table>
+<h2 id="get-file-information">Get File Information</h2>
+<p>Get codec details of a given video file e.g. "video.mp4":</p>
+<div class="highlight"><pre><span></span><code>ffprobe -v error -select_streams v:0 -show_entries <span class="nv">stream</span><span class="o">=</span>codec_name -of <span class="nv">default</span><span class="o">=</span><span class="nv">noprint_wrappers</span><span class="o">=</span><span class="m">1</span>:nokey<span class="o">=</span><span class="m">1</span> video.mp4
+</code></pre></div>
 <h2 id="create-time-lapse-video">Create Time Lapse Video</h2>
 <p>In my case the files are from a GoPro named "G" followed by seven digits e.g. G0011565.jpg.
 The starting number of the series of pictures is 11021 in my example.
