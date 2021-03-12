@@ -990,6 +990,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../fun/read/names/" class="md-nav__link">
+        Names
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../fun/read/news/" class="md-nav__link">
         News
       </a>
@@ -2792,8 +2804,9 @@
 Left Join --&gt; Auch wenn rechts keine Werte zu links stehen wird links angezeigt.
 Right Join --&gt; Auch wenn links keine Werte zu rechts stehen wird links angezeigt.</p>
 <h2 id="case-anweisung">CASE Anweisung</h2>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="p">[</span><span class="n">InstallationWorkflow</span><span class="p">]</span> <span class="o">=</span>
-<span class="k">CASE</span> <span class="p">[</span><span class="n">Servers</span><span class="p">].[</span><span class="n">InstallationWorkflowID</span><span class="p">]</span>
+<p>This example translates <code>[Table].[statusID]</code> into a given text value.</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="p">[</span><span class="k">Table</span><span class="p">]</span> <span class="o">=</span>
+<span class="k">CASE</span> <span class="p">[</span><span class="k">Table</span><span class="p">].[</span><span class="n">statusID</span><span class="p">]</span>
     <span class="k">WHEN</span> <span class="mi">0</span> <span class="k">THEN</span> <span class="s1">&#39;Created&#39;</span>
     <span class="k">WHEN</span> <span class="mi">200</span> <span class="k">THEN</span> <span class="s1">&#39;Running&#39;</span>
     <span class="k">WHEN</span> <span class="mi">300</span> <span class="k">THEN</span> <span class="s1">&#39;HALTED&#39;</span>
