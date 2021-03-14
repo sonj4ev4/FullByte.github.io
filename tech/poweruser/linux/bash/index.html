@@ -1187,6 +1187,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../fun/watch/netflix/" class="md-nav__link">
+        Netflix
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../fun/watch/passiv-online/" class="md-nav__link">
         Passive Online Screens
       </a>
@@ -2139,6 +2151,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#addremove-user" class="md-nav__link">
+    Add/Remove User
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-xrdp" class="md-nav__link">
+    Install xrdp
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-teamviewer" class="md-nav__link">
+    Install TeamViewer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#install-and-update" class="md-nav__link">
     Install and Update
   </a>
@@ -2891,6 +2924,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#addremove-user" class="md-nav__link">
+    Add/Remove User
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-xrdp" class="md-nav__link">
+    Install xrdp
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-teamviewer" class="md-nav__link">
+    Install TeamViewer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#install-and-update" class="md-nav__link">
     Install and Update
   </a>
@@ -3095,6 +3149,33 @@
                 
                 <h1 id="linux-commands-and-tools">Linux Commands and Tools</h1>
 <p>Add <a href="https://explainshell.com/">https://explainshell.com/</a> link to all cool commands :)</p>
+<h2 id="addremove-user">Add/Remove User</h2>
+<div class="highlight"><pre><span></span><code>adduser &lt;user&gt; <span class="c1"># Add user</span>
+gpasswd -a &lt;user&gt; &lt;group&gt; <span class="c1"># Add user to group</span>
+groups &lt;user&gt; <span class="c1"># Show groups the user is added to</span>
+gpasswd -d &lt;user&gt; &lt;group&gt; <span class="c1"># Remove user from group</span>
+
+passwd -l &lt;user&gt; <span class="c1"># Lock the  User account</span>
+killall -9 -u &lt;user&gt; <span class="c1"># Kill all running processes of the User</span>
+crontab -r -u &lt;user&gt; <span class="c1"># Delete the user&#39;s cron jobs</span>
+lprm &lt;user&gt; <span class="c1"># Delete printer jobs run</span>
+userdel -r &lt;user&gt; <span class="c1"># Delete/ remove user account and files</span>
+</code></pre></div>
+<h2 id="install-xrdp">Install xrdp</h2>
+<div class="highlight"><pre><span></span><code>sudo apt-get updates
+sudo apt-get install tasksel
+sudo apt-get install xrdp <span class="c1"># start RDP</span>
+sudo systemctl status xrdp <span class="c1">#verify</span>
+</code></pre></div>
+<h2 id="install-teamviewer">Install TeamViewer</h2>
+<div class="highlight"><pre><span></span><code>wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
+sudo apt-get install ./teamviewer_amd64.deb
+teamviewer
+teamviewer --passwd password
+teamviewer daemon restart
+teamviewer -info
+teamviewer license accept
+</code></pre></div>
 <h2 id="install-and-update">Install and Update</h2>
 <p><strong>Keyboard layout</strong></p>
 <div class="highlight"><pre><span></span><code>dpkg-reconfigure keyboard-configuration
