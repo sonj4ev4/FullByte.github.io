@@ -2311,6 +2311,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#convert-fromto-webp" class="md-nav__link">
+    Convert from/to webp
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#stack-videos-in-a-grid-horizontally-and-vertically" class="md-nav__link">
     Stack Videos in a Grid (Horizontally and Vertically)
   </a>
@@ -2822,6 +2829,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#convert-fromto-webp" class="md-nav__link">
+    Convert from/to webp
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#stack-videos-in-a-grid-horizontally-and-vertically" class="md-nav__link">
     Stack Videos in a Grid (Horizontally and Vertically)
   </a>
@@ -2912,10 +2926,13 @@ ffmpeg -i input.mp4 -pix_fmt yuv420p -movflags faststart -c:v libaom-av1 -b:v 20
 <div class="highlight"><pre><span></span><code>ffmpeg -i input.gif -filter_complex <span class="s2">&quot;[0:v] fps=15&quot;</span> -vsync <span class="m">0</span> -f mp4 -pix_fmt yuv420p output.mp4
 </code></pre></div>
 <p>From MP4 to GIF</p>
-<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -filter_complex <span class="s2">&quot;[0:v] fps=12,scale=480:-1,split [a][b];[a] palettegen [p];[b][p] paletteuse&quot;</span> output.gif
+<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -vf <span class="s2">&quot;fps=12,scale=480:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse&quot;</span> -loop <span class="m">0</span> output.gif
 </code></pre></div>
 <p>Add e.g. "-ss 5.0 -t 3.2" to only create GIF for 3.2 secounds ot "input.mp4"</p>
-<div class="highlight"><pre><span></span><code>ffmpeg -ss <span class="m">5</span>.0 -t <span class="m">3</span>.2 -i input.mp4 -filter_complex <span class="s2">&quot;[0:v] fps=12,scale=480:-1,split [a][b];[a] palettegen [p];[b][p] paletteuse&quot;</span> output.gif
+<div class="highlight"><pre><span></span><code>ffmpeg -ss <span class="m">5</span>.0 -t <span class="m">3</span>.2 -i input.mp4 -vf <span class="s2">&quot;fps=12,scale=480:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse&quot;</span> -loop <span class="m">0</span> output.gif
+</code></pre></div>
+<h2 id="convert-fromto-webp">Convert from/to webp</h2>
+<div class="highlight"><pre><span></span><code>ffmpeg -ss <span class="m">32</span>.5 -t <span class="m">7</span> -i input.mp4 -vf <span class="s2">&quot;fps=10,scale=720:-1:flags=lanczos&quot;</span> -vcodec libwebp -lossless <span class="m">0</span> -compression_level <span class="m">6</span> -q:v <span class="m">50</span> -loop <span class="m">0</span> -preset picture -an -vsync <span class="m">0</span> output.webp
 </code></pre></div>
 <h2 id="stack-videos-in-a-grid-horizontally-and-vertically">Stack Videos in a Grid (Horizontally and Vertically)</h2>
 <p>2 Videos Horizontally</p>
