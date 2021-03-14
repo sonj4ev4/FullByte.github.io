@@ -2290,8 +2290,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#save-video-to-share-with-whatsapp" class="md-nav__link">
-    Save video to share with Whatsapp
+  <a href="#save-video-optimized-for-messenger" class="md-nav__link">
+    Save Video optimized for Messenger
   </a>
   
 </li>
@@ -2301,45 +2301,11 @@
     Save as AV1
   </a>
   
-    <nav class="md-nav" aria-label="Save as AV1">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pass-1" class="md-nav__link">
-    Pass 1
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pass-2" class="md-nav__link">
-    Pass 2
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
-  <a href="#convert-from-mov-to-gif" class="md-nav__link">
-    Convert from MOV to GIF
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#convert-from-gif-to-mp4" class="md-nav__link">
-    Convert from GIF to MP4
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#convert-from-mp4-to-minimized-gif" class="md-nav__link">
-    Convert from MP4 to minimized GIF
+  <a href="#convert-fromto-gif" class="md-nav__link">
+    Convert from/to GIF
   </a>
   
 </li>
@@ -2835,8 +2801,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#save-video-to-share-with-whatsapp" class="md-nav__link">
-    Save video to share with Whatsapp
+  <a href="#save-video-optimized-for-messenger" class="md-nav__link">
+    Save Video optimized for Messenger
   </a>
   
 </li>
@@ -2846,45 +2812,11 @@
     Save as AV1
   </a>
   
-    <nav class="md-nav" aria-label="Save as AV1">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pass-1" class="md-nav__link">
-    Pass 1
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pass-2" class="md-nav__link">
-    Pass 2
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
-  <a href="#convert-from-mov-to-gif" class="md-nav__link">
-    Convert from MOV to GIF
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#convert-from-gif-to-mp4" class="md-nav__link">
-    Convert from GIF to MP4
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#convert-from-mp4-to-minimized-gif" class="md-nav__link">
-    Convert from MP4 to minimized GIF
+  <a href="#convert-fromto-gif" class="md-nav__link">
+    Convert from/to GIF
   </a>
   
 </li>
@@ -2960,30 +2892,30 @@ More details: <a href="http://ffmpeg.org/ffmpeg-all.html#image2-1">http://ffmpeg
 More details: <a href="https://trac.ffmpeg.org/wiki/Encode/H.264">https://trac.ffmpeg.org/wiki/Encode/H.264</a></p>
 <div class="highlight"><pre><span></span><code>ffmpeg -i input.avi -c:v libx264 -preset slow -crf <span class="m">15</span> output.mkv
 </code></pre></div>
-<h2 id="save-video-to-share-with-whatsapp">Save video to share with Whatsapp</h2>
-<p>If it doesn't work possibly max size is reached.</p>
+<h2 id="save-video-optimized-for-messenger">Save Video optimized for Messenger</h2>
+<p>This works well for Whatsapp, Signal, Threema, Telegram, etc...
+Make sure not to reach current allowed max files size.</p>
 <p>With sound:</p>
-<div class="highlight"><pre><span></span><code>ffmpeg -i obc_input.mkv -vf -an <span class="nv">scale</span><span class="o">=</span>960x540 whatsapp.mp4
+<div class="highlight"><pre><span></span><code>ffmpeg -i input.mkv -vf -an <span class="nv">scale</span><span class="o">=</span>960x540 messenger.mp4
 </code></pre></div>
 <p>No sound:</p>
-<div class="highlight"><pre><span></span><code>ffmpeg -i obc_input.mkv -vf -an <span class="nv">scale</span><span class="o">=</span>960x540 whatsapp.mp4
+<div class="highlight"><pre><span></span><code>ffmpeg -i input.mkv -vf -an <span class="nv">scale</span><span class="o">=</span>960x540 messenger.mp4
 </code></pre></div>
 <h2 id="save-as-av1">Save as AV1</h2>
-<h3 id="pass-1">Pass 1</h3>
-<div class="highlight"><pre><span></span><code>ffmpeg.exe -i input.mp4 -c:v libaom-av1 -b:v 200k -filter:v <span class="nv">scale</span><span class="o">=</span><span class="m">720</span>:-1 -strict experimental -cpu-used <span class="m">1</span> -tile-columns <span class="m">2</span> -row-mt <span class="m">1</span> -threads <span class="m">8</span> -pass <span class="m">1</span> -f mp4 NUL <span class="o">&amp;&amp;</span> ^
+<div class="highlight"><pre><span></span><code><span class="c1"># Pass 1</span>
+ffmpeg -i input.mp4 -c:v libaom-av1 -b:v 200k -filter:v <span class="nv">scale</span><span class="o">=</span><span class="m">720</span>:-1 -strict experimental -cpu-used <span class="m">1</span> -tile-columns <span class="m">2</span> -row-mt <span class="m">1</span> -threads <span class="m">8</span> -pass <span class="m">1</span> -f mp4 NUL <span class="o">&amp;&amp;</span> ^
+<span class="c1"># Pass 2</span>
+ffmpeg -i input.mp4 -pix_fmt yuv420p -movflags faststart -c:v libaom-av1 -b:v 200k -filter:v <span class="nv">scale</span><span class="o">=</span><span class="m">720</span>:-1 -strict experimental -cpu-used <span class="m">1</span> -tile-columns <span class="m">2</span> -row-mt <span class="m">1</span> -threads <span class="m">8</span> -pass <span class="m">2</span> output.mp4
 </code></pre></div>
-<h3 id="pass-2">Pass 2</h3>
-<div class="highlight"><pre><span></span><code>ffmpeg.exe -i input.mp4 -pix_fmt yuv420p -movflags faststart -c:v libaom-av1 -b:v 200k -filter:v <span class="nv">scale</span><span class="o">=</span><span class="m">720</span>:-1 -strict experimental -cpu-used <span class="m">1</span> -tile-columns <span class="m">2</span> -row-mt <span class="m">1</span> -threads <span class="m">8</span> -pass <span class="m">2</span> output.mp4
+<h2 id="convert-fromto-gif">Convert from/to GIF</h2>
+<p>From GIF to MP4</p>
+<div class="highlight"><pre><span></span><code>ffmpeg -i input.gif -filter_complex <span class="s2">&quot;[0:v] fps=15&quot;</span> -vsync <span class="m">0</span> -f mp4 -pix_fmt yuv420p output.mp4
 </code></pre></div>
-<h2 id="convert-from-mov-to-gif">Convert from MOV to GIF</h2>
-<div class="highlight"><pre><span></span><code>ffmpeg.exe -i input.mov -ss <span class="m">00</span>:08:08 -t <span class="m">12</span> -filter_complex <span class="s2">&quot;[0:v] fps=12,scale=720:-1&quot;</span> -y scene2.gif
+<p>From MP4 to GIF</p>
+<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -filter_complex <span class="s2">&quot;[0:v] fps=12,scale=480:-1,split [a][b];[a] palettegen [p];[b][p] paletteuse&quot;</span> output.gif
 </code></pre></div>
-<h2 id="convert-from-gif-to-mp4">Convert from GIF to MP4</h2>
-<div class="highlight"><pre><span></span><code>ffmpeg -f gif -i favmeme.gif betterfavmeme.mp4
-</code></pre></div>
-<h2 id="convert-from-mp4-to-minimized-gif">Convert from MP4 to minimized GIF</h2>
-<p>Turn input.mp4 into a small output.gif by cutting the gif palette size with palettegen=max_colors=64 to improve the compression:</p>
-<div class="highlight"><pre><span></span><code>ffmpeg -ss <span class="m">00</span>:03 -t <span class="m">00</span>:03.7 -i input.mp4 -an -vf <span class="s2">&quot;transpose=2, crop=in_w-200:in_h-50:0:0, fps=11, scale=-1:360:flags=lanczos, split[s0][s1];[s0]palettegen=max_colors=64[p];[s1][p]paletteuse&quot;</span> -loop <span class="m">1</span> output.gif
+<p>Add e.g. "-ss 5.0 -t 3.2" to only create GIF for 3.2 secounds ot "input.mp4"</p>
+<div class="highlight"><pre><span></span><code>ffmpeg -ss <span class="m">5</span>.0 -t <span class="m">3</span>.2 -i input.mp4 -filter_complex <span class="s2">&quot;[0:v] fps=12,scale=480:-1,split [a][b];[a] palettegen [p];[b][p] paletteuse&quot;</span> output.gif
 </code></pre></div>
 <h2 id="stack-videos-in-a-grid-horizontally-and-vertically">Stack Videos in a Grid (Horizontally and Vertically)</h2>
 <p>2 Videos Horizontally</p>
