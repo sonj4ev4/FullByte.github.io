@@ -2713,48 +2713,340 @@
 <p>Helpful strings needed from time to time</p>
 <h2 id="locations">Locations</h2>
 <p>Overview of regions in azure and their official short name.</p>
-<p>Continent|Country|Name|Location|Short Name|Short Name (Country First)
-|---|---|---|---|---|---|
-Africa|South Africa North|southafricanorth|sfno|sfno
-Africa|South Africa West|southafricawest|sfwe|sfwe
-Asia|East Asia|eastasia|eaas|asea
-Asia|Southeast Asia|southeastasia|seas|assoea
-Asia|Japan|Japan West|japanwest|jawe|jawe
-Asia|Japan|Japan East|japaneast|jaea|jaea
-Asia|India|South India|southindia|soin|inso
-Asia|India|Central India|centralindia|cnin|incn
-Asia|India|West India|westindia|wein|inwe
-Asia|Korea|Korea Central|koreacentral|krcn|krcn
-Asia|Korea|Korea South|koreasouth|krso|krso
-Asia|United Arab Emirates|UAE Central|uaecentral|aecn|aecn
-Asia|United Arab Emirates|UAE North|uaenorth|aeno|aeno
-Australia|Australia|Australia East|australiaeast|auea|auea
-Australia|Australia|Australia Southeast|australiasoutheast|ause|ause
-Australia|Australia|Australia Central|australiacentral|aucn|aucn
-Australia|Australia|Australia Central 2|australiacentral2|aucn2|aucn3
-Europe|North Europe|northeurope|noeu|euno
-Europe|West Europe|westeurope|weeu|euwe
-Europe|United Kingdom|UK South|uksouth|ukso|ukso
-Europe|United Kingdom|UK West|ukwest|ukwe|ukwe
-Europe|France|France Central|francecentral|frcn|frcn
-Europe|France|France South|francesouth|frso|frso
-Europe|Swizterland|Switzerland North|switzerlandnorth|chno|chno
-Europe|Swizterland|Switzerland West|switzerlandwest|chwe|chwe
-Europe|Germany|Germany North|germanynorth|deno|deno
-Europe|Germany|Germany West Central|germanywestcentral|dewecn|dewecn
-Europe|Norway|Norway West|norwaywest|nowe|nowe
-Europe|Norway|Norway East|norwayeast|noea|noea
-North America|United States|Central US|centralus|cnus|uscn
-North America|United States|East US|eastus|eaus|usea
-North America|United States|East US 2|eastus2|eaus2|usea2
-North America|United States|West US|westus|weus|uswe
-North America|United States|North Central US|northcentralus|nocnus|usnocn
-North America|United States|South Central US|southcentralus|socnus|ussocn
-North America|Central America|Canada Central|canadacentral|cacn|cacn
-North America|Central America|Canada East|canadaeast|caea|caea
-North America|United States|West Central US|westcentralus|wecnus|uswecn
-North America|United States|West US 2|westus2|weus2|uswe2
-South America|Brazil|Brazil South|brazilsouth|brso|brso</p>
+<table>
+<thead>
+<tr>
+<th>Continent</th>
+<th>Country</th>
+<th>Name</th>
+<th>Location</th>
+<th>Short Name</th>
+<th>Short Name (Country First)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Africa</td>
+<td>South Africa North</td>
+<td>southafricanorth</td>
+<td>sfno</td>
+<td>sfno</td>
+<td></td>
+</tr>
+<tr>
+<td>Africa</td>
+<td>South Africa West</td>
+<td>southafricawest</td>
+<td>sfwe</td>
+<td>sfwe</td>
+<td></td>
+</tr>
+<tr>
+<td>Asia</td>
+<td>East Asia</td>
+<td>eastasia</td>
+<td>eaas</td>
+<td>asea</td>
+<td></td>
+</tr>
+<tr>
+<td>Asia</td>
+<td>Southeast Asia</td>
+<td>southeastasia</td>
+<td>seas</td>
+<td>assoea</td>
+<td></td>
+</tr>
+<tr>
+<td>Asia</td>
+<td>Japan</td>
+<td>Japan West</td>
+<td>japanwest</td>
+<td>jawe</td>
+<td>jawe</td>
+</tr>
+<tr>
+<td>Asia</td>
+<td>Japan</td>
+<td>Japan East</td>
+<td>japaneast</td>
+<td>jaea</td>
+<td>jaea</td>
+</tr>
+<tr>
+<td>Asia</td>
+<td>India</td>
+<td>South India</td>
+<td>southindia</td>
+<td>soin</td>
+<td>inso</td>
+</tr>
+<tr>
+<td>Asia</td>
+<td>India</td>
+<td>Central India</td>
+<td>centralindia</td>
+<td>cnin</td>
+<td>incn</td>
+</tr>
+<tr>
+<td>Asia</td>
+<td>India</td>
+<td>West India</td>
+<td>westindia</td>
+<td>wein</td>
+<td>inwe</td>
+</tr>
+<tr>
+<td>Asia</td>
+<td>Korea</td>
+<td>Korea Central</td>
+<td>koreacentral</td>
+<td>krcn</td>
+<td>krcn</td>
+</tr>
+<tr>
+<td>Asia</td>
+<td>Korea</td>
+<td>Korea South</td>
+<td>koreasouth</td>
+<td>krso</td>
+<td>krso</td>
+</tr>
+<tr>
+<td>Asia</td>
+<td>United Arab Emirates</td>
+<td>UAE Central</td>
+<td>uaecentral</td>
+<td>aecn</td>
+<td>aecn</td>
+</tr>
+<tr>
+<td>Asia</td>
+<td>United Arab Emirates</td>
+<td>UAE North</td>
+<td>uaenorth</td>
+<td>aeno</td>
+<td>aeno</td>
+</tr>
+<tr>
+<td>Australia</td>
+<td>Australia</td>
+<td>Australia East</td>
+<td>australiaeast</td>
+<td>auea</td>
+<td>auea</td>
+</tr>
+<tr>
+<td>Australia</td>
+<td>Australia</td>
+<td>Australia Southeast</td>
+<td>australiasoutheast</td>
+<td>ause</td>
+<td>ause</td>
+</tr>
+<tr>
+<td>Australia</td>
+<td>Australia</td>
+<td>Australia Central</td>
+<td>australiacentral</td>
+<td>aucn</td>
+<td>aucn</td>
+</tr>
+<tr>
+<td>Australia</td>
+<td>Australia</td>
+<td>Australia Central 2</td>
+<td>australiacentral2</td>
+<td>aucn2</td>
+<td>aucn3</td>
+</tr>
+<tr>
+<td>Europe</td>
+<td>North Europe</td>
+<td>northeurope</td>
+<td>noeu</td>
+<td>euno</td>
+<td></td>
+</tr>
+<tr>
+<td>Europe</td>
+<td>West Europe</td>
+<td>westeurope</td>
+<td>weeu</td>
+<td>euwe</td>
+<td></td>
+</tr>
+<tr>
+<td>Europe</td>
+<td>United Kingdom</td>
+<td>UK South</td>
+<td>uksouth</td>
+<td>ukso</td>
+<td>ukso</td>
+</tr>
+<tr>
+<td>Europe</td>
+<td>United Kingdom</td>
+<td>UK West</td>
+<td>ukwest</td>
+<td>ukwe</td>
+<td>ukwe</td>
+</tr>
+<tr>
+<td>Europe</td>
+<td>France</td>
+<td>France Central</td>
+<td>francecentral</td>
+<td>frcn</td>
+<td>frcn</td>
+</tr>
+<tr>
+<td>Europe</td>
+<td>France</td>
+<td>France South</td>
+<td>francesouth</td>
+<td>frso</td>
+<td>frso</td>
+</tr>
+<tr>
+<td>Europe</td>
+<td>Swizterland</td>
+<td>Switzerland North</td>
+<td>switzerlandnorth</td>
+<td>chno</td>
+<td>chno</td>
+</tr>
+<tr>
+<td>Europe</td>
+<td>Swizterland</td>
+<td>Switzerland West</td>
+<td>switzerlandwest</td>
+<td>chwe</td>
+<td>chwe</td>
+</tr>
+<tr>
+<td>Europe</td>
+<td>Germany</td>
+<td>Germany North</td>
+<td>germanynorth</td>
+<td>deno</td>
+<td>deno</td>
+</tr>
+<tr>
+<td>Europe</td>
+<td>Germany</td>
+<td>Germany West Central</td>
+<td>germanywestcentral</td>
+<td>dewecn</td>
+<td>dewecn</td>
+</tr>
+<tr>
+<td>Europe</td>
+<td>Norway</td>
+<td>Norway West</td>
+<td>norwaywest</td>
+<td>nowe</td>
+<td>nowe</td>
+</tr>
+<tr>
+<td>Europe</td>
+<td>Norway</td>
+<td>Norway East</td>
+<td>norwayeast</td>
+<td>noea</td>
+<td>noea</td>
+</tr>
+<tr>
+<td>North America</td>
+<td>United States</td>
+<td>Central US</td>
+<td>centralus</td>
+<td>cnus</td>
+<td>uscn</td>
+</tr>
+<tr>
+<td>North America</td>
+<td>United States</td>
+<td>East US</td>
+<td>eastus</td>
+<td>eaus</td>
+<td>usea</td>
+</tr>
+<tr>
+<td>North America</td>
+<td>United States</td>
+<td>East US 2</td>
+<td>eastus2</td>
+<td>eaus2</td>
+<td>usea2</td>
+</tr>
+<tr>
+<td>North America</td>
+<td>United States</td>
+<td>West US</td>
+<td>westus</td>
+<td>weus</td>
+<td>uswe</td>
+</tr>
+<tr>
+<td>North America</td>
+<td>United States</td>
+<td>North Central US</td>
+<td>northcentralus</td>
+<td>nocnus</td>
+<td>usnocn</td>
+</tr>
+<tr>
+<td>North America</td>
+<td>United States</td>
+<td>South Central US</td>
+<td>southcentralus</td>
+<td>socnus</td>
+<td>ussocn</td>
+</tr>
+<tr>
+<td>North America</td>
+<td>Central America</td>
+<td>Canada Central</td>
+<td>canadacentral</td>
+<td>cacn</td>
+<td>cacn</td>
+</tr>
+<tr>
+<td>North America</td>
+<td>Central America</td>
+<td>Canada East</td>
+<td>canadaeast</td>
+<td>caea</td>
+<td>caea</td>
+</tr>
+<tr>
+<td>North America</td>
+<td>United States</td>
+<td>West Central US</td>
+<td>westcentralus</td>
+<td>wecnus</td>
+<td>uswecn</td>
+</tr>
+<tr>
+<td>North America</td>
+<td>United States</td>
+<td>West US 2</td>
+<td>westus2</td>
+<td>weus2</td>
+<td>uswe2</td>
+</tr>
+<tr>
+<td>South America</td>
+<td>Brazil</td>
+<td>Brazil South</td>
+<td>brazilsouth</td>
+<td>brso</td>
+<td>brso</td>
+</tr>
+</tbody>
+</table>
                 
               
               
