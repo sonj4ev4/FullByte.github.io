@@ -1766,6 +1766,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../speech/" class="md-nav__link">
+        Speech Service
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../strings/" class="md-nav__link">
         Azure Strings
       </a>
@@ -2117,8 +2129,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../poweruser/linux/DangerousLinuxCommands/" class="md-nav__link">
-        Dangerous Linux Commands
+      <a href="../../poweruser/linux/" class="md-nav__link">
+        Linux Links
       </a>
     </li>
   
@@ -2154,67 +2166,7 @@
   
     <li class="md-nav__item">
       <a href="../../poweruser/linux/Ubuntu/" class="md-nav__link">
-        Ubuntu
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../poweruser/linux/VIM/" class="md-nav__link">
-        VIM commands
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../poweruser/linux/bash/" class="md-nav__link">
-        Linux Commands and Tools
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../poweruser/linux/cli-tools/" class="md-nav__link">
-        CLI Tools
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../poweruser/linux/cron/" class="md-nav__link">
-        Cron
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../poweruser/linux/server/" class="md-nav__link">
-        Server
+        Linux / Ubuntu
       </a>
     </li>
   
@@ -2461,6 +2413,18 @@
     <li class="md-nav__item">
       <a href="../../poweruser/windows/WindowsServer/" class="md-nav__link">
         Windows Server
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../poweruser/windows/WindowsStore/" class="md-nav__link">
+        Windows Store
       </a>
     </li>
   
@@ -2808,12 +2772,10 @@
 </tbody>
 </table>
 <h2 id="attach-storage">Attach Storage</h2>
-<p>Add FileShare to Cloud Shell</p>
-<div class="highlight"><pre><span></span><code><span class="n">clouddrive</span> <span class="nb">mount </span><span class="n">-s</span> <span class="p">&lt;</span><span class="n">secret</span><span class="p">&gt;</span> <span class="n">-g</span> <span class="p">&lt;</span><span class="n">rg-name</span><span class="p">&gt;</span> <span class="n">-n</span> <span class="p">&lt;</span><span class="n">fileshare</span><span class="p">&gt;</span> <span class="o">-f</span> <span class="p">&lt;</span><span class="n">share</span><span class="p">&gt;</span>
-</code></pre></div>
-<p>Show Drives</p>
-<div class="highlight"><pre><span></span><code><span class="nb">Get-CloudDrive</span>
-</code></pre></div>
+<ul>
+<li>Add FileShare to Cloud Shell: <code>clouddrive mount -s &lt;secret&gt; -g &lt;rg-name&gt; -n &lt;fileshare&gt; -f &lt;share&gt;</code></li>
+<li>Show Drives: <code>Get-CloudDrive</code></li>
+</ul>
 <p>Link: <a href="https://docs.microsoft.com/de-de/azure/cloud-shell/persisting-shell-storage">https://docs.microsoft.com/de-de/azure/cloud-shell/persisting-shell-storage</a></p>
 <h2 id="connect-to-vm-console">Connect to VM console</h2>
 <p>You can access an Azure VM within the Azure Cloud Shell.

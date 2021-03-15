@@ -1705,6 +1705,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../azure/speech/" class="md-nav__link">
+        Speech Service
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../azure/strings/" class="md-nav__link">
         Azure Strings
       </a>
@@ -2060,8 +2072,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../DangerousLinuxCommands/" class="md-nav__link">
-        Dangerous Linux Commands
+      <a href="../" class="md-nav__link">
+        Linux Links
       </a>
     </li>
   
@@ -2122,8 +2134,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#find-pi-with-an-arp-scan-filtering-for-known-pi-mac-adresses" class="md-nav__link">
-    Find Pi with an ARP scan filtering for known Pi MAC Adresses
+  <a href="#find-pi-with-an-arp-scan-filtering-for-known-pi-mac-addresses" class="md-nav__link">
+    Find Pi with an ARP scan filtering for known Pi MAC Addresses
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retro-gaming-stations" class="md-nav__link">
+    Retro Gaming Stations
   </a>
   
 </li>
@@ -2142,67 +2161,7 @@
   
     <li class="md-nav__item">
       <a href="../Ubuntu/" class="md-nav__link">
-        Ubuntu
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../VIM/" class="md-nav__link">
-        VIM commands
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../bash/" class="md-nav__link">
-        Linux Commands and Tools
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../cli-tools/" class="md-nav__link">
-        CLI Tools
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../cron/" class="md-nav__link">
-        Cron
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../server/" class="md-nav__link">
-        Server
+        Linux / Ubuntu
       </a>
     </li>
   
@@ -2449,6 +2408,18 @@
     <li class="md-nav__item">
       <a href="../../windows/WindowsServer/" class="md-nav__link">
         Windows Server
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../windows/WindowsStore/" class="md-nav__link">
+        Windows Store
       </a>
     </li>
   
@@ -2738,8 +2709,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#find-pi-with-an-arp-scan-filtering-for-known-pi-mac-adresses" class="md-nav__link">
-    Find Pi with an ARP scan filtering for known Pi MAC Adresses
+  <a href="#find-pi-with-an-arp-scan-filtering-for-known-pi-mac-addresses" class="md-nav__link">
+    Find Pi with an ARP scan filtering for known Pi MAC Addresses
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retro-gaming-stations" class="md-nav__link">
+    Retro Gaming Stations
   </a>
   
 </li>
@@ -2771,13 +2749,23 @@
 <span class="nv">hdmi_force_hotplug</span><span class="o">=</span><span class="m">1</span>
 <span class="nv">hdmi_drive</span><span class="o">=</span><span class="m">2</span>
 </code></pre></div>
-<h2 id="find-pi-with-an-arp-scan-filtering-for-known-pi-mac-adresses">Find Pi with an ARP scan filtering for known Pi MAC Adresses</h2>
-<p>Find Pi with an ARP scan filtering for known Pi MAC Adresses</p>
+<h2 id="find-pi-with-an-arp-scan-filtering-for-known-pi-mac-addresses">Find Pi with an ARP scan filtering for known Pi MAC Addresses</h2>
+<p>Find Pi with an ARP scan filtering for known Pi MAC Addresses</p>
 <p>From windows:</p>
-<p>arp -a | findstr b8-27-eb</p>
+<div class="highlight"><pre><span></span><code>arp -a | findstr b8-27-eb
+</code></pre></div>
 <p>From linux</p>
-<p>arp-scan --localnet --interface=eth0 | grep b8:27:eb
-arp-scan --localnet --interface=wlan0 | grep b8:27:eb</p>
+<div class="highlight"><pre><span></span><code>arp-scan --localnet --interface<span class="o">=</span>eth0 <span class="p">|</span> grep b8:27:eb
+arp-scan --localnet --interface<span class="o">=</span>wlan0 <span class="p">|</span> grep b8:27:eb
+</code></pre></div>
+<h2 id="retro-gaming-stations">Retro Gaming Stations</h2>
+<p>All are good choices. Pick the one best for your hardware/roms:</p>
+<ul>
+<li>retropie: <a href="https://retropie.org.uk/">https://retropie.org.uk/</a></li>
+<li>recalbox: <a href="https://gitlab.com/recalbox/recalbox">https://gitlab.com/recalbox/recalbox</a></li>
+<li>EmuELEC: <a href="https://github.com/EmuELEC/EmuELEC/">https://github.com/EmuELEC/EmuELEC/</a></li>
+<li>batocera: <a href="https://batocera.org/">https://batocera.org/</a></li>
+</ul>
                 
               
               
@@ -2816,7 +2804,7 @@ arp-scan --localnet --interface=wlan0 | grep b8:27:eb</p>
               <span class="md-footer__direction">
                 Next
               </span>
-              Ubuntu
+              Linux / Ubuntu
             </div>
           </div>
           <div class="md-footer__button md-icon">
