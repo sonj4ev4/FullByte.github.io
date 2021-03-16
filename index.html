@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Personal wiki of things I felt worth sharing.">
+        <meta name="description" content="0xfab1 wiki">
       
       
       
@@ -2674,7 +2674,17 @@
                 
                 
                 <h1 id="welcome">Welcome</h1>
-<p>This website is dedicated to the notes and lists I made, code i have written, copied or modified, things i created, modified or repaired and basically anything I find of interest.</p>
+<p>Publishing my notes in a wiki format has been great exercise for me to to keep a certain level of quality and stay organized. As longs as this works well for me I will continue doing so :)</p>
+<p>The content may appear random as it is basically anything I find interesting and noteworthy. ¯(ツ)/¯</p>
+<p>Query DNS for TXT records of <a href="https://0xfab1.net">0xfab1.net</a> as follows:</p>
+<div class="highlight"><pre><span></span><code>curl -s -H <span class="s1">&#39;accept: application/dns-json&#39;</span> <span class="s1">&#39;https://cloudflare-dns.com/dns-query?name=0xfab1.net&amp;type=TXT&#39;</span>  <span class="p">|</span> jq -r .Answer<span class="o">[]</span>.data
+</code></pre></div>
+<p>and you will receive this result:</p>
+<div class="highlight"><pre><span></span><code><span class="s2">&quot;v=me; github=https://github.com/FullByte&quot;</span>
+<span class="s2">&quot;v=me; twitter=https://twitter.com/ZeroGdoubleD&quot;</span>
+<span class="s2">&quot;v=me; about=https://0xfab1.net/about/&quot;</span>
+<span class="s2">&quot;v=me; gravatar=https://de.gravatar.com/0xfab1&quot;</span>
+</code></pre></div>
 <p>I hope you enjoy the content and found your visit worthwhile :)</p>
 <p>Regards,
 0xfab1</p>
