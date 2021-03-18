@@ -2839,9 +2839,45 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          HyperV
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         HyperV
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-and-config" class="md-nav__link">
+    Install and config
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#helper" class="md-nav__link">
+    Helper
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2888,8 +2924,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../WindowsServer/" class="md-nav__link">
-        Windows Server
+      <a href="../WindowsApps/" class="md-nav__link">
+        Windows Store
       </a>
     </li>
   
@@ -2900,8 +2936,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../WindowsStore/" class="md-nav__link">
-        Windows Store
+      <a href="../WindowsServer/" class="md-nav__link">
+        Windows Server
       </a>
     </li>
   
@@ -3177,6 +3213,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-and-config" class="md-nav__link">
+    Install and config
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#helper" class="md-nav__link">
+    Helper
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3193,21 +3251,48 @@
                 
                 
                 <h1 id="hyperv">HyperV</h1>
+<h2 id="install-and-config">Install and config</h2>
 <p>Install Hyper V Feature</p>
 <div class="highlight"><pre><span></span><code><span class="nb">Install-WindowsFeature</span> <span class="n">-Name</span> <span class="n">Hyper-V</span> <span class="n">-ComputerName</span> <span class="n">localhost</span> <span class="n">-IncludeManagementTools</span> <span class="n">-Restart</span>
 </code></pre></div>
 <p>Check Hyper V Installation</p>
 <div class="highlight"><pre><span></span><code><span class="nb">Get-WindowsFeature</span> <span class="n">-Name</span> <span class="n">Hyper-V</span> <span class="n">-ComputerName</span> <span class="n">HOSTNAME</span>
 </code></pre></div>
-<p>reconfigure the service</p>
+<p>Reconfigure the service</p>
 <div class="highlight"><pre><span></span><code>sc config vmms <span class="nv">start</span><span class="o">=</span>auto  
 </code></pre></div>
-<p>stop and start the service</p>
+<p>Stop and start the service</p>
 <div class="highlight"><pre><span></span><code>sc stop vmms
 sc start vmms
 </code></pre></div>
 <p>Remove VM</p>
 <div class="highlight"><pre><span></span><code><span class="nb">Remove-VM</span> <span class="n">-Name</span> <span class="s2">&quot;Linux&quot;</span> <span class="n">-Force</span>
+</code></pre></div>
+<h2 id="helper">Helper</h2>
+<p>Get VHD owner</p>
+<div class="highlight"><pre><span></span><code><span class="k">param</span> <span class="p">(</span><span class="nv">$HyperVNodes</span><span class="p">,</span><span class="nv">$VHDName</span><span class="p">)</span>
+
+<span class="k">Foreach</span> <span class="p">(</span><span class="nv">$HyperVNode</span> <span class="k">in</span> <span class="nv">$HyperVNodes</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nv">$VMs</span> <span class="p">=</span> <span class="nb">Get-WmiObject</span> <span class="n">-Namespace</span> <span class="s2">&quot;root\virtualization&quot;</span> <span class="n">-ComputerName</span> <span class="nv">$HyperVNode</span> <span class="n">-class</span> <span class="n">Msvm_ComputerSystem</span> <span class="p">|</span> <span class="nb">where </span><span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">Caption</span> <span class="o">-match</span> <span class="s2">&quot;Virtual Machine&quot;</span><span class="p">}</span>
+    <span class="k">Foreach</span> <span class="p">(</span><span class="nv">$VM</span> <span class="k">in</span> <span class="nv">$VMs</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$VMSettingData</span> <span class="p">=</span> <span class="nb">Get-WmiObject</span> <span class="n">-Namespace</span> <span class="s2">&quot;root\virtualization&quot;</span> <span class="n">-ComputerName</span> <span class="nv">$HyperVNode</span> <span class="p">`</span>
+        <span class="n">-Query</span> <span class="s2">&quot;Associators of {$VM} Where ResultClass=Msvm_VirtualSystemSettingData AssocClass=Msvm_SettingsDefineState&quot;</span> 
+        <span class="nv">$VirtualDiskResource</span> <span class="p">=</span> <span class="nb">Get-WmiObject</span> <span class="n">-Namespace</span> <span class="s2">&quot;root\virtualization&quot;</span> <span class="n">-ComputerName</span> <span class="nv">$HyperVNode</span> <span class="p">`</span>
+        <span class="n">-Query</span> <span class="s2">&quot;Associators of {$VMSettingData} Where ResultClass=Msvm_ResourceAllocationSettingData AssocClass=Msvm_VirtualSystemSettingDataComponent&quot;</span> <span class="p">|</span> <span class="p">`</span>
+        <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">ResourceSubType</span> <span class="o">-match</span> <span class="s2">&quot;Microsoft Virtual Hard Disk&quot;</span> <span class="p">}</span>
+        <span class="nv">$VHDPath</span> <span class="p">=</span> <span class="nv">$null</span>
+        <span class="k">Foreach</span> <span class="p">(</span><span class="nv">$VHD</span> <span class="k">in</span> <span class="nv">$VirtualDiskResource</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="nv">$VHDPath</span> <span class="p">=</span> <span class="nv">$VHDPath</span> <span class="p">+</span> <span class="nv">$VHD</span><span class="p">.</span><span class="n">Connection</span><span class="p">[</span><span class="n">0</span><span class="p">]</span> <span class="p">+</span> <span class="s2">&quot;,&quot;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$VHDPath</span> <span class="o">-Match</span> <span class="nv">$VHDName</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="nb">Write-Host</span> <span class="s2">&quot;The VM named </span><span class="p">$(</span><span class="nv">$VM</span><span class="p">.</span><span class="n">ElementName</span><span class="p">)</span><span class="s2"> is connected to the VHD $VHDName&quot;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
                 
               

@@ -2720,6 +2720,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#powershell-in-docker" class="md-nav__link">
+    Powershell in Docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#tutorials" class="md-nav__link">
     Tutorials
   </a>
@@ -2792,6 +2799,13 @@
           <li class="md-nav__item">
   <a href="#collabora-online" class="md-nav__link">
     Collabora Online
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#burpsuite" class="md-nav__link">
+    Burpsuite
   </a>
   
 </li>
@@ -3021,8 +3035,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../windows/WindowsServer/" class="md-nav__link">
-        Windows Server
+      <a href="../../windows/WindowsApps/" class="md-nav__link">
+        Windows Store
       </a>
     </li>
   
@@ -3033,8 +3047,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../windows/WindowsStore/" class="md-nav__link">
-        Windows Store
+      <a href="../../windows/WindowsServer/" class="md-nav__link">
+        Windows Server
       </a>
     </li>
   
@@ -3346,6 +3360,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#powershell-in-docker" class="md-nav__link">
+    Powershell in Docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#tutorials" class="md-nav__link">
     Tutorials
   </a>
@@ -3422,6 +3443,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#burpsuite" class="md-nav__link">
+    Burpsuite
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3478,6 +3506,13 @@
 <p>TODO</p>
 <h2 id="cool-things-to-run-with-docker">Cool things to run with docker</h2>
 <p>A list of docker containers</p>
+<h3 id="powershell-in-docker">Powershell in Docker</h3>
+<p>Run the container</p>
+<div class="highlight"><pre><span></span><code>docker run -it mcr.microsoft.com/azure-powershell
+</code></pre></div>
+<p>Trigger script in Powershell in Docker</p>
+<div class="highlight"><pre><span></span><code>docker run -it -v C:<span class="se">\U</span>sers<span class="se">\f</span>abia<span class="se">\s</span>rc:/src mcr.microsoft.com/azure-powershell:3.6.1-ubuntu-18.04 pwsh -file /src/script.ps1
+</code></pre></div>
 <h3 id="tutorials">Tutorials</h3>
 <ul>
 <li><a href="https://www.ezzeddinabdullah.com/posts/how-to-clean-text-data-at-the-command-line">https://www.ezzeddinabdullah.com/posts/how-to-clean-text-data-at-the-command-line</a></li>
@@ -3572,6 +3607,12 @@ docker run -d -v /srv/jellyfin/config:/config -v /srv/jellyfin/cache:/cache -v /
 <li><a href="https://collaboraonline.github.io/">https://collaboraonline.github.io/</a></li>
 </ul>
 <div class="highlight"><pre><span></span><code>docker run -d -p <span class="m">8080</span>:80 nextcloud
+</code></pre></div>
+<h3 id="burpsuite">Burpsuite</h3>
+<div class="highlight"><pre><span></span><code>docker run -d --name burpsuite -e DISPLAY -v <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>:/home/burpsuite -v /tmp/.X11-unix/:/tmp/.X11-unix/ --p <span class="m">8080</span>:8080 alexandreoda/burpsuite
+</code></pre></div>
+<h1 id="mitmproxy">mitmproxy</h1>
+<div class="highlight"><pre><span></span><code>docker run --rm -it -p <span class="m">8080</span>:8080 mitmproxy/mitmproxy
 </code></pre></div>
                 
               
