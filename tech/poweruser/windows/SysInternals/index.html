@@ -2889,6 +2889,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#sysinternals-live" class="md-nav__link">
+    Sysinternals live
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3228,6 +3235,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#sysinternals-live" class="md-nav__link">
+    Sysinternals live
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3246,14 +3260,19 @@
                 
                 
                 <h1 id="sysinternals">Sysinternals</h1>
-<p>Download Microsoft Sysinternals: <a href="https://docs.microsoft.com/en-us/sysinternals/">https://docs.microsoft.com/en-us/sysinternals/</a></p>
+<p>Download Microsoft Sysinternals: <a href="https://docs.microsoft.com/sysinternals/">https://docs.microsoft.com/sysinternals/</a></p>
 <h2 id="psexec">PsExec</h2>
 <p>Add User to log on remotely:
 LocalUser = evtl. ein service account z.B. für updates/monitoring/…
 Server = name des Zielservers</p>
-<p>PsExec.exe \Server -u "Server\LocalUser" -p "LocalUserPW" net user testuser2 Passw0rd1 /add
-PsExec.exe \Server -u "Server\LocalUser" -p "LocalUserPW" net localgroup "Administrators" testuser /add
-PsExec.exe \Server -u "Server\LocalUser" -p "LocalUserPW" net localgroup "Remote Desktop Users" testuser /add</p>
+<div class="highlight"><pre><span></span><code><span class="n">PsExec</span><span class="p">.</span><span class="n">exe</span> <span class="p">\\</span><span class="n">Server</span> <span class="n">-u</span> <span class="s2">&quot;Server\\LocalUser&quot;</span> <span class="n">-p</span> <span class="s2">&quot;LocalUserPW&quot;</span> <span class="n">net</span> <span class="n">user</span> <span class="n">testuser2</span> <span class="n">Passw0rd1</span> <span class="p">/</span><span class="n">add</span>
+<span class="n">PsExec</span><span class="p">.</span><span class="n">exe</span> <span class="p">\\</span><span class="n">Server</span> <span class="n">-u</span> <span class="s2">&quot;Server\\LocalUser&quot;</span> <span class="n">-p</span> <span class="s2">&quot;LocalUserPW&quot;</span> <span class="n">net</span> <span class="n">localgroup</span> <span class="s2">&quot;Administrators&quot;</span> <span class="n">testuser</span> <span class="p">/</span><span class="n">add</span>
+<span class="n">PsExec</span><span class="p">.</span><span class="n">exe</span> <span class="p">\\</span><span class="n">Server</span> <span class="n">-u</span> <span class="s2">&quot;Server\\LocalUser&quot;</span> <span class="n">-p</span> <span class="s2">&quot;LocalUserPW&quot;</span> <span class="n">net</span> <span class="n">localgroup</span> <span class="s2">&quot;Remote Desktop Users&quot;</span> <span class="n">testuser</span> <span class="p">/</span><span class="n">add</span>
+</code></pre></div>
+<h2 id="sysinternals-live">Sysinternals live</h2>
+<p>Run sysinternals tools from the explorer</p>
+<div class="highlight"><pre><span></span><code><span class="p">\\</span><span class="n">live</span><span class="p">.</span><span class="n">sysinternals</span><span class="p">.</span><span class="n">com</span><span class="p">\</span><span class="n">tools</span><span class="p">\</span><span class="n">procexp</span><span class="p">.</span><span class="n">exe</span>
+</code></pre></div>
                 
               
               
