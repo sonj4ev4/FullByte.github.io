@@ -3199,7 +3199,11 @@
 <p>Publishing my notes in a wiki format has been great exercise for me to to keep a certain level of quality and stay organized. As longs as this works well for me I will continue doing so :)</p>
 <p>The content may appear random as it is basically anything I find interesting and noteworthy. ¯(ツ)/¯</p>
 <p>Query DNS for TXT records of <a href="https://0xfab1.net">0xfab1.net</a> as follows:</p>
+<p>Linux</p>
 <div class="highlight"><pre><span></span><code>curl -s -H <span class="s1">&#39;accept: application/dns-json&#39;</span> <span class="s1">&#39;https://cloudflare-dns.com/dns-query?name=0xfab1.net&amp;type=TXT&#39;</span>  <span class="p">|</span> jq -r .Answer<span class="o">[]</span>.data
+</code></pre></div>
+<p>Windows</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nb">Resolve-DnsName</span> <span class="n">0xfab1</span><span class="p">.</span><span class="n">net</span> <span class="n">-Type</span> <span class="n">TXT</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-ExcludeProperty</span> <span class="n">Strings</span><span class="p">).</span><span class="n">Text</span> <span class="p">|</span> <span class="nb">Format-Table</span>
 </code></pre></div>
 <p>and you will receive this result:</p>
 <div class="highlight"><pre><span></span><code><span class="s2">&quot;v=me; github=https://github.com/FullByte&quot;</span>
