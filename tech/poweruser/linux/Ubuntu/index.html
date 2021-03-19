@@ -2582,6 +2582,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../Kali/" class="md-nav__link">
+        Kali
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../RaspberryPi/" class="md-nav__link">
         Raspberry Pi
       </a>
@@ -2805,6 +2817,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../screen/" class="md-nav__link">
+        Screen
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -2862,7 +2886,7 @@
   
     <li class="md-nav__item">
       <a href="../../tools/curl/" class="md-nav__link">
-        Curl
+        curl
       </a>
     </li>
   
@@ -3258,7 +3282,7 @@
   
     <li class="md-nav__item">
       <a href="../../../script/python/" class="md-nav__link">
-        Python Snippets
+        Python
       </a>
     </li>
   
@@ -3584,7 +3608,7 @@ Great tool to understand commands: <a href="https://explainshell.com/">https://e
 <p>Random basics</p>
 <ul>
 <li>Check installed packges <code>sudo tasksel</code></li>
-<li>Update and upgrade <code>sudo apt update &amp;&amp; sudo apt upgrade -y</code></li>
+<li>Update and upgrade <code>sudo apt update &amp;&amp; apt -y full-upgrade &amp;&amp; apt -y autoremove</code></li>
 <li>Upgrading to a newer release <code>do-release-upgrade</code></li>
 <li>Check who is online <code>w</code></li>
 <li>Show all system users <code>cut -d: -f1 /etc/passwd</code></li>
@@ -3616,7 +3640,7 @@ Great tool to understand commands: <a href="https://explainshell.com/">https://e
 <p>Example script that install updates to ubuntu automatically</p>
 <p>The script "bootupdate.sh":</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-sudo apt update <span class="o">&amp;&amp;</span> sudo apt upgrade -y
+sudo apt update <span class="o">&amp;&amp;</span> apt -y full-upgrade <span class="o">&amp;&amp;</span> apt -y autoremove
 <span class="nb">exit</span> <span class="m">0</span>
 </code></pre></div>
 <p>Move "bootupdate.sh" to init.d</p>
@@ -3627,13 +3651,13 @@ sudo apt update <span class="o">&amp;&amp;</span> sudo apt upgrade -y
 </code></pre></div>
 <h2 id="make-ubuntu-desktop-nice">Make Ubuntu Desktop nice</h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># Get Video Codecs</span>
-sudo apt-get install ubuntu-restricted-extras ubuntu-restricted-addons
+sudo apt install ubuntu-restricted-extras ubuntu-restricted-addons
 
 <span class="c1"># Get Compiz and Docky</span>
-sudo apt-get install gnome-session-flashback compiz compiz-core compiz-plugins compiz-plugins-default compiz-plugins-extra compiz-plugins-main compiz-plugins-main-default compiz-plugins-main-dev compizconfig-settings-manager docky
+sudo apt install gnome-session-flashback compiz compiz-core compiz-plugins compiz-plugins-default compiz-plugins-extra compiz-plugins-main compiz-plugins-main-default compiz-plugins-main-dev compizconfig-settings-manager docky
 
 <span class="c1">#Gnome Tweak</span>
-sudo apt-get install gnome-tweaks gnome-tweak-tool
+sudo apt install gnome-tweaks gnome-tweak-tool
 </code></pre></div>
 <h2 id="addremove-user">Add/Remove User</h2>
 <div class="highlight"><pre><span></span><code>adduser &lt;user&gt; <span class="c1"># Add user</span>
@@ -3648,14 +3672,14 @@ lprm &lt;user&gt; <span class="c1"># Delete printer jobs run</span>
 userdel -r &lt;user&gt; <span class="c1"># Delete/ remove user account and files</span>
 </code></pre></div>
 <h2 id="install-xrdp">Install xrdp</h2>
-<div class="highlight"><pre><span></span><code>sudo apt-get updates
-sudo apt-get install tasksel
-sudo apt-get install xrdp <span class="c1"># start RDP</span>
+<div class="highlight"><pre><span></span><code>sudo apt update
+sudo apt install tasksel
+sudo apt install xrdp <span class="c1"># start RDP</span>
 sudo systemctl status xrdp <span class="c1">#verify</span>
 </code></pre></div>
 <h2 id="install-teamviewer">Install TeamViewer</h2>
 <div class="highlight"><pre><span></span><code>wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
-sudo apt-get install ./teamviewer_amd64.deb
+sudo apt install ./teamviewer_amd64.deb
 teamviewer
 teamviewer --passwd password
 teamviewer daemon restart
@@ -3695,6 +3719,14 @@ sudo service networking restart
 </code></pre></div>
 <p>Test Config:</p>
 <div class="highlight"><pre><span></span><code>wpa_supplicant -i wlan0 -D wext -c /etc/wpa_supplicant/wpa_supplicant.conf -d
+</code></pre></div>
+<p>Install Wine</p>
+<div class="highlight"><pre><span></span><code>sudo dpkg --add-architecture i386
+wget -nc https://dl.winehq.org/wine-builds/winehq.key
+sudo apt-key add winehq.key
+deb https://dl.winehq.org/wine-builds/debian/ buster main
+sudo apt update
+sudo apt install --install-recommends winehq-stable
 </code></pre></div>
 <h2 id="system-information">System Information</h2>
 <ul>
@@ -3808,13 +3840,15 @@ If you need to, chain more <code>grep</code> commands on to narrow things down e
 </ul>
 <h2 id="commands">COMMANDs</h2>
 <h3 id="misc-commands">Misc Commands</h3>
-<p>init 6  Reboot Linux from the command line.
-gcc -o output.c input.c Compile C code.
-gcc -m32 -o output.c input.c    Cross compile C code, compile 32 bit binary on 64 bit Linux.
-unset HISTORYFILE   Disable bash history logging.
-rdesktop X.X.X.X    Connect to RDP server from Linux.
-kill -9 $$  Kill current session.</p>
-<p>ssh user@X.X.X.X | cat /dev/null &gt; ~/.bash_history   Clear bash history</p>
+<ul>
+<li>Reboot: <code>init 6</code></li>
+<li>Compile C code: <code>gcc -o output.c input.c</code></li>
+<li>Compile 32 bit binary on 64 bit Linux: <code>gcc -m32 -o output.c input.c</code></li>
+<li>Disable bash history logging: <code>unset HISTORYFILE</code></li>
+<li>Connect to RDP server from Linux. <code>rdesktop X.X.X.X</code></li>
+<li>Kill current session: <code>kill -9 $$</code></li>
+<li>Clear bash history: <code>cat /dev/null &gt; ~/.bash_history</code></li>
+</ul>
 <h3 id="linux-file-system-permissions">Linux File System Permissions</h3>
 <ul>
 <li>Change owner of file or dir: <code>chown user:group blah</code></li>
@@ -3949,13 +3983,13 @@ On January 1st at Midnight    <span class="m">0</span> <span class="m">0</span> 
         </a>
       
       
-        <a href="../../tools/IRC/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../screen/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              IRC
+              Screen
             </div>
           </div>
           <div class="md-footer__button md-icon">

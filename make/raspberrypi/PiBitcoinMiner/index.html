@@ -2686,6 +2686,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../tech/poweruser/linux/Kali/" class="md-nav__link">
+        Kali
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../tech/poweruser/linux/RaspberryPi/" class="md-nav__link">
         Raspberry Pi
       </a>
@@ -2700,6 +2712,18 @@
     <li class="md-nav__item">
       <a href="../../../tech/poweruser/linux/Ubuntu/" class="md-nav__link">
         Linux / Ubuntu
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tech/poweruser/linux/screen/" class="md-nav__link">
+        Screen
       </a>
     </li>
   
@@ -2762,7 +2786,7 @@
   
     <li class="md-nav__item">
       <a href="../../../tech/poweruser/tools/curl/" class="md-nav__link">
-        Curl
+        curl
       </a>
     </li>
   
@@ -3158,7 +3182,7 @@
   
     <li class="md-nav__item">
       <a href="../../../tech/script/python/" class="md-nav__link">
-        Python Snippets
+        Python
       </a>
     </li>
   
@@ -3428,11 +3452,11 @@ sudo <span class="nb">kill</span> &lt;processID&gt;
 275         2.2         0A81</p>
 <h2 id="setup-gpio-for-visual-output-on-attached-lcd-board">Setup GPIO for visual output on attached LCD board</h2>
 <h3 id="run-the-following-commands">Run the following commands</h3>
-<div class="highlight"><pre><span></span><code>sudo apt-get update
-sudo apt-get install git
+<div class="highlight"><pre><span></span><code>sudo apt update
+sudo apt install git
 git clone http://github.com/adafruit/Adafruit-Raspberry-Pi-Python-Code.git
-sudo apt-get install python-dev
-sudo apt-get install python-rpi.gpio
+sudo apt install python-dev
+sudo apt install python-rpi.gpio
 </code></pre></div>
 <p><strong>Edit modules</strong></p>
 <div class="highlight"><pre><span></span><code>sudo nano /etc/modules
@@ -3440,8 +3464,8 @@ i2c-bcm2708
 i2c-dev
 </code></pre></div>
 <p><strong>check for newest version</strong></p>
-<div class="highlight"><pre><span></span><code>sudo apt-get install python-smbus
-sudo apt-get install i2c-tools
+<div class="highlight"><pre><span></span><code>sudo apt install python-smbus
+sudo apt install i2c-tools
 </code></pre></div>
 <p><strong>IF this file exists (/etc/modprobe.d/raspi-blacklist.conf) do...</strong></p>
 <p>Comment out these 2 lines:</p>

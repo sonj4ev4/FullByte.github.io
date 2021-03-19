@@ -2580,6 +2580,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../linux/Kali/" class="md-nav__link">
+        Kali
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../linux/RaspberryPi/" class="md-nav__link">
         Raspberry Pi
       </a>
@@ -2594,6 +2606,18 @@
     <li class="md-nav__item">
       <a href="../../linux/Ubuntu/" class="md-nav__link">
         Linux / Ubuntu
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/screen/" class="md-nav__link">
+        Screen
       </a>
     </li>
   
@@ -2658,7 +2682,7 @@
   
     <li class="md-nav__item">
       <a href="../curl/" class="md-nav__link">
-        Curl
+        curl
       </a>
     </li>
   
@@ -2785,9 +2809,45 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Wget
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Wget
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#download-all-files-from-website" class="md-nav__link">
+    Download all files from website
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-specific-files-types" class="md-nav__link">
+    Download specific files types
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3063,7 +3123,7 @@
   
     <li class="md-nav__item">
       <a href="../../../script/python/" class="md-nav__link">
-        Python Snippets
+        Python
       </a>
     </li>
   
@@ -3186,6 +3246,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#download-all-files-from-website" class="md-nav__link">
+    Download all files from website
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-specific-files-types" class="md-nav__link">
+    Download specific files types
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3202,7 +3284,8 @@
                 
                 
                 <h1 id="wget">Wget</h1>
-<p>Download all files on a website. Generally, this can be blocked but works in most cases. To avoid a few things:</p>
+<h2 id="download-all-files-from-website">Download all files from website</h2>
+<p>Generally, this can be blocked but works in most cases. To avoid a few things:</p>
 <ul>
 <li>Ignore <strong>robots.txt</strong> blocking the download by using <code>-e robots=off</code></li>
 <li>Add <strong>user-agent</strong>; either one that guarantees a math e.g. <code>--user-agent="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"</code> or just the one you are using atm e.g. <code>Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0</code> (Firefox: about:config --&gt; devtools.responsive.userAgent)</li>
@@ -3211,17 +3294,16 @@
 <li>Checking the details of the <strong>HTTP status code</strong> you get as an error may help resolve the issue too: <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">https://en.wikipedia.org/wiki/List_of_HTTP_status_codes</a></li>
 <li>A required <strong>cookie</strong> or missing <strong>authorization</strong> can be further reasons why the download doesn't work or run though fully.</li>
 </ul>
-<p>Download all files recursively from a given URI:</p>
+<p>Example:</p>
 <div class="highlight"><pre><span></span><code>wget -e <span class="nv">robots</span><span class="o">=</span>off -r -np --page-requisites --convert-links --user-agent<span class="o">=</span><span class="s2">&quot;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36&quot;</span> http://example.com/dir/
 </code></pre></div>
 <p>Alternative:</p>
 <div class="highlight"><pre><span></span><code>wget -e <span class="nv">robots</span><span class="o">=</span>off --verbose --debug --adjust-extension --backup-converted --base<span class="o">=</span>http://example.com/dir/ --no-http-keep-alive --no-parent --mirror http://example.com/dir/
 </code></pre></div>
-<p>Download only images</p>
-<div class="highlight"><pre><span></span><code>wget -e <span class="nv">robots</span><span class="o">=</span>off -r -l <span class="m">3</span> -np -p --user-agent<span class="o">=</span><span class="s2">&quot;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36&quot;</span> http://example.com/dir/
-</code></pre></div>
-<p>Specify the files you are looking for:</p>
-<div class="highlight"><pre><span></span><code>wget -e <span class="nv">robots</span><span class="o">=</span>off -r -A ogg,mp3 http://example.com/dir/
+<h2 id="download-specific-files-types">Download specific files types</h2>
+<div class="highlight"><pre><span></span><code>wget -e <span class="nv">robots</span><span class="o">=</span>off -r -A ogg,mp3 http://example.com/dir/ <span class="c1"># Specific audio files</span>
+wget -e <span class="nv">robots</span><span class="o">=</span>off -r -A png,jpeg,jpg,gif http://example.com/dir/ <span class="c1"># Specific Image Files</span>
+wget -e <span class="nv">robots</span><span class="o">=</span>off -r -l <span class="m">3</span> -np -p  http://example.com/dir/ <span class="c1"># All pictures</span>
 </code></pre></div>
                 
               

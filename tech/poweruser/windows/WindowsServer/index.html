@@ -2580,6 +2580,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../linux/Kali/" class="md-nav__link">
+        Kali
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../linux/RaspberryPi/" class="md-nav__link">
         Raspberry Pi
       </a>
@@ -2594,6 +2606,18 @@
     <li class="md-nav__item">
       <a href="../../linux/Ubuntu/" class="md-nav__link">
         Linux / Ubuntu
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/screen/" class="md-nav__link">
+        Screen
       </a>
     </li>
   
@@ -2656,7 +2680,7 @@
   
     <li class="md-nav__item">
       <a href="../../tools/curl/" class="md-nav__link">
-        Curl
+        curl
       </a>
     </li>
   
@@ -2937,6 +2961,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#iis" class="md-nav__link">
+    IIS
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3092,7 +3123,7 @@
   
     <li class="md-nav__item">
       <a href="../../../script/python/" class="md-nav__link">
-        Python Snippets
+        Python
       </a>
     </li>
   
@@ -3228,6 +3259,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#iis" class="md-nav__link">
+    IIS
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3252,6 +3290,10 @@
 </code></pre></div>
 <p>To trigger Windows activation you need to execute the following command:</p>
 <div class="highlight"><pre><span></span><code><span class="n">slmgr</span> <span class="p">/</span><span class="n">ato</span>
+</code></pre></div>
+<h2 id="iis">IIS</h2>
+<p><strong>IIS Passwords</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">foreach</span> <span class="p">(</span><span class="nv">$site</span> <span class="k">in</span> <span class="nb">Get-ChildItem</span> <span class="n">IIS</span><span class="err">:</span><span class="p">\</span><span class="n">Sites</span><span class="p">)</span> <span class="p">{</span> <span class="s2">&quot;Site: &quot;</span> <span class="p">+</span> <span class="nv">$site</span><span class="p">.</span><span class="n">name</span> <span class="p">+</span> <span class="s2">&quot; - &quot;</span> <span class="p">+</span> <span class="s2">&quot;User: &quot;</span> <span class="p">+</span> <span class="nv">$site</span><span class="p">.</span><span class="n">userName</span> <span class="p">+</span> <span class="s2">&quot;PW: &quot;</span> <span class="p">+</span> <span class="nv">$site</span><span class="p">.</span><span class="n">password</span> <span class="p">}</span>
 </code></pre></div>
                 
               

@@ -2578,6 +2578,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../poweruser/linux/Kali/" class="md-nav__link">
+        Kali
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../poweruser/linux/RaspberryPi/" class="md-nav__link">
         Raspberry Pi
       </a>
@@ -2592,6 +2604,18 @@
     <li class="md-nav__item">
       <a href="../../poweruser/linux/Ubuntu/" class="md-nav__link">
         Linux / Ubuntu
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../poweruser/linux/screen/" class="md-nav__link">
+        Screen
       </a>
     </li>
   
@@ -2654,7 +2678,7 @@
   
     <li class="md-nav__item">
       <a href="../../poweruser/tools/curl/" class="md-nav__link">
-        Curl
+        curl
       </a>
     </li>
   
@@ -3073,6 +3097,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#execute-gistgithub-script" class="md-nav__link">
+    Execute Gist/Github Script
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3111,7 +3142,7 @@
   
     <li class="md-nav__item">
       <a href="../python/" class="md-nav__link">
-        Python Snippets
+        Python
       </a>
     </li>
   
@@ -3268,6 +3299,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#execute-gistgithub-script" class="md-nav__link">
+    Execute Gist/Github Script
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3334,6 +3372,19 @@
 <li>Probot automates and improves your github workflows with pre-built apps: <a href="https://probot.github.io/">https://probot.github.io/</a></li>
 <li>Search for code: <a href="https://gowalker.org/">https://gowalker.org/</a></li>
 </ul>
+<h2 id="execute-gistgithub-script">Execute Gist/Github Script</h2>
+<p>You can run remote scripts from e.g. Github (either gists or raw content):</p>
+<p>From powershell with github raw file:</p>
+<p><strong>Windows</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nb">iex </span><span class="p">((</span><span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="n">Net</span><span class="p">.</span><span class="n">WebClient</span><span class="p">).</span><span class="n">DownloadString</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/FullByte/project/master/file.file&#39;</span><span class="p">))</span>
+</code></pre></div>
+<p>From cmd with gist link:</p>
+<div class="highlight"><pre><span></span><code>PowerShell -NoProfile -ExecutionPolicy Bypass -Command &quot;iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://gist.githubusercontent.com/FullByte/000000000000000000000000000000000000/raw&#39;))&quot;
+</code></pre></div>
+<p><strong>Linux</strong></p>
+<p>From bash</p>
+<div class="highlight"><pre><span></span><code>bash &lt;<span class="o">(</span>curl -Ls https://raw.githubusercontent.com/FullByte/scripts/master/something<span class="o">)</span>
+</code></pre></div>
                 
               
               

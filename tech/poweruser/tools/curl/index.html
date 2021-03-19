@@ -20,7 +20,7 @@
     
     
       
-        <title>Curl - 0xfab1</title>
+        <title>curl - 0xfab1</title>
       
     
     
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Curl
+              curl
             
           </span>
         </div>
@@ -2580,6 +2580,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../linux/Kali/" class="md-nav__link">
+        Kali
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../linux/RaspberryPi/" class="md-nav__link">
         Raspberry Pi
       </a>
@@ -2594,6 +2606,18 @@
     <li class="md-nav__item">
       <a href="../../linux/Ubuntu/" class="md-nav__link">
         Linux / Ubuntu
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/screen/" class="md-nav__link">
+        Screen
       </a>
     </li>
   
@@ -2665,9 +2689,38 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          curl
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
-        Curl
+        curl
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3063,7 +3116,7 @@
   
     <li class="md-nav__item">
       <a href="../../../script/python/" class="md-nav__link">
-        Python Snippets
+        Python
       </a>
     </li>
   
@@ -3186,6 +3239,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3201,7 +3269,46 @@
                   </a>
                 
                 
-                <h1 id="curl">Curl</h1>
+                <h1 id="curl">curl</h1>
+<table>
+<thead>
+<tr>
+<th>What</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Official Page</td>
+<td><a href="https://curl.se/">https://curl.se/</a></td>
+</tr>
+<tr>
+<td>Source</td>
+<td><a href="https://github.com/curl/curl">https://github.com/curl/curl</a></td>
+</tr>
+<tr>
+<td>Download</td>
+<td><a href="https://github.com/curl/curl/releases">https://github.com/curl/curl/releases</a></td>
+</tr>
+<tr>
+<td>Docs</td>
+<td><a href="https://everything.curl.dev">https://everything.curl.dev</a></td>
+</tr>
+<tr>
+<td>Book</td>
+<td><a href="https://curl.se/docs/">https://curl.se/docs/</a></td>
+</tr>
+<tr>
+<td>Windows</td>
+<td><code>scoop install curl</code></td>
+</tr>
+<tr>
+<td>Ubuntu</td>
+<td><code>apt install curl</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
 <p>Example to check /24 range in abuseipdb.com for the last 3 days</p>
 <div class="highlight"><pre><span></span><code>curl -s -G https://api.abuseipdb.com/api/v2/check-block --data-urlencode <span class="s2">&quot;network=123.123.123.1/24&quot;</span> -d <span class="nv">maxAgeInDays</span><span class="o">=</span><span class="nv">$DAYS</span> -H <span class="s2">&quot;Key: apikeyfromabuseipdb.com&quot;</span> -H <span class="s2">&quot;Accept: application/json&quot;</span> <span class="p">|</span>jq <span class="s1">&#39;.data.reportedAddress&#39;</span>
 </code></pre></div>

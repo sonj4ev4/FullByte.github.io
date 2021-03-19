@@ -2578,6 +2578,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../poweruser/linux/Kali/" class="md-nav__link">
+        Kali
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../poweruser/linux/RaspberryPi/" class="md-nav__link">
         Raspberry Pi
       </a>
@@ -2592,6 +2604,18 @@
     <li class="md-nav__item">
       <a href="../../poweruser/linux/Ubuntu/" class="md-nav__link">
         Linux / Ubuntu
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../poweruser/linux/screen/" class="md-nav__link">
+        Screen
       </a>
     </li>
   
@@ -2654,7 +2678,7 @@
   
     <li class="md-nav__item">
       <a href="../../poweruser/tools/curl/" class="md-nav__link">
-        Curl
+        curl
       </a>
     </li>
   
@@ -3105,6 +3129,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#script-description" class="md-nav__link">
     Script Description
   </a>
@@ -3128,6 +3159,13 @@
           <li class="md-nav__item">
   <a href="#parallel-tasks-and-throttle-limit" class="md-nav__link">
     Parallel tasks and throttle limit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging" class="md-nav__link">
+    Logging
   </a>
   
 </li>
@@ -3188,6 +3226,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#web" class="md-nav__link">
+    Web
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#email-and-calendar" class="md-nav__link">
     Email and Calendar
   </a>
@@ -3240,7 +3285,7 @@
   
     <li class="md-nav__item">
       <a href="../python/" class="md-nav__link">
-        Python Snippets
+        Python
       </a>
     </li>
   
@@ -3405,6 +3450,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#script-description" class="md-nav__link">
     Script Description
   </a>
@@ -3428,6 +3480,13 @@
           <li class="md-nav__item">
   <a href="#parallel-tasks-and-throttle-limit" class="md-nav__link">
     Parallel tasks and throttle limit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging" class="md-nav__link">
+    Logging
   </a>
   
 </li>
@@ -3483,6 +3542,13 @@
           <li class="md-nav__item">
   <a href="#speech" class="md-nav__link">
     Speech
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web" class="md-nav__link">
+    Web
   </a>
   
 </li>
@@ -3571,18 +3637,49 @@
 </code></pre></div>
 <h3 id="linux">Linux</h3>
 <p>Install powershell on Ubuntu 20.04</p>
-<div class="highlight"><pre><span></span><code>sudo apt-get update <span class="c1"># Update the list of packages</span>
-sudo apt-get install -y wget apt-transport-https software-properties-common <span class="c1"># Install pre-requisite packages.</span>
+<div class="highlight"><pre><span></span><code>sudo apt update <span class="c1"># Update the list of packages</span>
+sudo apt install -y wget apt-transport-https software-properties-common <span class="c1"># Install pre-requisite packages.</span>
 wget -q https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb <span class="c1"># Download the Microsoft repository GPG keys</span>
 sudo dpkg -i packages-microsoft-prod.deb <span class="c1"># Register the Microsoft repository GPG keys</span>
-sudo apt-get update <span class="c1"># Update the list of products</span>
+sudo apt update <span class="c1"># Update the list of products</span>
 sudo add-apt-repository universe <span class="c1"># Enable the &quot;universe&quot; repositories</span>
-sudo apt-get install -y powershell <span class="c1"># Install PowerShell</span>
+sudo apt install -y powershell <span class="c1"># Install PowerShell</span>
 pwsh <span class="c1"># Start PowerShell</span>
 </code></pre></div>
 <p>Details: <a href="https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-7.1">https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-7.1</a></p>
 <h2 id="powershell-tipps">Powershell Tipps</h2>
 <p>This chapter does not aim to teach powershell. Rather the scope is to teach proper scripting techniques, troubleshooting and collaboration when scripting.</p>
+<h3 id="variables">Variables</h3>
+<p><strong>Paths</strong></p>
+<p>Powershell defaults:</p>
+<ul>
+<li>Script location: <code>$PSScriptRoot</code></li>
+<li>Current location when the script is running: <code>$PWD</code></li>
+<li>User's home directory: <code>$HOME</code></li>
+<li>Script that invoked the current command (only populated if caller is a script): <code>$PSCommandPath</code></li>
+</ul>
+<p>You can also use the <a href="https://docs.microsoft.com/en-us/dotnet/api/system.environment.specialfolder">.NET Environment.SpecialFolder</a> Enum e.g.:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">$DesktopPath</span> <span class="p">=</span> <span class="no">[System.Environment]</span><span class="p">::</span><span class="n">GetFolderPath</span><span class="p">([</span><span class="n">System</span><span class="p">.</span><span class="n">Environment</span><span class="p">+</span><span class="n">SpecialFolder</span><span class="p">]::</span><span class="n">Desktop</span><span class="p">)</span>
+<span class="nv">$DocumentsPath</span> <span class="p">=</span> <span class="no">[System.Environment]</span><span class="p">::</span><span class="n">GetFolderPath</span><span class="p">([</span><span class="n">System</span><span class="p">.</span><span class="n">Environment</span><span class="p">+</span><span class="n">SpecialFolder</span><span class="p">]::</span><span class="n">CommonDocuments</span><span class="p">)</span>
+<span class="nv">$ProgramFilesX86Path</span> <span class="p">=</span> <span class="no">[System.Environment]</span><span class="p">::</span><span class="n">GetFolderPath</span><span class="p">([</span><span class="n">System</span><span class="p">.</span><span class="n">Environment</span><span class="p">+</span><span class="n">SpecialFolder</span><span class="p">]::</span><span class="n">ProgramFilesX86</span> <span class="p">)</span>
+<span class="nv">$ProgramFilesPath</span> <span class="p">=</span> <span class="no">[System.Environment]</span><span class="p">::</span><span class="n">GetFolderPath</span><span class="p">([</span><span class="n">System</span><span class="p">.</span><span class="n">Environment</span><span class="p">+</span><span class="n">SpecialFolder</span><span class="p">]::</span><span class="n">ProgramFiles</span><span class="p">)</span>
+<span class="nv">$RecentFilesPath</span> <span class="p">=</span> <span class="no">[System.Environment]</span><span class="p">::</span><span class="n">GetFolderPath</span><span class="p">([</span><span class="n">System</span><span class="p">.</span><span class="n">Environment</span><span class="p">+</span><span class="n">SpecialFolder</span><span class="p">]::</span><span class="n">Recent</span><span class="p">)</span>
+<span class="nv">$SendToPath</span> <span class="p">=</span> <span class="no">[System.Environment]</span><span class="p">::</span><span class="n">GetFolderPath</span><span class="p">([</span><span class="n">System</span><span class="p">.</span><span class="n">Environment</span><span class="p">+</span><span class="n">SpecialFolder</span><span class="p">]::</span><span class="n">SendTo</span><span class="p">)</span>
+<span class="nv">$UserProfilePath</span> <span class="p">=</span> <span class="no">[System.Environment]</span><span class="p">::</span><span class="n">GetFolderPath</span><span class="p">([</span><span class="n">System</span><span class="p">.</span><span class="n">Environment</span><span class="p">+</span><span class="n">SpecialFolder</span><span class="p">]::</span><span class="n">UserProfile</span><span class="p">)</span>
+<span class="nv">$StartupPath</span> <span class="p">=</span> <span class="no">[System.Environment]</span><span class="p">::</span><span class="n">GetFolderPath</span><span class="p">([</span><span class="n">System</span><span class="p">.</span><span class="n">Environment</span><span class="p">+</span><span class="n">SpecialFolder</span><span class="p">]::</span><span class="n">Startup</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Other</strong></p>
+<ul>
+<li>First token in the last line received by the session: <code>$^</code></li>
+<li>Last token in the last line received by the session: <code>$$</code></li>
+<li>Execution status (true/false) on if the last command succeeded: <code>$?</code></li>
+<li>Current object in the pipeline object: <code>$_</code> or <code>$PSItem</code></li>
+<li>Array of error objects: <code>$Error</code> e.g. first error entry = <code>$Error[0]</code></li>
+<li>Check OS with: <code>$IsLinux</code> or <code>$IsMacOS</code> or <code>$IsWindows</code></li>
+<li>Use True/False with these : <code>$true</code> and <code>$false</code></li>
+<li>Details on user who started the PSSession: <code>$PSSenderInfo</code></li>
+<li>Get version details of the run environment: <code>$PSVersionTable</code> e.g. <code>$PSVersionTable.PSVersion</code> or <code>$PSVersionTable.OS</code></li>
+</ul>
 <h3 id="script-description">Script Description</h3>
 <p><strong>Privileges</strong></p>
 <p>Make sure you are admin if required</p>
@@ -3652,12 +3749,12 @@ Some Examples:</p>
 <p>The following script will prepare a certificate or use a given one:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">$hascert</span><span class="p">=</span><span class="nb">Read-Host</span> <span class="n">-Prompt</span> <span class="s1">&#39;Do you have a certificate for file encryption? (Y/N)?&#39;</span>
 <span class="k">If</span> <span class="p">(</span><span class="nv">$hascert</span> <span class="o">-eq</span> <span class="s1">&#39;Y&#39;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nb">Write-Host</span> <span class="s1">&#39;Select Certificate.&#39;</span> 
+    <span class="nb">Write-Output</span> <span class="s1">&#39;Select Certificate.&#39;</span> 
     <span class="nv">$mycert</span><span class="p">=</span><span class="nb">Get-Childitem</span> <span class="n">Cert</span><span class="err">:</span><span class="p">\</span><span class="n">CurrentUser</span><span class="p">\</span><span class="n">My</span>
     <span class="nv">$cert</span><span class="p">=</span><span class="nv">$mycert</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="n">hasprivatekey</span> <span class="o">-eq</span> <span class="s1">&#39;true&#39;</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-Property</span> <span class="n">Issuer</span><span class="p">,</span><span class="n">Subject</span><span class="p">,</span><span class="n">HasPrivateKey</span> <span class="p">|</span> <span class="nb">Out-GridView</span> <span class="n">-Title</span> <span class="s1">&#39;Select Certificate&#39;</span> <span class="n">-PassThru</span>
 <span class="p">}</span>
 <span class="k">If</span> <span class="p">(</span><span class="nv">$hascert</span> <span class="o">-eq</span> <span class="s1">&#39;N&#39;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nb">Write-Host</span> <span class="s1">&#39;This section creates a new self signed certificate. Provide certificate name.&#39;</span>
+    <span class="nb">Write-Output</span> <span class="s1">&#39;This section creates a new self signed certificate. Provide certificate name.&#39;</span>
     <span class="nv">$newcert</span><span class="p">=</span><span class="nb">Read-Host</span> <span class="s1">&#39;Enter Certificate Name&#39;</span>
     <span class="nb">New-SelfSignedCertificate</span> <span class="n">-DnsName</span> <span class="nv">$newcert</span> <span class="n">-CertStoreLocation</span> <span class="s2">&quot;Cert:\CurrentUser\My&quot;</span> <span class="n">-KeyUsage</span> <span class="n">KeyEncipherment</span><span class="p">,</span><span class="n">DataEncipherment</span><span class="p">,</span><span class="n">KeyAgreement</span> <span class="n">-Type</span> <span class="n">DocumentEncryptionCert</span>
     <span class="nv">$cert</span><span class="p">=</span><span class="nb">Get-ChildItem</span> <span class="n">-Path</span> <span class="n">Cert</span><span class="err">:</span><span class="p">\</span><span class="n">CurrentUser</span><span class="p">\</span><span class="n">My</span><span class="p">\</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="n">subject</span> <span class="o">-like</span> <span class="s2">&quot;*$newcert*&quot;</span>
@@ -3681,6 +3778,20 @@ Some Examples:</p>
 <span class="nb">Measure-Command</span> <span class="n">-expression</span> <span class="p">{</span><span class="n">1</span><span class="p">..</span><span class="n">10</span> <span class="p">|</span> <span class="k">foreach</span><span class="n">-object</span> <span class="p">{</span><span class="nb">Start-Sleep</span> <span class="n">-seconds</span> <span class="n">1</span><span class="p">}}</span> <span class="c"># Serial Execution of 10 tasks of 1 seconds</span>
 <span class="nb">Measure-Command</span> <span class="n">-expression</span> <span class="p">{</span><span class="n">1</span><span class="p">..</span><span class="n">10</span> <span class="p">|</span> <span class="k">foreach</span><span class="n">-object</span> <span class="n">-parallel</span> <span class="p">{</span><span class="nb">Start-Sleep</span> <span class="n">-seconds</span> <span class="n">1</span><span class="p">}}</span> <span class="c"># Parallel Execution of 10 tasks of 1 seconds</span>
 <span class="nb">Measure-Command</span> <span class="n">-expression</span> <span class="p">{</span><span class="n">1</span><span class="p">..</span><span class="n">10</span> <span class="p">|</span> <span class="k">foreach</span><span class="n">-object</span> <span class="n">-parallel</span> <span class="p">{</span><span class="nb">Start-Sleep</span> <span class="n">-seconds</span> <span class="n">1</span><span class="p">}</span> <span class="n">-throttlelimit</span> <span class="n">10</span><span class="p">}</span> <span class="c">#Setting Throttlelimit to 10 instead 5 (default value)</span>
+</code></pre></div>
+<h3 id="logging">Logging</h3>
+<p>Adding log (better: event-logs) helps understand what went wrong and why things are they way they currently are.</p>
+<p>General logging:</p>
+<div class="highlight"><pre><span></span><code><span class="k">Function</span> <span class="n">writeEventLogEntry</span>
+<span class="p">{</span>
+    <span class="nv">$message</span> <span class="p">=</span> <span class="s2">&quot;$args[0] Time: &quot;</span> <span class="p">+</span> <span class="p">(</span><span class="nb">get-date</span><span class="p">).</span><span class="n">ToString</span><span class="p">(</span><span class="s1">&#39;yyyy-MM-dd HH:mm:ss&#39;</span><span class="p">)</span> <span class="p">+</span> <span class="s2">&quot; User: &quot;</span> <span class="p">+</span> <span class="nv">$env:userdomain</span> <span class="p">+</span> <span class="s2">&quot;\&quot;</span> <span class="p">+</span> <span class="nv">$env:username</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$args</span><span class="p">[</span><span class="n">1</span><span class="p">]</span> <span class="o">-eq</span> <span class="s2">&quot;Information&quot;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nb">write-eventlog</span> <span class="n">-logname</span> <span class="s2">&quot;Windows PowerShell&quot;</span> <span class="n">-source</span> <span class="n">PowerShell</span> <span class="n">-eventID</span> <span class="n">1999</span> <span class="n">-entrytype</span> <span class="n">Information</span> <span class="n">-message</span> <span class="nv">$message</span> <span class="n">-category</span> <span class="n">1</span> <span class="n">-rawdata</span> <span class="n">10</span><span class="p">,</span><span class="n">20</span>    <span class="p">}</span>
+    <span class="k">elseif</span> <span class="p">(</span><span class="nv">$args</span><span class="p">[</span><span class="n">1</span><span class="p">]</span> <span class="o">-eq</span> <span class="s2">&quot;Warning&quot;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nb">write-eventlog</span> <span class="n">-logname</span> <span class="s2">&quot;Windows PowerShell&quot;</span> <span class="n">-source</span> <span class="n">PowerShell</span> <span class="n">-eventID</span> <span class="n">1999</span> <span class="n">-entrytype</span> <span class="n">Warning</span> <span class="n">-message</span> <span class="nv">$message</span> <span class="n">-category</span> <span class="n">1</span> <span class="n">-rawdata</span> <span class="n">10</span><span class="p">,</span><span class="n">20</span>    <span class="p">}</span>
+    <span class="k">elseif</span> <span class="p">(</span><span class="nv">$args</span><span class="p">[</span><span class="n">1</span><span class="p">]</span> <span class="o">-eq</span> <span class="s2">&quot;Error&quot;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nb">write-eventlog</span> <span class="n">-logname</span> <span class="s2">&quot;Windows PowerShell&quot;</span> <span class="n">-source</span> <span class="n">PowerShell</span> <span class="n">-eventID</span> <span class="n">1999</span> <span class="n">-entrytype</span> <span class="n">Error</span> <span class="n">-message</span> <span class="nv">$message</span> <span class="n">-category</span> <span class="n">1</span> <span class="n">-rawdata</span> <span class="n">10</span><span class="p">,</span><span class="n">20</span>    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <h2 id="snippets">Snippets</h2>
 <p>Some handy code snippets for powershell :)</p>
@@ -3727,11 +3838,11 @@ Some Examples:</p>
 <span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="p">=</span> <span class="n">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">-lt</span> <span class="p">(</span><span class="nv">$pwlength</span><span class="p">);</span> <span class="nv">$i</span><span class="p">++)</span> <span class="p">{</span>
     <span class="nv">$line</span> <span class="p">=</span> <span class="s2">&quot;&quot;</span>
     <span class="k">for</span> <span class="p">(</span><span class="nv">$j</span> <span class="p">=</span> <span class="n">0</span><span class="p">;</span> <span class="nv">$j</span> <span class="o">-lt</span> <span class="p">(</span><span class="n">5</span><span class="p">);</span> <span class="nv">$j</span><span class="p">++)</span> <span class="p">{</span> <span class="nv">$line</span> <span class="p">+=</span> <span class="s2">&quot;</span><span class="p">$(</span><span class="nb">New-RandomPassword</span><span class="p">(</span><span class="nv">$pwlength</span><span class="p">))</span><span class="s2"> &quot;</span> <span class="p">}</span>
-    <span class="nb">Write-Host</span><span class="p">(</span><span class="nv">$line</span><span class="p">)</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span>
+    <span class="nb">Write-Output</span><span class="p">(</span><span class="nv">$line</span><span class="p">)</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span>
 <span class="p">}</span>
 
 <span class="c"># Result</span>
-<span class="nb">Write-Host</span><span class="p">(</span><span class="s2">&quot;Password:&quot;</span><span class="p">)</span> <span class="n">-ForegroundColor</span> <span class="n">black</span> <span class="n">-BackgroundColor</span> <span class="n">yellow</span> <span class="n">-NoNewline</span><span class="p">;</span> <span class="nb">Write-Host</span><span class="p">(</span><span class="s2">&quot; &quot;</span> <span class="p">+</span> <span class="p">$(</span><span class="nb">New-RandomPassword</span><span class="p">(</span><span class="nv">$pwlength</span><span class="p">)))</span> <span class="n">-ForegroundColor</span> <span class="n">Red</span>
+<span class="nb">Write-Output</span><span class="p">(</span><span class="s2">&quot;Password:&quot;</span><span class="p">)</span> <span class="n">-ForegroundColor</span> <span class="n">black</span> <span class="n">-BackgroundColor</span> <span class="n">yellow</span> <span class="n">-NoNewline</span><span class="p">;</span> <span class="nb">Write-Output</span><span class="p">(</span><span class="s2">&quot; &quot;</span> <span class="p">+</span> <span class="p">$(</span><span class="nb">New-RandomPassword</span><span class="p">(</span><span class="nv">$pwlength</span><span class="p">)))</span> <span class="n">-ForegroundColor</span> <span class="n">Red</span>
 </code></pre></div>
 <p>Option 3</p>
 <div class="highlight"><pre><span></span><code><span class="nv">$buffer</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">byte</span><span class="p">[]</span> <span class="n">32</span><span class="p">;</span>
@@ -3740,14 +3851,17 @@ Some Examples:</p>
 </code></pre></div>
 <h3 id="system-information">System information</h3>
 <p><strong>Last boot time</strong></p>
-<div class="highlight"><pre><span></span><code><span class="nb">Write-Host</span> <span class="s2">&quot;System boot:&quot;</span> <span class="p">(</span><span class="nb">Get-CimInstance</span> <span class="n">-ClassName</span> <span class="n">win32_operatingsystem</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-ExpandProperty</span> <span class="n">LastBootUpTime</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nb">Write-Output</span> <span class="s2">&quot;System boot:&quot;</span> <span class="p">(</span><span class="nb">Get-CimInstance</span> <span class="n">-ClassName</span> <span class="n">win32_operatingsystem</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-ExpandProperty</span> <span class="n">LastBootUpTime</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Get WiFi Passwords</strong></p>
+<p>Add more cultures if needed</p>
+<div class="highlight"><pre><span></span><code><span class="nv">$keyword</span> <span class="p">=</span> <span class="p">@{</span><span class="s2">&quot;de-DE&quot;</span> <span class="p">=</span> <span class="s1">&#39;Schlüsselinhalt&#39;</span><span class="p">;</span> <span class="s2">&quot;en-US&quot;</span> <span class="p">=</span> <span class="s1">&#39;Key Content&#39;</span><span class="p">}</span>
+<span class="nb">Invoke-Expression</span> <span class="n">-Command</span> <span class="s1">&#39;(netsh wlan show profiles) | Select-String &quot;\:(.+)$&quot; | %{$name=$_.Matches.Groups[1].Value.Trim(); $_} | %{(netsh wlan show profile name=&quot;$name&quot; key=clear)} | Select-String ($keyword[(get-culture).Name]+&quot;\W+\:(.+)$&quot;) | %{$pass=$_.Matches.Groups[1].Value.Trim(); $_} | %{[PSCustomObject]@{ WiFi=$name;PASSWORD=$pass }} | Format-Table -AutoSize&#39;</span>
 </code></pre></div>
 <p><strong>Get WinSAT information</strong></p>
-<div class="highlight"><pre><span></span><code><span class="c"># Run WinSAT (optional)</span>
+<div class="highlight"><pre><span></span><code><span class="c"># Get WinSAT Data (XML)</span>
 <span class="n">WinSAT</span> <span class="n">formal</span>
-
-<span class="c"># Get WinSAT Data (XML)</span>
-<span class="nv">$path</span> <span class="p">=</span> <span class="nb">Get-ChildItem</span> <span class="n">-Path</span> <span class="s1">&#39;C:\Windows\Performance\WinSAT\DataStore\*Formal.*.xml&#39;</span> <span class="p">|</span> <span class="nb">Sort-Object</span> <span class="n">-Property</span> <span class="n">CreationTime</span> <span class="n">-Descending</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-First</span> <span class="n">1</span> <span class="n">-ExpandProperty</span> <span class="n">FullName</span>
+<span class="nv">$path</span> <span class="p">=</span> <span class="nb">Get-ChildItem</span> <span class="n">-Path</span> <span class="s1">&#39;C:\Windows\Performance\WinSAT\DataStore\*Formal.*.xml&#39;</span> <span class="p">|</span> <span class="nb">Sort-Object</span> <span class="n">-Property</span> <span class="n">CreationTime</span> <span class="n">-Descending</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-First</span> <span class="n">1</span> <span class="n">-ExpandProperty</span> <span class="n">FullName</span> 
 
 <span class="c"># Parse as XML</span>
 <span class="nv">$xml</span> <span class="p">=</span> <span class="no">[xml]</span><span class="p">::</span><span class="n">new</span><span class="p">()</span>
@@ -3764,6 +3878,9 @@ Some Examples:</p>
     <span class="k">throw</span> <span class="s2">&quot;The Windows Defender service is not currently running&quot;</span>
 <span class="p">}</span>
 <span class="nb">Get-MpComputerStatus</span>
+</code></pre></div>
+<p><strong>Get Win10 key</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nb">Get-WmiObject</span> <span class="n">-query</span> <span class="err">‘</span><span class="nb">select </span><span class="p">*</span> <span class="n">from</span> <span class="n">SoftwareLicensingService</span><span class="err">’</span><span class="p">).</span><span class="n">OA3xOriginalProductKey</span>
 </code></pre></div>
 <p><strong>Install apps</strong></p>
 <p>Get install apps from app-store</p>
@@ -3792,16 +3909,7 @@ Some Examples:</p>
 
 <span class="nb">Import-Module</span> <span class="n">Appx</span>
 <span class="nv">$Packages</span> <span class="p">=</span> <span class="nb">Get-AppxPackage</span>
-
-<span class="c">## Ignore MS Stuff</span>
-<span class="nv">$Whitelist</span> <span class="p">=</span> <span class="p">@(</span>
-    <span class="s1">&#39;*WindowsCalculator*&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;*MSPaint*&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;*Office.OneNote*&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;*Microsoft.net*&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;*MicrosoftEdge*&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;*Microsoft*&#39;</span>
-<span class="p">)</span>
+<span class="nv">$Whitelist</span> <span class="p">=</span> <span class="p">@(</span><span class="s1">&#39;*WindowsCalculator*&#39;</span><span class="p">,</span> <span class="s1">&#39;*MSPaint*&#39;</span><span class="p">,</span> <span class="s1">&#39;*Office.OneNote*&#39;</span><span class="p">,</span> <span class="s1">&#39;*Microsoft.net*&#39;</span><span class="p">,</span> <span class="s1">&#39;*MicrosoftEdge*&#39;</span><span class="p">,</span> <span class="s1">&#39;*Microsoft*&#39;</span><span class="p">)</span> <span class="c">## Ignore MS Stuff</span>
 
 <span class="c">## Remove all things to ignore</span>
 <span class="k">ForEach</span><span class="p">(</span><span class="nv">$App</span> <span class="k">in</span> <span class="nv">$Packages</span><span class="p">){</span>
@@ -3863,6 +3971,32 @@ Some Examples:</p>
 <span class="s1">&lt;/speak&gt;</span>
 <span class="s1">&#39;</span>
 <span class="nv">$tts</span><span class="p">.</span><span class="n">SpeakSsml</span><span class="p">(</span><span class="nv">$Phrase</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="web">Web</h3>
+<p><strong>Download Images</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nv">$url</span> <span class="p">=</span> <span class="no">[System.Uri]</span><span class="s2">&quot;https://example.org&quot;</span>
+<span class="nv">$regex</span> <span class="p">=</span> <span class="s1">&#39;(http(s)?:\/\/)([^\s([&quot;&lt;,&gt;/]*)(\/)[^\s[&quot;,&gt;&lt;]*(.png|.jpg|.gif|.jpeg|.svg)(\?[^\s[&quot;,&gt;&lt;]*)?&#39;</span>
+<span class="nv">$useragent</span> <span class="p">=</span> <span class="s2">&quot;Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)&quot;</span>
+
+<span class="nv">$FilePath</span> <span class="p">=</span> <span class="p">((</span><span class="no">[System.Environment]</span><span class="p">::</span><span class="n">GetFolderPath</span><span class="p">([</span><span class="n">System</span><span class="p">.</span><span class="n">Environment</span><span class="p">+</span><span class="n">SpecialFolder</span><span class="p">]::</span><span class="n">Desktop</span><span class="p">))+</span><span class="s2">&quot;\&quot;</span><span class="p">+</span><span class="nv">$url</span><span class="p">.</span><span class="n">Authority</span><span class="p">)</span>
+<span class="nb">New-Item</span> <span class="n">-ItemType</span> <span class="n">Directory</span> <span class="n">-Force</span> <span class="n">-Path</span> <span class="nv">$FilePath</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+
+<span class="nb">Add-Type</span> <span class="n">-AssemblyName</span> <span class="n">System</span><span class="p">.</span><span class="n">Web</span>
+<span class="nv">$webClient</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="n">Net</span><span class="p">.</span><span class="n">WebClient</span>
+<span class="nv">$webClient</span><span class="p">.</span><span class="n">Headers</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">&quot;user-agent&quot;</span><span class="p">,</span> <span class="nv">$useragent</span><span class="p">)</span>
+<span class="nv">$webClient</span><span class="p">.</span><span class="n">Headers</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">,</span><span class="s2">&quot;application/x-www-form-urlencoded&quot;</span><span class="p">)</span>
+<span class="nv">$webpage</span> <span class="p">=</span> <span class="nv">$webclient</span><span class="p">.</span><span class="n">DownloadString</span><span class="p">(</span><span class="nv">$url</span><span class="p">)</span>
+<span class="nv">$listImgUrls</span> <span class="p">=</span> <span class="nv">$webpage</span><span class="p">.</span><span class="n">ToLower</span><span class="p">()</span> <span class="p">|</span> <span class="nb">Select-String</span> <span class="n">-pattern</span> <span class="nv">$regex</span> <span class="n">-Allmatches</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">Matches</span><span class="p">}</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Value</span> <span class="n">-Unique</span>
+
+<span class="k">foreach</span><span class="p">(</span><span class="nv">$imgUrlString</span> <span class="k">in</span> <span class="nv">$listImgUrls</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="no">[System.Uri]</span><span class="nv">$imgUri</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="n">Uri</span> <span class="n">-ArgumentList</span> <span class="nv">$imgUrlString</span>
+        <span class="nv">$imgSaveDestination</span> <span class="p">=</span> <span class="nv">$FilePath</span><span class="p">+</span><span class="s2">&quot;\&quot;</span><span class="p">+(</span><span class="no">[System.IO.Path]</span><span class="p">::</span><span class="n">GetFileName</span><span class="p">(</span><span class="nv">$imgUri</span><span class="p">.</span><span class="n">LocalPath</span><span class="p">))</span>
+        <span class="nv">$webClient</span><span class="p">.</span><span class="n">DownloadFile</span><span class="p">(</span><span class="nv">$imgUri</span><span class="p">,</span> <span class="nv">$imgSaveDestination</span><span class="p">)</span>       
+        <span class="nb">Write-Output</span><span class="p">(</span><span class="s2">&quot;Downloaded &#39;$imgUrlString&#39; to &#39;$imgSaveDestination&#39;&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">catch</span> <span class="p">{</span> <span class="nb">Write-Host</span><span class="p">(</span><span class="s2">&quot;Error: &quot;</span> <span class="p">+</span> <span class="nv">$imgUrlString</span> <span class="p">+</span> <span class="s2">&quot; - &quot;</span><span class="p">)</span> <span class="n">-ForegroundColor</span> <span class="n">Yellow</span> <span class="n">-NoNewline</span><span class="p">;</span> <span class="nb">Write-Host</span><span class="p">(</span><span class="nv">$_</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">Message</span><span class="p">)</span> <span class="n">-ForegroundColor</span> <span class="n">Red</span> <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <h3 id="email-and-calendar">Email and Calendar</h3>
 <p>Sind Mail with depreacted Send-MailMessage command</p>
@@ -3956,7 +4090,7 @@ Follow these three steps to update, find old modules and delete all but the late
               <span class="md-footer__direction">
                 Next
               </span>
-              Python Snippets
+              Python
             </div>
           </div>
           <div class="md-footer__button md-icon">
