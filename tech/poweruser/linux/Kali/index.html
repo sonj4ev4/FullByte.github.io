@@ -2374,6 +2374,90 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../hack/tools/burpsuite/" class="md-nav__link">
+        Burpsuite
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hack/tools/gobuster/" class="md-nav__link">
+        GoBuster
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hack/tools/hydra/" class="md-nav__link">
+        Hydra
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hack/tools/john/" class="md-nav__link">
+        John
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hack/tools/linpeas/" class="md-nav__link">
+        Linpeas
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hack/tools/mimikatz/" class="md-nav__link">
+        mimikatz
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hack/tools/netcat/" class="md-nav__link">
+        Netcat
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../hack/tools/nmap/" class="md-nav__link">
         NMAP
       </a>
@@ -2615,6 +2699,13 @@
         <li class="md-nav__item">
   <a href="#update" class="md-nav__link">
     Update
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    Commands
   </a>
   
 </li>
@@ -3260,6 +3351,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    Commands
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#wsl-with-gui-and-seamless-mode" class="md-nav__link">
     WSL with GUI and seamless mode
   </a>
@@ -3288,6 +3386,11 @@
 <div class="highlight"><pre><span></span><code>sudo wget -q -O - https://archive.kali.org/archive-key.asc <span class="p">|</span> apt-key add <span class="c1"># Get latest key</span>
 sudo dpkg --configure -a
 sudo apt update <span class="o">&amp;&amp;</span> apt -y full-upgrade <span class="o">&amp;&amp;</span> apt -y autoremove
+</code></pre></div>
+<h2 id="commands">Commands</h2>
+<p>Search for network devices in Monitor Mode and Access Points</p>
+<div class="highlight"><pre><span></span><code>iwconfig <span class="m">2</span>&gt;/dev/null <span class="p">|</span> grep <span class="s2">&quot;Mode\\:Monitor&quot;</span> <span class="p">|</span> awk <span class="s1">&#39;{print $1}&#39;</span>
+iwconfig <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> sed -n -e <span class="s1">&#39;s/^.\*Access Point: //p&#39;</span>
 </code></pre></div>
 <h2 id="wsl-with-gui-and-seamless-mode">WSL with GUI and seamless mode</h2>
 <p><strong>Set WSL version 2</strong></p>

@@ -2310,8 +2310,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#gotta-go-fast" class="md-nav__link">
-    Gotta go fast
+  <a href="#xor-starter" class="md-nav__link">
+    XOR starter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xorproperties" class="md-nav__link">
+    XORProperties
   </a>
   
 </li>
@@ -2406,6 +2413,90 @@
     <li class="md-nav__item">
       <a href="../../tools/Metasploit/" class="md-nav__link">
         Metasploit
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/burpsuite/" class="md-nav__link">
+        Burpsuite
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/gobuster/" class="md-nav__link">
+        GoBuster
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/hydra/" class="md-nav__link">
+        Hydra
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/john/" class="md-nav__link">
+        John
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/linpeas/" class="md-nav__link">
+        Linpeas
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/mimikatz/" class="md-nav__link">
+        mimikatz
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/netcat/" class="md-nav__link">
+        Netcat
       </a>
     </li>
   
@@ -3246,8 +3337,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#gotta-go-fast" class="md-nav__link">
-    Gotta go fast
+  <a href="#xor-starter" class="md-nav__link">
+    XOR starter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xorproperties" class="md-nav__link">
+    XORProperties
   </a>
   
 </li>
@@ -3271,7 +3369,99 @@
                 
                 <h1 id="cryptohackorg">CryptoHack.org</h1>
 <p>Notes from challenges I did @ <a href="https://cryptohack.org">https://cryptohack.org</a>.</p>
+<h2 id="xor-starter">XOR starter</h2>
+<div class="highlight"><pre><span></span><code><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;label&quot;</span>
+
+<span class="n">number1</span><span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+  <span class="n">number1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="o">.</span><span class="n">from_bytes</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="s1">&#39;big&#39;</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">number1</span><span class="p">)</span>
+
+<span class="n">number2</span> <span class="o">=</span> <span class="mi">13</span>
+
+<span class="n">solution1</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">number1</span><span class="p">:</span>
+    <span class="n">solution1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">element</span> <span class="o">^</span> <span class="n">number2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">solution1</span><span class="p">)</span>
+
+<span class="n">solution2</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">solution1</span><span class="p">:</span>
+    <span class="n">solution2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="n">element</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">solution2</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="xorproperties">XORProperties</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="n">xor</span>
+
+<span class="n">KEY1</span> <span class="o">=</span> <span class="s2">&quot;a6c8b6733c9b22de7bc0253266a3867df55acde8635e19c73313&quot;</span>
+<span class="n">key2x</span> <span class="o">=</span> <span class="s2">&quot;37dcb292030faa90d07eec17e3b1c6d8daf94c35d4c9191a5e1e&quot;</span>
+<span class="n">KEY3x</span> <span class="o">=</span> <span class="s2">&quot;c1545756687e7573db23aa1c3452a098b71a7fbf0fddddde5fc1&quot;</span>
+<span class="n">FLAGx</span> <span class="o">=</span> <span class="s2">&quot;04ee9855208a2cd59091d04767ae47963170d1660df7f56f5faf&quot;</span>
+
+<span class="n">KEY2</span> <span class="o">=</span> <span class="p">(</span><span class="n">xor</span><span class="p">(</span><span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="n">KEY1</span><span class="p">),</span> <span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="n">key2x</span><span class="p">)))</span> <span class="c1"># XOR for KEY2</span>
+<span class="n">KEY3</span> <span class="o">=</span> <span class="p">(</span><span class="n">xor</span><span class="p">(</span><span class="n">KEY2</span><span class="p">,</span> <span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="n">KEY3x</span><span class="p">)))</span> <span class="c1"># XOR for KEY3</span>
+<span class="n">FLAG</span> <span class="o">=</span> <span class="p">(</span><span class="n">xor</span><span class="p">(</span><span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="n">KEY1</span><span class="p">),</span> <span class="n">KEY2</span><span class="p">,</span> <span class="n">KEY3</span><span class="p">,</span> <span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="n">FLAGx</span><span class="p">)))</span> <span class="c1"># XOR for FLAG</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">FLAG</span><span class="p">)</span>
+</code></pre></div>
+<h1 id="xor-you-dont">XOR you dont</h1>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="n">xor</span>
+
+<span class="n">key</span> <span class="o">=</span> <span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="s2">&quot;0e0b213f26041e480b26217f27342e175d0e070a3c5b103e2526217f27342e175d0e077e263451150104&quot;</span><span class="p">)</span>
+
+<span class="c1"># Alt 1</span>
+<span class="nb">print</span><span class="p">((</span><span class="n">xor</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s2">&quot;crypto{&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">((</span><span class="n">xor</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s2">&quot;myXORkey&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+
+<span class="c1"># Alt 2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">xor</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="s1">&#39;crypto{&#39;</span><span class="o">.</span><span class="n">encode</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">xor</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="s1">&#39;myXORkey&#39;</span><span class="o">.</span><span class="n">encode</span><span class="p">()))</span>
+</code></pre></div>
+<h2 id="favbyte">FavByte</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="n">xor</span>
+
+<span class="n">KEY1x</span> <span class="o">=</span> <span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="s2">&quot;73626960647f6b206821204f21254f7d694f7624662065622127234f726927756d&quot;</span><span class="p">)</span>
+
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">55</span><span class="p">:</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">possibleKey</span> <span class="o">=</span> <span class="p">(</span><span class="n">xor</span><span class="p">(</span><span class="n">KEY1x</span><span class="p">,</span> <span class="n">count</span><span class="p">))</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">possibleKey</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;crypto&quot;</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">possibleKey</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;An exception occurred wtih &quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">))</span> 
+</code></pre></div>
+<h2 id="lemurxor">LemurXOR</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">cv2</span> <span class="c1"># pip3 install opencv-python </span>
+
+<span class="n">fullpathPIC1</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;/_flag_7ae18c704272532658c10b5faad06d74.png&quot;</span>
+<span class="n">fullpathPIC2</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;/_lemur_ed66878c338e662d3473f0d98eedbd0d.png&quot;</span>
+<span class="n">fullpathnewPIC</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;/result.png&quot;</span>
+
+<span class="n">key</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">bitwise_xor</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">fullpathPIC1</span><span class="p">),</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">fullpathPIC2</span><span class="p">))</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="n">fullpathnewPIC</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;View &quot;</span><span class="p">,</span> <span class="n">fullpathnewPIC</span><span class="p">,</span> <span class="s2">&quot; for result.&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>PNGs used in this exercise:</p>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Lemur</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="Flag" src="../_flag_7ae18c704272532658c10b5faad06d74.png" /></td>
+<td><img alt="Lemur" src="../_lemur_ed66878c338e662d3473f0d98eedbd0d.png" /></td>
+<td><img alt="result" src="../_result.png" /></td>
+</tr>
+</tbody>
+</table>
 <h2 id="gotta-go-fast">Gotta go fast</h2>
+<p><strong>Client</strong></p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span> <span class="c1"># pip3 install pwntools</span>
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">time</span>
@@ -3303,6 +3493,253 @@
         <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
     <span class="k">except</span><span class="p">:</span>
          <span class="k">pass</span>
+</code></pre></div>
+<p><strong>Server</strong></p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env python3</span>
+
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="n">long_to_bytes</span>
+<span class="kn">import</span> <span class="nn">hashlib</span>
+<span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="n">listener</span>
+
+<span class="n">FLAG</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;crypto{????????????????????}&#39;</span>
+
+
+<span class="k">def</span> <span class="nf">generate_key</span><span class="p">():</span>
+    <span class="n">current_time</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">long_to_bytes</span><span class="p">(</span><span class="n">current_time</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">key</span><span class="p">)</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">generate_key</span><span class="p">()</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">),</span> <span class="s2">&quot;Data package too large to encrypt&quot;</span>
+    <span class="n">ciphertext</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">)):</span>
+        <span class="n">ciphertext</span> <span class="o">+=</span> <span class="nb">bytes</span><span class="p">([</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">^</span> <span class="n">key</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span>
+    <span class="k">return</span> <span class="n">ciphertext</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span>
+
+
+<span class="k">class</span> <span class="nc">Challenge</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">before_input</span> <span class="o">=</span> <span class="s2">&quot;Gotta go fast!</span><span class="se">\n</span><span class="s2">&quot;</span>
+
+    <span class="k">def</span> <span class="nf">challenge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">your_input</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="s1">&#39;option&#39;</span> <span class="ow">in</span> <span class="n">your_input</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="s2">&quot;You must send an option to this server&quot;</span><span class="p">}</span>
+
+        <span class="k">elif</span> <span class="n">your_input</span><span class="p">[</span><span class="s1">&#39;option&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;get_flag&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;encrypted_flag&quot;</span><span class="p">:</span> <span class="n">encrypt</span><span class="p">(</span><span class="n">FLAG</span><span class="p">)}</span>
+
+        <span class="k">elif</span> <span class="n">your_input</span><span class="p">[</span><span class="s1">&#39;option&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;encrypt_data&#39;</span><span class="p">:</span>
+            <span class="n">input_data</span> <span class="o">=</span> <span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="n">your_input</span><span class="p">[</span><span class="s1">&#39;input_data&#39;</span><span class="p">])</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;encrypted_data&quot;</span><span class="p">:</span> <span class="n">encrypt</span><span class="p">(</span><span class="n">input_data</span><span class="p">)}</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="s2">&quot;Invalid option&quot;</span><span class="p">}</span>
+
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">When you connect, the &#39;challenge&#39; function will be called on your JSON</span>
+<span class="sd">input.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">listener</span><span class="o">.</span><span class="n">start_server</span><span class="p">(</span><span class="n">port</span><span class="o">=</span><span class="mi">13372</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="encoding-challenge">Encoding Challenge</h2>
+<p><strong>Server</strong></p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env python3</span>
+
+<span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="n">bytes_to_long</span><span class="p">,</span> <span class="n">long_to_bytes</span>
+<span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="n">listener</span>
+<span class="kn">import</span> <span class="nn">base64</span>
+<span class="kn">import</span> <span class="nn">codecs</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">FLAG</span> <span class="o">=</span> <span class="s2">&quot;crypto{????????????????????}&quot;</span>
+<span class="n">ENCODINGS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;base64&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;hex&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;rot13&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;bigint&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;utf-8&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/usr/share/dict/words&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">WORDS</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()]</span>
+
+
+<span class="k">class</span> <span class="nc">Challenge</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">challenge_words</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stage</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="nf">create_level</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stage</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">challenge_words</span> <span class="o">=</span> <span class="s2">&quot;_&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">(</span><span class="n">WORDS</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>
+        <span class="n">encoding</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">ENCODINGS</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">encoding</span> <span class="o">==</span> <span class="s2">&quot;base64&quot;</span><span class="p">:</span>
+            <span class="n">encoded</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">challenge_words</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span> <span class="c1"># wow so encode</span>
+        <span class="k">elif</span> <span class="n">encoding</span> <span class="o">==</span> <span class="s2">&quot;hex&quot;</span><span class="p">:</span>
+            <span class="n">encoded</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">challenge_words</span><span class="o">.</span><span class="n">encode</span><span class="p">()</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">encoding</span> <span class="o">==</span> <span class="s2">&quot;rot13&quot;</span><span class="p">:</span>
+            <span class="n">encoded</span> <span class="o">=</span> <span class="n">codecs</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">challenge_words</span><span class="p">,</span> <span class="s1">&#39;rot_13&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">encoding</span> <span class="o">==</span> <span class="s2">&quot;bigint&quot;</span><span class="p">:</span>
+            <span class="n">encoded</span> <span class="o">=</span> <span class="nb">hex</span><span class="p">(</span><span class="n">bytes_to_long</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">challenge_words</span><span class="o">.</span><span class="n">encode</span><span class="p">()))</span>
+        <span class="k">elif</span> <span class="n">encoding</span> <span class="o">==</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">:</span>
+            <span class="n">encoded</span> <span class="o">=</span> <span class="p">[</span><span class="nb">ord</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">challenge_words</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="n">encoding</span><span class="p">,</span> <span class="s2">&quot;encoded&quot;</span><span class="p">:</span> <span class="n">encoded</span><span class="p">}</span>
+
+    <span class="c1">#</span>
+    <span class="c1"># This challenge function is called on your input, which must be JSON</span>
+    <span class="c1"># encoded</span>
+    <span class="c1">#</span>
+    <span class="k">def</span> <span class="nf">challenge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">your_input</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">stage</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_level</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">stage</span> <span class="o">==</span> <span class="mi">100</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">exit</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;flag&quot;</span><span class="p">:</span> <span class="n">FLAG</span><span class="p">}</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">challenge_words</span> <span class="o">==</span> <span class="n">your_input</span><span class="p">[</span><span class="s2">&quot;decoded&quot;</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_level</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="s2">&quot;Decoding fail&quot;</span><span class="p">}</span>
+
+
+<span class="n">listener</span><span class="o">.</span><span class="n">start_server</span><span class="p">(</span><span class="n">port</span><span class="o">=</span><span class="mi">13377</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Client</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span> <span class="c1"># pip3 install pwntools</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="n">bytes_to_long</span><span class="p">,</span> <span class="n">long_to_bytes</span>
+<span class="kn">import</span> <span class="nn">base64</span>
+<span class="kn">import</span> <span class="nn">codecs</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">remote</span><span class="p">(</span><span class="s1">&#39;socket.cryptohack.org&#39;</span><span class="p">,</span> <span class="mi">13377</span><span class="p">,</span> <span class="n">level</span> <span class="o">=</span> <span class="s1">&#39;debug&#39;</span><span class="p">)</span> 
+
+<span class="k">def</span> <span class="nf">json_recv</span><span class="p">():</span>
+    <span class="n">line</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">recvline</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+
+<span class="k">def</span> <span class="nf">json_send</span><span class="p">(</span><span class="n">jsonstring</span><span class="p">):</span>
+    <span class="n">request</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">jsonstring</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">()</span>
+    <span class="n">r</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">count</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">):</span>     
+    <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--------------&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;--------------&quot;</span><span class="p">)</span> 
+
+    <span class="n">received</span> <span class="o">=</span> <span class="n">json_recv</span><span class="p">()</span>
+
+    <span class="n">receivedtype</span> <span class="o">=</span> <span class="n">received</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span>
+    <span class="n">encoded</span> <span class="o">=</span> <span class="n">received</span><span class="p">[</span><span class="s2">&quot;encoded&quot;</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">receivedtype</span> <span class="o">==</span> <span class="s2">&quot;base64&quot;</span><span class="p">:</span>
+        <span class="n">decoded</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">encoded</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">receivedtype</span> <span class="o">==</span> <span class="s2">&quot;hex&quot;</span><span class="p">:</span>
+        <span class="n">decoded</span> <span class="o">=</span>  <span class="nb">bytearray</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="n">encoded</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="n">receivedtype</span> <span class="o">==</span> <span class="s2">&quot;rot13&quot;</span><span class="p">:</span>
+        <span class="n">decoded</span> <span class="o">=</span> <span class="n">codecs</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">encoded</span><span class="p">,</span> <span class="s1">&#39;rot_13&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">receivedtype</span> <span class="o">==</span> <span class="s2">&quot;bigint&quot;</span><span class="p">:</span>
+        <span class="n">decoded</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="n">encoded</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="n">receivedtype</span> <span class="o">==</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">:</span>
+        <span class="n">decoded_temp</span> <span class="o">=</span> <span class="p">[</span><span class="nb">chr</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">encoded</span><span class="p">]</span>
+        <span class="n">decoded</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span> <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">decoded_temp</span><span class="p">])</span> 
+
+    <span class="n">to_send</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;decoded&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">decoded</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">to_send</span><span class="p">)</span>
+
+    <span class="n">json_send</span><span class="p">(</span><span class="n">to_send</span><span class="p">)</span>    
+
+<span class="k">else</span><span class="p">:</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;We are done here&quot;</span><span class="p">)</span>
+    <span class="n">json_recv</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="no-leaks-13372">No Leaks 13372</h2>
+<p>Little note:</p>
+<p><img alt="13372_notes" src="../_13372.drawio.svg" /></p>
+<p><strong>Decode</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span> <span class="c1"># pip3 install pwntools</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="n">long_to_bytes</span>
+<span class="kn">import</span> <span class="nn">hashlib</span>
+
+<span class="k">def</span> <span class="nf">GetChallenge</span><span class="p">(</span><span class="n">JSON</span><span class="p">):</span>
+    <span class="n">r</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">JSON</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">r</span><span class="o">.</span><span class="n">recvline</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">long_to_bytes</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())))</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span>
+    <span class="n">ciphertext</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">)):</span>
+        <span class="n">ciphertext</span> <span class="o">+=</span> <span class="nb">bytes</span><span class="p">([</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">^</span> <span class="n">key</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span>
+    <span class="k">return</span> <span class="n">ciphertext</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span>
+
+<span class="c1"># Connect</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">remote</span><span class="p">(</span><span class="s1">&#39;socket.cryptohack.org&#39;</span><span class="p">,</span> <span class="mi">13372</span><span class="p">)</span> 
+<span class="n">getFlagJSON</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;option&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="s2">&quot;get_flag&quot;</span><span class="p">)</span> <span class="p">}</span> <span class="c1"># JSON string to get flag</span>
+<span class="n">GetChallenge</span><span class="p">(</span><span class="n">getFlagJSON</span><span class="p">)</span> <span class="c1"># Say Hi</span>
+
+<span class="c1"># Do This While there is no error</span>
+<span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="k">while</span> <span class="n">result</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">receivedflag</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">GetChallenge</span><span class="p">(</span><span class="n">getFlagJSON</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">())[</span><span class="s1">&#39;encrypted_flag&#39;</span><span class="p">]</span> <span class="c1">#63727970746f7b7430305f663473745f7430305f667572693075357d</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="n">encrypt</span><span class="p">(</span><span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="n">receivedflag</span><span class="p">)))</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+         <span class="k">pass</span>
+</code></pre></div>
+<p><strong>Program</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">base64</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="n">listener</span>
+
+<span class="n">FLAG</span> <span class="o">=</span> <span class="s2">&quot;crypto{????????????}&quot;</span>
+
+
+<span class="k">def</span> <span class="nf">xor_flag_with_otp</span><span class="p">():</span>
+    <span class="n">flag_ord</span> <span class="o">=</span> <span class="p">[</span><span class="nb">ord</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">FLAG</span><span class="p">]</span>
+    <span class="n">otp</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">urandom</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+
+    <span class="n">xored</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">([</span><span class="n">a</span> <span class="o">^</span> <span class="n">b</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">flag_ord</span><span class="p">,</span> <span class="n">otp</span><span class="p">)])</span>
+
+    <span class="c1"># make sure our OTP doesnt leak any bytes from the flag</span>
+    <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">xored</span><span class="p">,</span> <span class="n">flag_ord</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="n">c</span> <span class="o">!=</span> <span class="n">p</span>
+
+    <span class="k">return</span> <span class="n">xored</span>
+
+<span class="k">class</span> <span class="nc">Challenge</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">before_input</span> <span class="o">=</span> <span class="s2">&quot;No leaks</span><span class="se">\n</span><span class="s2">&quot;</span>
+
+    <span class="k">def</span> <span class="nf">challenge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">your_input</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">your_input</span> <span class="o">==</span> <span class="p">{</span><span class="s2">&quot;msg&quot;</span><span class="p">:</span> <span class="s2">&quot;request&quot;</span><span class="p">}:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">ciphertext</span> <span class="o">=</span> <span class="n">xor_flag_with_otp</span><span class="p">()</span>
+            <span class="k">except</span> <span class="ne">AssertionError</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="s2">&quot;Leaky ciphertext&quot;</span><span class="p">}</span>
+
+            <span class="n">ct_b64</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;ciphertext&quot;</span><span class="p">:</span> <span class="n">ct_b64</span><span class="o">.</span><span class="n">decode</span><span class="p">()}</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">exit</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="s2">&quot;Please request OTP&quot;</span><span class="p">}</span>
+
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">When you connect, the &#39;challenge&#39; function will be called on your JSON</span>
+<span class="sd">input.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">listener</span><span class="o">.</span><span class="n">start_server</span><span class="p">(</span><span class="n">port</span><span class="o">=</span><span class="mi">13370</span><span class="p">)</span>
 </code></pre></div>
                 
               

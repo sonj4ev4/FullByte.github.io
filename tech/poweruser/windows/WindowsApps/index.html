@@ -2374,6 +2374,90 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../hack/tools/burpsuite/" class="md-nav__link">
+        Burpsuite
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hack/tools/gobuster/" class="md-nav__link">
+        GoBuster
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hack/tools/hydra/" class="md-nav__link">
+        Hydra
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hack/tools/john/" class="md-nav__link">
+        John
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hack/tools/linpeas/" class="md-nav__link">
+        Linpeas
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hack/tools/mimikatz/" class="md-nav__link">
+        mimikatz
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hack/tools/netcat/" class="md-nav__link">
+        Netcat
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../hack/tools/nmap/" class="md-nav__link">
         NMAP
       </a>
@@ -2957,9 +3041,29 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#wsl" class="md-nav__link">
+    WSL
+  </a>
+  
+    <nav class="md-nav" aria-label="WSL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#ubuntu-2004-lts" class="md-nav__link">
     Ubuntu 20.04 LTS
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kali-with-gui" class="md-nav__link">
+    Kali with GUI
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3274,9 +3378,29 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#wsl" class="md-nav__link">
+    WSL
+  </a>
+  
+    <nav class="md-nav" aria-label="WSL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#ubuntu-2004-lts" class="md-nav__link">
     Ubuntu 20.04 LTS
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kali-with-gui" class="md-nav__link">
+    Kali with GUI
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3306,9 +3430,21 @@
 <p>Open a new Terminal Window with powershell 7, cmd and WSL (in my case ubuntu)</p>
 <div class="highlight"><pre><span></span><code><span class="n">wt</span> <span class="n">-p</span> <span class="s2">&quot;PowerShell 7&quot;</span> <span class="p">`;</span> <span class="nb">split-pane</span> <span class="n">-p</span> <span class="s2">&quot;cmd&quot;</span> <span class="p">`;</span> <span class="nb">split-pane</span> <span class="n">-H</span> <span class="n">wsl</span><span class="p">.</span><span class="n">exe</span>
 </code></pre></div>
-<h2 id="ubuntu-2004-lts">Ubuntu 20.04 LTS</h2>
+<h2 id="wsl">WSL</h2>
+<p><strong>Set WSL version 2</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="n">Net</span><span class="p">.</span><span class="n">WebClient</span><span class="p">).</span><span class="n">DownloadFile</span><span class="p">(</span><span class="s2">&quot;https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi&quot;</span><span class="p">,</span> <span class="s2">&quot;wsl_update_x64.msi&quot;</span><span class="p">)</span> 
+<span class="nb">Start-Process</span> <span class="n">msiexec</span><span class="p">.</span><span class="n">exe</span> <span class="n">-Wait</span> <span class="n">-ArgumentList</span> <span class="s1">&#39;/I wsl_update_x64.msi /quiet&#39;</span> 
+<span class="n">wsl</span> <span class="p">-</span><span class="n">-set-version</span> <span class="n">kali-linux</span> <span class="n">2</span>
+</code></pre></div>
+<h3 id="ubuntu-2004-lts">Ubuntu 20.04 LTS</h3>
 <p>Link: <a href="https://www.microsoft.com/de-de/p/ubuntu-2004-lts/9n6svws3rx71?cid=msft_web_chart&amp;activetab=pivot:overviewtab">https://www.microsoft.com/de-de/p/ubuntu-2004-lts/9n6svws3rx71?cid=msft_web_chart&amp;activetab=pivot:overviewtab</a></p>
-<p>TODO WSL tricks</p>
+<h3 id="kali-with-gui">Kali with GUI</h3>
+<div class="highlight"><pre><span></span><code>sudo apt update
+sudo apt install -y kali-linux-large
+sudo apt install -y kali-win-kex
+kex start
+kex --esm --sound
+</code></pre></div>
                 
               
               
