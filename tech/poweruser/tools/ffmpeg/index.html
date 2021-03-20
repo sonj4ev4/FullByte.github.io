@@ -2792,6 +2792,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../ImageMagick/" class="md-nav__link">
+        ImageMagick
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../adb/" class="md-nav__link">
         adb
       </a>
@@ -2818,6 +2830,18 @@
     <li class="md-nav__item">
       <a href="../docker/" class="md-nav__link">
         Docker
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exiftool/" class="md-nav__link">
+        EXIFtool
       </a>
     </li>
   
@@ -2948,6 +2972,18 @@
     <li class="md-nav__item">
       <a href="../ipfs/" class="md-nav__link">
         IPFS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mobaxterm/" class="md-nav__link">
+        MobaXterm
       </a>
     </li>
   
@@ -3579,14 +3615,19 @@ ffmpeg -i input.mp4 -c:v libaom-av1 -b:v 200k -filter:v <span class="nv">scale</
 ffmpeg -i input.mp4 -pix_fmt yuv420p -movflags faststart -c:v libaom-av1 -b:v 200k -filter:v <span class="nv">scale</span><span class="o">=</span><span class="m">720</span>:-1 -strict experimental -cpu-used <span class="m">1</span> -tile-columns <span class="m">2</span> -row-mt <span class="m">1</span> -threads <span class="m">8</span> -pass <span class="m">2</span> output.mp4
 </code></pre></div>
 <h2 id="convert-fromto-gif">Convert from/to GIF</h2>
-<p>From GIF to MP4</p>
+<p><strong>From GIF to MP4</strong></p>
 <div class="highlight"><pre><span></span><code>ffmpeg -i input.gif -filter_complex <span class="s2">&quot;[0:v] fps=15&quot;</span> -vsync <span class="m">0</span> -f mp4 -pix_fmt yuv420p output.mp4
 </code></pre></div>
-<p>From MP4 to GIF</p>
+<p><strong>From MP4 to GIF</strong></p>
 <div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -vf <span class="s2">&quot;fps=12,scale=480:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse&quot;</span> -loop <span class="m">0</span> output.gif
 </code></pre></div>
+<p><strong>GIF from a special section</strong></p>
 <p>Add e.g. "-ss 5.0 -t 3.2" to only create GIF for 3.2 secounds ot "input.mp4"</p>
 <div class="highlight"><pre><span></span><code>ffmpeg -ss <span class="m">5</span>.0 -t <span class="m">3</span>.2 -i input.mp4 -vf <span class="s2">&quot;fps=12,scale=480:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse&quot;</span> -loop <span class="m">0</span> output.gif
+</code></pre></div>
+<p><strong>GIF video summery</strong></p>
+<p>Create a short GIF from a long video</p>
+<div class="highlight"><pre><span></span><code>ffmpeg.exe -i input.mp4 -vf  <span class="s2">&quot;scale=vga,thumbnail=100,split[a][b],[b]palettegen=reserve_transparent=0:stats_mode=single[b];[a][b]paletteuse=new=1,settb=1/25,setpts=N&quot;</span> output.gif
 </code></pre></div>
 <h2 id="convert-fromto-webp">Convert from/to webp</h2>
 <div class="highlight"><pre><span></span><code>ffmpeg -ss <span class="m">32</span>.5 -t <span class="m">7</span> -i input.mp4 -vf <span class="s2">&quot;fps=10,scale=720:-1:flags=lanczos&quot;</span> -vcodec libwebp -lossless <span class="m">0</span> -compression_level <span class="m">6</span> -q:v <span class="m">50</span> -loop <span class="m">0</span> -preset picture -an -vsync <span class="m">0</span> output.webp
@@ -3623,7 +3664,7 @@ ffmpeg -i input.mp4 -pix_fmt yuv420p -movflags faststart -c:v libaom-av1 -b:v 20
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../docker/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../exiftool/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -3632,7 +3673,7 @@ ffmpeg -i input.mp4 -pix_fmt yuv420p -movflags faststart -c:v libaom-av1 -b:v 20
               <span class="md-footer__direction">
                 Previous
               </span>
-              Docker
+              EXIFtool
             </div>
           </div>
         </a>
