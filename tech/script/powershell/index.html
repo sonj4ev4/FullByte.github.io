@@ -3378,6 +3378,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#languages" class="md-nav__link">
+    Languages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#variables" class="md-nav__link">
     Variables
   </a>
@@ -3699,6 +3706,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#languages" class="md-nav__link">
+    Languages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#variables" class="md-nav__link">
     Variables
   </a>
@@ -3898,6 +3912,14 @@ pwsh <span class="c1"># Start PowerShell</span>
 <p>Details: <a href="https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-7.1">https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-7.1</a></p>
 <h2 id="powershell-tipps">Powershell Tipps</h2>
 <p>This chapter does not aim to teach powershell. Rather the scope is to teach proper scripting techniques, troubleshooting and collaboration when scripting.</p>
+<h3 id="languages">Languages</h3>
+<p>In case you run a command and want to query e.g. windows commands the result/keywords to look for may vary per language</p>
+<p>Create a hash table with an expected search string entry per language:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">$keyword</span> <span class="p">=</span> <span class="p">@{</span><span class="s2">&quot;de-DE&quot;</span> <span class="p">=</span> <span class="s1">&#39;Schlüsselinhalt&#39;</span><span class="p">;</span> <span class="s2">&quot;en-US&quot;</span> <span class="p">=</span> <span class="s1">&#39;Key Content&#39;</span><span class="p">}</span>
+</code></pre></div>
+<p>Then call the correct entry with <code>get-culture</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo </span><span class="n">something</span> <span class="p">|</span> <span class="nb">Select-String</span> <span class="p">(</span><span class="nv">$keyword</span><span class="p">[(</span><span class="nb">get-culture</span><span class="p">).</span><span class="n">Name</span><span class="p">])</span>
+</code></pre></div>
 <h3 id="variables">Variables</h3>
 <p><strong>Paths</strong></p>
 <p>Powershell defaults:</p>
