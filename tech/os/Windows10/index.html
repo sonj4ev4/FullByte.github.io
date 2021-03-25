@@ -2688,6 +2688,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#winget" class="md-nav__link">
+    WinGet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#file-recovery" class="md-nav__link">
     File Recovery
   </a>
@@ -3555,7 +3562,7 @@
   
     <li class="md-nav__item">
       <a href="../../tools/obs/" class="md-nav__link">
-        Stream with OBS
+        OBS
       </a>
     </li>
   
@@ -3700,6 +3707,13 @@
   
     <nav class="md-nav" aria-label="Windows Apps">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#winget" class="md-nav__link">
+    WinGet
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#file-recovery" class="md-nav__link">
@@ -3953,10 +3967,33 @@
                 
                 <h1 id="windows-10">Windows 10</h1>
 <h2 id="windows-apps">Windows Apps</h2>
+<h3 id="winget">WinGet</h3>
+<p>Source: <a href="https://github.com/microsoft/winget-cli">https://github.com/microsoft/winget-cli</a>
+Store: <a href="https://www.microsoft.com/en-us/p/app-installer/9nblggh4nns1">https://www.microsoft.com/en-us/p/app-installer/9nblggh4nns1</a>
+Docs: <a href="https://docs.microsoft.com/en-us/windows/package-manager/">https://docs.microsoft.com/en-us/windows/package-manager/</a></p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="n">winget</span> <span class="n">install</span> <span class="n">powertoys</span> 
+</code></pre></div>
 <h3 id="file-recovery">File Recovery</h3>
-<p>Link: <a href="https://www.microsoft.com/en-us/p/windows-file-recovery/9n26s50ln705?activetab=pivot:overviewtab">https://www.microsoft.com/en-us/p/windows-file-recovery/9n26s50ln705?activetab=pivot:overviewtab</a></p>
+<p>Store: <a href="https://www.microsoft.com/en-us/p/windows-file-recovery/9n26s50ln705?activetab=pivot:overviewtab">https://www.microsoft.com/en-us/p/windows-file-recovery/9n26s50ln705?activetab=pivot:overviewtab</a></p>
+<p>Recover a specific file from your C: drive to the recovery folder on an E: drive.</p>
+<div class="highlight"><pre><span></span><code><span class="n">winfr</span> <span class="n">C</span><span class="err">:</span> <span class="n">E</span><span class="err">:</span> <span class="p">/</span><span class="n">n</span> <span class="p">\</span><span class="n">Users</span><span class="p">\&lt;</span><span class="n">username</span><span class="p">&gt;\</span><span class="n">Documents</span><span class="p">\</span><span class="n">QuarterlyStatement</span><span class="p">.</span><span class="n">docx</span>
+</code></pre></div>
+<p>Recover jpeg and png photos from your Pictures folder to the recovery folder on an E: drive.</p>
+<div class="highlight"><pre><span></span><code><span class="n">winfr</span> <span class="n">C</span><span class="err">:</span> <span class="n">E</span><span class="err">:</span> <span class="p">/</span><span class="n">n</span> <span class="p">\</span><span class="n">Users</span><span class="p">\&lt;</span><span class="n">username</span><span class="p">&gt;\</span><span class="n">Pictures</span><span class="p">\*.</span><span class="n">JPEG</span> <span class="p">/</span><span class="n">n</span> <span class="p">\</span><span class="n">Users</span><span class="p">\&lt;</span><span class="n">username</span><span class="p">&gt;\</span><span class="n">Pictures</span><span class="p">\*.</span><span class="n">PNG</span>
+</code></pre></div>
+<p>Recover your Documents folder from your C: drive to the recovery folder on an E: drive.</p>
+<div class="highlight"><pre><span></span><code><span class="n">winfr</span> <span class="n">C</span><span class="err">:</span> <span class="n">E</span><span class="err">:</span> <span class="p">/</span><span class="n">n</span> <span class="p">\</span><span class="n">Users</span><span class="p">\&lt;</span><span class="n">username</span><span class="p">&gt;\</span><span class="n">Documents</span><span class="p">\</span> 
+</code></pre></div>
+<p>Recover PDF and Word files from your C: drive to the recovery folder on an E: drive.</p>
+<div class="highlight"><pre><span></span><code><span class="n">winfr</span> <span class="n">C</span><span class="err">:</span> <span class="n">E</span><span class="err">:</span> <span class="p">/</span><span class="nb">r </span><span class="p">/</span><span class="n">n</span> <span class="p">*.</span><span class="n">pdf</span> <span class="p">/</span><span class="n">n</span> <span class="p">*.</span><span class="n">docx</span>
+</code></pre></div>
+<p>Recover any file with the string "invoice" in the filename by using wildcard characters.</p>
+<div class="highlight"><pre><span></span><code><span class="n">winfr</span> <span class="n">C</span><span class="err">:</span> <span class="n">E</span><span class="err">:</span> <span class="p">/</span><span class="nb">r </span><span class="p">/</span><span class="n">n</span> <span class="p">*</span><span class="n">invoice</span><span class="p">*</span> 
+</code></pre></div>
 <h3 id="windows-terminal">Windows Terminal</h3>
-<p>Link: <a href="https://www.microsoft.com/de-de/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab">https://www.microsoft.com/de-de/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab</a></p>
+<p>Store: <a href="https://www.microsoft.com/de-de/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab">https://www.microsoft.com/de-de/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab</a>
+Doc: <a href="https://docs.microsoft.com/en-us/windows/terminal/">https://docs.microsoft.com/en-us/windows/terminal/</a></p>
 <p>Open a new Terminal Window with powershell 7, cmd and WSL (in my case ubuntu)</p>
 <div class="highlight"><pre><span></span><code><span class="n">wt</span> <span class="n">-p</span> <span class="s2">&quot;PowerShell 7&quot;</span> <span class="p">`;</span> <span class="nb">split-pane</span> <span class="n">-p</span> <span class="s2">&quot;cmd&quot;</span> <span class="p">`;</span> <span class="nb">split-pane</span> <span class="n">-H</span> <span class="n">wsl</span><span class="p">.</span><span class="n">exe</span>
 </code></pre></div>
@@ -3967,7 +4004,7 @@
 <span class="n">wsl</span> <span class="p">-</span><span class="n">-set-version</span> <span class="n">kali-linux</span> <span class="n">2</span>
 </code></pre></div>
 <h4 id="ubuntu-2004-lts">Ubuntu 20.04 LTS</h4>
-<p>Link: <a href="https://www.microsoft.com/de-de/p/ubuntu-2004-lts/9n6svws3rx71?cid=msft_web_chart&amp;activetab=pivot:overviewtab">https://www.microsoft.com/de-de/p/ubuntu-2004-lts/9n6svws3rx71?cid=msft_web_chart&amp;activetab=pivot:overviewtab</a></p>
+<p>Store: <a href="https://www.microsoft.com/de-de/p/ubuntu-2004-lts/9n6svws3rx71?cid=msft_web_chart&amp;activetab=pivot:overviewtab">https://www.microsoft.com/de-de/p/ubuntu-2004-lts/9n6svws3rx71?cid=msft_web_chart&amp;activetab=pivot:overviewtab</a></p>
 <h4 id="kali-with-gui">Kali with GUI</h4>
 <div class="highlight"><pre><span></span><code>sudo apt update
 sudo apt install -y kali-linux-large
