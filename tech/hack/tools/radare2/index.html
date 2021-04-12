@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://0xfab1.net/tech/hack/tools/radare2/">
       
       <link rel="icon" href="../../../../icons/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.1">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.33e2939f.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.9299cb39.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ef6f36e2.min.css">
@@ -2619,6 +2619,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    Cheat Sheet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inspecting-a-function" class="md-nav__link">
+    inspecting a function
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-mode" class="md-nav__link">
+    visual mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-mode" class="md-nav__link">
+    graph mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipegrepetc" class="md-nav__link">
+    pipe,grep,etc
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analysis-assembly-memory" class="md-nav__link">
+    analysis, assembly, memory
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3528,6 +3570,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    Cheat Sheet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inspecting-a-function" class="md-nav__link">
+    inspecting a function
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-mode" class="md-nav__link">
+    visual mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-mode" class="md-nav__link">
+    graph mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipegrepetc" class="md-nav__link">
+    pipe,grep,etc
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analysis-assembly-memory" class="md-nav__link">
+    analysis, assembly, memory
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3588,6 +3672,95 @@ ds
 dr
 px @rbp-0x8
 </code></pre></div>
+<h2 id="cheat-sheet">Cheat Sheet</h2>
+<p>load without any analysis (file header at offset 0x0): <code>r2 -n /path/to/file</code></p>
+<ul>
+<li>analyze all: <code>aa</code></li>
+<li>show sections: <code>iS</code></li>
+<li>list functions: <code>afl</code></li>
+<li>list imports: <code>ii</code></li>
+<li>list entrypoints: <code>ie</code></li>
+<li>seek to function: <code>s sym.main</code></li>
+<li>open project: <code>Po &lt;name&gt;</code></li>
+<li>save project: <code>Ps &lt;name&gt;</code></li>
+<li>edit project notes: <code>Pn -</code></li>
+</ul>
+<h2 id="inspecting-a-function">inspecting a function</h2>
+<ul>
+<li>show basic block disassembly: <code>pdb</code></li>
+<li>show function disassembly: <code>pdf</code></li>
+<li>show function arguments: <code>afa</code></li>
+<li>show function variables: <code>afv</code></li>
+<li>rename function variable: <code>afvn</code></li>
+<li>set function variable type: <code>afvt</code></li>
+<li>add/analyze function: <code>af</code></li>
+</ul>
+<h2 id="visual-mode">visual mode</h2>
+<ul>
+<li>enter visual mode: <code>V</code></li>
+<li>select function, variable, xref: <code>v</code></li>
+<li>quick command/seek: <code>_ &lt;search string&gt;</code></li>
+<li>custom quick command list: <code>??</code></li>
+<li>update the list of commands by changing <code>$R2HOME/hud</code>.</li>
+<li>show cursor: <code>c</code></li>
+<li>set function name: <code>d</code></li>
+<li>add comment: <code>;</code></li>
+<li>remove comment: <code>;-</code></li>
+</ul>
+<h2 id="graph-mode">graph mode</h2>
+<p>graph mode is not visual mode!</p>
+<ul>
+<li>enter graph modes: <code>VV</code></li>
+<li>cycle types of graphs:</li>
+<li>forward: <code>p</code></li>
+<li>
+<p>backwards: <code>P</code></p>
+</li>
+<li>
+<p>types of graphs:</p>
+</li>
+<li>graph view</li>
+<li>graph view + opcode bytes</li>
+<li>esil</li>
+<li>esil + comments</li>
+<li>
+<p>overview</p>
+</li>
+<li>
+<p>seek to function: <code>g&lt;identifier&gt;</code></p>
+</li>
+<li>undo seek: <code>u</code></li>
+<li>define new function at cursor: <code>df</code></li>
+<li>rename function at cursor: <code>dr</code></li>
+<li>show comments: <code>'</code></li>
+<li>add comment: <code>/</code></li>
+<li>add comment (complex): <code>:CC!</code></li>
+<li>select bb: <code>???</code></li>
+<li>seek to next bb: <code>tab</code></li>
+<li>seek to previous bb: <code>TAB</code></li>
+<li>if bb has conditional branch:</li>
+<li>seek to True target: <code>t</code></li>
+<li>seek to False target: <code>f</code></li>
+</ul>
+<h2 id="pipegrepetc">pipe,grep,etc</h2>
+<ul>
+<li>exec multiple cmd: <code>;</code></li>
+<li>pipeline cmd: <code>|</code></li>
+<li>run shell cmd: '!' , and give output back to r2 buffer: '!!'</li>
+<li>grep:</li>
+<li><code>&lt;cmd&gt;~&lt;string&gt;</code> grep string from command output</li>
+<li><code>&lt;cmd&gt;~[n]</code> grep also the 'n' column</li>
+<li><code>&lt;cmd&gt;~:n</code> grep also the 'n' row</li>
+</ul>
+<h2 id="analysis-assembly-memory">analysis, assembly, memory</h2>
+<ul>
+<li>analyze functions: <code>af</code></li>
+<li>analyze stack: <code>ad@rsp</code> or <code>ad@esp</code></li>
+<li>search for opcode: <code>/a</code></li>
+<li>search for rop/jop/etc: <code>/R</code></li>
+<li>search for bytes: <code>/x</code></li>
+<li>get offset for the actual seek point address: <code>?p</code></li>
+</ul>
                 
               
               
@@ -3681,7 +3854,7 @@ px @rbp-0x8
     <script id="__config" type="application/json">{"base": "../../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.d892486b.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.7353b375.min.js"></script>
       
     
   </body>
