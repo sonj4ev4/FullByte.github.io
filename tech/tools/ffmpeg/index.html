@@ -3715,14 +3715,14 @@
 <div class="highlight"><pre><span></span><code>ffprobe -v error -select_streams v:0 -show_entries <span class="nv">stream</span><span class="o">=</span>codec_name -of <span class="nv">default</span><span class="o">=</span><span class="nv">noprint_wrappers</span><span class="o">=</span><span class="m">1</span>:nokey<span class="o">=</span><span class="m">1</span> video.mp4
 </code></pre></div>
 <h2 id="create-time-lapse-video">Create Time Lapse Video</h2>
-<p>In my case the files are from a GoPro named "G" followed by seven digits e.g. G0011565.jpg.
-The starting number of the series of pictures is 11021 in my example.
-Change the start_number value, the filename prefix (in this case "G") and the length of the number if required.
-More details: <a href="http://ffmpeg.org/ffmpeg-all.html#image2-1">http://ffmpeg.org/ffmpeg-all.html#image2-1</a></p>
+<p><strong>Time Lapse using pictures</strong></p>
+<p>This example will create a video based on pictures as input. In this case the files are from a GoPro so all pictures start with a "G" followed by seven digits e.g. G0011565.jpg. The starting number of the series of pictures is 11021 in my example. Change the value for "start_number", the filename prefix (in this case "G") and the length of the number (currently 7) to match your requirements.</p>
 <div class="highlight"><pre><span></span><code>ffmpeg -framerate <span class="m">30</span> -start_number <span class="m">11021</span> -i <span class="s2">&quot;E:\path\G%07d.jpg&quot;</span> -c:v libx264 <span class="s2">&quot;E:\path\output.mp4&quot;</span>
 </code></pre></div>
-<p>Example output:</p>
-<p><img alt="Timelapse video using FFmpeg" src="../_ffmpeg_timelapse.jpg" /></p>
+<p><strong>Time Lapse using long video</strong></p>
+<p>This example will shorten a given video to create a time lapse video. The video quality in this example will be reduced to VGA and reduce image quality. If the video is to slow/fast change the value for "thumbnail" (currently at 100).</p>
+<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -vf <span class="s2">&quot;scale=vga,thumbnail=100,split[a][b],[b]palettegen=reserve_transparent=0:stats_mode=single[b];[a][b]paletteuse=new=1,settb=1/25,setpts=N&quot;</span> output.mp4
+</code></pre></div>
 <h2 id="compress-video">Compress Video</h2>
 <p>To compress an avi file you can use H.264 on the output file named e.g. "input.avi" and create a smaller version of the video named "output.mkv"
 More details: <a href="https://trac.ffmpeg.org/wiki/Encode/H.264">https://trac.ffmpeg.org/wiki/Encode/H.264</a></p>
@@ -3756,7 +3756,7 @@ ffmpeg -i input.mp4 -pix_fmt yuv420p -movflags faststart -c:v libaom-av1 -b:v 20
 </code></pre></div>
 <p><strong>GIF video summery</strong></p>
 <p>Create a short GIF from a long video</p>
-<div class="highlight"><pre><span></span><code>ffmpeg.exe -i input.mp4 -vf <span class="s2">&quot;scale=vga,thumbnail=100,split[a][b],[b]palettegen=reserve_transparent=0:stats_mode=single[b];[a][b]paletteuse=new=1,settb=1/25,setpts=N&quot;</span> output.gif
+<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -vf <span class="s2">&quot;scale=vga,thumbnail=100,split[a][b],[b]palettegen=reserve_transparent=0:stats_mode=single[b];[a][b]paletteuse=new=1,settb=1/25,setpts=N&quot;</span> output.gif
 </code></pre></div>
 <h2 id="convert-fromto-webp">Convert from/to webp</h2>
 <div class="highlight"><pre><span></span><code>ffmpeg -ss <span class="m">32</span>.5 -t <span class="m">7</span> -i input.mp4 -vf <span class="s2">&quot;fps=10,scale=720:-1:flags=lanczos&quot;</span> -vcodec libwebp -lossless <span class="m">0</span> -compression_level <span class="m">6</span> -q:v <span class="m">50</span> -loop <span class="m">0</span> -preset picture -an -vsync <span class="m">0</span> output.webp
