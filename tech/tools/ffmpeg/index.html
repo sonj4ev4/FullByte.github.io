@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://0xfab1.net/tech/tools/ffmpeg/">
       
       <link rel="icon" href="../../../icons/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.1">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.9299cb39.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f955dcd.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ef6f36e2.min.css">
@@ -3287,6 +3287,7 @@
       
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
+      
         
       
       
@@ -3301,6 +3302,7 @@
       
         
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
   
   
     
@@ -3341,15 +3343,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#save-video-optimized-for-messenger" class="md-nav__link">
-    Save Video optimized for Messenger
+  <a href="#convert-video-optimized-for-messenger" class="md-nav__link">
+    Convert Video optimized for Messenger
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#save-as-av1" class="md-nav__link">
-    Save as AV1
+  <a href="#sconvert-to-av1" class="md-nav__link">
+    SConvert to AV1
   </a>
   
 </li>
@@ -3376,8 +3378,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#audio-only" class="md-nav__link">
-    Audio only
+  <a href="#convert-to-audio-only" class="md-nav__link">
+    Convert to audio only
   </a>
   
 </li>
@@ -3573,6 +3575,7 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
     
   
   
@@ -3611,15 +3614,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#save-video-optimized-for-messenger" class="md-nav__link">
-    Save Video optimized for Messenger
+  <a href="#convert-video-optimized-for-messenger" class="md-nav__link">
+    Convert Video optimized for Messenger
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#save-as-av1" class="md-nav__link">
-    Save as AV1
+  <a href="#sconvert-to-av1" class="md-nav__link">
+    SConvert to AV1
   </a>
   
 </li>
@@ -3646,8 +3649,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#audio-only" class="md-nav__link">
-    Audio only
+  <a href="#convert-to-audio-only" class="md-nav__link">
+    Convert to audio only
   </a>
   
 </li>
@@ -3712,79 +3715,84 @@
 </ul>
 <h2 id="get-file-information">Get File Information</h2>
 <p>Get codec details of a given video file e.g. "video.mp4":</p>
-<div class="highlight"><pre><span></span><code>ffprobe -v error -select_streams v:0 -show_entries <span class="nv">stream</span><span class="o">=</span>codec_name -of <span class="nv">default</span><span class="o">=</span><span class="nv">noprint_wrappers</span><span class="o">=</span><span class="m">1</span>:nokey<span class="o">=</span><span class="m">1</span> video.mp4
+<div class="highlight"><pre><span></span><code>ffprobe -v error -select_streams v:0 -show_entries stream=codec_name -of default=noprint_wrappers=1:nokey=1 video.mp4
 </code></pre></div>
 <h2 id="create-time-lapse-video">Create Time Lapse Video</h2>
 <p><strong>Time Lapse using pictures</strong></p>
 <p>This example will create a video based on pictures as input. In this case the files are from a GoPro so all pictures start with a "G" followed by seven digits e.g. G0011565.jpg. The starting number of the series of pictures is 11021 in my example. Change the value for "start_number", the filename prefix (in this case "G") and the length of the number (currently 7) to match your requirements.</p>
-<div class="highlight"><pre><span></span><code>ffmpeg -framerate <span class="m">30</span> -start_number <span class="m">11021</span> -i <span class="s2">&quot;E:\path\G%07d.jpg&quot;</span> -c:v libx264 <span class="s2">&quot;E:\path\output.mp4&quot;</span>
+<div class="highlight"><pre><span></span><code>ffmpeg -framerate 30 -start_number 11021 -i &quot;E:\path\G%07d.jpg&quot; -c:v libx264 &quot;E:\path\output.mp4&quot;
 </code></pre></div>
 <p><strong>Time Lapse using long video</strong></p>
 <p>This example will shorten a given video to create a time lapse video. The video quality in this example will be reduced to VGA and reduce image quality. If the video is to slow/fast change the value for "thumbnail" (currently at 100).</p>
-<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -vf <span class="s2">&quot;scale=vga,thumbnail=100,split[a][b],[b]palettegen=reserve_transparent=0:stats_mode=single[b];[a][b]paletteuse=new=1,settb=1/25,setpts=N&quot;</span> output.mp4
+<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -vf &quot;scale=vga,thumbnail=100,split[a][b],[b]palettegen=reserve_transparent=0:stats_mode=single[b];[a][b]paletteuse=new=1,settb=1/25,setpts=N&quot; output.mp4
 </code></pre></div>
 <h2 id="compress-video">Compress Video</h2>
 <p>To compress an avi file you can use H.264 on the output file named e.g. "input.avi" and create a smaller version of the video named "output.mkv"
 More details: <a href="https://trac.ffmpeg.org/wiki/Encode/H.264">https://trac.ffmpeg.org/wiki/Encode/H.264</a></p>
-<div class="highlight"><pre><span></span><code>ffmpeg -i input.avi -c:v libx264 -preset slow -crf <span class="m">15</span> output.mkv
+<div class="highlight"><pre><span></span><code>ffmpeg -i input.avi -c:v libx264 -preset slow -crf 15 output.mkv
 </code></pre></div>
-<h2 id="save-video-optimized-for-messenger">Save Video optimized for Messenger</h2>
+<h2 id="convert-video-optimized-for-messenger">Convert Video optimized for Messenger</h2>
 <p>This works well for Whatsapp, Signal, Threema, Telegram, etc...
 Make sure not to reach current allowed max files size.</p>
 <p>With sound:</p>
-<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -vf <span class="s2">&quot;scale=vga&quot;</span> messenger.mp4
+<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -vf &quot;scale=vga&quot; messenger.mp4
 </code></pre></div>
 <p>No sound:</p>
-<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -an -vf <span class="s2">&quot;scale=vga&quot;</span> messenger.mp4
+<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -an -vf &quot;scale=vga&quot; messenger.mp4
 </code></pre></div>
-<h2 id="save-as-av1">Save as AV1</h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># Pass 1</span>
-ffmpeg -i input.mp4 -c:v libaom-av1 -b:v 200k -filter:v <span class="nv">scale</span><span class="o">=</span><span class="m">720</span>:-1 -strict experimental -cpu-used <span class="m">1</span> -tile-columns <span class="m">2</span> -row-mt <span class="m">1</span> -threads <span class="m">8</span> -pass <span class="m">1</span> -f mp4 NUL <span class="o">&amp;&amp;</span> ^
-<span class="c1"># Pass 2</span>
-ffmpeg -i input.mp4 -pix_fmt yuv420p -movflags faststart -c:v libaom-av1 -b:v 200k -filter:v <span class="nv">scale</span><span class="o">=</span><span class="m">720</span>:-1 -strict experimental -cpu-used <span class="m">1</span> -tile-columns <span class="m">2</span> -row-mt <span class="m">1</span> -threads <span class="m">8</span> -pass <span class="m">2</span> output.mp4
+<h2 id="sconvert-to-av1">SConvert to AV1</h2>
+<div class="highlight"><pre><span></span><code># Pass 1
+ffmpeg -i input.mp4 -c:v libaom-av1 -b:v 200k -filter:v scale=720:-1 -strict experimental -cpu-used 1 -tile-columns 2 -row-mt 1 -threads 8 -pass 1 -f mp4 NUL &amp;&amp; ^
+# Pass 2
+ffmpeg -i input.mp4 -pix_fmt yuv420p -movflags faststart -c:v libaom-av1 -b:v 200k -filter:v scale=720:-1 -strict experimental -cpu-used 1 -tile-columns 2 -row-mt 1 -threads 8 -pass 2 output.mp4
 </code></pre></div>
 <h2 id="convert-fromto-gif">Convert from/to GIF</h2>
 <p><strong>From GIF to MP4</strong></p>
-<div class="highlight"><pre><span></span><code>ffmpeg -i input.gif -filter_complex <span class="s2">&quot;[0:v] fps=15&quot;</span> -vsync <span class="m">0</span> -f mp4 -pix_fmt yuv420p output.mp4
+<div class="highlight"><pre><span></span><code>ffmpeg -i input.gif -filter_complex &quot;[0:v] fps=15&quot; -vsync 0 -f mp4 -pix_fmt yuv420p output.mp4
 </code></pre></div>
 <p><strong>From MP4 to GIF</strong></p>
-<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -vf <span class="s2">&quot;fps=12,scale=480:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse&quot;</span> -loop <span class="m">0</span> output.gif
+<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -vf &quot;fps=12,scale=480:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse&quot; -loop 0 output.gif
 </code></pre></div>
 <p><strong>GIF from a special section</strong></p>
 <p>Add e.g. "-ss 5.0 -t 3.2" to only create GIF for 3.2 secounds ot "input.mp4"</p>
-<div class="highlight"><pre><span></span><code>ffmpeg -ss <span class="m">5</span>.0 -t <span class="m">3</span>.2 -i input.mp4 -vf <span class="s2">&quot;fps=12,scale=480:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse&quot;</span> -loop <span class="m">0</span> output.gif
+<div class="highlight"><pre><span></span><code>ffmpeg -ss 5.0 -t 3.2 -i input.mp4 -vf &quot;fps=12,scale=480:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse&quot; -loop 0 output.gif
 </code></pre></div>
 <p><strong>GIF video summery</strong></p>
 <p>Create a short GIF from a long video</p>
-<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -vf <span class="s2">&quot;scale=vga,thumbnail=100,split[a][b],[b]palettegen=reserve_transparent=0:stats_mode=single[b];[a][b]paletteuse=new=1,settb=1/25,setpts=N&quot;</span> output.gif
+<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -vf &quot;scale=vga,thumbnail=100,split[a][b],[b]palettegen=reserve_transparent=0:stats_mode=single[b];[a][b]paletteuse=new=1,settb=1/25,setpts=N&quot; output.gif
 </code></pre></div>
 <h2 id="convert-fromto-webp">Convert from/to webp</h2>
-<div class="highlight"><pre><span></span><code>ffmpeg -ss <span class="m">32</span>.5 -t <span class="m">7</span> -i input.mp4 -vf <span class="s2">&quot;fps=10,scale=720:-1:flags=lanczos&quot;</span> -vcodec libwebp -lossless <span class="m">0</span> -compression_level <span class="m">6</span> -q:v <span class="m">50</span> -loop <span class="m">0</span> -preset picture -an -vsync <span class="m">0</span> output.webp
+<div class="highlight"><pre><span></span><code>ffmpeg -ss 32.5 -t 7 -i input.mp4 -vf &quot;fps=10,scale=720:-1:flags=lanczos&quot; -vcodec libwebp -lossless 0 -compression_level 6 -q:v 50 -loop 0 -preset picture -an -vsync 0 output.webp
 </code></pre></div>
 <h2 id="stack-videos-in-a-grid-horizontally-and-vertically">Stack Videos in a Grid (Horizontally and Vertically)</h2>
-<p>2 Videos Horizontally</p>
-<div class="highlight"><pre><span></span><code>ffmpeg -i input0.mp4 -i input1.mp4 -filter_complex <span class="nv">hstack</span><span class="o">=</span><span class="nv">inputs</span><span class="o">=</span><span class="m">2</span> horizontal-stacked-output.mp4
+<p><strong>2 Videos Horizontally</strong></p>
+<div class="highlight"><pre><span></span><code>ffmpeg -i input0.mp4 -i input1.mp4 -filter_complex hstack=inputs=2 horizontal-stacked-output.mp4
 </code></pre></div>
-<p>2 Videos Vertically</p>
-<div class="highlight"><pre><span></span><code>ffmpeg -i input0.mp4 -i input1.mp4 -filter_complex <span class="nv">vstack</span><span class="o">=</span><span class="nv">inputs</span><span class="o">=</span><span class="m">2</span> vertical-stack-output.mp4
+<p><strong>2 Videos Vertically</strong></p>
+<div class="highlight"><pre><span></span><code>ffmpeg -i input0.mp4 -i input1.mp4 -filter_complex vstack=inputs=2 vertical-stack-output.mp4
 </code></pre></div>
-<p>Videos of Different Lengths</p>
-<div class="highlight"><pre><span></span><code>ffmpeg -i input0.mp4 -i input1.mp4 -filter_complex <span class="nv">hstack</span><span class="o">=</span><span class="nv">inputs</span><span class="o">=</span><span class="m">2</span>:shortest<span class="o">=</span><span class="m">1</span> shortest-output.mp4
+<p><strong>Videos of Different Lengths</strong></p>
+<div class="highlight"><pre><span></span><code>ffmpeg -i input0.mp4 -i input1.mp4 -filter_complex hstack=inputs=2:shortest=1 shortest-output.mp4
 </code></pre></div>
-<p>2×2 Grid of Videos</p>
-<div class="highlight"><pre><span></span><code>ffmpeg -i input0.mp4 -i input1.mp4 -i input2.mp4 -i input3.mp4 -filter_complex <span class="s2">&quot;[0:v][1:v]hstack=inputs=2[top]; [2:v][3:v]hstack=inputs=2[bottom]; [top][bottom]vstack=inputs=2[v]&quot;</span> -map <span class="s2">&quot;[v]&quot;</span> finalOutput.mp4
+<p><strong>2×2 Grid of Videos</strong></p>
+<div class="highlight"><pre><span></span><code>ffmpeg -i input0.mp4 -i input1.mp4 -i input2.mp4 -i input3.mp4 -filter_complex &quot;[0:v][1:v]hstack=inputs=2[top]; [2:v][3:v]hstack=inputs=2[bottom]; [top][bottom]vstack=inputs=2[v]&quot; -map &quot;[v]&quot; finalOutput.mp4
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>ffmpeg -i input0.mp4 -i input1.mp4 -i input2.mp4 -i input3.mp4 -i input4.mp4 -i input5.mp4 -filter_complex <span class="s2">&quot;[0:v][1:v][2:v]hstack=inputs=3[top]; [3:v][4:v][5:v]hstack=inputs=3[bottom]; [top][bottom]vstack=inputs=2[v]&quot;</span> -map <span class="s2">&quot;[v]&quot;</span> finalOutput.mp4
+<div class="highlight"><pre><span></span><code>ffmpeg -i input0.mp4 -i input1.mp4 -i input2.mp4 -i input3.mp4 -i input4.mp4 -i input5.mp4 -filter_complex &quot;[0:v][1:v][2:v]hstack=inputs=3[top]; [3:v][4:v][5:v]hstack=inputs=3[bottom]; [top][bottom]vstack=inputs=2[v]&quot; -map &quot;[v]&quot; finalOutput.mp4
 </code></pre></div>
-<h2 id="audio-only">Audio only</h2>
-<p>Convert MP4 to WAV e.g. for <a href="https://0xfab1.net/tech/azure/speech/">Azure Speech to Text conversion</a>.</p>
-<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -vn -acodec pcm_s16le -ar <span class="m">44100</span> -ac <span class="m">2</span> output.wav
+<h2 id="convert-to-audio-only">Convert to audio only</h2>
+<p><strong>Convert MP4 to WAV</strong></p>
+<p>e.g. for <a href="https://0xfab1.net/tech/azure/speech/">Azure Speech to Text conversion</a>.</p>
+<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -vn -acodec pcm_s16le -ar 44100 -ac 2 output.wav
 </code></pre></div>
-<p>Convert MP4 to FLAC</p>
-<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -acodec flac -bits_per_raw_sample <span class="m">16</span> -ar <span class="m">44100</span> output.flac
+<p><strong>Convert MP4 to FLAC</strong></p>
+<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -acodec flac -bits_per_raw_sample 16 -ar 44100 output.flac
 </code></pre></div>
-<p>Convert MP4 to MP3</p>
-<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -vn -acodec mp3 -ab 320k -ar <span class="m">44100</span> -ac <span class="m">2</span> output.mp3
+<p><strong>Convert MP4 to MP3</strong></p>
+<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -vn -acodec mp3 -ab 320k -ar 44100 -ac 2 output.mp3
+</code></pre></div>
+<p><strong>Convert all files in the current path to mp3</strong></p>
+<p>This uses libmp3lame with default settings. The script will convert all media files it can handel and continue on error.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Get-ChildItem</span> <span class="o">-file</span> <span class="n">-exclude</span> <span class="p">*.</span><span class="n">mp3</span> <span class="p">|</span> <span class="k">Foreach</span><span class="n">-Object</span> <span class="p">{</span> <span class="n">ffmpeg</span> <span class="n">-i</span> <span class="p">(</span><span class="s1">&#39;&quot;&#39;</span> <span class="p">+</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Name</span> <span class="p">+</span> <span class="s1">&#39;&quot;&#39;</span><span class="p">)</span> <span class="n">-map_metadata</span> <span class="p">-</span><span class="n">1</span> <span class="n">-acodec</span> <span class="n">libmp3lame</span> <span class="p">(</span><span class="s1">&#39;&quot;&#39;</span> <span class="p">+</span> <span class="nv">$_</span><span class="p">.</span><span class="n">BaseName</span> <span class="p">+</span> <span class="s1">&#39;.mp3&quot;&#39;</span><span class="p">)</span> <span class="p">}</span>
 </code></pre></div>
                 
               
@@ -3879,7 +3887,7 @@ ffmpeg -i input.mp4 -pix_fmt yuv420p -movflags faststart -c:v libaom-av1 -b:v 20
     <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.7353b375.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.4ea5477f.min.js"></script>
       
     
   </body>
