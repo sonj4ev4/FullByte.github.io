@@ -1214,6 +1214,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../fun/games/team/1on1/" class="md-nav__link">
+        Other
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../fun/games/team/zocki/" class="md-nav__link">
         Zocki
       </a>
@@ -3505,6 +3517,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#script-to-download-audio-of-playlist" class="md-nav__link">
+    Script to download audio of playlist
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3585,6 +3604,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#script-to-download-audio-of-playlist" class="md-nav__link">
+    Script to download audio of playlist
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3615,15 +3641,15 @@
 <tbody>
 <tr>
 <td>Official Page</td>
-<td></td>
+<td><a href="https://youtube-dl.org/">https://youtube-dl.org/</a></td>
 </tr>
 <tr>
 <td>Source</td>
-<td></td>
+<td><a href="https://github.com/ytdl-org/youtube-dl">https://github.com/ytdl-org/youtube-dl</a></td>
 </tr>
 <tr>
 <td>Download</td>
-<td></td>
+<td><a href="https://github.com/ytdl-org/youtube-dl/releases">https://github.com/ytdl-org/youtube-dl/releases</a></td>
 </tr>
 <tr>
 <td>Install</td>
@@ -3651,6 +3677,28 @@
 <h2 id="get-video-source-information">Get Video Source Information</h2>
 <p>Get Source formats available:</p>
 <div class="highlight"><pre><span></span><code>youtube-dl --list-formats <span class="s1">&#39;&lt;youtube-link&gt;&#39;</span>
+</code></pre></div>
+<h2 id="script-to-download-audio-of-playlist">Script to download audio of playlist</h2>
+<p>Run ytdlpl (youtube downloader playlist) and add the playlist you want to download.
+This script will download the latest youtube-dl version for windows to the current folder if not available.</p>
+<div class="highlight"><pre><span></span><code><span class="k">Function</span> <span class="n">ytdlpl</span>
+<span class="p">{</span>
+    <span class="k">Param</span> <span class="p">(</span><span class="nv">$playlist</span><span class="p">)</span>
+
+    <span class="c"># Check and get youtube-dl if required</span>
+    <span class="nv">$oldPreference</span> <span class="p">=</span> <span class="nv">$ErrorActionPreference</span>
+    <span class="nv">$ErrorActionPreference</span> <span class="p">=</span> <span class="err">‘</span><span class="n">stop</span><span class="err">’</span>
+    <span class="k">try</span> <span class="p">{</span><span class="k">if</span><span class="p">(</span><span class="nb">Get-Command</span> <span class="n">youtube-dl</span><span class="p">){</span><span class="nb">Write-Host</span><span class="p">(</span><span class="s2">&quot;Using youtube-dl version &quot;</span> <span class="p">+</span> <span class="p">(</span><span class="nb">Get-Command</span> <span class="n">youtube-dl</span><span class="p">).</span><span class="n">Version</span> <span class="p">+</span> <span class="s2">&quot; from source: &quot;</span> <span class="p">+</span> <span class="p">(</span><span class="nb">Get-Command</span> <span class="n">youtube-dl</span><span class="p">).</span><span class="n">Source</span><span class="p">)}}</span>
+    <span class="k">catch</span> <span class="p">{</span><span class="nb">Write-Host</span> <span class="err">“</span><span class="n">youtube-dl</span> <span class="n">not</span> <span class="n">found</span><span class="p">,</span> <span class="n">downloading</span> <span class="n">to</span> <span class="n">current</span> <span class="n">folder</span><span class="p">...</span> <span class="err">”</span><span class="p">;</span> <span class="nb">Invoke-WebRequest</span> <span class="n">-Uri</span> <span class="s2">&quot;https://youtube-dl.org/downloads/latest/youtube-dl.exe&quot;</span> <span class="n">-OutFile</span> <span class="p">((</span><span class="nb">Get-Location</span><span class="p">).</span><span class="n">Path</span> <span class="p">+</span> <span class="s2">&quot;\youtube-dl.exe&quot;</span><span class="p">)}</span>
+    <span class="nv">$ErrorActionPreference</span><span class="p">=</span><span class="nv">$oldPreference</span>
+
+    <span class="c"># Download and rename playlist</span>
+    <span class="n">youtube-dl</span><span class="p">.</span><span class="n">exe</span> <span class="n">-o</span> <span class="s1">&#39;%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s&#39;</span> <span class="n">-i</span> <span class="p">-</span><span class="n">-extract-audio</span> <span class="p">-</span><span class="n">-audio-format</span> <span class="n">mp3</span> <span class="p">-</span><span class="n">-audio-quality</span> <span class="n">2</span> <span class="p">-</span><span class="n">-yes-playlist</span> <span class="s2">&quot;$playlist&quot;</span>
+    <span class="nb">Set-Location</span> <span class="n">-Path</span> <span class="p">((</span><span class="nb">Get-Location</span><span class="p">).</span><span class="n">Path</span> <span class="p">+</span> <span class="s2">&quot;\&quot;</span> <span class="p">+</span> <span class="p">(</span><span class="nb">Get-ChildItem</span> <span class="p">|</span> <span class="nb">Sort-Object</span> <span class="n">LastWriteTime</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-last</span> <span class="n">1</span><span class="p">).</span><span class="n">Name</span><span class="p">)</span>
+    <span class="nb">Get-ChildItem</span> <span class="p">|</span> <span class="nb">Rename-Item</span> <span class="n">-NewName</span> <span class="p">{</span> <span class="p">(</span><span class="nv">$_</span><span class="p">.</span><span class="n">BaseName</span> <span class="o">-replace</span> <span class="s1">&#39;[^a-zA-Z]&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span> <span class="p">+</span> <span class="s1">&#39;.mp3&#39;</span> <span class="p">}</span>
+    <span class="nb">Get-ChildItem</span> <span class="p">|</span> <span class="nb">Rename-Item</span> <span class="n">-NewName</span> <span class="p">{</span> <span class="p">(</span><span class="nv">$_</span><span class="p">.</span><span class="n">BaseName</span> <span class="o">-replace</span> <span class="s1">&#39;\s+&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span> <span class="p">+</span> <span class="s1">&#39;.mp3&#39;</span> <span class="p">}</span>
+    <span class="nb">Get-ChildItem</span> <span class="p">|</span> <span class="nb">Rename-Item</span> <span class="n">-NewName</span> <span class="p">{</span> <span class="p">(</span><span class="nv">$_</span><span class="p">.</span><span class="n">Name</span> <span class="o">-replace</span> <span class="s1">&#39; .mp3&#39;</span><span class="p">,</span> <span class="s1">&#39;.mp3&#39;</span><span class="p">)}</span>
+<span class="p">}</span>
 </code></pre></div>
                 
               
