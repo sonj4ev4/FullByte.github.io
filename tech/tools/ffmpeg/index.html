@@ -3747,7 +3747,7 @@ More details: <a href="https://trac.ffmpeg.org/wiki/Encode/H.264">https://trac.f
 <p>This works well for Whatsapp, Signal, Threema, Telegram, etc...
 Make sure not to reach current allowed max files size.</p>
 <p>With sound:</p>
-<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -vf &quot;scale=vga&quot; messenger.mp4
+<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -vf &quot;scale=-2:480&quot; -c:v libx264 -preset slow -crf 21 -profile:v baseline -level 3.0 -pix_fmt yuv420p -r 25 -g 50 -c:a aac -b:a 160k -r:a 44100 -f mp4 output.mp4
 </code></pre></div>
 <p>No sound:</p>
 <div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -an -vf &quot;scale=vga&quot; messenger.mp4
