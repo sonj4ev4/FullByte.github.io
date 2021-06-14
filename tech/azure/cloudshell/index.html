@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://0xfab1.net/tech/azure/cloudshell/">
       
       <link rel="icon" href="../../../icons/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.7">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
     
     
       
@@ -48,6 +48,8 @@
     
     
       
+
+
     
     
   </head>
@@ -1700,6 +1702,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../fun/wtf/links/" class="md-nav__link">
+        WTF Links
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../fun/wtf/studpidia/" class="md-nav__link">
         Stupidedia
       </a>
@@ -2581,9 +2595,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#edit-files" class="md-nav__link">
-    Edit files
+  <a href="#cloud-shell-options" class="md-nav__link">
+    Cloud Shell options
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    Docker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows-terminal" class="md-nav__link">
+    Windows Terminal
+  </a>
+  
+    <nav class="md-nav" aria-label="Windows Terminal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-portal" class="md-nav__link">
+    Azure Portal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4032,9 +4073,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#edit-files" class="md-nav__link">
-    Edit files
+  <a href="#cloud-shell-options" class="md-nav__link">
+    Cloud Shell options
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    Docker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows-terminal" class="md-nav__link">
+    Windows Terminal
+  </a>
+  
+    <nav class="md-nav" aria-label="Windows Terminal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-portal" class="md-nav__link">
+    Azure Portal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4098,12 +4166,26 @@
 <td>Online</td>
 <td><a href="https://shell.azure.com/">https://shell.azure.com/</a> </br> <a href="https://portal.azure.com/#cloudshell/">https://portal.azure.com/#cloudshell/</a></td>
 </tr>
+<tr>
+<td>Cloud Shell Tools</td>
+<td><a href="https://docs.microsoft.com/en-us/azure/cloud-shell/features">https://docs.microsoft.com/en-us/azure/cloud-shell/features</a> </br> <a href="https://build5nines.com/azure-cloud-shell-tips-and-tricks/">https://build5nines.com/azure-cloud-shell-tips-and-tricks/</a></td>
+</tr>
 </tbody>
 </table>
-<h2 id="edit-files">Edit files</h2>
-<p>To get a GUI editor run this command:</p>
-<div class="highlight"><pre><span></span><code><span class="n">code</span> <span class="p">.</span>
+<h2 id="cloud-shell-options">Cloud Shell options</h2>
+<p>There are three options to use the cloud shell: Docker, Windows Terminal and the Azure Web Interface:</p>
+<h2 id="docker">Docker</h2>
+<p>You get a <a href="https://github.com/Azure/CloudShell">CloudShell</a> container as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="n">docker</span> <span class="n">run</span> <span class="n">-it</span> <span class="n">mcr</span><span class="p">.</span><span class="n">microsoft</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">azure-cloudshell</span> <span class="p">/</span><span class="n">bin</span><span class="p">/</span><span class="n">bash</span> <span class="c"># for bash</span>
+<span class="n">docker</span> <span class="n">run</span> <span class="n">-it</span> <span class="n">mcr</span><span class="p">.</span><span class="n">microsoft</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">azure-cloudshell</span> <span class="p">/</span><span class="n">usr</span><span class="p">/</span><span class="n">bin</span><span class="p">/</span><span class="n">pwsh</span> <span class="c"># for powershell</span>
 </code></pre></div>
+<h2 id="windows-terminal">Windows Terminal</h2>
+<p>The <a href="https://docs.microsoft.com/de-de/windows/terminal/">Windows terminal</a> has the cloud shell integrated. Aside from other features this is a good way to interact with azure on command line.</p>
+<p>Install the windows terminal with <code>choco install microsoft-windows-terminal</code>.
+You need to login to azure first to use the terminal.</p>
+<h3 id="azure-portal">Azure Portal</h3>
+<p>Go to <a href="https://shell.azure.com">https://shell.azure.com</a> and you are logged in with your current user.</p>
+<p>To get a GUI editor in the web run <code>code .</code>.</p>
 <h2 id="attach-storage">Attach Storage</h2>
 <ul>
 <li>Add FileShare to Cloud Shell: <code>clouddrive mount -s &lt;secret&gt; -g &lt;rg-name&gt; -n &lt;fileshare&gt; -f &lt;share&gt;</code></li>

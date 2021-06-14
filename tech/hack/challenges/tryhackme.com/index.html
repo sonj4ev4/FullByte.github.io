@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://0xfab1.net/tech/hack/challenges/tryhackme.com/">
       
       <link rel="icon" href="../../../../icons/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.7">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
     
     
       
@@ -48,6 +48,8 @@
     
     
       
+
+
     
     
   </head>
@@ -1694,6 +1696,18 @@
           Wtf
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../fun/wtf/links/" class="md-nav__link">
+        WTF Links
+      </a>
+    </li>
+  
+
           
             
   
@@ -4265,23 +4279,43 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 /server-status        <span class="o">(</span>Status: <span class="m">403</span><span class="o">)</span> <span class="o">[</span>Size: <span class="m">277</span><span class="o">]</span>
 </code></pre></div>
 <p>So basically we have a folder /dog with random dog pics and a folder /cat with random cat pics.</p>
-<p>Opening /server-status we get the error</p>
+<p>Opening <a href="http://httpd.apache.org/docs/2.4/mod/mod_status.html">/server-status</a> we get the error so probably with a .htaccess file.</p>
 <div class="highlight"><pre><span></span><code>Forbidden
 
 You don&#39;t have permission to access this resource.
 Apache/2.4.38 (Debian)
 </code></pre></div>
 <h4 id="nikto">nikto</h4>
-<p>In this case running nikto doesn't reveal anything new:</p>
+<p>Running nikto confirms the apache web server and shows PHP is used.
+Nothing else of interest is revealed:</p>
 <div class="highlight"><pre><span></span><code>nikto -h <span class="m">10</span>.10.46.238
+- Nikto v2.1.6
+---------------------------------------------------------------------------
++ Target IP:          <span class="m">10</span>.10.46.238
++ Target Hostname:    <span class="m">10</span>.10.46.238
++ Target Port:        <span class="m">80</span>
++ Start Time:         <span class="m">2021</span>-00-00 <span class="m">00</span>:00:00 <span class="o">(</span>GMT-4<span class="o">)</span>
+---------------------------------------------------------------------------
++ Server: Apache/2.4.38 <span class="o">(</span>Debian<span class="o">)</span>
++ Retrieved x-powered-by header: PHP/7.4.3
++ The anti-clickjacking X-Frame-Options header is not present.
++ The X-XSS-Protection header is not defined. This header can hint to the user agent to protect against some forms of XSS
++ The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site <span class="k">in</span> a different fashion to the MIME <span class="nb">type</span>
++ No CGI Directories found <span class="o">(</span>use <span class="s1">&#39;-C all&#39;</span> to force check all possible <span class="nb">dirs</span><span class="o">)</span>
++ Web Server returns a valid response with junk HTTP methods, this may cause <span class="nb">false</span> positives.
++ OSVDB-3233: /icons/README: Apache default file found.
++ <span class="m">7890</span> requests: <span class="m">0</span> error<span class="o">(</span>s<span class="o">)</span> and <span class="m">6</span> item<span class="o">(</span>s<span class="o">)</span> reported on remote host
++ End Time:           <span class="m">2021</span>-00-00 <span class="m">00</span>:00:00 <span class="o">(</span>GMT-4<span class="o">)</span> <span class="o">(</span><span class="m">326</span> seconds<span class="o">)</span>
+---------------------------------------------------------------------------
++ <span class="m">1</span> host<span class="o">(</span>s<span class="o">)</span> tested
 </code></pre></div>
 <h3 id="visit-website">Visit website</h3>
-<p>Let's visit the page on port 80 and click on dog or cat</p>
+<p>So now we know machine 10.10.46.238 is running a Debian based Apache (2.4.38 ) webserver with PHP (7.4.3) serving a website with dogs and cats (probably stored under "/dogs" and "/cats").</p>
+<p>Let's visit the page on port 80 and click on dog or cat:</p>
 <ul>
 <li>We can see a random dog or cat pic</li>
 <li>See url changes to ?view=dog or ?view=cat.</li>
 </ul>
-<p>To check if the site is running PHP or something else we can request the URL with index.html and index.php. In this case, we can verify that it is a PHP page.</p>
 <p>Let's look at the "view?" parameter in more detail:</p>
 <p>Changing the view parameter to "something" we get this error:</p>
 <div class="highlight"><pre><span></span><code>Sorry, only dogs or cats are allowed.
