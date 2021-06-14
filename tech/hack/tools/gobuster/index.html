@@ -3992,10 +3992,12 @@
                 
                 
                 <h1 id="gobuster">GoBuster</h1>
-<p>Install</p>
-<div class="highlight"><pre><span></span><code>sudo apt-get install gobuster
-</code></pre></div>
 <p>Find dirs that work</p>
+<ul>
+<li>Source: <a href="https://github.com/OJ/gobuster">https://github.com/OJ/gobuster</a></li>
+<li>Install: <code>sudo apt-get install gobuster</code></li>
+</ul>
+<p>Example:</p>
 <div class="highlight"><pre><span></span><code>gobuster dir -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt -u http://10.10.112.131:80
 </code></pre></div>
 <p><img alt="GoBusterExample" src="../_gobuster_example.jpg" /></p>

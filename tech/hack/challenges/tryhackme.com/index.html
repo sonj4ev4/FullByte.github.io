@@ -4240,16 +4240,20 @@
                 
                 <h1 id="tryhackmecom">TryHackMe.com</h1>
 <p>Notes from challenges I did @ <a href="https://tryhackme.com">https://tryhackme.com</a>.</p>
-<p>Flags are not fully written to avoid copy &amp; paste ;)</p>
-<p>Connect to current challenge: <code>sudo openvpn 0xfab1.ovpn</code></p>
+<p>Connect to tryhackme via openvpn e.g.: <code>sudo openvpn 0xfab1.ovpn</code></p>
+<p>Please note:</p>
+<ul>
+<li>Flags are not fully written to avoid copy &amp; paste ;)</li>
+<li>I used an SSH-Tunnel in case you are wondering why I have "localhost" instead of an IP mentioned.</li>
+</ul>
 <h2 id="advent-of-cyber-2"><a href="https://tryhackme.com/room/adventofcyber2">Advent of Cyber 2</a></h2>
 <h3 id="day-16-scripting-help-where-is-santa">[Day 16] Scripting Help! Where is Santa?</h3>
-<p>Address is localhost because I port-forwarded the tryhackme machine over kali to my host.</p>
+<p>Python One-Liner to query the API :)</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span> 
 <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s1"> --&gt; &#39;</span> <span class="o">+</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;http://localhost:8080/api/</span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="dogcat"><a href="https://tryhackme.com/room/dogcat">DogCat</a></h2>
-<p>This is a full write up of the "dogcat" CTF @ <a href="https://tryhackme.com/room/dogcat">https://tryhackme.com/room/dogcat</a>.</p>
+<p>This is a full write up of the great "dogcat" CTF @ <a href="https://tryhackme.com/room/dogcat">https://tryhackme.com/room/dogcat</a>.</p>
 <h3 id="first-look">First look</h3>
 <p>We know there is a website hosting dog and cat pictures. Let's have a look...</p>
 <h4 id="nmap">nmap</h4>
