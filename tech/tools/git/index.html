@@ -3675,6 +3675,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#commands" class="md-nav__link">
     Commands
   </a>
@@ -4025,6 +4032,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#commands" class="md-nav__link">
     Commands
   </a>
@@ -4053,8 +4067,16 @@
 <ul>
 <li>git quick stats: <a href="https://github.com/arzzen/git-quick-stats">https://github.com/arzzen/git-quick-stats</a></li>
 </ul>
+<h2 id="setup">Setup</h2>
+<p>Set global user name and email:
+(remove --global flag for specific repo only)</p>
+<div class="highlight"><pre><span></span><code>git config --global user.name <span class="s2">&quot;0xfab1&quot;</span>
+git config --global user.email <span class="s2">&quot;f@bi.an&quot;</span>
+</code></pre></div>
 <h2 id="commands">Commands</h2>
-<p>TODO</p>
+<p>Get all authors:</p>
+<div class="highlight"><pre><span></span><code><span class="n">git</span> <span class="n">log</span> <span class="p">|</span> <span class="nb">Where </span><span class="p">{</span> <span class="nv">$_</span> <span class="o">-match</span> <span class="s2">&quot;Author&quot;</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-unique</span>
+</code></pre></div>
                 
               
               
