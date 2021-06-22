@@ -511,22 +511,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/make/lasercutter/EpilogZing6040/</loc>
-         <lastmod>2021-06-22</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://0xfab1.net/make/lasercutter/TrotecSpeedy360/</loc>
-         <lastmod>2021-06-22</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://0xfab1.net/make/lasercutter/boxes.py/</loc>
          <lastmod>2021-06-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://0xfab1.net/make/lasercutter/epilog-zing-6040/</loc>
+         <lastmod>2021-06-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://0xfab1.net/make/lasercutter/links/</loc>
+         <lastmod>2021-06-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://0xfab1.net/make/lasercutter/trotec-speedy-360/</loc>
          <lastmod>2021-06-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
