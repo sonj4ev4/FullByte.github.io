@@ -471,6 +471,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://0xfab1.net/make/art/database/</loc>
+         <lastmod>2021-06-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://0xfab1.net/make/art/links/</loc>
          <lastmod>2021-06-23</lastmod>
          <changefreq>daily</changefreq>
