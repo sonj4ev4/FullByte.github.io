@@ -611,6 +611,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://0xfab1.net/tech/azure/caf-waf/</loc>
+         <lastmod>2021-06-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://0xfab1.net/tech/azure/cloudshell/</loc>
          <lastmod>2021-06-24</lastmod>
          <changefreq>daily</changefreq>
