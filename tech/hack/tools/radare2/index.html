@@ -2329,6 +2329,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../make/lasercutter/proempeln/" class="md-nav__link">
+        Prömpeln
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../make/lasercutter/trotec-speedy-360/" class="md-nav__link">
         Trotec Speedy 360
       </a>
@@ -3174,6 +3186,13 @@
         <li class="md-nav__item">
   <a href="#analysis-assembly-memory" class="md-nav__link">
     analysis, assembly, memory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tryhackme-tutorial-notes" class="md-nav__link">
+    Tryhackme tutorial notes
   </a>
   
 </li>
@@ -4289,6 +4308,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#tryhackme-tutorial-notes" class="md-nav__link">
+    Tryhackme tutorial notes
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4438,6 +4464,61 @@ px @rbp-0x8
 <li>search for bytes: <code>/x</code></li>
 <li>get offset for the actual seek point address: <code>?p</code></li>
 </ul>
+<h2 id="tryhackme-tutorial-notes">Tryhackme tutorial notes</h2>
+<p>Just some notes from the tryhackme tutorials <a href="https://tryhackme.com/room/introtox8664">intro to x86-64</a> and <a href="https://tryhackme.com/room/rfirmware">Dumping Router Firmware</a></p>
+<p>Open "if2" to analyses the program:</p>
+<div class="highlight"><pre><span></span><code>r2 -d if2
+e asm.syntax<span class="o">=</span>att
+aaa
+afl
+</code></pre></div>
+<p>Output:</p>
+<p><img alt="_radare2_part1" src="../_radare2_part1.jpg" /></p>
+<p>Set breakpoint at popq %rbp</p>
+<div class="highlight"><pre><span></span><code>pdf @main
+db 0x561d78dd863c
+</code></pre></div>
+<p>Output:</p>
+<p><img alt="_radare2_part2" src="../_radare2_part2.jpg" /></p>
+<p>Start execution of the program:</p>
+<div class="highlight"><pre><span></span><code>dc
+px @ rbp-0x8
+px @ rbp-0x4
+px @ rbp-0xc
+</code></pre></div>
+<p>Output:</p>
+<p><img alt="_radare2_part3" src="../_radare2_part3.jpg" /></p>
+<p>Read value of var_ch, var_8h, var_4h before popq/retq as requested.</p>
+<p>Task 5 open loop2</p>
+<div class="highlight"><pre><span></span><code>r2 -d loop2
+e asm.syntax<span class="o">=</span>att
+aaa
+afl
+pdf @main
+
+db 0x55ffc9760620 <span class="c1"># sarl</span>
+dc
+dc
+</code></pre></div>
+<p>Read at secound loop</p>
+<div class="highlight"><pre><span></span><code>px @ rbp-0x8
+px @ rbp-0xc
+</code></pre></div>
+<p>Read at end of loop</p>
+<div class="highlight"><pre><span></span><code>dc
+px @ rbp-0x8
+px @ rbp-0xc
+</code></pre></div>
+<p>task6 - crackme1</p>
+<div class="highlight"><pre><span></span><code>r2 -d crackme1
+e asm.syntax<span class="o">=</span>att
+aaa
+afl
+pdf @main
+
+px @ rbp-0x48 <span class="o">(</span>var_48h<span class="o">)</span>
+px @ rbp-0x54 <span class="o">(</span>var_54h<span class="o">)</span> pw
+</code></pre></div>
                 
               
               
