@@ -4022,8 +4022,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#convert-fromto-webp" class="md-nav__link">
-    Convert from/to webp
+  <a href="#convert-to-webp" class="md-nav__link">
+    Convert to webp
   </a>
   
 </li>
@@ -4569,8 +4569,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#convert-fromto-webp" class="md-nav__link">
-    Convert from/to webp
+  <a href="#convert-to-webp" class="md-nav__link">
+    Convert to webp
   </a>
   
 </li>
@@ -4778,7 +4778,8 @@ ffmpeg -i input.mp4 -pix_fmt yuv420p -movflags faststart -c:v libaom-av1 -b:v 20
 <p>Create a short GIF from a long video</p>
 <div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -vf &quot;scale=vga,thumbnail=100,split[a][b],[b]palettegen=reserve_transparent=0:stats_mode=single[b];[a][b]paletteuse=new=1,settb=1/25,setpts=N&quot; output.gif
 </code></pre></div>
-<h3 id="convert-fromto-webp">Convert from/to webp</h3>
+<h3 id="convert-to-webp">Convert to webp</h3>
+<p>Webp is great for web content as all browsers can read the format directly. E.g. I use this for videos on the website.</p>
 <div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -vf &quot;fps=30,scale=720:-1:flags=lanczos&quot; -vcodec libwebp -lossless 0 -compression_level 6 -q:v 50 -loop 0 -preset picture -an -vsync 0 output.webp
 </code></pre></div>
 <h2 id="convert-to-audio-file">Convert to audio file</h2>
