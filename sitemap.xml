@@ -771,11 +771,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/hack/tools/linpeas/</loc>
-         <lastmod>2021-06-30</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://0xfab1.net/tech/hack/tools/mimikatz/</loc>
          <lastmod>2021-06-30</lastmod>
          <changefreq>daily</changefreq>
