@@ -2305,6 +2305,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../make/lasercutter/dixit/" class="md-nav__link">
+        Dixit
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../make/lasercutter/epilog-zing-6040/" class="md-nav__link">
         EpilogZing 6040
       </a>
@@ -2329,6 +2341,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../make/lasercutter/mastermind/" class="md-nav__link">
+        Mastermind
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../make/lasercutter/proempeln/" class="md-nav__link">
         Prömpeln
       </a>
@@ -2343,6 +2367,18 @@
     <li class="md-nav__item">
       <a href="../../../make/lasercutter/trotec-speedy-360/" class="md-nav__link">
         Trotec Speedy 360
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../make/lasercutter/wuerfeln/" class="md-nav__link">
+        Würfeln
       </a>
     </li>
   
@@ -3959,6 +3995,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mobile-internet-download-speeds" class="md-nav__link">
+    Mobile internet download speeds
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4485,6 +4528,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mobile-internet-download-speeds" class="md-nav__link">
+    Mobile internet download speeds
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4510,7 +4560,6 @@
 <th>Medium</th>
 <th>nanoseconds</th>
 <th>milliseconds</th>
-<th>Comment</th>
 </tr>
 </thead>
 <tbody>
@@ -4518,79 +4567,164 @@
 <td>L1 cache reference</td>
 <td>0.5 ns</td>
 <td></td>
-<td></td>
 </tr>
 <tr>
 <td>Branch mispredict</td>
 <td>5   ns</td>
-<td></td>
 <td></td>
 </tr>
 <tr>
 <td>L2 cache reference</td>
 <td>7   ns</td>
 <td></td>
-<td>14x L1 cache</td>
 </tr>
 <tr>
 <td>Mutex lock/unlock</td>
 <td>25   ns</td>
-<td></td>
 <td></td>
 </tr>
 <tr>
 <td>Main memory reference</td>
 <td>100   ns</td>
 <td></td>
-<td>20x L2 cache, 200x L1 cache</td>
 </tr>
 <tr>
 <td>Compress 1K bytes with Zippy</td>
 <td>3,000   ns</td>
-<td></td>
 <td></td>
 </tr>
 <tr>
 <td>Send 1K bytes over 1 Gbps network</td>
 <td>10,000   ns</td>
 <td>0.01 ms</td>
-<td></td>
 </tr>
 <tr>
 <td>Read 1 MB sequentially from memory</td>
 <td>250,000   ns</td>
 <td>0.25 ms</td>
-<td></td>
 </tr>
 <tr>
 <td>Round trip within same datacenter</td>
 <td>500,000   ns</td>
 <td>0.5  ms</td>
-<td></td>
 </tr>
 <tr>
 <td>Read 1 MB sequentially from SSD</td>
 <td>1,000,000   ns</td>
 <td>1    ms</td>
-<td>4X memory</td>
 </tr>
 <tr>
 <td>Disk seek</td>
 <td>10,000,000   ns</td>
 <td>10    ms</td>
-<td>20x datacenter roundtrip</td>
 </tr>
 <tr>
 <td>Read 1 MB sequentially from disk</td>
 <td>20,000,000   ns</td>
 <td>20    ms</td>
-<td>80x memory, 20X SSD</td>
 </tr>
 <tr>
 <td>Send packet CA-&gt;Netherlands-&gt;CA</td>
 <td>150,000,000   ns</td>
 <td>150    ms</td>
-<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="mobile-internet-download-speeds">Mobile internet download speeds</h2>
+<table>
+<thead>
+<tr>
+<th align="center">Gen</th>
+<th align="center">Short</th>
+<th align="center">Technology</th>
+<th align="center">Max Download Speed</th>
+<th align="center">AVG Download Speed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">2G</td>
+<td align="center">G</td>
+<td align="center">GPRS</td>
+<td align="center">0.1Mbit/s</td>
+<td align="center">&lt;0.1Mbit/s</td>
+</tr>
+<tr>
+<td align="center">2G</td>
+<td align="center">E</td>
+<td align="center">EDGE</td>
+<td align="center">0.3Mbit/s</td>
+<td align="center">0.1Mbit/s</td>
+</tr>
+<tr>
+<td align="center">3G</td>
+<td align="center">3G</td>
+<td align="center">3G (Basic)</td>
+<td align="center">0.3Mbit/s</td>
+<td align="center">0.1Mbit/s</td>
+</tr>
+<tr>
+<td align="center">3G</td>
+<td align="center">H</td>
+<td align="center">HSPA</td>
+<td align="center">7.2Mbit/s</td>
+<td align="center">1.5Mbit/s</td>
+</tr>
+<tr>
+<td align="center">3G</td>
+<td align="center">H+</td>
+<td align="center">HSPA+</td>
+<td align="center">21Mbit/s</td>
+<td align="center">4Mbit/s</td>
+</tr>
+<tr>
+<td align="center">3G</td>
+<td align="center">H+</td>
+<td align="center">DC-HSPA+</td>
+<td align="center">42Mbit/s</td>
+<td align="center">8Mbit/s</td>
+</tr>
+<tr>
+<td align="center">4G</td>
+<td align="center">4G</td>
+<td align="center">LTE Category 4</td>
+<td align="center">150Mbit/s</td>
+<td align="center">15Mbit/s</td>
+</tr>
+<tr>
+<td align="center">4G+</td>
+<td align="center">4G+</td>
+<td align="center">LTE-Advanced Cat6</td>
+<td align="center">300Mbit/s</td>
+<td align="center">30Mbit/s</td>
+</tr>
+<tr>
+<td align="center">4G+</td>
+<td align="center">4G+</td>
+<td align="center">LTE-Advanced Cat9</td>
+<td align="center">450Mbit/s</td>
+<td align="center">45Mbit/s</td>
+</tr>
+<tr>
+<td align="center">4G+</td>
+<td align="center">4G+</td>
+<td align="center">LTE-Advanced Cat12</td>
+<td align="center">600Mbit/s</td>
+<td align="center">60Mbit/s</td>
+</tr>
+<tr>
+<td align="center">4G+</td>
+<td align="center">4G+</td>
+<td align="center">LTE-Advanced Cat16</td>
+<td align="center">979Mbit/s</td>
+<td align="center">90Mbit/s</td>
+</tr>
+<tr>
+<td align="center">5G</td>
+<td align="center">5G</td>
+<td align="center">5G</td>
+<td align="center">1,000-10,000Mbit/s</td>
+<td align="center">150-200Mbit/s</td>
 </tr>
 </tbody>
 </table>
