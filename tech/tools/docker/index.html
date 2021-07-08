@@ -1762,6 +1762,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../fun/wtf/systems-of-management/" class="md-nav__link">
+        WTF Driven development
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../fun/wtf/urban-dictionary/" class="md-nav__link">
         Urban Dictionary
       </a>
@@ -4117,6 +4129,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#webtop" class="md-nav__link">
+    webtop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#i2p" class="md-nav__link">
     I2P
   </a>
@@ -4662,6 +4681,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#webtop" class="md-nav__link">
+    webtop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#i2p" class="md-nav__link">
     I2P
   </a>
@@ -4816,6 +4842,17 @@
 <ul>
 <li><a href="https://www.ezzeddinabdullah.com/posts/how-to-clean-text-data-at-the-command-line">https://www.ezzeddinabdullah.com/posts/how-to-clean-text-data-at-the-command-line</a></li>
 </ul>
+<h3 id="webtop">webtop</h3>
+<p>Sources:</p>
+<ul>
+<li><a href="https://github.com/linuxserver/docker-webtop">https://github.com/linuxserver/docker-webtop</a></li>
+<li><a href="https://www.linuxserver.io/blog/2021-05-05-meet-webtops-a-linux-desktop-environment-in-your-browser">https://www.linuxserver.io/blog/2021-05-05-meet-webtops-a-linux-desktop-environment-in-your-browser</a></li>
+</ul>
+<div class="highlight"><pre><span></span><code>docker run -d --name<span class="o">=</span>webtop -e <span class="nv">PUID</span><span class="o">=</span><span class="m">1000</span> -e <span class="nv">PGID</span><span class="o">=</span><span class="m">1000</span> -e <span class="nv">TZ</span><span class="o">=</span>Europe/London -p <span class="m">3000</span>:3000 -v /home --shm-size<span class="o">=</span><span class="s2">&quot;1gb&quot;</span> --restart unless-stopped ghcr.io/linuxserver/webtop
+</code></pre></div>
+<p>If you lose your password you can reset it by execing into the container as root:</p>
+<div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> -it webtop passwd abc
+</code></pre></div>
 <h3 id="i2p">I2P</h3>
 <p>Sources:</p>
 <ul>

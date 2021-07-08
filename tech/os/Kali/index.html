@@ -1762,6 +1762,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../fun/wtf/systems-of-management/" class="md-nav__link">
+        WTF Driven development
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../fun/wtf/urban-dictionary/" class="md-nav__link">
         Urban Dictionary
       </a>
@@ -4815,13 +4827,23 @@
                 <h1 id="kali">Kali</h1>
 <p>Install and config Kali</p>
 <h2 id="update">Update</h2>
-<p>Run this once on old Kali versions</p>
+<p>Set the password for root and switch to root</p>
+<div class="highlight"><pre><span></span><code>sudo passwd root
+su root
+</code></pre></div>
+<p>Run this once on old Kali versions and run this as root:</p>
 <div class="highlight"><pre><span></span><code>sudo apt install gcc-8-base
 sudo wget -q -O - https://archive.kali.org/archive-key.asc <span class="p">|</span> apt-key add
 sudo dpkg --configure -a
 </code></pre></div>
+<p>Switch back to your user e.g. fab1</p>
+<div class="highlight"><pre><span></span><code>su fab1
+</code></pre></div>
 <p>Run an update</p>
 <div class="highlight"><pre><span></span><code>sudo apt update <span class="o">&amp;&amp;</span> sudo apt -y full-upgrade <span class="o">&amp;&amp;</span> sudo apt -y autoremove <span class="o">&amp;&amp;</span> sudo apt -y autoclean
+</code></pre></div>
+<p>Install more tools (alt install <code>kali-linux-default</code> or <code>kali-linux-large</code>)</p>
+<div class="highlight"><pre><span></span><code>sudo apt-get install kali-linux-everything
 </code></pre></div>
 <p>Options to get current version</p>
 <div class="highlight"><pre><span></span><code>lsb_release -a
@@ -4830,6 +4852,7 @@ hostnamectl
 /proc/version
 </code></pre></div>
 <h2 id="add-new-user">Add new user</h2>
+<p>Add new user e.g. 0xfab1 with full privileges:</p>
 <div class="highlight"><pre><span></span><code>sudo useradd -m 0xfab1
 sudo passwd 0xfab1
 sudo usermod -a -G sudo 0xfab1
@@ -4869,7 +4892,7 @@ kex --esm --sound
 <div class="highlight"><pre><span></span><code>az vm open-port --resource-group myResourceGroup --name myVM --port <span class="m">3389</span>
 </code></pre></div>
 <p>Connect via SSH to Kali and run the following commands:</p>
-<div class="highlight"><pre><span></span><code>sudo apt update <span class="o">&amp;&amp;</span> sudo apt dist-upgrade <span class="o">&amp;&amp;</span> sudo apt full-upgrade
+<div class="highlight"><pre><span></span><code>sudo apt update
 sudo apt-get -y install xfce4
 sudo apt-get -y install xrdp
 sudo systemctl <span class="nb">enable</span> xrdp
