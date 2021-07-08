@@ -3509,7 +3509,14 @@
     Set german keyboard
   </a>
   
-    <nav class="md-nav" aria-label="Set german keyboard">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enlargen-disk" class="md-nav__link">
+    Enlargen Disk
+  </a>
+  
+    <nav class="md-nav" aria-label="Enlargen Disk">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3517,7 +3524,8 @@
     Get a GUI
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Get a GUI">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#kali-in-wsl2-with-gui" class="md-nav__link">
@@ -3530,6 +3538,11 @@
   <a href="#enable-rdp-for-azure" class="md-nav__link">
     Enable RDP for Azure
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -4682,7 +4695,14 @@
     Set german keyboard
   </a>
   
-    <nav class="md-nav" aria-label="Set german keyboard">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enlargen-disk" class="md-nav__link">
+    Enlargen Disk
+  </a>
+  
+    <nav class="md-nav" aria-label="Enlargen Disk">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4690,7 +4710,8 @@
     Get a GUI
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Get a GUI">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#kali-in-wsl2-with-gui" class="md-nav__link">
@@ -4703,6 +4724,11 @@
   <a href="#enable-rdp-for-azure" class="md-nav__link">
     Enable RDP for Azure
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -4863,9 +4889,26 @@ whoami
 <h2 id="set-german-keyboard">Set german keyboard</h2>
 <div class="highlight"><pre><span></span><code>setxkbmap -layout de
 </code></pre></div>
+<h2 id="enlargen-disk">Enlargen Disk</h2>
+<p>Use fdisk to enlargen <code>/dev/sda</code> (e.g. when providing more disk space to the VM)</p>
+<div class="highlight"><pre><span></span><code>df -h <span class="c1"># check current space</span>
+sudo fdisk /dev/sda <span class="c1"># run fdisk to resize the partition</span>
+-&gt; u <span class="c1"># change the units to sectors</span>
+-&gt; p <span class="c1"># list the partitions details</span>
+-&gt; d <span class="c1"># delete the partition</span>
+-&gt; n <span class="c1"># create a new partition</span>
+-&gt; p <span class="c1"># create a primary partition</span>
+-&gt; <span class="m">1</span> <span class="c1"># create first partition</span>
+-&gt; <span class="o">(</span>default<span class="o">)</span> <span class="c1"># starting sector  </span>
+-&gt; <span class="o">(</span>default<span class="o">)</span> <span class="c1"># ending sector</span>
+-&gt; w <span class="c1"># Write the partition</span>
+sudo resize2fs /dev/sda1
+sudo reboot
+df -h <span class="c1"># verfiy space has increased</span>
+</code></pre></div>
 <h3 id="get-a-gui">Get a GUI</h3>
 <p>Run <code>startx</code> if you are on a local machine, in a console and have a GUI installed.</p>
-<h3 id="kali-in-wsl2-with-gui">Kali in WSL2 with GUI</h3>
+<h4 id="kali-in-wsl2-with-gui">Kali in WSL2 with GUI</h4>
 <p>Set WSL version 2</p>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="n">Net</span><span class="p">.</span><span class="n">WebClient</span><span class="p">).</span><span class="n">DownloadFile</span><span class="p">(</span><span class="s2">&quot;https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi&quot;</span><span class="p">,</span> <span class="s2">&quot;wsl_update_x64.msi&quot;</span><span class="p">)</span> 
 <span class="nb">Start-Process</span> <span class="n">msiexec</span><span class="p">.</span><span class="n">exe</span> <span class="n">-Wait</span> <span class="n">-ArgumentList</span> <span class="s1">&#39;/I wsl_update_x64.msi /quiet&#39;</span> 
@@ -4886,7 +4929,7 @@ kex --esm --sound
       <span class="nt">&quot;commandline&quot;</span><span class="p">:</span> <span class="s2">&quot;wsl -d kali-linux kex --esm --sound&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="enable-rdp-for-azure">Enable RDP for Azure</h3>
+<h4 id="enable-rdp-for-azure">Enable RDP for Azure</h4>
 <p>Make sure ssh (22) and rdp (3389) ports are open.</p>
 <p>Depending on your setup you can open a port in Azure CLI as follows:</p>
 <div class="highlight"><pre><span></span><code>az vm open-port --resource-group myResourceGroup --name myVM --port <span class="m">3389</span>
