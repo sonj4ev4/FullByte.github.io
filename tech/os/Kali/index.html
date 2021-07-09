@@ -3491,9 +3491,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update" class="md-nav__link">
-    Update
+  <a href="#basic-config" class="md-nav__link">
+    Basic Config
   </a>
+  
+    <nav class="md-nav" aria-label="Basic Config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-os" class="md-nav__link">
+    Update OS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3518,6 +3531,20 @@
   
     <nav class="md-nav" aria-label="Enlargen Disk">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wifi-issues" class="md-nav__link">
+    WiFi issues
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitor-mode" class="md-nav__link">
+    Monitor Mode
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#get-a-gui" class="md-nav__link">
@@ -3552,38 +3579,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#config" class="md-nav__link">
-    Config
+  <a href="#more-tools" class="md-nav__link">
+    More Tools
   </a>
   
-    <nav class="md-nav" aria-label="Config">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#wifi-issues" class="md-nav__link">
-    WiFi issues
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#monitor-mode" class="md-nav__link">
-    Monitor Mode
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tools" class="md-nav__link">
-    Tools
-  </a>
-  
-    <nav class="md-nav" aria-label="Tools">
+    <nav class="md-nav" aria-label="More Tools">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4677,9 +4677,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update" class="md-nav__link">
-    Update
+  <a href="#basic-config" class="md-nav__link">
+    Basic Config
   </a>
+  
+    <nav class="md-nav" aria-label="Basic Config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-os" class="md-nav__link">
+    Update OS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4704,6 +4717,20 @@
   
     <nav class="md-nav" aria-label="Enlargen Disk">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wifi-issues" class="md-nav__link">
+    WiFi issues
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitor-mode" class="md-nav__link">
+    Monitor Mode
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#get-a-gui" class="md-nav__link">
@@ -4738,38 +4765,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#config" class="md-nav__link">
-    Config
+  <a href="#more-tools" class="md-nav__link">
+    More Tools
   </a>
   
-    <nav class="md-nav" aria-label="Config">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#wifi-issues" class="md-nav__link">
-    WiFi issues
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#monitor-mode" class="md-nav__link">
-    Monitor Mode
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tools" class="md-nav__link">
-    Tools
-  </a>
-  
-    <nav class="md-nav" aria-label="Tools">
+    <nav class="md-nav" aria-label="More Tools">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4852,7 +4852,8 @@
                 
                 <h1 id="kali">Kali</h1>
 <p>Install and config Kali</p>
-<h2 id="update">Update</h2>
+<h2 id="basic-config">Basic Config</h2>
+<h3 id="update-os">Update OS</h3>
 <p>Set the password for root and switch to root</p>
 <div class="highlight"><pre><span></span><code>sudo passwd root
 su root
@@ -4906,6 +4907,22 @@ sudo resize2fs /dev/sda1
 sudo reboot
 df -h <span class="c1"># verfiy space has increased</span>
 </code></pre></div>
+<h3 id="wifi-issues">WiFi issues</h3>
+<p>Check the NetworkManager.conf</p>
+<div class="highlight"><pre><span></span><code>sudo nano /etc/NetworkManager/NetworkManager.conf
+</code></pre></div>
+<p>If "managed=false" set this to true</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>ifupdown<span class="o">]</span>
+<span class="nv">managed</span><span class="o">=</span><span class="nb">true</span>
+</code></pre></div>
+<p>now save the file and restart the network manager.</p>
+<div class="highlight"><pre><span></span><code>systemctl restart NetworkManager
+</code></pre></div>
+<h3 id="monitor-mode">Monitor Mode</h3>
+<p>Search for network devices in Monitor Mode and Access Points</p>
+<div class="highlight"><pre><span></span><code>iwconfig <span class="m">2</span>&gt;/dev/null <span class="p">|</span> grep <span class="s2">&quot;Mode\\:Monitor&quot;</span> <span class="p">|</span> awk <span class="s1">&#39;{print $1}&#39;</span>
+iwconfig <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> sed -n -e <span class="s1">&#39;s/^.\*Access Point: //p&#39;</span>
+</code></pre></div>
 <h3 id="get-a-gui">Get a GUI</h3>
 <p>Run <code>startx</code> if you are on a local machine, in a console and have a GUI installed.</p>
 <h4 id="kali-in-wsl2-with-gui">Kali in WSL2 with GUI</h4>
@@ -4948,24 +4965,7 @@ update-rc.d xrdp <span class="nb">enable</span>
 apt-get remove gnome-core
 apt-get install lxde-core lxde kali-defaults kali-root-login desktop-base
 </code></pre></div>
-<h2 id="config">Config</h2>
-<h3 id="wifi-issues">WiFi issues</h3>
-<p>Check the NetworkManager.conf</p>
-<div class="highlight"><pre><span></span><code>sudo nano /etc/NetworkManager/NetworkManager.conf
-</code></pre></div>
-<p>If "managed=false" set this to true</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>ifupdown<span class="o">]</span>
-<span class="nv">managed</span><span class="o">=</span><span class="nb">true</span>
-</code></pre></div>
-<p>now save the file and restart the network manager.</p>
-<div class="highlight"><pre><span></span><code>systemctl restart NetworkManager
-</code></pre></div>
-<h3 id="monitor-mode">Monitor Mode</h3>
-<p>Search for network devices in Monitor Mode and Access Points</p>
-<div class="highlight"><pre><span></span><code>iwconfig <span class="m">2</span>&gt;/dev/null <span class="p">|</span> grep <span class="s2">&quot;Mode\\:Monitor&quot;</span> <span class="p">|</span> awk <span class="s1">&#39;{print $1}&#39;</span>
-iwconfig <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> sed -n -e <span class="s1">&#39;s/^.\*Access Point: //p&#39;</span>
-</code></pre></div>
-<h2 id="tools">Tools</h2>
+<h2 id="more-tools">More Tools</h2>
 <p>Tools ready to be installed</p>
 <ul>
 <li>Eyewitness (screenshot pws): <code>sudo apt install eyewitness</code></li>
