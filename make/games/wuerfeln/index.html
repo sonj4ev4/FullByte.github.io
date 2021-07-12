@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://0xfab1.net/make/games/wuerfeln/">
       
       <link rel="icon" href="../../../icons/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.10">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ca7ac06f.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1fe995fd.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.f1a3b89f.min.css">
@@ -2325,13 +2325,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#example-round" class="md-nav__link">
-    Example round
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#einhorn" class="md-nav__link">
     🦄 Einhorn
   </a>
@@ -2345,19 +2338,18 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#multiple-games" class="md-nav__link">
-    Multiple games
-  </a>
+      </ul>
+    </nav>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#multiple-games-example" class="md-nav__link">
-    Multiple games example
+      
+        <li class="md-nav__item">
+  <a href="#example-game-todo" class="md-nav__link">
+    Example game (todo)
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Example game (todo)">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#extras" class="md-nav__link">
@@ -4611,13 +4603,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#example-round" class="md-nav__link">
-    Example round
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#einhorn" class="md-nav__link">
     🦄 Einhorn
   </a>
@@ -4631,19 +4616,18 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#multiple-games" class="md-nav__link">
-    Multiple games
-  </a>
+      </ul>
+    </nav>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#multiple-games-example" class="md-nav__link">
-    Multiple games example
+      
+        <li class="md-nav__item">
+  <a href="#example-game-todo" class="md-nav__link">
+    Example game (todo)
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Example game (todo)">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#extras" class="md-nav__link">
@@ -4675,20 +4659,68 @@
                 
                 
                 <h1 id="wurfeln">Würfeln</h1>
-<p><code>Würfeln ist Einstellungssache</code> is a game of luck and high precision dice rolling. Tweak statistics to your advantage with the right mindset. Is your dice roll determination stronger than the one of your opponents? Play a game, bet on your roll attempts and show that you have mastered the art of rolling the die.</p>
+<p><code>Würfeln ist Einstellungssache</code> is a game of luck and high precision dice rolling. Tweak statistics to your advantage with the right mindset. Is your dice roll determination stronger than the one of your opponents? Challenge up to five opponents, bet on your roll attempts and show that you have mastered the art of rolling the die.</p>
 <h2 id="how-to-play">How to play</h2>
+<p>Bet on your role outcome and receive or pay rocks. Beware of the unicorn. The first player with 0 rocks loses the round. All other players keep their rocks. Bet on the unicorn and play another rounds until all rocks are gone, a player has the agreed amount of rocks in their stash or see who has the most rocks after an agreed amount of rounds.</p>
 <h3 id="setup">Setup</h3>
-<p>Challenge up to three opponents, three standard D6 dice (numbers 1-6) per player (idealy visually different), an einhorn and plenty of smooth rocks.</p>
-<p>The poor mans option that works is any object that will resemble the einhorn and something to keep track of the score e.g. rocks, coins, etc. Pen and paper works but is a little more work and kills the flow.</p>
-<p>Everyone starts with 6 rocks (=points). Roll all three die and the player with highest total number starts the game.</p>
+<p>Setup the game by providing 3 dice per players and at least 50 rocks. Ideally you have a bowl for the rocks and centrally placed place to roll the dice. Place the unicorn next to the central rock stash.</p>
+<p>Agree on how many rounds shall be played to determine the winner.</p>
+<p>To start, each player gets</p>
+<ul>
+<li>3 standard D6 (numbers 1-6) dice</li>
+<li>6 rocks</li>
+</ul>
+<p>Each player rolls all three die once and the player with highest total number starts the game. If there is a draw those players role again until a starting player is determined.</p>
 <h3 id="play">Play</h3>
-<p>The current player decides to either predict the upcoming roll or not (passive roll) - then rolls all three dice once.</p>
-<p>Based on the result add/remove points as follows:</p>
+<p>The current player decides to either predict the upcoming roll or not (passive roll) - then proceeds to roll all three die once.</p>
+<p>There are 4 different predictable outcomes. Below is a list of all possible combinations and their probability:</p>
 <table>
 <thead>
 <tr>
 <th>Result</th>
-<th>Rule / Dice combination</th>
+<th>Rule</th>
+<th>Example</th>
+<th>Total combinations</th>
+<th>distinct  combinations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unvermeidlich</td>
+<td><code>n &amp; n+1 &amp; (!n / !n+1)</code></td>
+<td>⚀⚁⚃ or ⚂⚃⚀</td>
+<td>97 (45%)</td>
+<td>16 (29%)</td>
+</tr>
+<tr>
+<td>Wunsch</td>
+<td><code>2x n &amp; !n</code></td>
+<td>⚀⚀⚁</td>
+<td>89 (41%)</td>
+<td>30 (54%)</td>
+</tr>
+<tr>
+<td>Einhorn</td>
+<td><code>n &amp; n+2 &amp; (n+4 / n+5)</code></br> <code>n &amp; n+3 &amp; n+5</code></td>
+<td>⚀⚂⚄ or ⚀⚃⚅</td>
+<td>24 (11%)</td>
+<td>4 (7%)</td>
+</tr>
+<tr>
+<td>Dreifaltigkeit</td>
+<td><code>3x n</code></td>
+<td>⚁⚁⚁ or ⚅⚅⚅</td>
+<td>6 (3%)</td>
+<td>6 (11%)</td>
+</tr>
+</tbody>
+</table>
+<p>For a list of all combinations and total possible combinations view the overview at the bottom.</p>
+<p>Based on the result of the players role attempt add or remove rocks (points) as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Result</th>
 <th>Correct</th>
 <th>Wrong</th>
 <th>Passive</th>
@@ -4697,47 +4729,44 @@
 <tbody>
 <tr>
 <td>⚰️ Das Unvermeidliche</td>
-<td><code>n &amp; n+1 &amp; (!n / !n+1)</code></br>Example: ⚀⚁⚃ or ⚂⚃⚀</td>
 <td>+2</td>
 <td>-2</td>
 <td>-1</td>
 </tr>
 <tr>
 <td>🎁 Wunsch</td>
-<td><code>2x n &amp; !n</code></br>Example: ⚀⚀⚁</td>
 <td>+1</td>
 <td>-1</td>
 <td>0</td>
 </tr>
 <tr>
 <td>🦄 Einhorn</td>
-<td><code>n &amp; n+2 &amp; (n+4 / n+5)</code></br> <code>n &amp; n+3 &amp; n+5</code></br>Example: ⚀⚂⚄ or ⚀⚃⚅</td>
 <td>+5</td>
 <td>-5</td>
 <td>-5</td>
 </tr>
 <tr>
 <td>☢️ Dreifaltigkeit</td>
-<td><code>3x n</code></br>Example: ⚁⚁⚁ or ⚅⚅⚅</td>
 <td>+3</td>
 <td>-3</td>
 <td>+3</td>
 </tr>
 </tbody>
 </table>
-<h3 id="example-round">Example round</h3>
-<p>If it is your turn, you bet on rolling 🎁(Wunsch) and you rolled 1,2,5 which is ⚰️(Das Unvermeidliche). Therefore, you lose 2 points. If this is the first round of the game, you started with 6 points and now have 4 points. Now it is the next players turn. The player choses to not predict anything and roll a 2,2,2 which is ☢️(Dreifaltigkeit). In this case the player gains 3 points and it is the next players turn. The third player predicts an 🦄(Einhorn) and roll a 1,3,6 and gains 5 points. (this never happens IRL, lol :D)</p>
+<p>In case the role result was a 🎁(Wunsch) go to that line in the table, then check if the prediction was correct/wrong or passive and add or remove rocks accordingly. It does not matter what prediction was made specificity. All that matters is if the prediction was correct, wrong or if no prediction was made.</p>
 <h3 id="einhorn">🦄 Einhorn</h3>
-<p>In case a player rolls an 🦄(Einhorn) the player then recieves the Einhorn. It doesn't matter if the prediction was correct, wrong or passiv. From this moment on the player may choose from where to take and give points: either the main rock stash from any other player. If the player with the Einhorn needs to give rocks back, those are given to any other player of choice. The 🦄(Einhorn) is passed once another player roles an 🦄(Einhorn) and returned once the round ends.</p>
+<p>Additionally to the rocks earned/payed, a player that rolls an 🦄(Einhorn) receives the Einhorn. If the player already has the Einhorn no rocks are earned/payed for rolling an Einhorn (nothing happens).</p>
+<p>Normally all players can only take rocks from the central stash and put rocks back to the central stash depending on their role and prediction outcome. A player with the Einhorn can give and take rocks either from the central stash or from any other player. Of course a player with the Einhorn still needs to pay for mistakes from the own stash (but can give the rocks to some other player instead of putting it in the central stash if desired).</p>
+<p>The 🦄(Einhorn) is passed once another player roles an 🦄(Einhorn).</p>
+<p>Once the round ends the Einhorn is placed in the middle of the dice rolling area and all players bet with their personal rock stash (if available) to receive the Einhorn in the next round. It is recommended to not show how much you are bidding on the Einhorn. The Einhorn goes to the highest bidder but all bidders loose all the rocks used to bet for the Einhorn and place those rocks in the central stash. In case there is a tie all highest bidders role their 3 die and the player with the highest total sum receives the Einhorn. This step is repeated in case there is another tie. The player with the unicorn starts the next round.</p>
 <h3 id="how-to-win">How to win</h3>
-<p>The first player to reach 0 points (or less) loses the game. The game ends at this point and the player with the most points wins the game.</p>
-<h3 id="multiple-games">Multiple games</h3>
-<p>Should you play multiple games note down all remaining points from the current game and add them to the total score.</p>
-<p>Agree on how many games shall be played and after that game the player with the highest overall score wins.</p>
-<p>On every new round you start again with 6 points but can add already gained points from previous matches into this game if you like. You can add your entire point stach if you want.</p>
-<p>You do not keep the 🦄(Einhorn) over multiple games. After each game is over the 🦄(Einhorn) returns to the middle of the table and is called once an 🦄(Einhorn) is rolled.</p>
-<p>The looser of the last round begins the new game.</p>
-<h3 id="multiple-games-example">Multiple games example</h3>
+<p>The first player with 0 rocks loses the round. The game round ends at this point and all players but their remaining rocks in their rock stash. All players then bet on the unicorn und start another rounds. For the new round all players receive 6 rocks from the main stash. Players with a personal rock stash may choose to add rocks to their current game stash at this time only.</p>
+<h2 id="example-game-todo">Example game (todo)</h2>
+<ul>
+<li>If it is your turn, you bet on rolling 🎁(Wunsch) and you rolled 1,2,5 which is ⚰️(Das Unvermeidliche). Therefore, you lose 2 rocks. If this is your first round of the game, then since you started with 6 rocks and now have 4 rocks. Now it is the next players turn.</li>
+<li>The next player choses to not predict anything and roll a 2,2,2 which is ☢️(Dreifaltigkeit). In this case the player gains 3 points and it is the next players turn.</li>
+<li>The third player predicts an 🦄(Einhorn) and roll a 1,3,6 and gains 5 points.</li>
+</ul>
 <p>This is the score board of an example session with 4 games and 3 players:</p>
 <table>
 <thead>
@@ -4803,7 +4832,7 @@
     \frac{(6+3-1)!}{3!*(6-1)!} = 56
 \end{align}</script>
 </div>
-<p>You can copy <code>(6+3-1)!/(3!*(6-1)!)</code> to wolframalpha to calculate it or use <a href="https://www.wolframalpha.com/input/?i=%286%2B3-1%29%21%2F%283%21*%286-1%29%21%29">this link</a>.</p>
+<p>You can copy <code>(6+3-1)!/(3!*(6-1)!)</code> to WolframAlpha to calculate it or use <a href="https://www.wolframalpha.com/input/?i=%286%2B3-1%29%21%2F%283%21*%286-1%29%21%29">this link</a>.</p>
 <p>These 56 combinations distribute as follows:</p>
 <table>
 <thead>
@@ -4838,6 +4867,1350 @@
 <td>⚀⚀⚀, ⚁⚁⚁, ⚂⚂⚂</br>⚃⚃⚃, ⚄⚄⚄, ⚅⚅⚅</td>
 <td>6</td>
 <td>11 %</td>
+</tr>
+</tbody>
+</table>
+<p>However, this is not the probability of each combination since the distinct combinations are not evenly distributed over the 216 possible outcomes.</p>
+<p>I do not know how to calculate this so I created a list of all possible outcomes. To view the full list expand "Full list of possible die combinations". The outcome is as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Result</th>
+<th>total</th>
+<th>distinct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Das Unvermeidlich</td>
+<td>97 (45%)</td>
+<td>16 (29%)</td>
+</tr>
+<tr>
+<td>Wunsch</td>
+<td>89 (41%)</td>
+<td>30 (54%)</td>
+</tr>
+<tr>
+<td>Einhorn</td>
+<td>24 (11%)</td>
+<td>4 (7%)</td>
+</tr>
+<tr>
+<td>Dreifaltigkeit</td>
+<td>6 (3%)</td>
+<td>6 (11%)</td>
+</tr>
+</tbody>
+</table>
+<p>The result shows that Das Unvermeidliche has less distinct variations than Wunsch but more possible combinations.</p>
+</details>
+<details class="info"><summary>Full list of possible die combinations</summary><p>This is a full list of all possible die throws in this game and the result based on the described rules above.</p>
+<table>
+<thead>
+<tr>
+<th>D1</th>
+<th>D2</th>
+<th>D3</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>Dreifaltigkeit</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>3</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>4</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>5</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>6</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>4</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>5</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>6</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>1</td>
+<td>3</td>
+<td>1</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>1</td>
+<td>3</td>
+<td>2</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>1</td>
+<td>3</td>
+<td>3</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>1</td>
+<td>3</td>
+<td>4</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>1</td>
+<td>3</td>
+<td>5</td>
+<td>Einhorn</td>
+</tr>
+<tr>
+<td>1</td>
+<td>3</td>
+<td>6</td>
+<td>Einhorn</td>
+</tr>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>1</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>2</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>3</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>4</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>5</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>6</td>
+<td>Einhorn</td>
+</tr>
+<tr>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>1</td>
+<td>5</td>
+<td>2</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>1</td>
+<td>5</td>
+<td>3</td>
+<td>Einhorn</td>
+</tr>
+<tr>
+<td>1</td>
+<td>5</td>
+<td>4</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>1</td>
+<td>5</td>
+<td>5</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>1</td>
+<td>5</td>
+<td>6</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6</td>
+<td>1</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6</td>
+<td>2</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6</td>
+<td>3</td>
+<td>Einhorn</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6</td>
+<td>4</td>
+<td>Einhorn</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6</td>
+<td>5</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6</td>
+<td>6</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>2</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>3</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>4</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>5</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>6</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2</td>
+<td>1</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>Dreifaltigkeit</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2</td>
+<td>3</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2</td>
+<td>4</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2</td>
+<td>5</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2</td>
+<td>6</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>1</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>2</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>3</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>5</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>6</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4</td>
+<td>1</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4</td>
+<td>2</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4</td>
+<td>3</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4</td>
+<td>4</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4</td>
+<td>5</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4</td>
+<td>6</td>
+<td>Einhorn</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5</td>
+<td>1</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5</td>
+<td>2</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5</td>
+<td>3</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5</td>
+<td>4</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5</td>
+<td>5</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5</td>
+<td>6</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6</td>
+<td>1</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6</td>
+<td>2</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6</td>
+<td>3</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6</td>
+<td>4</td>
+<td>Einhorn</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6</td>
+<td>5</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6</td>
+<td>6</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1</td>
+<td>1</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1</td>
+<td>2</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1</td>
+<td>3</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1</td>
+<td>4</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1</td>
+<td>5</td>
+<td>Einhorn</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1</td>
+<td>6</td>
+<td>Einhorn</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+<td>2</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+<td>3</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+<td>4</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+<td>5</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+<td>6</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3</td>
+<td>1</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3</td>
+<td>2</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+<td>Dreifaltigkeit</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3</td>
+<td>4</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3</td>
+<td>5</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3</td>
+<td>6</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4</td>
+<td>1</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4</td>
+<td>2</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4</td>
+<td>3</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4</td>
+<td>4</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4</td>
+<td>6</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>3</td>
+<td>5</td>
+<td>1</td>
+<td>Einhorn</td>
+</tr>
+<tr>
+<td>3</td>
+<td>5</td>
+<td>2</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>3</td>
+<td>5</td>
+<td>3</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>3</td>
+<td>5</td>
+<td>4</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>3</td>
+<td>5</td>
+<td>5</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>3</td>
+<td>5</td>
+<td>6</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>3</td>
+<td>6</td>
+<td>1</td>
+<td>Einhorn</td>
+</tr>
+<tr>
+<td>3</td>
+<td>6</td>
+<td>2</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>3</td>
+<td>6</td>
+<td>3</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>3</td>
+<td>6</td>
+<td>4</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>3</td>
+<td>6</td>
+<td>5</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>3</td>
+<td>6</td>
+<td>6</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1</td>
+<td>1</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1</td>
+<td>2</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1</td>
+<td>3</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1</td>
+<td>4</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1</td>
+<td>5</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1</td>
+<td>6</td>
+<td>Einhorn</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2</td>
+<td>1</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2</td>
+<td>2</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2</td>
+<td>3</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2</td>
+<td>4</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2</td>
+<td>5</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2</td>
+<td>6</td>
+<td>Einhorn</td>
+</tr>
+<tr>
+<td>4</td>
+<td>3</td>
+<td>1</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>4</td>
+<td>3</td>
+<td>2</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>4</td>
+<td>3</td>
+<td>3</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>4</td>
+<td>3</td>
+<td>4</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>4</td>
+<td>3</td>
+<td>5</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>4</td>
+<td>3</td>
+<td>6</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4</td>
+<td>1</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4</td>
+<td>2</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4</td>
+<td>3</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>Dreifaltigkeit</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4</td>
+<td>5</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4</td>
+<td>6</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5</td>
+<td>1</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5</td>
+<td>2</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5</td>
+<td>3</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5</td>
+<td>4</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5</td>
+<td>5</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>4</td>
+<td>6</td>
+<td>1</td>
+<td>Einhorn</td>
+</tr>
+<tr>
+<td>4</td>
+<td>6</td>
+<td>2</td>
+<td>Einhorn</td>
+</tr>
+<tr>
+<td>4</td>
+<td>6</td>
+<td>3</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>4</td>
+<td>6</td>
+<td>4</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>4</td>
+<td>6</td>
+<td>5</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>4</td>
+<td>6</td>
+<td>6</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1</td>
+<td>1</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1</td>
+<td>2</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1</td>
+<td>3</td>
+<td>Einhorn</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1</td>
+<td>4</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1</td>
+<td>5</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1</td>
+<td>6</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2</td>
+<td>1</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2</td>
+<td>2</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2</td>
+<td>3</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2</td>
+<td>4</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2</td>
+<td>5</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2</td>
+<td>6</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3</td>
+<td>1</td>
+<td>Einhorn</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3</td>
+<td>2</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3</td>
+<td>3</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3</td>
+<td>4</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3</td>
+<td>5</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3</td>
+<td>6</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>5</td>
+<td>4</td>
+<td>1</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>5</td>
+<td>4</td>
+<td>2</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>5</td>
+<td>4</td>
+<td>3</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>5</td>
+<td>4</td>
+<td>4</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>5</td>
+<td>4</td>
+<td>5</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>5</td>
+<td>4</td>
+<td>6</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>5</td>
+<td>5</td>
+<td>1</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>5</td>
+<td>5</td>
+<td>2</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>5</td>
+<td>5</td>
+<td>3</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>5</td>
+<td>5</td>
+<td>4</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>Dreifaltigkeit</td>
+</tr>
+<tr>
+<td>5</td>
+<td>5</td>
+<td>6</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>5</td>
+<td>6</td>
+<td>1</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>5</td>
+<td>6</td>
+<td>2</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>5</td>
+<td>6</td>
+<td>3</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>5</td>
+<td>6</td>
+<td>4</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>5</td>
+<td>6</td>
+<td>5</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>5</td>
+<td>6</td>
+<td>6</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>6</td>
+<td>1</td>
+<td>1</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>6</td>
+<td>1</td>
+<td>2</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>6</td>
+<td>1</td>
+<td>3</td>
+<td>Einhorn</td>
+</tr>
+<tr>
+<td>6</td>
+<td>1</td>
+<td>4</td>
+<td>Einhorn</td>
+</tr>
+<tr>
+<td>6</td>
+<td>1</td>
+<td>5</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>6</td>
+<td>1</td>
+<td>6</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2</td>
+<td>1</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2</td>
+<td>2</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2</td>
+<td>3</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2</td>
+<td>4</td>
+<td>Einhorn</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2</td>
+<td>5</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2</td>
+<td>6</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>6</td>
+<td>3</td>
+<td>1</td>
+<td>Einhorn</td>
+</tr>
+<tr>
+<td>6</td>
+<td>3</td>
+<td>2</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>6</td>
+<td>3</td>
+<td>3</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>6</td>
+<td>3</td>
+<td>4</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>6</td>
+<td>3</td>
+<td>5</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>6</td>
+<td>3</td>
+<td>6</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>6</td>
+<td>4</td>
+<td>1</td>
+<td>Einhorn</td>
+</tr>
+<tr>
+<td>6</td>
+<td>4</td>
+<td>2</td>
+<td>Einhorn</td>
+</tr>
+<tr>
+<td>6</td>
+<td>4</td>
+<td>3</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>6</td>
+<td>4</td>
+<td>4</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>6</td>
+<td>4</td>
+<td>5</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>6</td>
+<td>4</td>
+<td>6</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>6</td>
+<td>5</td>
+<td>1</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>6</td>
+<td>5</td>
+<td>2</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>6</td>
+<td>5</td>
+<td>3</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>6</td>
+<td>5</td>
+<td>4</td>
+<td>Das Unvermeidliche</td>
+</tr>
+<tr>
+<td>6</td>
+<td>5</td>
+<td>5</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>6</td>
+<td>5</td>
+<td>6</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>6</td>
+<td>6</td>
+<td>1</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>6</td>
+<td>6</td>
+<td>2</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>6</td>
+<td>6</td>
+<td>3</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>6</td>
+<td>6</td>
+<td>4</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>6</td>
+<td>6</td>
+<td>5</td>
+<td>Wunsch</td>
+</tr>
+<tr>
+<td>6</td>
+<td>6</td>
+<td>6</td>
+<td>Dreifaltigkeit</td>
 </tr>
 </tbody>
 </table>
@@ -5077,7 +6450,7 @@
     <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.82b56eb2.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
       
     
   </body>
