@@ -1071,11 +1071,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/tools/mkdocs/</loc>
-         <lastmod>2021-07-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://0xfab1.net/tech/tools/mobaxterm/</loc>
          <lastmod>2021-07-13</lastmod>
          <changefreq>daily</changefreq>
@@ -1162,6 +1157,16 @@
     </url>
     <url>
          <loc>https://0xfab1.net/tech/tools/lists/server-apps/</loc>
+         <lastmod>2021-07-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://0xfab1.net/tech/tools/static-website/mkdocs/</loc>
+         <lastmod>2021-07-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://0xfab1.net/tech/tools/static-website/sigal/</loc>
          <lastmod>2021-07-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
