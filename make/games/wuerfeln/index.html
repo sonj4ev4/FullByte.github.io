@@ -4662,12 +4662,42 @@
 <h3 id="play">Play</h3>
 <p>The current player decides to either predict the upcoming roll or not (passive roll) - then proceeds to roll all three die once.</p>
 <p>There are 4 different predictable outcomes. Below is a list of all possible combinations and their probability:</p>
-<p>| Result         | Rule / Example    | Total Combinations | Distinct Combinations |
-|----------------|------------------------------------------------------|------------|--------------------|------------------------|
-| ⚰️ Unvermeidlich  | <code>n &amp; n+1 &amp; (!n / !n+1)</code>  </br>Example: ⚀⚁⚃ or ⚂⚃⚀ | 97 (45%)           | 16 (29%)               |
-| 🎁 Wunsch         | <code>2x n &amp; !n</code>   </br>Example: ⚀⚀⚁        | 89 (41%)           | 30 (54%)               |
-| 🦄 Einhorn        | <code>n &amp; n+2 &amp; (n+4 / n+5)</code></br><code>n &amp; n+3 &amp; n+5</code> </br>Example: ⚀⚂⚄ or ⚀⚃⚅ | 24 (11%)           | 4 (7%)                 |
-| ☢️ Dreifaltigkeit | <code>3x n</code>  </br>Example: ⚁⚁⚁ or ⚅⚅⚅ | 6 (3%)             | 6 (11%)                |</p>
+<table>
+<thead>
+<tr>
+<th>Result</th>
+<th>Rule / Example</th>
+<th>Total Combinations</th>
+<th>Distinct Combinations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>⚰️ Unvermeidlich</td>
+<td><code>n &amp; n+1 &amp; (!n / !n+1)</code>  </br>Example: ⚀⚁⚃ or ⚂⚃⚀</td>
+<td>97 (45%)</td>
+<td>16 (29%)</td>
+</tr>
+<tr>
+<td>🎁 Wunsch</td>
+<td><code>2x n &amp; !n</code>   </br>Example: ⚀⚀⚁</td>
+<td>89 (41%)</td>
+<td>30 (54%)</td>
+</tr>
+<tr>
+<td>🦄 Einhorn</td>
+<td><code>n &amp; n+2 &amp; (n+4 / n+5)</code></br><code>n &amp; n+3 &amp; n+5</code> </br>Example: ⚀⚂⚄ or ⚀⚃⚅</td>
+<td>24 (11%)</td>
+<td>4 (7%)</td>
+</tr>
+<tr>
+<td>☢️ Dreifaltigkeit</td>
+<td><code>3x n</code>  </br>Example: ⚁⚁⚁ or ⚅⚅⚅</td>
+<td>6 (3%)</td>
+<td>6 (11%)</td>
+</tr>
+</tbody>
+</table>
 <p>For a list of all combinations and total possible combinations view the overview at the bottom.</p>
 <p>Based on the result of the players role attempt add or remove rocks as follows:</p>
 <table>
