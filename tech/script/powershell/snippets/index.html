@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://0xfab1.net/tech/script/powershell/snippets/">
       
       <link rel="icon" href="../../../../icons/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.1.11">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.1">
     
     
       
@@ -24,10 +24,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.3754935a.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.1118c9be.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.f1a3b89f.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ba0d045b.min.css">
         
           
           
@@ -123,14 +123,18 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
       </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -1675,18 +1679,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../fun/watch/movies/" class="md-nav__link">
-        Watch List
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../../fun/watch/netflix/" class="md-nav__link">
         Netflix
       </a>
@@ -1701,6 +1693,18 @@
     <li class="md-nav__item">
       <a href="../../../../fun/watch/passiv-online/" class="md-nav__link">
         Passive Online Screens
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../fun/watch/watch-list/" class="md-nav__link">
+        Watch List
       </a>
     </li>
   
@@ -2377,6 +2381,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../make/lasercutter/phone-holder/" class="md-nav__link">
+        Phone Holder
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../make/lasercutter/proempeln/" class="md-nav__link">
         Prömpeln
       </a>
@@ -2402,7 +2418,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../make/lasercutter/wuerfeln/" class="md-nav__link">
-        Würfeln
+        Wuerfeln
       </a>
     </li>
   
@@ -4814,18 +4830,22 @@
 <span class="k">return</span> <span class="no">[BitConverter]</span><span class="p">::</span><span class="n">ToString</span><span class="p">(</span><span class="nv">$buffer</span><span class="p">).</span><span class="n">Replace</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="no">[string]</span><span class="p">::</span><span class="n">Empty</span><span class="p">);</span>
 </code></pre></div>
 <h2 id="system-information">System information</h2>
-<p><strong>Last boot time</strong></p>
+<p>Programs that run on this system</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Get-ScheduledTask</span> <span class="p">|</span> <span class="nb">Get-ScheduledTaskInfo</span>
+<span class="nb">Get-Service</span>
+<span class="nb">Get-Process</span>
+</code></pre></div>
+<p>Last boot time</p>
 <div class="highlight"><pre><span></span><code><span class="nb">Write-Output</span> <span class="s2">&quot;System boot:&quot;</span> <span class="p">(</span><span class="nb">Get-CimInstance</span> <span class="n">-ClassName</span> <span class="n">win32_operatingsystem</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-ExpandProperty</span> <span class="n">LastBootUpTime</span><span class="p">)</span>
 </code></pre></div>
-<p><strong>Last Installation Date</strong></p>
+<p>Last Installation Date</p>
 <div class="highlight"><pre><span></span><code><span class="nb">Get-ChildItem</span> <span class="n">-Path</span> <span class="n">HKLM</span><span class="p">:\</span><span class="n">System</span><span class="p">\</span><span class="n">Setup</span><span class="p">\</span><span class="n">Source</span><span class="p">*</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span><span class="nb">Get-ItemProperty</span> <span class="n">-Path</span> <span class="n">Registry</span><span class="p">::</span><span class="nv">$_</span><span class="p">}</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">ProductName</span><span class="p">,</span> <span class="n">ReleaseID</span><span class="p">,</span> <span class="n">CurrentBuild</span><span class="p">,</span> <span class="p">@{</span><span class="n">n</span><span class="p">=</span><span class="s2">&quot;Install Date&quot;</span><span class="p">;</span> <span class="n">e</span><span class="p">={(</span><span class="no">[DateTime]</span><span class="s1">&#39;1/1/1970&#39;</span><span class="p">).</span><span class="n">AddSeconds</span><span class="p">(</span><span class="nv">$_</span><span class="p">.</span><span class="n">InstallDate</span><span class="p">)}}</span> <span class="p">|</span> <span class="nb">Sort-Object</span> <span class="s2">&quot;Install Date&quot;</span>
 </code></pre></div>
-<p><strong>Get WiFi Passwords</strong></p>
-<p>Add more cultures if needed</p>
+<p>Get WiFi Passwords (add more cultures if needed):</p>
 <div class="highlight"><pre><span></span><code><span class="nv">$keyword</span> <span class="p">=</span> <span class="p">@{</span><span class="s2">&quot;de-DE&quot;</span> <span class="p">=</span> <span class="s1">&#39;Schlüsselinhalt&#39;</span><span class="p">;</span> <span class="s2">&quot;en-US&quot;</span> <span class="p">=</span> <span class="s1">&#39;Key Content&#39;</span><span class="p">}</span>
 <span class="nb">Invoke-Expression</span> <span class="n">-Command</span> <span class="s1">&#39;(netsh wlan show profiles) | Select-String &quot;\:(.+)$&quot; | %{$name=$_.Matches.Groups[1].Value.Trim(); $_} | %{(netsh wlan show profile name=&quot;$name&quot; key=clear)} | Select-String ($keyword[(get-culture).Name]+&quot;\W+\:(.+)$&quot;) | %{$pass=$_.Matches.Groups[1].Value.Trim(); $_} | %{[PSCustomObject]@{ WiFi=$name;PASSWORD=$pass }} | Format-Table -AutoSize&#39;</span>
 </code></pre></div>
-<p><strong>Get WinSAT information</strong></p>
+<p>WinSAT information</p>
 <div class="highlight"><pre><span></span><code><span class="c"># Get WinSAT Data (XML)</span>
 <span class="n">WinSAT</span> <span class="n">formal</span>
 <span class="nv">$path</span> <span class="p">=</span> <span class="nb">Get-ChildItem</span> <span class="n">-Path</span> <span class="s1">&#39;C:\Windows\Performance\WinSAT\DataStore\*Formal.*.xml&#39;</span> <span class="p">|</span> <span class="nb">Sort-Object</span> <span class="n">-Property</span> <span class="n">CreationTime</span> <span class="n">-Descending</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-First</span> <span class="n">1</span> <span class="n">-ExpandProperty</span> <span class="n">FullName</span> 
@@ -4839,22 +4859,22 @@
 <span class="s1">&#39;CPU Compression Performance is {0} {1}&#39;</span> <span class="o">-f</span> <span class="nv">$node</span><span class="p">.</span><span class="s1">&#39;#text&#39;</span><span class="p">,</span> <span class="nv">$node</span><span class="p">.</span><span class="n">units</span>
 <span class="s1">&#39;CPU Manufacturer is {0} &#39;</span> <span class="o">-f</span> <span class="nv">$xml</span><span class="p">.</span><span class="n">WinSAT</span><span class="p">.</span><span class="n">SystemConfig</span><span class="p">.</span><span class="n">Processor</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">Signature</span><span class="p">.</span><span class="n">Manufacturer</span><span class="p">.</span><span class="n">friendly</span>
 </code></pre></div>
-<p><strong>Windows Defender Stats</strong></p>
+<p>Windows Defender statistics/information</p>
 <div class="highlight"><pre><span></span><code><span class="nv">$DefenderStatus</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Get-Service</span> <span class="n">WinDefend</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span><span class="p">).</span><span class="n">Status</span>
 <span class="k">if</span> <span class="p">(</span><span class="nv">$DefenderStatus</span> <span class="o">-ne</span> <span class="s2">&quot;Running&quot;</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">throw</span> <span class="s2">&quot;The Windows Defender service is not currently running&quot;</span>
 <span class="p">}</span>
 <span class="nb">Get-MpComputerStatus</span>
 </code></pre></div>
-<p><strong>Get Win10 key</strong></p>
+<p>Win10 key</p>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nb">Get-WmiObject</span> <span class="n">-query</span> <span class="err">‘</span><span class="nb">select </span><span class="p">*</span> <span class="n">from</span> <span class="n">SoftwareLicensingService</span><span class="err">’</span><span class="p">).</span><span class="n">OA3xOriginalProductKey</span>
 </code></pre></div>
-<p><strong>Install apps</strong></p>
-<p>Get install apps from app-store</p>
-<div class="highlight"><pre><span></span><code><span class="nb">Get-AppxPackage</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-Property</span> <span class="n">Name</span><span class="p">,</span> <span class="n">Status</span><span class="p">,</span> <span class="n">Version</span><span class="p">,</span> <span class="n">InstallLocation</span> <span class="p">|</span> <span class="nb">Format-Table</span>
-</code></pre></div>
-<p>List all programs installed on Windows (and ignore the ones from Microsoft)</p>
-<div class="highlight"><pre><span></span><code><span class="nb">Get-WMIObject</span> <span class="n">-Query</span> <span class="s2">&quot;SELECT * FROM Win32_Product Where Not Vendor Like &#39;%Microsoft%&#39;&quot;</span> <span class="p">|</span> <span class="nb">Format-Table</span>
+<p>List installed apps</p>
+<div class="highlight"><pre><span></span><code><span class="c"># Get install apps from app-store</span>
+<span class="nb">Get-AppxPackage</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-Property</span> <span class="n">Name</span><span class="p">,</span> <span class="n">Status</span><span class="p">,</span> <span class="n">Version</span><span class="p">,</span> <span class="n">InstallLocation</span> <span class="p">|</span> <span class="nb">Format-Table</span>
+
+<span class="c"># List all programs installed on Windows (and ignore the ones from Microsoft)</span>
+<span class="nb">Get-WMIObject</span> <span class="n">-Query</span> <span class="s2">&quot;SELECT * FROM Win32_Product Where Not Vendor Like &#39;%Microsoft%&#39;&quot;</span> <span class="p">|</span> <span class="nb">Format-Table</span>
 </code></pre></div>
 <p>List files in programs folder:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">$Path</span> <span class="p">=</span> <span class="s2">&quot;$Env:ProgramData\Microsoft\Windows\Start Menu\Programs&quot;</span>
@@ -5194,10 +5214,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.716f8af4.min.js"></script>
       
     
   </body>
