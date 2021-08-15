@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://0xfab1.net/tech/script/web/JavaScript/">
       
       <link rel="icon" href="../../../../icons/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.1">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
     
     
       
@@ -24,10 +24,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.1118c9be.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.f7f47774.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ba0d045b.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.3f5d1f46.min.css">
         
           
           
@@ -5263,7 +5263,7 @@ Base cases are for string <code>length</code> equal to <code>2</code> or <code>1
 </code></pre></div>
 <h3 id="unique-values-of-array">Unique values of array</h3>
 <p>Use ES6 <code>Set</code> and the <code>...rest</code> operator to discard all duplicated values.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">unique</span> <span class="o">=</span> <span class="nx">arr</span> <span class="p">=&gt;</span> <span class="p">[...</span><span class="k">new</span> <span class="nx">Set</span><span class="p">(</span><span class="nx">arr</span><span class="p">)];</span>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">unique</span> <span class="o">=</span> <span class="nx">arr</span> <span class="p">=&gt;</span> <span class="p">[...</span><span class="ow">new</span> <span class="nb">Set</span><span class="p">(</span><span class="nx">arr</span><span class="p">)];</span>
 <span class="c1">// unique([1,2,2,3,4,4,5]) -&gt; [1,2,3,4,5]</span>
 </code></pre></div>
 <h3 id="sum-of-array-of-numbers">Sum of array of numbers</h3>
@@ -5314,7 +5314,7 @@ Combine values using <code>join('')</code>.</p>
 <p>Use <code>crypto</code> API to generate a UUID, compliant with <a href="https://www.ietf.org/rfc/rfc4122.txt">RFC4122</a> version 4.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">uuid</span> <span class="o">=</span> <span class="nx">_</span> <span class="p">=&gt;</span>
   <span class="p">(</span> <span class="p">[</span><span class="mf">1e7</span><span class="p">]</span><span class="o">+-</span><span class="mf">1e3</span><span class="o">+-</span><span class="mf">4e3</span><span class="o">+-</span><span class="mf">8e3</span><span class="o">+-</span><span class="mf">1e11</span> <span class="p">).</span><span class="nx">replace</span><span class="p">(</span> <span class="sr">/[018]/g</span><span class="p">,</span> <span class="nx">c</span> <span class="p">=&gt;</span>
-    <span class="p">(</span><span class="nx">c</span> <span class="o">^</span> <span class="nx">crypto</span><span class="p">.</span><span class="nx">getRandomValues</span><span class="p">(</span><span class="k">new</span> <span class="nx">Uint8Array</span><span class="p">(</span><span class="mf">1</span><span class="p">))[</span><span class="mf">0</span><span class="p">]</span> <span class="o">&amp;</span> <span class="mf">15</span> <span class="o">&gt;&gt;</span> <span class="nx">c</span> <span class="o">/</span> <span class="mf">4</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="mf">16</span><span class="p">)</span>
+    <span class="p">(</span><span class="nx">c</span> <span class="o">^</span> <span class="nx">crypto</span><span class="p">.</span><span class="nx">getRandomValues</span><span class="p">(</span><span class="ow">new</span> <span class="nb">Uint8Array</span><span class="p">(</span><span class="mf">1</span><span class="p">))[</span><span class="mf">0</span><span class="p">]</span> <span class="o">&amp;</span> <span class="mf">15</span> <span class="o">&gt;&gt;</span> <span class="nx">c</span> <span class="o">/</span> <span class="mf">4</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="mf">16</span><span class="p">)</span>
   <span class="p">)</span>
 </code></pre></div>
 <h2 id="manipulate-web-page">Manipulate Web Page</h2>
@@ -5344,7 +5344,7 @@ Scroll by a fraction of the distance from top. Use <code>window.requestFrame()</
 <span class="p">}</span>
 </code></pre></div>
 <p>String converter</p>
-<div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">CreateTranslator</span><span class="p">(</span><span class="nx">translationTable</span><span class="p">)</span> <span class="kd">function</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="nx">s</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="k">new</span> <span class="nb">RegExp</span><span class="p">([</span><span class="nx">k</span> <span class="k">for</span> <span class="p">(</span><span class="nx">k</span> <span class="k">in</span> <span class="nx">translationTable</span><span class="p">)].</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;|&#39;</span><span class="p">),</span> <span class="s1">&#39;g&#39;</span><span class="p">),</span> <span class="kd">function</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="nx">translationTable</span><span class="p">[</span><span class="nx">str</span><span class="p">]);</span>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">CreateTranslator</span><span class="p">(</span><span class="nx">translationTable</span><span class="p">)</span> <span class="kd">function</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="nx">s</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="ow">new</span> <span class="nb">RegExp</span><span class="p">([</span><span class="nx">k</span> <span class="k">for</span> <span class="p">(</span><span class="nx">k</span> <span class="ow">in</span> <span class="nx">translationTable</span><span class="p">)].</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;|&#39;</span><span class="p">),</span> <span class="s1">&#39;g&#39;</span><span class="p">),</span> <span class="kd">function</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="nx">translationTable</span><span class="p">[</span><span class="nx">str</span><span class="p">]);</span>
 
 <span class="kd">var</span> <span class="nx">translationTable</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">a</span><span class="o">:</span><span class="mf">1</span><span class="p">,</span> <span class="nx">bb</span><span class="o">:</span><span class="mf">2</span><span class="p">,</span> <span class="nx">b</span><span class="o">:</span><span class="mf">3</span><span class="p">,</span> <span class="nx">c</span><span class="o">:</span><span class="mf">4</span> <span class="p">};</span>
 <span class="kd">var</span> <span class="nx">MyTranslater</span> <span class="o">=</span> <span class="nx">CreateTranslator</span><span class="p">(</span> <span class="nx">translationTable</span> <span class="p">);</span>
@@ -5432,7 +5432,7 @@ Scroll by a fraction of the distance from top. Use <code>window.requestFrame()</
 <span class="p">};</span>
 
 <span class="kd">var</span> <span class="nx">charToEntity</span> <span class="o">=</span> <span class="p">{};</span>
-<span class="k">for</span> <span class="p">(</span> <span class="kd">var</span> <span class="nx">entityName</span> <span class="k">in</span> <span class="nx">entityToCode</span> <span class="p">)</span>
+<span class="k">for</span> <span class="p">(</span> <span class="kd">var</span> <span class="nx">entityName</span> <span class="ow">in</span> <span class="nx">entityToCode</span> <span class="p">)</span>
         <span class="nx">charToEntity</span><span class="err">\</span><span class="p">[</span><span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">(</span><span class="nx">entityToCode</span><span class="p">[</span><span class="nx">entityName</span><span class="p">])]</span> <span class="o">=</span> <span class="nx">entityName</span><span class="p">;</span>
 
 <span class="kd">function</span> <span class="nx">UnescapeEntities</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&amp;(.+?);/g</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">str</span><span class="p">,</span> <span class="nx">ent</span><span class="p">)</span> <span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">(</span> <span class="nx">ent</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="o">!=</span><span class="s1">&#39;#&#39;</span> <span class="o">?</span> <span class="nx">entityToCode</span><span class="p">[</span><span class="nx">ent</span><span class="p">]</span> <span class="o">&amp;</span><span class="err">#</span><span class="nx">x3A</span><span class="p">;</span> <span class="nx">ent</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;x&#39;</span> <span class="o">?</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">ent</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="mf">2</span><span class="p">),</span><span class="mf">16</span><span class="p">)</span><span class="o">:</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">ent</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="mf">1</span><span class="p">))</span> <span class="p">)</span> <span class="p">);</span>
@@ -6068,10 +6068,10 @@ Scroll by a fraction of the distance from top. Use <code>window.requestFrame()</
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.716f8af4.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.febc23d1.min.js"></script>
       
     
   </body>

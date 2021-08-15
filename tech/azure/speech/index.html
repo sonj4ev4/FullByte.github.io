@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://0xfab1.net/tech/azure/speech/">
       
       <link rel="icon" href="../../../icons/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.1">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
     
     
       
@@ -24,10 +24,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.1118c9be.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.f7f47774.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ba0d045b.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
         
           
           
@@ -4664,36 +4664,36 @@ Change the parts where comments are added to make it work for you.</p>
 
             <span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">recognizer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SpeechRecognizer</span><span class="p">(</span><span class="n">speechConfig</span><span class="p">,</span> <span class="n">audioConfig</span><span class="p">))</span>
             <span class="p">{</span>
-                <span class="n">recognizer</span><span class="p">.</span><span class="n">Recognizing</span> <span class="p">+=</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s">&quot;RECOGNIZING: Text={e.Result.Text}&quot;</span><span class="p">);</span> <span class="p">};</span>
+                <span class="n">recognizer</span><span class="p">.</span><span class="n">Recognizing</span> <span class="p">+=</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;RECOGNIZING: Text={e.Result.Text}&quot;</span><span class="p">);</span> <span class="p">};</span>
 
                 <span class="n">recognizer</span><span class="p">.</span><span class="n">Recognized</span> <span class="p">+=</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
                     <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="n">e</span><span class="p">.</span><span class="n">Result</span><span class="p">;</span>
-                    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s">&quot;Reason: {result.Reason.ToString()}&quot;</span><span class="p">);</span>
+                    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Reason: {result.Reason.ToString()}&quot;</span><span class="p">);</span>
 
                     <span class="k">switch</span> <span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">Reason</span><span class="p">)</span>
                     <span class="p">{</span>
                         <span class="k">case</span> <span class="n">ResultReason</span><span class="p">.</span><span class="n">RecognizedSpeech</span><span class="p">:</span>
-                            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s">&quot;Final result: Text: {result.Text}.&quot;</span><span class="p">);</span>
+                            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Final result: Text: {result.Text}.&quot;</span><span class="p">);</span>
                             <span class="n">File</span><span class="p">.</span><span class="n">AppendAllText</span><span class="p">(</span><span class="s">&quot;Output.txt&quot;</span><span class="p">,</span> <span class="n">Environment</span><span class="p">.</span><span class="n">NewLine</span><span class="p">);</span>
                             <span class="n">File</span><span class="p">.</span><span class="n">AppendAllText</span><span class="p">(</span><span class="s">&quot;Output.txt&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">.</span><span class="n">Text</span><span class="p">);</span>
                             <span class="k">break</span><span class="p">;</span>
                         <span class="k">case</span> <span class="n">ResultReason</span><span class="p">.</span><span class="n">NoMatch</span><span class="p">:</span>
-                            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s">&quot;NOMATCH: Speech could not be recognized.&quot;</span><span class="p">);</span>
+                            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;NOMATCH: Speech could not be recognized.&quot;</span><span class="p">);</span>
                             <span class="k">break</span><span class="p">;</span>
                         <span class="k">case</span> <span class="n">ResultReason</span><span class="p">.</span><span class="n">Canceled</span><span class="p">:</span>
                             <span class="kt">var</span> <span class="n">cancellation</span> <span class="p">=</span> <span class="n">CancellationDetails</span><span class="p">.</span><span class="n">FromResult</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
-                            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s">&quot;CANCELED: Reason={cancellation.Reason}&quot;</span><span class="p">);</span>
+                            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;CANCELED: Reason={cancellation.Reason}&quot;</span><span class="p">);</span>
                             <span class="k">if</span> <span class="p">(</span><span class="n">cancellation</span><span class="p">.</span><span class="n">Reason</span> <span class="p">==</span> <span class="n">CancellationReason</span><span class="p">.</span><span class="n">Error</span><span class="p">)</span>
                             <span class="p">{</span>
-                                <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s">&quot;CANCELED: ErrorCode={cancellation.ErrorCode}&quot;</span><span class="p">);</span>
-                                <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s">&quot;CANCELED: ErrorDetails={cancellation.ErrorDetails}&quot;</span><span class="p">);</span>
-                                <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s">&quot;CANCELED: Did you update the subscription info?&quot;</span><span class="p">);</span>
+                                <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;CANCELED: ErrorCode={cancellation.ErrorCode}&quot;</span><span class="p">);</span>
+                                <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;CANCELED: ErrorDetails={cancellation.ErrorDetails}&quot;</span><span class="p">);</span>
+                                <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;CANCELED: Did you update the subscription info?&quot;</span><span class="p">);</span>
                             <span class="p">}</span>
                             <span class="k">break</span><span class="p">;</span>
                     <span class="p">}</span>
                 <span class="p">};</span>
 
-                <span class="n">recognizer</span><span class="p">.</span><span class="n">Canceled</span> <span class="p">+=</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s">&quot;\n    Canceled. Reason: {e.Reason.ToString()}, CanceledReason: {e.Reason}&quot;</span><span class="p">);</span> <span class="p">};</span>
+                <span class="n">recognizer</span><span class="p">.</span><span class="n">Canceled</span> <span class="p">+=</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;\n    Canceled. Reason: {e.Reason.ToString()}, CanceledReason: {e.Reason}&quot;</span><span class="p">);</span> <span class="p">};</span>
                 <span class="n">recognizer</span><span class="p">.</span><span class="n">SessionStarted</span> <span class="p">+=</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;\n    Session started event.&quot;</span><span class="p">);</span> <span class="p">};</span>
                 <span class="n">recognizer</span><span class="p">.</span><span class="n">SessionStopped</span> <span class="p">+=</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;\n    Session stopped event.&quot;</span><span class="p">);</span> <span class="p">};</span>
 
@@ -4805,10 +4805,10 @@ Change the parts where comments are added to make it work for you.</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.716f8af4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.febc23d1.min.js"></script>
       
     
   </body>
