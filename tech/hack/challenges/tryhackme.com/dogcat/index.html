@@ -4587,8 +4587,7 @@
                 
                 
                 <h1 id="dogcat">DogCat</h1>
-<p>Notes from challenges I did @ <a href="https://tryhackme.com">https://tryhackme.com</a>.</p>
-<p>This is a full write up of the great "dogcat" CTF @ <a href="https://tryhackme.com/room/dogcat">https://tryhackme.com/room/dogcat</a>.</p>
+<p>These notes are from a challenge I did @<a href="https://tryhackme.com">tryhackme</a> called <a href="https://tryhackme.com/room/dogcat">dogcat</a>.</p>
 <p>Connect to tryhackme via openvpn e.g.: <code>sudo openvpn 0xfab1.ovpn</code></p>
 <p>Please note:</p>
 <ul>
@@ -4598,10 +4597,8 @@
 <h2 id="first-look">First look</h2>
 <p>We know there is a website hosting dog and cat pictures. Let's have a look...</p>
 <h3 id="nmap">nmap</h3>
-<p>Running nmap to search for available services and versions:</p>
-<div class="highlight"><pre><span></span><code>nmap -sC -sV <span class="m">10</span>.10.46.238
-</code></pre></div>
-<p>Result: two ports open SSH on 22 and HTTP on 80</p>
+<p>Running nmap to search for available services and versions: <code>nmap -sC -sV 10.10.46.238</code></p>
+<details class="output"><summary>Nmap output</summary><p>Result: two ports open SSH on 22 and HTTP on 80</p>
 <div class="highlight"><pre><span></span><code>Host is up (0.021s latency).
 Not shown: 998 closed ports
 PORT   STATE SERVICE VERSION
@@ -4615,6 +4612,7 @@ PORT   STATE SERVICE VERSION
 |_http-title: dogcat
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 </code></pre></div>
+</details>
 <h3 id="gobuster">gobuster</h3>
 <p>Let's run gobuster to check for available folders using this command:</p>
 <div class="highlight"><pre><span></span><code>gobuster dir -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt -u http://10.10.46.238:80
@@ -4632,9 +4630,8 @@ You don&#39;t have permission to access this resource.
 Apache/2.4.38 (Debian)
 </code></pre></div>
 <h3 id="nikto">nikto</h3>
-<p>Running nikto confirms the apache web server and shows PHP is used.
-Nothing else of interest is revealed:</p>
-<div class="highlight"><pre><span></span><code>nikto -h <span class="m">10</span>.10.46.238
+<p>Running nikto confirms the apache web server and shows PHP is used: <code>nikto -h 10.10.46.238</code></p>
+<details class="output"><summary>nikto output</summary><div class="highlight"><pre><span></span><code>nikto -h <span class="m">10</span>.10.46.238
 - Nikto v2.1.6
 ---------------------------------------------------------------------------
 + Target IP:          <span class="m">10</span>.10.46.238
@@ -4655,6 +4652,7 @@ Nothing else of interest is revealed:</p>
 ---------------------------------------------------------------------------
 + <span class="m">1</span> host<span class="o">(</span>s<span class="o">)</span> tested
 </code></pre></div>
+</details>
 <h2 id="visit-website">Visit website</h2>
 <p>So now we know machine 10.10.46.238 is running a Debian based Apache (2.4.38 ) webserver with PHP (7.4.3) serving a website with dogs and cats (probably stored under "/dogs" and "/cats").</p>
 <p>Let's visit the page on port 80 and click on dog or cat:</p>
