@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://0xfab1.net/tech/tools/static-website/mkdocs/">
       
       <link rel="icon" href="../../../../icons/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.f7f47774.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.be71726b.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -2518,6 +2518,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../azure/container/" class="md-nav__link">
+        Container
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../azure/query-azure-cli/" class="md-nav__link">
         Query Azure CLI
       </a>
@@ -3551,6 +3563,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../script/db/links/" class="md-nav__link">
+        Database Links
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -4427,16 +4451,49 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#hosting" class="md-nav__link">
+    Hosting
+  </a>
+  
+    <nav class="md-nav" aria-label="Hosting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#container" class="md-nav__link">
     Container
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#python" class="md-nav__link">
     Python
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-page" class="md-nav__link">
+    Create page
+  </a>
+  
+    <nav class="md-nav" aria-label="Create page">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mkdocs-material-admonitions" class="md-nav__link">
+    mkdocs-material admonitions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4504,16 +4561,49 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#hosting" class="md-nav__link">
+    Hosting
+  </a>
+  
+    <nav class="md-nav" aria-label="Hosting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#container" class="md-nav__link">
     Container
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#python" class="md-nav__link">
     Python
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-page" class="md-nav__link">
+    Create page
+  </a>
+  
+    <nav class="md-nav" aria-label="Create page">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mkdocs-material-admonitions" class="md-nav__link">
+    mkdocs-material admonitions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4535,14 +4625,15 @@
                 
                 
                 <h1 id="mkdocs">mkdocs</h1>
-<p><a href="https://github.com/mkdocs/mkdocs/">MkDocs</a> is a great way to host a simple, static website. This website uses <a href="https://github.com/squidfunk/mkdocs-material">Material for MkDocs</a>. Material for MkDocs is a theme for MkDocs, a static site generator geared towards (technical) project documentation. </p>
+<p><a href="https://github.com/mkdocs/mkdocs/">MkDocs</a> is a great way to host a simple, static website. This website uses <a href="https://github.com/squidfunk/mkdocs-material">Material for MkDocs</a>. Material for MkDocs is a theme for MkDocs, a static site generator geared towards (technical) project documentation.</p>
+<h2 id="hosting">Hosting</h2>
 <p>Use docker or python to quickly create and host a static website.</p>
-<h2 id="container">Container</h2>
+<h3 id="container">Container</h3>
 <div class="highlight"><pre><span></span><code>git clone https://github.com/FullByte/FullByte.github.io.git <span class="c1"># clone repo</span>
 <span class="nb">cd</span> FullByte.github.io <span class="c1"># Go to main folder</span>
 docker run --rm -it -p <span class="m">8000</span>:8000 -v <span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>:/docs squidfunk/mkdocs-material <span class="c1"># run the container</span>
 </code></pre></div>
-<h2 id="python">Python</h2>
+<h3 id="python">Python</h3>
 <p>Run this once to install all requirements:</p>
 <div class="highlight"><pre><span></span><code>choco install -y python
 python -m pip install --upgrade pip
@@ -4561,6 +4652,9 @@ py -3.8-64 -m pip install --upgrade mkdocs-material
 <p>Then run this in the main folder with mkdocs.yml file</p>
 <div class="highlight"><pre><span></span><code>py -3.8-64 -m mkdocs serve
 </code></pre></div>
+<h2 id="create-page">Create page</h2>
+<h3 id="mkdocs-material-admonitions">mkdocs-material admonitions</h3>
+<p><a href="https://squidfunk.github.io/mkdocs-material/reference/admonitions/#inline-blocks">https://squidfunk.github.io/mkdocs-material/reference/admonitions/#inline-blocks</a></p>
                 
               
               
@@ -4653,10 +4747,10 @@ py -3.8-64 -m pip install --upgrade mkdocs-material
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.56a63758.min.js"></script>
       
     
   </body>

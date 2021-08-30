@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://0xfab1.net/make/games/wuerfeln/">
       
       <link rel="icon" href="../../../icons/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.f7f47774.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.be71726b.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -2588,6 +2588,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../tech/azure/container/" class="md-nav__link">
+        Container
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../tech/azure/query-azure-cli/" class="md-nav__link">
         Query Azure CLI
       </a>
@@ -3616,6 +3628,18 @@
     <li class="md-nav__item">
       <a href="../../../tech/script/db/SQL/" class="md-nav__link">
         MS SQL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tech/script/db/links/" class="md-nav__link">
+        Database Links
       </a>
     </li>
   
@@ -4693,7 +4717,7 @@
 <p>Once the agreed number of rounds are played the player with the most rocks in their stash wins the game.</p>
 <h2 id="extras">Extras</h2>
 <p>This is not needed to understand or play the game.</p>
-<details class="game"><summary>Example game</summary><p>The following is an example game play with three players:</p>
+<details class="check"><summary>Example game</summary><p>The following is an example game play with three players:</p>
 <p>All players agree to play 5 rounds.</p>
 <ul>
 <li>Player 1 starts the game and bets on rolling a 🎁. Player 1 then proceeds to roll 1,2,5 which is ⚰️ and therefore loses 2 rocks. Player 1 started with 6 rocks and now has 4. Now it is the next players turn.</li>
@@ -4804,7 +4828,7 @@
 </table>
 <p>The result shows that Das Unvermeidliche has less distinct variations than Wunsch but more possible combinations.</p>
 </details>
-<details class="code"><summary>Script to analyze all possible roll attempts</summary><p>Here is the python script I wrote to calculate the result:</p>
+<details class="note"><summary>Script to analyze all possible roll attempts</summary><p>Here is the python script I wrote to calculate the result:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Check groups for Würfel game:</span>
 <span class="c1"># Step 1 create all possible options for 3x D6 dice</span>
 <span class="c1"># Step 2 remove doubles -&gt; if total is 1 = Dreifaltigkeit, 2 = Wunsch</span>
@@ -4861,7 +4885,7 @@
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Einhorn: &quot;</span><span class="p">,</span> <span class="n">Einhorn</span><span class="p">,</span> <span class="s2">&quot;(</span><span class="si">{:.1f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Einhorn</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">rolls</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">),</span> <span class="s2">&quot;%)&quot;</span><span class="p">)</span>
 </code></pre></div>
 </details>
-<details class="work"><summary>creating the game</summary><p>Creating a box</p>
+<details class="tip"><summary>creating the game</summary><p>Creating a box</p>
 <p>Using boxes.py: <a href="https://www.festi.info/boxes.py/TwoPiece?FingerJoint_angle=90.0&amp;FingerJoint_style=rectangular&amp;FingerJoint_surroundingspaces=2.0&amp;FingerJoint_edge_width=1.0&amp;FingerJoint_finger=2.0&amp;FingerJoint_play=0.0&amp;FingerJoint_space=2.0&amp;FingerJoint_width=1.0&amp;x=182&amp;y=182&amp;h=65&amp;hi=0.0&amp;outside=0&amp;play=0.15&amp;thickness=3.0&amp;format=svg&amp;tabs=0.0&amp;debug=0&amp;labels=0&amp;labels=1&amp;reference=100&amp;burn=0.1&amp;render=1">https://www.festi.info/boxes.py/TwoPiece?FingerJoint_angle=90.0&amp;FingerJoint_style=rectangular&amp;FingerJoint_surroundingspaces=2.0&amp;FingerJoint_edge_width=1.0&amp;FingerJoint_finger=2.0&amp;FingerJoint_play=0.0&amp;FingerJoint_space=2.0&amp;FingerJoint_width=1.0&amp;x=182&amp;y=182&amp;h=65&amp;hi=0.0&amp;outside=0&amp;play=0.15&amp;thickness=3.0&amp;format=svg&amp;tabs=0.0&amp;debug=0&amp;labels=0&amp;labels=1&amp;reference=100&amp;burn=0.1&amp;render=1</a></p>
 <p>These are the settings:</p>
 <p><img alt="_wuerfeln" src="../_wuerfeln.jpg" /></p>
@@ -6269,10 +6293,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.56a63758.min.js"></script>
       
     
   </body>
