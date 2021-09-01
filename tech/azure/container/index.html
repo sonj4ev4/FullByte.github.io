@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://0xfab1.net/tech/azure/container/">
       
       <link rel="icon" href="../../../icons/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.be71726b.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.802231af.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -4575,7 +4575,8 @@ az acr repository list --name fab1container --output table
 </code></pre></div>
 <p>The setup is complete and we should be able to use croc.</p>
 <p>Example on how to use croc with the azure hosted relay:</p>
-<div class="highlight"><pre><span></span><code>croc --relay <span class="s2">&quot;xfab1.westeurope.azurecontainer.io:9009&quot;</span> send geohashing.png
+<p>I added a CNAME entry (croc) to my DNS entry <code>service.0xfab1.net</code> and added the alias: <code>xfab1.westeurope.azurecontainer.io</code> so that i can call the service @ <code>croc.service.0xfab1.net</code>.</p>
+<div class="highlight"><pre><span></span><code>croc --relay <span class="s2">&quot;croc.service.0xfab1.net:9009&quot;</span> send geohashing.png
 </code></pre></div>
 <p>Sources:</p>
 <ul>
@@ -4677,7 +4678,7 @@ az acr repository list --name fab1container --output table
     <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.56a63758.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.756773cc.min.js"></script>
       
     
   </body>
