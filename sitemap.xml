@@ -551,6 +551,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://0xfab1.net/tech/art/pytorch/</loc>
+         <lastmod>2021-09-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://0xfab1.net/tech/azure/</loc>
          <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
@@ -831,57 +836,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/script/bash/</loc>
-         <lastmod>2021-09-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://0xfab1.net/tech/script/cmd/</loc>
-         <lastmod>2021-09-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://0xfab1.net/tech/script/github/</loc>
-         <lastmod>2021-09-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://0xfab1.net/tech/script/python/</loc>
-         <lastmod>2021-09-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://0xfab1.net/tech/script/pytorch/</loc>
-         <lastmod>2021-09-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://0xfab1.net/tech/script/API/sendgrid/</loc>
-         <lastmod>2021-09-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://0xfab1.net/tech/script/OS/gentoo/</loc>
-         <lastmod>2021-09-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://0xfab1.net/tech/script/OS/kali/</loc>
-         <lastmod>2021-09-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://0xfab1.net/tech/script/OS/plan9/</loc>
-         <lastmod>2021-09-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://0xfab1.net/tech/script/OS/ubuntu/</loc>
-         <lastmod>2021-09-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://0xfab1.net/tech/script/OS/windows10/</loc>
          <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -896,37 +851,87 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/script/powershell/advice/</loc>
+         <loc>https://0xfab1.net/tech/script/linux/bash/</loc>
          <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/script/powershell/setup/</loc>
+         <loc>https://0xfab1.net/tech/script/linux/gentoo/</loc>
          <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/script/powershell/snippets/</loc>
+         <loc>https://0xfab1.net/tech/script/linux/kali/</loc>
          <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/script/web/CSS/</loc>
+         <loc>https://0xfab1.net/tech/script/linux/plan9/</loc>
          <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/script/web/HTML/</loc>
+         <loc>https://0xfab1.net/tech/script/linux/ubuntu/</loc>
          <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/script/web/JavaScript/</loc>
+         <loc>https://0xfab1.net/tech/script/python/python-basics/</loc>
          <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://0xfab1.net/tech/script/web/links/</loc>
+         <lastmod>2021-09-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://0xfab1.net/tech/script/web/basics/CSS/</loc>
+         <lastmod>2021-09-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://0xfab1.net/tech/script/web/basics/HTML/</loc>
+         <lastmod>2021-09-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://0xfab1.net/tech/script/web/basics/JavaScript/</loc>
+         <lastmod>2021-09-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://0xfab1.net/tech/script/web/static-website/mkdocs/</loc>
+         <lastmod>2021-09-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://0xfab1.net/tech/script/web/static-website/sigal/</loc>
+         <lastmod>2021-09-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://0xfab1.net/tech/script/windows/cmd/</loc>
+         <lastmod>2021-09-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://0xfab1.net/tech/script/windows/windows10/</loc>
+         <lastmod>2021-09-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://0xfab1.net/tech/script/windows/powershell/advice/</loc>
+         <lastmod>2021-09-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://0xfab1.net/tech/script/windows/powershell/setup/</loc>
+         <lastmod>2021-09-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://0xfab1.net/tech/script/windows/powershell/snippets/</loc>
          <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -956,11 +961,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/standards/markdown/</loc>
-         <lastmod>2021-09-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://0xfab1.net/tech/standards/mobile-code/</loc>
          <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
@@ -981,17 +981,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/standards/regex/</loc>
-         <lastmod>2021-09-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://0xfab1.net/tech/standards/speed/</loc>
          <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/standards/timezone/</loc>
+         <loc>https://0xfab1.net/tech/standards/time/</loc>
          <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1042,6 +1037,11 @@
     </url>
     <url>
          <loc>https://0xfab1.net/tech/tools/git/</loc>
+         <lastmod>2021-09-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://0xfab1.net/tech/tools/github/</loc>
          <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1172,16 +1172,6 @@
     </url>
     <url>
          <loc>https://0xfab1.net/tech/tools/lists/server-apps/</loc>
-         <lastmod>2021-09-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://0xfab1.net/tech/tools/static-website/mkdocs/</loc>
-         <lastmod>2021-09-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://0xfab1.net/tech/tools/static-website/sigal/</loc>
          <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
