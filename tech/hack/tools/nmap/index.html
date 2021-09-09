@@ -3022,7 +3022,7 @@
   
     <li class="md-nav__item">
       <a href="../../challenges/tryhackme.com/kenobi/" class="md-nav__link">
-        Internal
+        Kenobi
       </a>
     </li>
   
@@ -3322,6 +3322,13 @@
         <li class="md-nav__item">
   <a href="#simple-ip-scan" class="md-nav__link">
     Simple IP scan
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enumerate-the-smb-shares" class="md-nav__link">
+    Enumerate the SMB shares
   </a>
   
 </li>
@@ -4643,6 +4650,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#enumerate-the-smb-shares" class="md-nav__link">
+    Enumerate the SMB shares
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ncat" class="md-nav__link">
     ncat
   </a>
@@ -4669,7 +4683,10 @@
                 <h1 id="nmap">Nmap</h1>
 <p>Press "v" if you forgot du add "-v" in the scan and need to increase verbosity.</p>
 <h2 id="simple-ip-scan">Simple IP scan</h2>
-<div class="highlight"><pre><span></span><code>nmap -sC -sV <span class="m">10</span>.10.153.26
+<div class="highlight"><pre><span></span><code>nmap -sC -sV &lt;ip&gt;
+</code></pre></div>
+<h2 id="enumerate-the-smb-shares">Enumerate the SMB shares</h2>
+<div class="highlight"><pre><span></span><code>nmap -p <span class="m">445</span> --script<span class="o">=</span>smb-enum-shares.nse,smb-enum-users.nse &lt;ip&gt;
 </code></pre></div>
 <h2 id="ncat"><a href="https://nmap.org/ncat/">ncat</a></h2>
 <p>todo</p>
