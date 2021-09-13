@@ -11,6 +11,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://0xfab1.net/entertain/</loc>
+         <lastmod>2021-09-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://0xfab1.net/entertain/games/devices/odriod-go/</loc>
          <lastmod>2021-09-13</lastmod>
          <changefreq>daily</changefreq>
@@ -232,6 +237,11 @@
     </url>
     <url>
          <loc>https://0xfab1.net/entertain/wtf/wisdom/</loc>
+         <lastmod>2021-09-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://0xfab1.net/make/</loc>
          <lastmod>2021-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -512,6 +522,11 @@
     </url>
     <url>
          <loc>https://0xfab1.net/make/recipes/soup/tomatensuppe/</loc>
+         <lastmod>2021-09-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://0xfab1.net/tech/</loc>
          <lastmod>2021-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
