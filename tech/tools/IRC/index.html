@@ -4313,6 +4313,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#use-matrixorg-as-irc-client" class="md-nav__link">
+    Use matrix.org as IRC client
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4679,6 +4686,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#use-matrixorg-as-irc-client" class="md-nav__link">
+    Use matrix.org as IRC client
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4792,6 +4806,19 @@
 </table>
 <p>To join the channel, now run this command: <code>/JOIN #my-new-channel channel-password</code>
 Get details on the channel owner: <code>/msg ChanServ info #my-new-channel</code></p>
+<h2 id="use-matrixorg-as-irc-client">Use matrix.org as IRC client</h2>
+<p>Join the room <code>#freenode_#channel:matrix.org</code> on matrix.org.</p>
+<p>If you have a Freenode-registered nickname and want to use it from Matrix, you can do it like this:</p>
+<ol>
+<li>Leave with your nick on IRC</li>
+<li>On Matrix, open a new chat</li>
+<li>Invite <code>@appservice-irc:matrix.org</code> to the new chat</li>
+<li>Say <code>!nick &lt;yournick&gt;</code></li>
+<li>A request for new chat with <code>NickServ</code> will pop up</li>
+<li>Accept it and identify yourself with your Freenode password (<code>identify &lt;password&gt;</code>)</li>
+</ol>
+<p>Voila, you'll be using your Freenode-registered nick through Matrix, being able to use multiple devices simultaneously with shared history and all!</p>
+<p>To start private IRC Chats, invite <code>@freenode_&lt;nick&gt;:matrix.org</code> to the new chat. This works for nicks that are known to matrix.org, i.e. if the nick has never joined an IRC channel that was bridged to matrix it won't work.</p>
                 
               
               
