@@ -731,6 +731,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://0xfab1.net/tech/hack/challenges/tryhackme.com/post-exploitation-basics/</loc>
+         <lastmod>2021-09-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://0xfab1.net/tech/hack/hardware/USB-Armory/</loc>
          <lastmod>2021-09-16</lastmod>
          <changefreq>daily</changefreq>
