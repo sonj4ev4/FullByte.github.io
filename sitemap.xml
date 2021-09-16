@@ -421,6 +421,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://0xfab1.net/make/boxes.py/phone-holder/</loc>
+         <lastmod>2021-09-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://0xfab1.net/make/boxes.py/royal-game/</loc>
+         <lastmod>2021-09-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://0xfab1.net/make/games/halli-galli-extreme/</loc>
          <lastmod>2021-09-16</lastmod>
          <changefreq>daily</changefreq>
@@ -481,26 +491,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/make/random/boulderbag/</loc>
-         <lastmod>2021-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://0xfab1.net/make/random/dicemosaic/</loc>
-         <lastmod>2021-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://0xfab1.net/make/random/hoerbert/</loc>
-         <lastmod>2021-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://0xfab1.net/make/random/phone-holder/</loc>
-         <lastmod>2021-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://0xfab1.net/make/tools/3dprinter/</loc>
          <lastmod>2021-09-16</lastmod>
          <changefreq>daily</changefreq>
@@ -512,6 +502,21 @@
     </url>
     <url>
          <loc>https://0xfab1.net/make/tools/lasercutter/</loc>
+         <lastmod>2021-09-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://0xfab1.net/make/werkstatt/boulderbag/</loc>
+         <lastmod>2021-09-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://0xfab1.net/make/werkstatt/dicemosaic/</loc>
+         <lastmod>2021-09-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://0xfab1.net/make/werkstatt/hoerbert/</loc>
          <lastmod>2021-09-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
