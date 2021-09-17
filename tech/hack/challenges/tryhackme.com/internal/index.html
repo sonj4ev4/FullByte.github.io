@@ -3007,6 +3007,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        About tryhackme.com
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../advent-of-cyber2/" class="md-nav__link">
         adventofcyber2
       </a>
@@ -3147,8 +3159,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../post-exploitation-basics/" class="md-nav__link">
-        Post-Exploitation Basics
+      <a href="../post-exploitation/" class="md-nav__link">
+        Post-Exploitation
       </a>
     </li>
   
@@ -4781,12 +4793,6 @@
                 
                 <h1 id="internal">Internal</h1>
 <p>These notes are from a challenge I did @<a href="https://tryhackme.com">tryhackme</a> called <a href="https://tryhackme.com/room/internal">Internal Penetration Testing Challenge</a>.</p>
-<p>Connect to tryhackme via openvpn e.g.: <code>sudo openvpn 0xfab1.ovpn</code></p>
-<p>Please note:</p>
-<ul>
-<li>Flags are not fully written to avoid copy &amp; paste ;)</li>
-<li>I used an SSH-Tunnel in case you are wondering why I have "localhost" instead of an IP mentioned.</li>
-</ul>
 <h2 id="first-checks">First Checks</h2>
 <p>Let's add internal.thm to the hosts file as requested and run nmap, niktio and gobuster to scan the target.</p>
 <div class="highlight"><pre><span></span><code>sudo <span class="nb">echo</span> <span class="m">10</span>.10.156.30 internal.thm &gt;&gt; /etc/hosts
