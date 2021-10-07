@@ -481,16 +481,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/make/boxes.py/phone-holder/</loc>
-         <lastmod>2021-10-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://0xfab1.net/make/boxes.py/royal-game/</loc>
-         <lastmod>2021-10-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://0xfab1.net/make/games/halli-galli-extreme/</loc>
          <lastmod>2021-10-07</lastmod>
          <changefreq>daily</changefreq>
@@ -516,17 +506,27 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/make/games/enhancements/catan/</loc>
+         <loc>https://0xfab1.net/make/laser-cutter/boxes.py/phone-holder/</loc>
          <lastmod>2021-10-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/make/games/enhancements/dixit/</loc>
+         <loc>https://0xfab1.net/make/laser-cutter/boxes.py/royal-game/</loc>
          <lastmod>2021-10-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/make/games/enhancements/mastermind/</loc>
+         <loc>https://0xfab1.net/make/laser-cutter/game-organizer/catan/</loc>
+         <lastmod>2021-10-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://0xfab1.net/make/laser-cutter/game-organizer/dixit/</loc>
+         <lastmod>2021-10-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://0xfab1.net/make/laser-cutter/game-organizer/mastermind/</loc>
          <lastmod>2021-10-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
