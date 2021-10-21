@@ -1111,37 +1111,37 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/script/os/linux/bash/</loc>
+         <loc>https://0xfab1.net/tech/script/os/bash/</loc>
          <lastmod>2021-10-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/script/os/linux/gentoo/</loc>
+         <loc>https://0xfab1.net/tech/script/os/cmd/</loc>
          <lastmod>2021-10-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/script/os/linux/kali/</loc>
+         <loc>https://0xfab1.net/tech/script/os/gentoo/</loc>
          <lastmod>2021-10-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/script/os/linux/plan9/</loc>
+         <loc>https://0xfab1.net/tech/script/os/kali/</loc>
          <lastmod>2021-10-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/script/os/linux/ubuntu/</loc>
+         <loc>https://0xfab1.net/tech/script/os/plan9/</loc>
          <lastmod>2021-10-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/script/os/windows/cmd/</loc>
+         <loc>https://0xfab1.net/tech/script/os/ubuntu/</loc>
          <lastmod>2021-10-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/script/os/windows/windows10/</loc>
+         <loc>https://0xfab1.net/tech/script/os/windows10/</loc>
          <lastmod>2021-10-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
