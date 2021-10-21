@@ -746,6 +746,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://0xfab1.net/tech/hack/ctf/tryhackme.com/wonderland/</loc>
+         <lastmod>2021-10-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://0xfab1.net/tech/hack/tools/aircrack/</loc>
          <lastmod>2021-10-21</lastmod>
          <changefreq>daily</changefreq>
