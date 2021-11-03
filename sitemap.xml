@@ -606,7 +606,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/azure/azure-public-ip/</loc>
+         <loc>https://0xfab1.net/tech/azure/azure-regions/</loc>
          <lastmod>2021-11-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -642,11 +642,6 @@
     </url>
     <url>
          <loc>https://0xfab1.net/tech/azure/storage-account/</loc>
-         <lastmod>2021-11-03</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://0xfab1.net/tech/azure/strings/</loc>
          <lastmod>2021-11-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
