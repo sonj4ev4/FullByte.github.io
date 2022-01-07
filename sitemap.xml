@@ -541,22 +541,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/art/cli/ansi/</loc>
+         <loc>https://0xfab1.net/tech/art/commandline/ansi/</loc>
          <lastmod>2022-01-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/art/cli/ascii/</loc>
+         <loc>https://0xfab1.net/tech/art/commandline/ascii/</loc>
          <lastmod>2022-01-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/art/db/database/</loc>
+         <loc>https://0xfab1.net/tech/art/database/database/</loc>
          <lastmod>2022-01-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/art/ml/pytorch/</loc>
+         <loc>https://0xfab1.net/tech/art/machine-learning/pytorch/</loc>
          <lastmod>2022-01-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -586,27 +586,27 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/azure/cli/az-cli/</loc>
+         <loc>https://0xfab1.net/tech/azure/commandline/az-cli/</loc>
          <lastmod>2022-01-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/azure/cli/az-powershell/</loc>
+         <loc>https://0xfab1.net/tech/azure/commandline/az-powershell/</loc>
          <lastmod>2022-01-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/azure/cli/bicep/</loc>
+         <loc>https://0xfab1.net/tech/azure/commandline/bicep/</loc>
          <lastmod>2022-01-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/azure/cli/cloudshell/</loc>
+         <loc>https://0xfab1.net/tech/azure/commandline/cloudshell/</loc>
          <lastmod>2022-01-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/azure/cli/query-azure-cli/</loc>
+         <loc>https://0xfab1.net/tech/azure/commandline/query-azure-cli/</loc>
          <lastmod>2022-01-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -841,12 +841,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/script/db/SQL/</loc>
+         <loc>https://0xfab1.net/tech/script/database/SQL/</loc>
          <lastmod>2022-01-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/script/db/links/</loc>
+         <loc>https://0xfab1.net/tech/script/database/links/</loc>
          <lastmod>2022-01-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -976,7 +976,47 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/tools/</loc>
+         <loc>https://0xfab1.net/tech/tools/admin/admin/</loc>
+         <lastmod>2022-01-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://0xfab1.net/tech/tools/admin/package-manager/</loc>
+         <lastmod>2022-01-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://0xfab1.net/tech/tools/admin/remote-access/</loc>
+         <lastmod>2022-01-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://0xfab1.net/tech/tools/chat/chat/</loc>
+         <lastmod>2022-01-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://0xfab1.net/tech/tools/commandline/cli-only/</loc>
+         <lastmod>2022-01-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://0xfab1.net/tech/tools/develop/containers/</loc>
+         <lastmod>2022-01-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://0xfab1.net/tech/tools/develop/develop/</loc>
+         <lastmod>2022-01-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://0xfab1.net/tech/tools/files/convert-files/</loc>
+         <lastmod>2022-01-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://0xfab1.net/tech/tools/files/copy-files/</loc>
          <lastmod>2022-01-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1011,47 +1051,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/tools/poweruser/admin/</loc>
-         <lastmod>2022-01-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://0xfab1.net/tech/tools/poweruser/chat/</loc>
-         <lastmod>2022-01-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://0xfab1.net/tech/tools/poweruser/cli-only/</loc>
-         <lastmod>2022-01-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://0xfab1.net/tech/tools/poweruser/containers/</loc>
-         <lastmod>2022-01-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://0xfab1.net/tech/tools/poweruser/convert-files/</loc>
-         <lastmod>2022-01-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://0xfab1.net/tech/tools/poweruser/copy-files/</loc>
-         <lastmod>2022-01-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://0xfab1.net/tech/tools/poweruser/develop/</loc>
-         <lastmod>2022-01-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://0xfab1.net/tech/tools/poweruser/draw/</loc>
-         <lastmod>2022-01-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://0xfab1.net/tech/tools/poweruser/encryption/</loc>
          <lastmod>2022-01-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1076,27 +1076,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/tools/poweruser/package-manager/</loc>
-         <lastmod>2022-01-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://0xfab1.net/tech/tools/poweruser/pimp-os/</loc>
          <lastmod>2022-01-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/tools/poweruser/privacy/</loc>
-         <lastmod>2022-01-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://0xfab1.net/tech/tools/poweruser/remote-access/</loc>
-         <lastmod>2022-01-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://0xfab1.net/tech/tools/poweruser/virt-emu-port/</loc>
+         <lastmod>2022-01-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://0xfab1.net/tech/tools/security/encryption/</loc>
+         <lastmod>2022-01-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://0xfab1.net/tech/tools/security/privacy/</loc>
          <lastmod>2022-01-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
