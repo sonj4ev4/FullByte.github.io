@@ -481,12 +481,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://0xfab1.net/make/werkstatt/boardgame-replica/catan/</loc>
+         <lastmod>2022-01-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://0xfab1.net/make/werkstatt/boxes.py/phone-holder/</loc>
          <lastmod>2022-01-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://0xfab1.net/make/werkstatt/boxes.py/royal-game/</loc>
+         <lastmod>2022-01-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://0xfab1.net/make/werkstatt/game-console/retro-console/</loc>
          <lastmod>2022-01-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
