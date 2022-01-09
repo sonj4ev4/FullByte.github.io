@@ -301,17 +301,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://0xfab1.net/make/food/meal/chicken-curry/</loc>
+         <lastmod>2022-01-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://0xfab1.net/make/food/meal/chili/</loc>
          <lastmod>2022-01-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://0xfab1.net/make/food/meal/curry/</loc>
-         <lastmod>2022-01-09</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://0xfab1.net/make/food/meal/geschnetzeltes/</loc>
          <lastmod>2022-01-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -357,11 +357,6 @@
     </url>
     <url>
          <loc>https://0xfab1.net/make/food/meal/nudelsalat/</loc>
-         <lastmod>2022-01-09</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://0xfab1.net/make/food/meal/paela/</loc>
          <lastmod>2022-01-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
