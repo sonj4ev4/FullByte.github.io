@@ -1211,27 +1211,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/tools/files/EXIFtool/</loc>
-         <lastmod>2022-03-22</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://0xfab1.net/tech/tools/files/ImageMagick/</loc>
-         <lastmod>2022-03-22</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://0xfab1.net/tech/tools/files/Squoosh/</loc>
-         <lastmod>2022-03-22</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://0xfab1.net/tech/tools/files/curl/</loc>
-         <lastmod>2022-03-22</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://0xfab1.net/tech/tools/files/ffmpeg/</loc>
          <lastmod>2022-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1272,11 +1252,6 @@
     </url>
     <url>
          <loc>https://0xfab1.net/tech/tools/files/wget/</loc>
-         <lastmod>2022-03-22</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://0xfab1.net/tech/tools/files/youtube-dl/</loc>
          <lastmod>2022-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1341,17 +1316,32 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/tools/media/calibre/</loc>
+         <loc>https://0xfab1.net/tech/tools/image/EXIFtool/</loc>
          <lastmod>2022-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/tools/media/embyserver/</loc>
+         <loc>https://0xfab1.net/tech/tools/image/ImageMagick/</loc>
          <lastmod>2022-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://0xfab1.net/tech/tools/media/playnite/</loc>
+         <loc>https://0xfab1.net/tech/tools/image/Squoosh/</loc>
+         <lastmod>2022-03-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://0xfab1.net/tech/tools/media-management/calibre/</loc>
+         <lastmod>2022-03-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://0xfab1.net/tech/tools/media-management/embyserver/</loc>
+         <lastmod>2022-03-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://0xfab1.net/tech/tools/media-management/playnite/</loc>
          <lastmod>2022-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1416,7 +1406,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://0xfab1.net/tech/tools/video/ffmpeg/</loc>
+         <lastmod>2022-03-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://0xfab1.net/tech/tools/video/obs/</loc>
+         <lastmod>2022-03-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://0xfab1.net/tech/tools/video/youtube-dl/</loc>
          <lastmod>2022-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
