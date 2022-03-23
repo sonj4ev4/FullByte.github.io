@@ -1336,6 +1336,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://0xfab1.net/tech/tools/image/print-scan/</loc>
+         <lastmod>2022-03-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://0xfab1.net/tech/tools/media-management/calibre/</loc>
          <lastmod>2022-03-23</lastmod>
          <changefreq>daily</changefreq>
@@ -1377,11 +1382,6 @@
     </url>
     <url>
          <loc>https://0xfab1.net/tech/tools/office/excel/</loc>
-         <lastmod>2022-03-23</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://0xfab1.net/tech/tools/office/naps2/</loc>
          <lastmod>2022-03-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
